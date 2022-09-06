@@ -3,11 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { store } from './store'
+import { Provider } from 'react-redux'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    ha ha
+    {/* Provider giúp cho toàn bộ các component của app truy cập được vào store mà nó khai báo */}
+    <Provider store={store}>
+      <App />
+    </Provider>,
   </React.StrictMode>
 );
 
