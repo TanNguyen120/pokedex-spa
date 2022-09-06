@@ -19,12 +19,13 @@ function SearchResult() {
     return (
         <div>SearchResult
             <div>
-                {
-                    JSON.stringify(results)
-                }
+                <h5 className=" to-red-600 text-right text-blue-700">
+                    {
+                        JSON.stringify(results)
+                    }
+                </h5>
             </div>
         </div>
-
     )
 }
 
