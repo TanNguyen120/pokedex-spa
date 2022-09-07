@@ -4,6 +4,7 @@ import axios from 'axios';
 import { setCount } from "../../../reduxSlicer/pokemonCount"
 import { setData } from '../../../reduxSlicer/singlePokemon';
 import PokeFrame from './pokeFrame';
+import PokeInfo from './pokeInfo';
 const RadomMonSection = () => {
     // ta phai su dung useSelector va useDispatch de goi toi store va lay state can thiet
     const numberOfMon = useSelector((state) => state.pokemonCount);
@@ -26,9 +27,8 @@ const RadomMonSection = () => {
         const randomID = Math.floor(Math.random() * numberOfMon.value);
         // check if we had already get number of pokemon
         if (randomID !== 0) {
-            axios.get(`https://pokeapi.co/api/v2/pokemon-species/${randomID}/`).then(
+            axios.get(`https://pokeapi.co/api/v2/pokemon/${randomID}/`).then(
                 res => {
-                    console.log(res.data);
                     dispatch(setData(res.data))
                 }
             )
@@ -37,8 +37,9 @@ const RadomMonSection = () => {
 
 
     return (
-        <div className="bg-red-space px-2">radomMonSection of {numberOfMon.value} Pokemons
-            <PokeFrame pokeImg={singlePokemon} />
+        <div className="bg-red-space px-2 grid grid-flow-col">
+            <PokeFrame pokeImg={singlePokemon.value ? singlePokemon.value.sprites.front_default : "loading"} />
+            <PokeInfo pokeInfo={singlePokemon.value ? singlePokemon.value : "loading"} />
         </div>
     )
 }
