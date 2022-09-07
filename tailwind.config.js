@@ -5,6 +5,10 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    backgroundImage: {
+      'red-space': "url('../public/spaceBG.jpg')",
+      'magic-circle': "url('../public/magic-circle.png')"
+    },
   },
   plugins: [],
 }

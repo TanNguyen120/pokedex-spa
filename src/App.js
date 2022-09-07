@@ -1,11 +1,11 @@
 import './App.css';
 import NavBar from './component/navBar';
-import SearchResult from './component/searchResult';
+import Body from './component/body'
 function App() {
   return (
     <div className="App">
       <NavBar />
-      <SearchResult />
+      <Body />
     </div>
   );
 }
