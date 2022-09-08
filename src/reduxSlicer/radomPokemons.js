@@ -10,13 +10,13 @@ export const randomPokeSlice = createSlice({
     initialState,
     reducers: {
         setNewPokeMonArray: (state, action) => {
-            state.value = action.payload
+            state.push(action.payload);
         },
         addPokemon: (state, action) => {
             state.push(action.payload);
         },
         clearPokemonArray: (state) => {
-            state = [];
+            state.splice(0, state.length)
         }
     },
 })

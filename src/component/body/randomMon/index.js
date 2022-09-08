@@ -10,8 +10,8 @@ import PokeInfo from './pokeInfo';
 const RadomMonSection = () => {
     // ta phai su dung useSelector va useDispatch de goi toi store va lay state can thiet
     const numberOfMon = useSelector((state) => state.pokemonCount);
-    const singlePokemon = useSelector((state) => state.singlePokemon);
-    const randomPokemons = useSelector((state) => state.randomPokemon)
+    const reloadFlag = useSelector((state) => state.reloadFlag)
+    const randomPokemons = useSelector((state) => state.randomPokemon);
     const dispatch = useDispatch();
 
     // get number of pokemon
@@ -45,11 +45,11 @@ const RadomMonSection = () => {
             }
         }
 
-    }, [numberOfMon])
+    }, [numberOfMon, reloadFlag])
 
 
     return (
-        <div className="bg-red-space bg-cover px-14 py-14 grid grid-cols-1 md:grid-cols-5 gap-20 ">
+        <div className=" px-14 py-14 grid grid-cols-1 md:grid-cols-5 gap-20 ">
             <PokeFrame pokeImg={randomPokemons.length >= 5 ? randomPokemons[0].sprites.front_default : "loading"} className="col-span-4" />
             <PokeFrame pokeImg={randomPokemons.length >= 5 ? randomPokemons[1].sprites.front_default : "loading"} className="col-span-2" />
             <PokeFrame pokeImg={randomPokemons.length >= 5 ? randomPokemons[2].sprites.front_default : "loading"} className="col-span-4" />

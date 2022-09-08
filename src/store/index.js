@@ -3,13 +3,16 @@ import homeResultReducer from '../reduxSlicer/homeResult';
 import pokemonCount from '../reduxSlicer/pokemonCount';
 import singlePokemon from '../reduxSlicer/singlePokemon';
 import randomPokemon from '../reduxSlicer/radomPokemons';
-
+import searchInput from '../reduxSlicer/searchBarState';
+import reloadFlag from '../reduxSlicer/reloadFlag';
 // ta sử dụng toolkit để khai báo một store để chứa các reducer
 export const store = configureStore({
     reducer: {
         homeResult: homeResultReducer,
         pokemonCount: pokemonCount,
         singlePokemon: singlePokemon,
-        randomPokemon: randomPokemon
+        randomPokemon: randomPokemon,
+        searchInput: searchInput,
+        reloadFlag: reloadFlag
     },
 })
