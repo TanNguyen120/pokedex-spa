@@ -1,10 +1,19 @@
 import React from 'react'
-
+import LoadingSpinner from '../../loadingSpiner'
 const PokeFrame = ({ pokeImg }) => {
     return (
-        <div className='justify-center bg-magic-circle bg-cover'>
-            <img className=" w-5/12 h-5/12" src={pokeImg} alt="poke sprite" />
-        </div>
+        <>
+            {
+                // render loading spinner if the prob is loading
+                pokeImg !== 'loading'
+                    ?
+                    <div className='bg-magic-circle bg-cover hover:cursor-help'>
+                        <img className=" w-full h-full" src={pokeImg} alt="poke sprite" />
+                    </div>
+                    :
+                    <LoadingSpinner />
+            }
+        </>
     )
 }
 

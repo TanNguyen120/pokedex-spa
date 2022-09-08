@@ -7,7 +7,7 @@ module.exports = {
     extend: {},
     backgroundImage: {
       'red-space': "url('../public/spaceBG.jpg')",
-      'magic-circle': "url('../public/magic-circle.png')"
+      'magic-circle': "url('../public/borderPoke.png')"
     },
   },
   plugins: [],
