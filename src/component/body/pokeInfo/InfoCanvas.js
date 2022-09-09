@@ -44,6 +44,9 @@ const InfoCanvas = ({ pokemon }) => {
                 <PokemonFormPic picUrl={pokemon.sprites.back_shiny} type='shiny back' />
                 <PokemonFormPic picUrl={pokemon.sprites.front_shiny} type='shiny front' />
             </div>
+            <div className='grid grid-cols-1'>
+
+            </div>
         </div>
     )
 }
