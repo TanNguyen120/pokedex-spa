@@ -19,8 +19,7 @@ const PokeInfo = () => {
                     res => {
                         // clear the state
                         dispatch(clearSinglePokeData());
-
-                        dispatch(setPokeData(res.data))
+                        dispatch(setPokeData(res.data));
                     }
                 );
                 break;

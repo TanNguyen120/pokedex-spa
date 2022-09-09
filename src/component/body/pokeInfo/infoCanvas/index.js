@@ -4,7 +4,7 @@ import { GiBodyHeight } from 'react-icons/gi';
 import { AiOutlineExperiment } from 'react-icons/ai'
 import TypeCanvas from './typeCanvas';
 import InfoSmallComponent from './inforSmallComponent';
-
+import HeldItems from './heldItems';
 import PokemonFormPic from './pokemonFormPic';
 
 
@@ -38,7 +38,7 @@ const InfoCanvas = ({ pokemon }) => {
                 <div className='grid grid-cols-1 md:grid-cols-2'>
 
                     <InfoSmallComponent tile="Base Experience" detail_info={pokemon.base_experience} icon={expIcon} />
-                    <InfoSmallComponent tile="Held Items" detail_info={"none"} />
+                    <HeldItems heldItems={pokemon.held_items} />
                 </div>
 
             </div>
