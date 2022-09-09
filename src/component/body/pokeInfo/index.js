@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import axios from 'axios';
 import { setPokeData, clearSinglePokeData } from '../../../reduxSlicer/singlePokemon';
-import InfoCanvas from './InfoCanvas';
+import InfoCanvas from './infoCanvas';
 import LoadingSpinner from '../../loadingSpiner';
 
 const PokeInfo = () => {
