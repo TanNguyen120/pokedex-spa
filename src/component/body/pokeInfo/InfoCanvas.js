@@ -1,20 +1,21 @@
 import React from 'react'
+import { FaWeightHanging } from 'react-icons/fa'
 // SMALL COMPONENTS
-const InfoSmallComponent = ({ tile, detail_info }) => {
+const InfoSmallComponent = ({ tile, detail_info, metric, icon }) => {
     return (
         <div className="bg-slate-300 rounded-lg text-center font-mono font-semibold text-black m-1">
             <h3>
-                {tile}
+                {tile} {icon}
             </h3>
-            <WhiteInfoComponent detail_info={detail_info} />
+            <WhiteInfoComponent detail_info={detail_info} metric={metric} />
         </div>
     )
 }
 
-const WhiteInfoComponent = ({ detail_info }) => {
+const WhiteInfoComponent = ({ detail_info, metric }) => {
     return (
         <div className='bg-white rounded-lg text-center text-black m-2'>
-            {detail_info}
+            {detail_info} {metric}
         </div>
     )
 }
@@ -45,6 +46,10 @@ const InfoCanvas = ({ pokemon }) => {
                 <PokemonFormPic picUrl={pokemon.sprites.front_shiny} type='shiny front' />
             </div>
             <div className='grid grid-cols-1'>
+                <div className='grid grid-cols-2'>
+                    <InfoSmallComponent tile="Weight" detail_info={pokemon.weight * 0.1} metric=" kg" />
+                    <InfoSmallComponent tile="Height" detail_info={pokemon.height * 0.1} metric=" m" />
+                </div>
 
             </div>
         </div>
