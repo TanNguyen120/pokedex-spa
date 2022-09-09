@@ -8,17 +8,20 @@ const initialState = {
 // ta sẽ khai báo slice này vào store để lưu state toàn cục
 
 export const singlePokeSlice = createSlice({
-    name: 'searchText',
+    name: 'singlePokeData',
     initialState,
     reducers: {
-
-        setData: (state, action) => {
+        setPokeData: (state, action) => {
             state.value = action.payload
+        },
+        clearSinglePokeData: (state) => {
+            state.value = null
         }
     },
 })
 
 // Action creators are generated for each case reducer function
-export const { setData } = singlePokeSlice.actions
+// we export two thing in this file the action so we can dispatch it in other component AND the reducer for the store to save our state and reducer
+export const { setPokeData, clearSinglePokeData } = singlePokeSlice.actions
 
 export default singlePokeSlice.reducer

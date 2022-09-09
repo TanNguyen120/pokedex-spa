@@ -5,6 +5,7 @@ import singlePokemon from '../reduxSlicer/singlePokemon';
 import randomPokemon from '../reduxSlicer/radomPokemons';
 import searchInput from '../reduxSlicer/searchBarState';
 import reloadFlag from '../reduxSlicer/reloadFlag';
+import findPokeInfoFlag from '../reduxSlicer/findPokeInfoFlag';
 // ta sử dụng toolkit để khai báo một store để chứa các reducer
 export const store = configureStore({
     reducer: {
@@ -13,6 +14,7 @@ export const store = configureStore({
         singlePokemon: singlePokemon,
         randomPokemon: randomPokemon,
         searchInput: searchInput,
-        reloadFlag: reloadFlag
+        reloadFlag: reloadFlag,
+        findPokeInfoFlag: findPokeInfoFlag
     },
 })

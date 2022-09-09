@@ -9,7 +9,7 @@ const SearchBar = () => {
     const searchInput = useSelector((state) => state.searchInput);
     const dispatch = useDispatch();
     return (
-        <div className="grid grid-cols-4 gap-3 py-10 m-5 px-32">
+        <div className="grid md:grid-cols-4 grid-cols-2 gap-3 py-10 m-5 px-32">
             <form className="col-span-2">
                 <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300 inline">Search For  <TbPokeball /> </label>
                 <div className="relative">

@@ -1,6 +1,10 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
 import LoadingSpinner from '../../loadingSpiner'
-const PokeFrame = ({ pokeImg }) => {
+import { findPokeByID } from '../../../reduxSlicer/findPokeInfoFlag'
+
+const PokeFrame = ({ pokeImg, pokeId }) => {
+    const dispatch = useDispatch();
     return (
         <>
             {
@@ -8,7 +12,12 @@ const PokeFrame = ({ pokeImg }) => {
                 pokeImg !== 'loading'
                     ?
                     <div className='bg-magic-circle bg-cover hover:cursor-help'>
-                        <img className=" w-full h-full" src={pokeImg} alt="poke sprite" />
+                        <img className=" w-full h-full" src={pokeImg} alt="poke sprite" onClick={
+                            e => {
+                                dispatch(findPokeByID(pokeId));
+
+                            }
+                        } />
                     </div>
                     :
                     <LoadingSpinner />
