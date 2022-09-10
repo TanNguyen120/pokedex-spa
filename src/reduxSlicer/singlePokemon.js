@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
     baseData: null,
+    species: null,
 
 }
 
@@ -17,12 +18,15 @@ export const singlePokeSlice = createSlice({
         },
         clearSinglePokeData: (state) => {
             state = initialState;
+        },
+        setPokeSpecie: (state, action) => {
+            state.species = action.payload
         }
     },
 })
 
 // Action creators are generated for each case reducer function
 // we export two thing in this file the action so we can dispatch it in other component AND the reducer for the store to save our state and reducer
-export const { setBasePokeData, clearSinglePokeData } = singlePokeSlice.actions
+export const { setBasePokeData, clearSinglePokeData, setPokeSpecie } = singlePokeSlice.actions
 
 export default singlePokeSlice.reducer

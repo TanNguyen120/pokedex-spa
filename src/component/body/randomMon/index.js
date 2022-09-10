@@ -6,6 +6,7 @@ import { setBasePokeData } from '../../../reduxSlicer/singlePokemon';
 import { addPokemon, clearPokemonArray } from '../../../reduxSlicer/radomPokemons';
 import { FaRegHandPointUp } from 'react-icons/fa'
 import PokeFrame from './pokeFrame';
+import { findPokeByID } from '../../../reduxSlicer/findPokeInfoFlag';
 const RadomMonSection = () => {
     // ta phai su dung useSelector va useDispatch de goi toi store va lay state can thiet
     const numberOfMon = useSelector((state) => state.pokemonCount);
@@ -40,7 +41,7 @@ const RadomMonSection = () => {
                         dispatch(addPokemon(res.data));
                         // show the information of middle pokemon
                         if (index === 2) {
-                            dispatch(setBasePokeData(res.data))
+                            dispatch(findPokeByID(res.data.id))
                         }
                     }
                 );

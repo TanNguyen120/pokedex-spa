@@ -2,12 +2,11 @@ import React from 'react'
 import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import axios from 'axios';
-import { setBasePokeData, clearSinglePokeData } from '../../../reduxSlicer/singlePokemon';
+import { setBasePokeData, clearSinglePokeData, setPokeSpecie } from '../../../reduxSlicer/singlePokemon';
 import InfoCanvas from './infoCanvas';
 import LoadingSpinner from '../../loadingSpiner';
+import SpecieCanvas from './specieCanvas';
 
-
-// the function to get all pokemon data with it relate data
 
 
 
@@ -16,17 +15,22 @@ const PokeInfo = () => {
     const pokeInfo = useSelector((state) => state.singlePokemon)
     const dispatch = useDispatch();
 
+    // the function to get all pokemon data with it relate data
+
+    const getAllData = async (searchCond) => {
+
+        const baseData = await (axios.get('https://pokeapi.co/api/v2/pokemon/' + searchCond));
+        dispatch(setBasePokeData(baseData.data));
+        const pokeSpecie = await axios.get(baseData.data.species.url);
+        dispatch(setPokeSpecie(pokeSpecie.data));
+    }
+
     // get pokemon info base on findPokeFlag
     useEffect(() => {
+        dispatch(clearSinglePokeData);
         switch (findPokeFlag.searchBy) {
             case "id":
-                axios.get('https://pokeapi.co/api/v2/pokemon/' + findPokeFlag.id).then(
-                    res => {
-                        // clear the state
-                        dispatch(clearSinglePokeData());
-                        dispatch(setBasePokeData(res.data));
-                    }
-                );
+                getAllData(findPokeFlag.id);
                 break;
 
             default:
@@ -36,11 +40,16 @@ const PokeInfo = () => {
 
 
     return (
-        <div className='grid grid-cols-1 md:grid-cols-2 m-7 opacity-2'>
+        <>
             {
-                pokeInfo.baseData ? <InfoCanvas pokemon={pokeInfo} /> : <LoadingSpinner />
+                pokeInfo.baseData ?
+                    <div className='grid grid-cols-1 md:grid-cols-2 m-7 opacity-2'>
+                        <InfoCanvas pokemon={pokeInfo} />
+                        <SpecieCanvas specieInfo={pokeInfo.species} />
+                    </div>
+                    : <LoadingSpinner />
             }
-        </div>
+        </>
     )
 }
 
