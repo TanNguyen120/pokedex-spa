@@ -7,6 +7,7 @@ import InfoSmallComponent from './inforSmallComponent';
 import HeldItems from './heldItems';
 import PokemonFormPic from './pokemonFormPic';
 import AbilityCanvas from './abilityCanvas';
+import MoveSetCanvas from './moveSetCanvas';
 
 
 
@@ -42,7 +43,9 @@ const InfoCanvas = ({ pokemon }) => {
                     <HeldItems heldItems={pokemon.held_items} />
                 </div>
                 <AbilityCanvas abilities={pokemon.abilities} />
-
+            </div>
+            <div className="col-span-2">
+                <MoveSetCanvas moveSets={pokemon.moves} />
             </div>
         </div>
     )

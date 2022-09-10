@@ -15,7 +15,6 @@ const PokeFrame = ({ pokeImg, pokeId }) => {
                         <img className=" w-full h-full" src={pokeImg} alt="poke sprite" onClick={
                             e => {
                                 dispatch(findPokeByID(pokeId));
-
                             }
                         } />
                     </div>

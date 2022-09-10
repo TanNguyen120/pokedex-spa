@@ -4,10 +4,25 @@ import { FaRandom } from 'react-icons/fa'
 import { useSelector, useDispatch } from 'react-redux'
 import { setInput } from '../../../reduxSlicer/searchBarState'
 import { toggleFlag } from '../../../reduxSlicer/reloadFlag'
+import { findPokeByID, findPokeByName } from '../../../reduxSlicer/findPokeInfoFlag'
 
 const SearchBar = () => {
     const searchInput = useSelector((state) => state.searchInput);
+    const numberOfMon = useSelector((state) => state.pokemonCount);
     const dispatch = useDispatch();
+    // handle search bar event
+    const handleSearch = () => {
+        // check if user search by id
+        if (!isNaN(searchInput.text)) {
+            if (searchInput.text > numberOfMon.value) {
+                alert("There Are Only " + numberOfMon.value + " pokemon in database")
+            }
+            else {
+
+                dispatch(findPokeByID(searchInput.text))
+            }
+        }
+    }
     return (
         <div className="grid md:grid-cols-4 grid-cols-2 gap-3 py-10 m-5 px-32">
             <form className="col-span-2">
@@ -25,7 +40,7 @@ const SearchBar = () => {
                     <button
                         onClick={e => {
                             e.preventDefault();
-
+                            handleSearch();
                         }}
                         className="text-white absolute right-2.5 bottom-2.5 bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-full text-sm px-4 py-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800 inline">
                         Search
