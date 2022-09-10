@@ -22,30 +22,30 @@ const InfoCanvas = ({ pokemon }) => {
     return (
         <div className='bg-slate-400 grid grid-cols-1 md:grid-cols-2 rounded-lg p-4 mx-6'>
             <div className='bg-white rounded-lg text-center text-black m-2 text-xl font-bold p-3'>
-                {pokemon.name}
+                {pokemon.baseData.name}
             </div>
-            <InfoSmallComponent tile="Order In National Dex" detail_info={'# ' + pokemon.order} />
+            <InfoSmallComponent tile="Order In National Dex" detail_info={'# ' + pokemon.baseData.id} />
             <div className='grid grid-cols-1 md:grid-cols-2 rounded-lg bg-slate-300 m-1'>
-                <PokemonFormPic picUrl={pokemon.sprites.back_default} type='back' />
-                <PokemonFormPic picUrl={pokemon.sprites.front_default} type='font' />
-                <PokemonFormPic picUrl={pokemon.sprites.back_shiny} type='shiny back' />
-                <PokemonFormPic picUrl={pokemon.sprites.front_shiny} type='shiny front' />
+                <PokemonFormPic picUrl={pokemon.baseData.sprites.back_default} type='back' />
+                <PokemonFormPic picUrl={pokemon.baseData.sprites.front_default} type='font' />
+                <PokemonFormPic picUrl={pokemon.baseData.sprites.back_shiny} type='shiny back' />
+                <PokemonFormPic picUrl={pokemon.baseData.sprites.front_shiny} type='shiny front' />
             </div>
             <div className='grid grid-cols-1'>
                 <div className='grid grid-cols-2'>
-                    <InfoSmallComponent tile="Weight" detail_info={(pokemon.weight * 0.1).toFixed(2)} metric=" kg" icon={weightIcon} />
-                    <InfoSmallComponent tile="Height" detail_info={(pokemon.height * 0.1).toFixed(2)} metric=" m" icon={heightIcon} />
+                    <InfoSmallComponent tile="Weight" detail_info={(pokemon.baseData.weight * 0.1).toFixed(2)} metric=" kg" icon={weightIcon} />
+                    <InfoSmallComponent tile="Height" detail_info={(pokemon.baseData.height * 0.1).toFixed(2)} metric=" m" icon={heightIcon} />
                 </div>
-                <TypeCanvas types={pokemon.types} />
+                <TypeCanvas types={pokemon.baseData.types} />
                 <div className='grid grid-cols-1 md:grid-cols-2'>
 
-                    <InfoSmallComponent tile="Base Experience" detail_info={pokemon.base_experience} icon={expIcon} />
-                    <HeldItems heldItems={pokemon.held_items} />
+                    <InfoSmallComponent tile="Base Experience" detail_info={pokemon.baseData.base_experience} icon={expIcon} />
+                    <HeldItems heldItems={pokemon.baseData.held_items} />
                 </div>
-                <AbilityCanvas abilities={pokemon.abilities} />
+                <AbilityCanvas abilities={pokemon.baseData.abilities} />
             </div>
             <div className="col-span-2">
-                <MoveSetCanvas moveSets={pokemon.moves} />
+                <MoveSetCanvas moveSets={pokemon.baseData.moves} />
             </div>
         </div>
     )

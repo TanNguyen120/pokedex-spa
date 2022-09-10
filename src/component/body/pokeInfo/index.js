@@ -2,9 +2,14 @@ import React from 'react'
 import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import axios from 'axios';
-import { setPokeData, clearSinglePokeData } from '../../../reduxSlicer/singlePokemon';
+import { setBasePokeData, clearSinglePokeData } from '../../../reduxSlicer/singlePokemon';
 import InfoCanvas from './infoCanvas';
 import LoadingSpinner from '../../loadingSpiner';
+
+
+// the function to get all pokemon data with it relate data
+
+
 
 const PokeInfo = () => {
     const findPokeFlag = useSelector((state) => state.findPokeInfoFlag);
@@ -19,7 +24,7 @@ const PokeInfo = () => {
                     res => {
                         // clear the state
                         dispatch(clearSinglePokeData());
-                        dispatch(setPokeData(res.data));
+                        dispatch(setBasePokeData(res.data));
                     }
                 );
                 break;
@@ -33,7 +38,7 @@ const PokeInfo = () => {
     return (
         <div className='grid grid-cols-1 md:grid-cols-2 m-7 opacity-2'>
             {
-                pokeInfo.value ? <InfoCanvas pokemon={pokeInfo.value} /> : <LoadingSpinner />
+                pokeInfo.baseData ? <InfoCanvas pokemon={pokeInfo} /> : <LoadingSpinner />
             }
         </div>
     )

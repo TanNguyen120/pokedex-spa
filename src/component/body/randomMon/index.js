@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import axios from 'axios';
 import { setCount } from "../../../reduxSlicer/pokemonCount"
-import { setPokeData } from '../../../reduxSlicer/singlePokemon';
+import { setBasePokeData } from '../../../reduxSlicer/singlePokemon';
 import { addPokemon, clearPokemonArray } from '../../../reduxSlicer/radomPokemons';
 import { FaRegHandPointUp } from 'react-icons/fa'
 import PokeFrame from './pokeFrame';
@@ -40,7 +40,7 @@ const RadomMonSection = () => {
                         dispatch(addPokemon(res.data));
                         // show the information of middle pokemon
                         if (index === 2) {
-                            dispatch(setPokeData(res.data))
+                            dispatch(setBasePokeData(res.data))
                         }
                     }
                 );
