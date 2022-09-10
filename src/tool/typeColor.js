@@ -17,7 +17,7 @@ const typeToColor = (type) => {
         case "electric":
             return "bg-yellow-300"
         case "ground":
-            return "bg-amber-200"
+            return "bg-amber-400"
         case "psychic":
             return "bg-pink-500"
         case "rock":
@@ -33,7 +33,7 @@ const typeToColor = (type) => {
         case "dark":
             return "bg-stone-500"
         case "steel":
-            return "bg-gray-300"
+            return "bg-gray-400"
         case "fairy":
             return "bg-pink-300"
         default:

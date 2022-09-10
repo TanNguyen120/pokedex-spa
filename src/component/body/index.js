@@ -5,7 +5,7 @@ import PokeInfo from './pokeInfo'
 const Body = () => {
     return (
         <div className="bg-main-bg min-w-full min-h-screen bg-cover bg-center">
-            <div className='container md:mx-auto bg-red-space bg-cover '>
+            <div className='md:container lg:mx-auto bg-red-space bg-cover'>
                 <RadomMonSection />
                 <SearchBar />
                 <PokeInfo />
