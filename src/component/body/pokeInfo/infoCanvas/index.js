@@ -7,7 +7,9 @@ import InfoSmallComponent from './inforSmallComponent';
 import HeldItems from './heldItems';
 import PokemonFormPic from './pokemonFormPic';
 import AbilityCanvas from './abilityCanvas';
-import MoveSetCanvas from './moveSetCanvas';
+// import MoveSetCanvas from './moveSetCanvas';
+import PokeGenera from './pokeGenera';
+import LoadingSpinner from '../../../loadingSpiner';
 
 
 
@@ -22,7 +24,7 @@ const InfoCanvas = ({ pokemon }) => {
     return (
         <div className='bg-slate-400 grid grid-cols-1 md:grid-cols-2 rounded-lg p-4 ml-5 mr-2'>
             <div className='bg-white rounded-lg text-center text-black m-2 text-xl font-bold p-3'>
-                {pokemon.baseData.name} ({pokemon.sp})
+                {pokemon.baseData.name} {pokemon.species ? <PokeGenera pokeGenera={pokemon.species.genera} /> : <LoadingSpinner />}
             </div>
             <InfoSmallComponent tile="Order In National Dex" detail_info={'# ' + pokemon.baseData.id} />
             <div className='grid grid-cols-1 md:grid-cols-2 rounded-lg bg-slate-300 m-1'>
@@ -45,9 +47,7 @@ const InfoCanvas = ({ pokemon }) => {
                 </div>
 
             </div>
-            <div className="col-span-2">
-                <MoveSetCanvas moveSets={pokemon.baseData.moves} />
-            </div>
+
         </div>
     )
 }

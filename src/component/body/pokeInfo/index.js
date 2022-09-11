@@ -6,7 +6,7 @@ import { setBasePokeData, clearSinglePokeData, setPokeSpecie } from '../../../re
 import InfoCanvas from './infoCanvas';
 import LoadingSpinner from '../../loadingSpiner';
 import SpecieCanvas from './specieCanvas';
-
+import MoveSetCanvas from './infoCanvas/moveSetCanvas';
 
 
 
@@ -49,10 +49,17 @@ const PokeInfo = () => {
             }
             {
                 pokeInfo.species ?
-                    <SpecieCanvas specieInfo={pokeInfo.species} />
+                    <SpecieCanvas className="place-self-center" specieInfo={pokeInfo.species} />
                     :
                     <LoadingSpinner />
             }
+            {
+                pokeInfo.baseData ?
+                    <MoveSetCanvas moveSets={pokeInfo.baseData.moves} />
+                    :
+                    <LoadingSpinner />
+            }
+
         </div>
     )
 }
