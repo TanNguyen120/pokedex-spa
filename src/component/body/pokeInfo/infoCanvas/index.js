@@ -20,9 +20,9 @@ const expIcon = <AiOutlineExperiment className='inline' />;
 // MAIN CANVAS
 const InfoCanvas = ({ pokemon }) => {
     return (
-        <div className='bg-slate-400 grid grid-cols-1 md:grid-cols-2 rounded-lg p-4 mx-6'>
+        <div className='bg-slate-400 grid grid-cols-1 md:grid-cols-2 rounded-lg p-4 ml-5 mr-2'>
             <div className='bg-white rounded-lg text-center text-black m-2 text-xl font-bold p-3'>
-                {pokemon.baseData.name}
+                {pokemon.baseData.name} ({pokemon.sp})
             </div>
             <InfoSmallComponent tile="Order In National Dex" detail_info={'# ' + pokemon.baseData.id} />
             <div className='grid grid-cols-1 md:grid-cols-2 rounded-lg bg-slate-300 m-1'>
@@ -37,12 +37,13 @@ const InfoCanvas = ({ pokemon }) => {
                     <InfoSmallComponent tile="Height" detail_info={(pokemon.baseData.height * 0.1).toFixed(2)} metric=" m" icon={heightIcon} />
                 </div>
                 <TypeCanvas types={pokemon.baseData.types} />
+                <AbilityCanvas abilities={pokemon.baseData.abilities} />
                 <div className='grid grid-cols-1 md:grid-cols-2'>
 
                     <InfoSmallComponent tile="Base Experience" detail_info={pokemon.baseData.base_experience} icon={expIcon} />
                     <HeldItems heldItems={pokemon.baseData.held_items} />
                 </div>
-                <AbilityCanvas abilities={pokemon.baseData.abilities} />
+
             </div>
             <div className="col-span-2">
                 <MoveSetCanvas moveSets={pokemon.baseData.moves} />

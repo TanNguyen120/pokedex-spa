@@ -40,16 +40,20 @@ const PokeInfo = () => {
 
 
     return (
-        <>
+        <div className='grid grid-cols-1 md:grid-cols-2 m-7 opacity-2'>
             {
                 pokeInfo.baseData ?
-                    <div className='grid grid-cols-1 md:grid-cols-2 m-7 opacity-2'>
-                        <InfoCanvas pokemon={pokeInfo} />
-                        <SpecieCanvas specieInfo={pokeInfo.species} />
-                    </div>
-                    : <LoadingSpinner />
+                    <InfoCanvas pokemon={pokeInfo} />
+                    :
+                    <LoadingSpinner />
             }
-        </>
+            {
+                pokeInfo.species ?
+                    <SpecieCanvas specieInfo={pokeInfo.species} />
+                    :
+                    <LoadingSpinner />
+            }
+        </div>
     )
 }
 

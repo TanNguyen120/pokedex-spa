@@ -3,7 +3,7 @@ import typeToColor from '../../../../tool/typeColor'
 
 const TypeCanvas = ({ types }) => {
     return (
-        <div className='bg-slate-300 rounded-lg items-center m-2 '>
+        <div className='bg-slate-300 rounded-lg items-center m-1'>
             <h3 className="text-lg font-mono font-bold">Type</h3>
             <div className='bg-white rounded-lg justify-center grid grid-cols-2 md:grid-cols-3 m-2 p-3'>
                 {types.map((type, index) => (
