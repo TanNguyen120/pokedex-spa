@@ -32,8 +32,8 @@ const PokedexDescription = ({ pokeEntry }) => {
         <div className="bg-slate-300 rounded-lg text-center font-mono font-semibold text-black m-1 p-2">
             <div className='grid grid-cols-3 md:grid-cols-12 m-2'>
                 {
-                    pokeEntry.map(element => (
-                        <PokeVersionDiv selectedVersion={currentGameVer} version={element.version.name} updateGameVer={updateCurrentGameVer} />
+                    pokeEntry.map((element, index) => (
+                        <PokeVersionDiv selectedVersion={currentGameVer} version={element.version.name} updateGameVer={updateCurrentGameVer} key={index} />
                     ))
                 }
             </div>

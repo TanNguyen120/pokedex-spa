@@ -5,6 +5,7 @@ import InfoSmallComponent from '../infoCanvas/inforSmallComponent';
 
 import EggGroup from './eggGroup';
 import EvolveFrom from './evolveFrom';
+import GenderCanvas from './genderCanvas';
 import PokedexEntry from './pokedexEntry';
 
 
@@ -22,6 +23,7 @@ const SpecieCanvas = ({ specieInfo }) => {
                 <InfoSmallComponent tile="Hatch Counter" detail_info={specieInfo.hatch_counter} icon={<IoFootstepsSharp className='inline' />} metric="step" />
                 <EvolveFrom evolveFrom={specieInfo.evolves_from_species} />
             </div>
+            <GenderCanvas genderRatio={specieInfo.gender_rate} />
         </div>
     )
 }
