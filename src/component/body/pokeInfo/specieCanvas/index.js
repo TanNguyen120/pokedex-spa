@@ -1,6 +1,8 @@
 import React from 'react';
 import { FaBirthdayCake } from 'react-icons/fa';
 import { IoFootstepsSharp } from 'react-icons/io5';
+import { GiBugNet } from 'react-icons/gi'
+import { TbMoodHappy } from 'react-icons/tb'
 import InfoSmallComponent from '../infoCanvas/inforSmallComponent';
 
 import EggGroup from './eggGroup';
@@ -20,10 +22,15 @@ const SpecieCanvas = ({ specieInfo }) => {
                 <EggGroup eggGroup={specieInfo.egg_groups} />
             </div>
             <div className='grid md:grid-cols-2 grid-cols-1'>
-                <InfoSmallComponent tile="Hatch Counter" detail_info={specieInfo.hatch_counter} icon={<IoFootstepsSharp className='inline' />} metric="step" />
+                <InfoSmallComponent tile="Hatch Counter" detail_info={specieInfo.hatch_counter * 255} icon={<IoFootstepsSharp className='inline' />} metric="step" />
                 <EvolveFrom evolveFrom={specieInfo.evolves_from_species} />
             </div>
             <GenderCanvas genderRatio={specieInfo.gender_rate} />
+            <div className='grid md:grid-cols-2 grid-cols-1'>
+                <InfoSmallComponent tile="Catch Rate" detail_info={specieInfo.capture_rate} icon={<GiBugNet className='inline' />} />
+                <InfoSmallComponent tile="Base Happiness" detail_info={specieInfo.base_happiness} icon={<TbMoodHappy className='inline' />} />
+
+            </div>
         </div>
     )
 }

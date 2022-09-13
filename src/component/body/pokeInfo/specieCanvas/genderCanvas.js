@@ -1,5 +1,6 @@
 import React from 'react'
-import { BsGenderMale, BsGenderFemale } from 'react-icons/bs'
+import { BsGenderMale, BsGenderFemale, BsGenderTrans } from 'react-icons/bs'
+
 
 
 const GenderCanvas = ({ genderRatio }) => {
@@ -9,7 +10,7 @@ const GenderCanvas = ({ genderRatio }) => {
         <div >
             <div className="bg-slate-300 rounded-lg text-center font-mono font-semibold text-black m-1">
                 <h3>
-                    Gender Rate
+                    Gender Rate <BsGenderTrans className='inline' />
                 </h3>
                 {
                     genderRatio > 0 ?
