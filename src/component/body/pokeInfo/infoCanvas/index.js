@@ -1,7 +1,9 @@
 import React from 'react';
 import { FaWeightHanging } from 'react-icons/fa';
-import { GiBodyHeight } from 'react-icons/gi';
+import { GiBodyHeight, GiHealthIncrease } from 'react-icons/gi';
 import { AiOutlineExperiment } from 'react-icons/ai'
+
+
 import TypeCanvas from './typeCanvas';
 import InfoSmallComponent from './inforSmallComponent';
 import HeldItems from './heldItems';
@@ -10,7 +12,7 @@ import AbilityCanvas from './abilityCanvas';
 // import MoveSetCanvas from './moveSetCanvas';
 import PokeGenera from './pokeGenera';
 import LoadingSpinner from '../../../loadingSpiner';
-
+import HabitatCanvas from './habitatCanvas';
 
 
 //-----------------------------------------------------------------------------------
@@ -45,7 +47,17 @@ const InfoCanvas = ({ pokemon }) => {
                     <InfoSmallComponent tile="Base Experience" detail_info={pokemon.baseData.base_experience} icon={expIcon} />
                     <HeldItems heldItems={pokemon.baseData.held_items} />
                 </div>
+                {
+                    pokemon.species ?
+                        <div className='grid md:grid-cols-2 grid-cols-1'>
+                            <InfoSmallComponent tile="Growth Rate" detail_info={pokemon.species.growth_rate.name} icon={<GiHealthIncrease className='inline' />} />
+                            <HabitatCanvas habitat={pokemon.species.habitat} />
+                        </div>
 
+
+
+                        : <LoadingSpinner />
+                }
             </div>
 
         </div>
