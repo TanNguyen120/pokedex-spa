@@ -1,3 +1,5 @@
+// this function will read the color input and return the string class for tailwind
+
 const colorToBg = (color) => {
     switch (color) {
         case "red":
@@ -25,3 +27,5 @@ const colorToBg = (color) => {
             break;
     }
 }
+
+export default colorToBg;
