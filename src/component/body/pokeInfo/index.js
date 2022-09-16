@@ -28,8 +28,12 @@ const PokeInfo = () => {
         baseData.data.abilities.forEach(element => {
             axios.get(element.ability.url).then(
                 (res) => {
-                    // we just need the flavor text for the pokemon page
-                    dispatch(setPokeAbilities(res.data.flavor_text_entries))
+                    // we just need the flavor text for the pokemon page and it name
+                    const saveData = {
+                        name: res.data.names,
+                        flavor_text: res.data.flavor_text_entries
+                    };
+                    dispatch(setPokeAbilities(saveData))
                 }
             )
         });
@@ -59,7 +63,7 @@ const PokeInfo = () => {
             }
             {
                 pokeInfo.species ?
-                    <SpecieCanvas className="place-self-center" specieInfo={pokeInfo.species} />
+                    <SpecieCanvas className="place-self-center" specieInfo={pokeInfo.species} abilityDetail={pokeInfo.abilities} />
                     :
                     <LoadingSpinner />
             }

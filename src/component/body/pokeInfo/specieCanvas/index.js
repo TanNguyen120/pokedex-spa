@@ -10,9 +10,10 @@ import EvolveFrom from './evolveFrom';
 import GenderCanvas from './genderCanvas';
 import PokedexEntry from './pokedexEntry';
 import PokeColor from './pokeColor';
+import AbilitiesDetail from './abilitesDetail';
 
 
-const SpecieCanvas = ({ specieInfo }) => {
+const SpecieCanvas = ({ specieInfo, abilityDetail }) => {
     return (
         <div className='bg-slate-400 rounded-lg p-4 mr-5 ml-2 grid grid-cols-1 md:grid-cols-2 '>
             <div className="md:col-span-2">
@@ -31,7 +32,13 @@ const SpecieCanvas = ({ specieInfo }) => {
                 <InfoSmallComponent tile="Catch Rate" detail_info={specieInfo.capture_rate} icon={<GiBugNet className='inline' />} />
                 <InfoSmallComponent tile="Base Happiness" detail_info={specieInfo.base_happiness} icon={<TbMoodHappy className='inline' />} />
             </div>
-            <PokeColor pokeColor={specieInfo.color} />
+            <div className='grid grid-cols-4'>
+                <PokeColor pokeColor={specieInfo.color} />
+                <div className="col-span-3">
+                    <AbilitiesDetail abilities={abilityDetail} />
+                </div>
+            </div>
+
         </div>
     )
 }
