@@ -6,7 +6,7 @@ import { findPokeByID } from '../../../reduxSlicer/findPokeInfoFlag'
 const PokeFrame = ({ pokeImg, pokeId }) => {
     const dispatch = useDispatch();
     return (
-        <>
+        <div className="columns-sm md:columns-md my-2 md:mx-0 ">
             {
                 // render loading spinner if the prob is loading
                 pokeImg !== 'loading'
@@ -21,7 +21,7 @@ const PokeFrame = ({ pokeImg, pokeId }) => {
                     :
                     <LoadingSpinner />
             }
-        </>
+        </div>
     )
 }
 

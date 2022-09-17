@@ -52,14 +52,16 @@ const RadomMonSection = () => {
 
 
     return (
-        <div className=" px-14 py-14 grid grid-cols-1 md:grid-cols-5 gap-20 ">
+        <div className=" px-14 py-14 grid grid-cols-1 md:grid-cols-5 md:gap-20 ">
             <PokeFrame pokeImg={randomPokemons.length >= 5 ? randomPokemons[0].sprites.front_default : "loading"} pokeId={randomPokemons.length >= 5 ? randomPokemons[0].id : "loading"} />
             <PokeFrame pokeImg={randomPokemons.length >= 5 ? randomPokemons[1].sprites.front_default : "loading"} pokeId={randomPokemons.length >= 5 ? randomPokemons[1].id : "loading"} />
             <PokeFrame pokeImg={randomPokemons.length >= 5 ? randomPokemons[2].sprites.front_default : "loading"} pokeId={randomPokemons.length >= 5 ? randomPokemons[2].id : "loading"} />
             <PokeFrame pokeImg={randomPokemons.length >= 5 ? randomPokemons[3].sprites.front_default : "loading"} pokeId={randomPokemons.length >= 5 ? randomPokemons[3].id : "loading"} />
             <PokeFrame pokeImg={randomPokemons.length >= 5 ? randomPokemons[4].sprites.front_default : "loading"} pokeId={randomPokemons.length >= 5 ? randomPokemons[4].id : "loading"} />
-
-            <div className='col-start-2 col-span-3 bg-slate-300 font-mono text-xl font-semibold p-6 ring-offset-2 ring-2 ring-red-300 rounded-full animate-bounce'>
+            <div className='md:col-start-2 md:col-span-3 
+            bg-slate-300 font-mono text-sm md:text-xl 
+            font-semibold md:p-6 p-2 ring-offset-2 ring-2 
+            ring-red-300 rounded-full animate-bounce md:m-0 my-5'>
                 Pick One To See Detail <span>
                     <FaRegHandPointUp className='inline' />
                 </span>

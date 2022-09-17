@@ -74,7 +74,7 @@ const PokeInfo = () => {
 
 
     return (
-        <div className='grid grid-cols-1 md:grid-cols-2 m-7 opacity-2'>
+        <div className='grid grid-cols-1 md:grid-cols-2 md:m-7 opacity-2 m-0'>
             {
                 pokeInfo.baseData ?
                     <InfoCanvas pokemon={pokeInfo} />

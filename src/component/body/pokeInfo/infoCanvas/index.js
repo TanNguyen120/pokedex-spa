@@ -25,8 +25,8 @@ const expIcon = <AiOutlineExperiment className='inline' />;
 // MAIN CANVAS
 const InfoCanvas = ({ pokemon }) => {
     return (
-        <div className='bg-slate-400 grid grid-cols-1 md:grid-cols-2 rounded-lg p-4 ml-5 mr-2'>
-            <div className='bg-white rounded-lg text-center text-black m-2 text-xl font-bold p-3'>
+        <div className='bg-slate-400 grid grid-cols-1 md:grid-cols-2 rounded-lg p-4 md:ml-5 md:mr-2'>
+            <div className='bg-white rounded-lg text-center text-black m-2 md:text-xl text-sm font-bold p-3'>
                 {pokemon.baseData.name} {pokemon.species ? <PokeGenera pokeGenera={pokemon.species.genera} /> : <LoadingSpinner />}
             </div>
             <InfoSmallComponent tile="Order In National Dex" detail_info={'# ' + pokemon.baseData.id} />
@@ -37,7 +37,7 @@ const InfoCanvas = ({ pokemon }) => {
                 <PokemonFormPic picUrl={pokemon.baseData.sprites.front_shiny} type='shiny front' />
             </div>
             <div className='grid grid-cols-1'>
-                <div className='grid grid-cols-2'>
+                <div className='grid md:grid-cols-2 grid-cols-1'>
                     <InfoSmallComponent tile="Weight" detail_info={(pokemon.baseData.weight * 0.1).toFixed(2)} metric=" kg" icon={weightIcon} />
                     <InfoSmallComponent tile="Height" detail_info={(pokemon.baseData.height * 0.1).toFixed(2)} metric=" m" icon={heightIcon} />
                 </div>
