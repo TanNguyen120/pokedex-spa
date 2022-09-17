@@ -14,7 +14,7 @@ const AbilitiesName = ({ ability, setActive, activeAbility }) => {
         setActive(ability);
     }
     return (
-        <div className={`rounded-t-lg ${style} hover:cursor-pointer`} onClick={e => handleClick()}>
+        <div className={`rounded-t-lg ${style} hover:cursor-pointer md:font-semibold  text-xs md:text-base md:px-2`} onClick={e => handleClick()}>
             {ability.name}
         </div>
     )

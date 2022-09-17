@@ -19,16 +19,16 @@ const SpecieCanvas = ({ specieInfo, abilityDetail }) => {
             <div className="md:col-span-2 col-span-1">
                 <PokedexEntry pokedexEntry={specieInfo.flavor_text_entries} />
             </div>
-            <div className='grid md:grid-cols-2 grid-cols-1 col-span-1'>
+            <div className='grid grid-cols-2 '>
                 <InfoSmallComponent tile="Debuts" detail_info={specieInfo.generation.name} icon={<FaBirthdayCake className='inline' />} />
                 <EggGroup eggGroup={specieInfo.egg_groups} />
             </div>
-            <div className='grid md:grid-cols-2 grid-cols-1 col-span-1'>
+            <div className='grid grid-cols-2 '>
                 <InfoSmallComponent tile="Hatch Counter" detail_info={specieInfo.hatch_counter * 255} icon={<IoFootstepsSharp className='inline' />} metric="step" />
                 <EvolveFrom evolveFrom={specieInfo.evolves_from_species} />
             </div>
             <GenderCanvas genderRatio={specieInfo.gender_rate} />
-            <div className='grid md:grid-cols-2 grid-cols-1 col-span-1'>
+            <div className='grid grid-cols-2'>
                 <InfoSmallComponent tile="Catch Rate" detail_info={specieInfo.capture_rate} icon={<GiBugNet className='inline' />} />
                 <InfoSmallComponent tile="Base Happiness" detail_info={specieInfo.base_happiness} icon={<TbMoodHappy className='inline' />} />
             </div>

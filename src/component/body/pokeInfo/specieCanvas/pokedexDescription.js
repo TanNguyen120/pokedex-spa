@@ -38,7 +38,7 @@ const PokedexDescription = ({ pokeEntry }) => {
                 }
             </div>
             <div className='grid grid-cols-4'>
-                <div className='bg-white text-center rounded-t-lg ml-4'>
+                <div className='bg-white text-center rounded-t-lg ml-4 md:text-base text-xs'>
                     Pokemon: {currentGameVer}
                 </div>
             </div>
