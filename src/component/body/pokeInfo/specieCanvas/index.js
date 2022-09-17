@@ -32,7 +32,7 @@ const SpecieCanvas = ({ specieInfo, abilityDetail }) => {
                 <InfoSmallComponent tile="Catch Rate" detail_info={specieInfo.capture_rate} icon={<GiBugNet className='inline' />} />
                 <InfoSmallComponent tile="Base Happiness" detail_info={specieInfo.base_happiness} icon={<TbMoodHappy className='inline' />} />
             </div>
-            <div className='grid grid-cols-4'>
+            <div className='grid grid-cols-4 col-span-2'>
                 <PokeColor pokeColor={specieInfo.color} />
                 <div className="col-span-3">
                     <AbilitiesDetail abilities={abilityDetail} />
