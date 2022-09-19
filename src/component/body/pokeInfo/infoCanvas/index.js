@@ -13,7 +13,7 @@ import AbilityCanvas from './abilityCanvas';
 import PokeGenera from './pokeGenera';
 import LoadingSpinner from '../../../loadingSpiner';
 import HabitatCanvas from './habitatCanvas';
-import axios from 'axios';
+import StatCanvas from './statCanvas';
 
 
 //-----------------------------------------------------------------------------------
@@ -59,8 +59,11 @@ const InfoCanvas = ({ pokemon }) => {
 
                         : <LoadingSpinner />
                 }
-            </div>
 
+            </div>
+            <div className='md:col-span-2'>
+                <StatCanvas stat={pokemon.baseData.stats} />
+            </div>
         </div>
     )
 }
