@@ -13,7 +13,7 @@ import PokeColor from './pokeColor';
 import AbilitiesDetail from './abilitesDetail';
 
 
-const SpecieCanvas = ({ specieInfo, abilityDetail }) => {
+const SpecieCanvas = ({ specieInfo, abilityDetail, pokeShape }) => {
     return (
         <div className='bg-slate-400 rounded-lg p-4 md:mr-5 md:ml-2 grid grid-cols-1 md:grid-cols-2 '>
             <div className="md:col-span-2 col-span-1">
@@ -33,7 +33,10 @@ const SpecieCanvas = ({ specieInfo, abilityDetail }) => {
                 <InfoSmallComponent tile="Base Happiness" detail_info={specieInfo.base_happiness} icon={<TbMoodHappy className='inline' />} />
             </div>
             <div className='grid md:grid-cols-4 grid-cols-1 md:col-span-2 '>
-                <PokeColor pokeColor={specieInfo.color} />
+                <div className='grid grid-cols-1'>
+                    <PokeColor pokeColor={specieInfo.color} />
+
+                </div>
                 <div className="col-span-3">
                     <AbilitiesDetail abilities={abilityDetail} />
                 </div>

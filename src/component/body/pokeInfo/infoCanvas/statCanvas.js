@@ -11,7 +11,7 @@ const StatCanvas = ({ stat }) => {
             <div className='bg-white rounded-lg text-center text-black m-2 grid grid-cols-3 md:grid-cols-6'>
                 {stat.map((element, index) => {
                     const bgColor = statToColor(element.stat.name);
-                    return (<div key={index} className={`rounded-lg m-2 text-black md:text-sm text-xs ${bgColor} `}>
+                    return (<div key={index} className={`rounded-lg m-2 text-black md:text-sm text-xs ${bgColor} font-medium `}>
                         <div className='mt-3'>{statToIcon(element.stat.name)} {element.base_stat}  </div>
                         <div className='mt-2'>{element.stat.name}</div>
                     </div>)
