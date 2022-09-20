@@ -8,12 +8,12 @@ const StatCanvas = ({ stat }) => {
             <h3>
                 Base Stat <IoStatsChartSharp className='inline' />
             </h3>
-            <div className='bg-white rounded-lg text-center text-black m-2 grid grid-cols-3 md:grid-cols-6'>
+            <div className='bg-white rounded-lg text-center text-black m-2 grid grid-cols-3 md:grid-cols-6 '>
                 {stat.map((element, index) => {
                     const bgColor = statToColor(element.stat.name);
-                    return (<div key={index} className={`rounded-lg m-2 text-black md:text-sm text-xs ${bgColor} font-medium `}>
+                    return (<div key={index} className={`rounded-lg m-2 text-black md:text-sm text-xs ${bgColor} font-semibold`}>
                         <div className='mt-3'>{statToIcon(element.stat.name)} {element.base_stat}  </div>
-                        <div className='mt-2'>{element.stat.name}</div>
+                        <div className='mt-2 font-semibold'>{element.stat.name}</div>
                     </div>)
                 })}
             </div>

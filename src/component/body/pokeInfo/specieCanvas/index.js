@@ -1,8 +1,9 @@
 import React from 'react';
 import { FaBirthdayCake } from 'react-icons/fa';
 import { IoFootstepsSharp } from 'react-icons/io5';
-import { GiBugNet } from 'react-icons/gi'
-import { TbMoodHappy } from 'react-icons/tb'
+import { GiBugNet } from 'react-icons/gi';
+
+import { TbMoodHappy } from 'react-icons/tb';
 import InfoSmallComponent from '../infoCanvas/inforSmallComponent';
 
 import EggGroup from './eggGroup';
@@ -11,6 +12,7 @@ import GenderCanvas from './genderCanvas';
 import PokedexEntry from './pokedexEntry';
 import PokeColor from './pokeColor';
 import AbilitiesDetail from './abilitesDetail';
+import ShapeCanvas from './shapeCanvas';
 
 
 const SpecieCanvas = ({ specieInfo, abilityDetail, pokeShape }) => {
@@ -35,6 +37,7 @@ const SpecieCanvas = ({ specieInfo, abilityDetail, pokeShape }) => {
             <div className='grid md:grid-cols-4 grid-cols-1 md:col-span-2 '>
                 <div className='grid grid-cols-1'>
                     <PokeColor pokeColor={specieInfo.color} />
+                    <ShapeCanvas pokeShape={pokeShape} />
 
                 </div>
                 <div className="col-span-3">

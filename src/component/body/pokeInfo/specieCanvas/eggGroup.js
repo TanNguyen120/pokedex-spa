@@ -9,7 +9,7 @@ const EggGroup = ({ eggGroup }) => {
             </h3>
             <div className='bg-white rounded-lg text-center text-black m-2 grid grid-cols-2'>
                 {eggGroup.map((element, index) => (
-                    <div key={index}>{element.name}</div>
+                    <div key={index} className="font-medium">{element.name}</div>
                 ))}
             </div>
         </div>
