@@ -13,6 +13,7 @@ import PokedexEntry from './pokedexEntry';
 import PokeColor from './pokeColor';
 import AbilitiesDetail from './abilitesDetail';
 import ShapeCanvas from './shapeCanvas';
+import CheckCanvas from './checkCanvas';
 
 
 const SpecieCanvas = ({ specieInfo, abilityDetail, pokeShape }) => {
@@ -42,6 +43,7 @@ const SpecieCanvas = ({ specieInfo, abilityDetail, pokeShape }) => {
                 </div>
                 <div className="col-span-3">
                     <AbilitiesDetail abilities={abilityDetail} />
+                    <CheckCanvas isBaby={specieInfo.is_baby} isLegend={specieInfo.is_legendary} isMythical={specieInfo.is_mythical} />
                 </div>
             </div>
 
