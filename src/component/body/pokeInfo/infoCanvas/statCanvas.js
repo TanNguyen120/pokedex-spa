@@ -4,7 +4,7 @@ import statToColor from '../../../../tool/statToColor';
 import statToIcon from '../../../../tool/statToIcon';
 const StatCanvas = ({ stat }) => {
     return (
-        <div className="bg-slate-300 rounded-lg text-center font-mono font-semibold text-black m-1">
+        <div className="bg-slate-300 rounded-lg text-center font-mono font-semibold text-black m-1 p-1">
             <h3>
                 Base Stat <IoStatsChartSharp className='inline' />
             </h3>

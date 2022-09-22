@@ -11,7 +11,7 @@ const NumberInOtherDex = ({ pokedexNumber }) => {
                 Number In Other Dex <GiPokerHand className='inline' />
             </h3>
 
-            <div className='bg-white rounded-lg text-center text-black m-2  grid grid-cols-2 md:grid-cols-3 '>
+            <div className='rounded-lg text-center text-black m-2  grid grid-cols-2 md:grid-cols-3 '>
                 {pokedexNumber.map(element => (
                     <div className='hover:cursor-pointer text-sm rounded-lg ring-1 ring-slate-400 m-1'> {element.pokedex.name}: {element.entry_number} </div>
                 ))}
