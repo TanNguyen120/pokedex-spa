@@ -11,7 +11,7 @@ const PokeColor = ({ pokeColor }) => {
                 Color <IoIosColorPalette className='inline' />
             </h3>
             <div className='bg-white rounded-lg text-center text-black m-2 p-3'>
-                <div className={`${bgColor} rounded-lg text-white font-semibold m-3`}>{pokeColor.name}</div>
+                <div className={`${bgColor} rounded-lg text-white font-semibold m-2`}>{pokeColor.name}</div>
             </div>
         </div>
     )

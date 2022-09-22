@@ -14,6 +14,7 @@ import PokeColor from './pokeColor';
 import AbilitiesDetail from './abilitesDetail';
 import ShapeCanvas from './shapeCanvas';
 import CheckCanvas from './checkCanvas';
+import NumberInOtherDex from './numberInOtherDex';
 
 
 const SpecieCanvas = ({ specieInfo, abilityDetail, pokeShape }) => {
@@ -36,14 +37,14 @@ const SpecieCanvas = ({ specieInfo, abilityDetail, pokeShape }) => {
                 <InfoSmallComponent tile="Base Happiness" detail_info={specieInfo.base_happiness} icon={<TbMoodHappy className='inline' />} />
             </div>
             <div className='grid md:grid-cols-4 grid-cols-1 md:col-span-2 '>
-                <div className='grid grid-cols-1'>
+                <div className='col-span-1 grid grid-cols-1'>
                     <PokeColor pokeColor={specieInfo.color} />
                     <ShapeCanvas pokeShape={pokeShape} />
-
                 </div>
-                <div className="col-span-3">
+                <div className="col-span-3 grid grid-cols-1">
                     <AbilitiesDetail abilities={abilityDetail} />
                     <CheckCanvas isBaby={specieInfo.is_baby} isLegend={specieInfo.is_legendary} isMythical={specieInfo.is_mythical} />
+                    <NumberInOtherDex pokedexNumber={specieInfo.pokedex_numbers} />
                 </div>
             </div>
 

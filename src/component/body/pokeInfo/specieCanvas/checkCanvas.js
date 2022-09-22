@@ -15,10 +15,9 @@ const CheckCanvas = ({ isBaby, isLegend, isMythical }) => {
     // the button to show info
     const SmallBtn = ({ tile, value }) => {
         return (
-            <div className='bg-slate-300 p-2 rounded-lg mx-2'>
-                <h4 className='font-bold'>{tile}</h4>
-                <div className='bg-white rounded-lg mx-2 p-1'>
-
+            <div className='bg-slate-300 p-2 rounded-lg mx-2 font-md'>
+                <div className="font-semibold text-sm">{tile}</div>
+                <div className='bg-white rounded-lg mx-1 p-1'>
                     {<CheckValue value={value} />}
                 </div>
             </div>
