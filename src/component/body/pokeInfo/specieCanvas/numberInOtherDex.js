@@ -13,7 +13,7 @@ const NumberInOtherDex = ({ pokedexNumber }) => {
 
             <div className='rounded-lg text-center text-black m-2  grid grid-cols-2 md:grid-cols-3 '>
                 {pokedexNumber.map(element => (
-                    <div className='hover:cursor-pointer text-sm rounded-lg ring-1 ring-slate-400 m-1'> {element.pokedex.name}: {element.entry_number} </div>
+                    <div key={element.entry_number} className='hover:cursor-pointer text-sm rounded-lg ring-1 ring-slate-400 m-1'> {element.pokedex.name}: {element.entry_number} </div>
                 ))}
             </div>
 

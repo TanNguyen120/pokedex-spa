@@ -7,6 +7,7 @@ import InfoCanvas from './infoCanvas';
 import LoadingSpinner from '../../loadingSpiner';
 import SpecieCanvas from './specieCanvas';
 import MoveSetCanvas from './infoCanvas/moveSetCanvas';
+import EvolutionChain from './evolutionChain';
 
 
 
@@ -91,6 +92,12 @@ const PokeInfo = () => {
             {
                 pokeInfo.baseData ?
                     <MoveSetCanvas moveSets={pokeInfo.baseData.moves} />
+                    :
+                    <LoadingSpinner />
+            }
+            {
+                pokeInfo.species ?
+                    <EvolutionChain evoChainProb={pokeInfo.species.evolution_chain.url} />
                     :
                     <LoadingSpinner />
             }
