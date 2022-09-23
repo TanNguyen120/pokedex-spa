@@ -8,6 +8,7 @@ module.exports = {
     backgroundImage: {
       'red-space': "url('../public/spaceBG.jpg')",
       'magic-circle': "url('../public/borderPoke.png')",
+      // 'magic-circle': "url('../public/newPokeBorder1.gif')",
       'main-bg': "url('../public/bodyBG.png')",
       'gold-frame': "url('../public/gold-frame.png')",
     },
