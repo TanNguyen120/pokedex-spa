@@ -90,14 +90,14 @@ const PokeInfo = () => {
                     <LoadingSpinner />
             }
             {
-                pokeInfo.baseData ?
-                    <MoveSetCanvas moveSets={pokeInfo.baseData.moves} />
+                pokeInfo.species ?
+                    <EvolutionChain evoChainProb={pokeInfo.species.evolution_chain.url} />
                     :
                     <LoadingSpinner />
             }
             {
-                pokeInfo.species ?
-                    <EvolutionChain evoChainProb={pokeInfo.species.evolution_chain.url} />
+                pokeInfo.baseData ?
+                    <MoveSetCanvas moveSets={pokeInfo.baseData.moves} />
                     :
                     <LoadingSpinner />
             }
