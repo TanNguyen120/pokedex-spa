@@ -11,13 +11,14 @@ const EvolutionChain = ({ evoChainProb }) => {
     // the ascnycrom axios function
     const getEvolutionChain = async (url) => {
         const res = await axios.get(url);
+
         dispatch(setEvolutionChain(res.data));
     }
     useEffect(() => {
         getEvolutionChain(evoChainProb);
     }, [evoChainProb]);
     return (
-        <div> {JSON.stringify(evoChain)}</div>
+        <div className="bg-slate-300 rounded-lg m-2"> {JSON.stringify(evoChain)}</div>
     )
 }
 
