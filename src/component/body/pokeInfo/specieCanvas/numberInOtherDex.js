@@ -8,7 +8,7 @@ const NumberInOtherDex = ({ pokedexNumber }) => {
     return (
         <div className="bg-slate-300 rounded-lg text-center font-mono font-semibold text-black m-1 p-1">
             <h3>
-                Number In Other Dex <GiPokerHand className='inline' />
+                Number In Local Dex <GiPokerHand className='inline' />
             </h3>
 
             <div className='rounded-lg text-center text-black m-2  grid grid-cols-2 md:grid-cols-3 '>

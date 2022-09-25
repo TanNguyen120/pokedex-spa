@@ -10,6 +10,7 @@ module.exports = {
       'magic-circle': "url('../public/borderPoke.png')",
       // 'magic-circle': "url('../public/newPokeBorder1.gif')",
       'main-bg': "url('../public/bodyBG.png')",
+      'evoPokeBg': "url('../public/pokeBorder.png')",
       'gold-frame': "url('../public/gold-frame.png')",
     },
   },

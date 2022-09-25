@@ -2,6 +2,7 @@ import React from 'react'
 import RadomMonSection from './randomMon'
 import SearchBar from './searchBar'
 import PokeInfo from './pokeInfo'
+import EvolutionChain from './pokeInfo/evolutionChain'
 const Body = () => {
     return (
         <div className="bg-main-bg min-w-full min-h-screen bg-cover bg-center">
@@ -9,6 +10,7 @@ const Body = () => {
                 <RadomMonSection />
                 <SearchBar />
                 <PokeInfo />
+
             </div>
         </div>
 
