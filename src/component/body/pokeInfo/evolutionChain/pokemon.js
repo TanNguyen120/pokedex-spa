@@ -1,20 +1,19 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
 import { findPokeByID } from '../../../../reduxSlicer/findPokeInfoFlag';
+import QuickInfo from './quickInfo';
 
-const Pokemon = ({ picUrl, name }) => {
+const Pokemon = ({ pokemon }) => {
     const dispatch = useDispatch();
     return (
-        <div className='rounded-lg text-center text-black m-2 h-28 w-28 md:h-60 md:w-60 '>
-            <div className='bg-magic-circle bg-cover bg-center w-11/12 h-11/12 '>
-                <img className=" w-full h-full hover:cursor-pointer" src={picUrl} alt="poke sprite" onClick={
+        <div className='text-center text-black m-2  p-2 '>
+            <div className='bg-magic-circle h-28 w-28 md:h-60 md:w-60 bg-cover bg-center'>
+                <img className=" h-28 w-28 md:h-60 md:w-60 hover:cursor-pointer" src={pokemon.sprite} alt="poke sprite" onClick={
                     e => {
-                        dispatch(findPokeByID(name));
+                        dispatch(findPokeByID(pokemon.name));
                     }} />
             </div>
-            <div className="font-semibold text-base">
-                {name}
-            </div>
+            <QuickInfo pokemon={pokemon} />
         </div>
     )
 }

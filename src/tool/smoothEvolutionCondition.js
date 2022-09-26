@@ -12,7 +12,6 @@ const smoothTriggerName = (name) => {
 const smoothCondition = (obj) => {
     let result = "";
     for (const [key, value] of Object.entries(obj)) {
-
         console.log(key);
         switch (key) {
             case "min_level":
@@ -35,6 +34,9 @@ const smoothCondition = (obj) => {
                 break
             case "min_beauty":
                 result = result + "with min " + value + " beauty";
+                break
+            case "needs_overworld_rain":
+                result = result + " in raining environment ";
                 break
             default:
                 result = JSON.stringify(obj)

@@ -29,7 +29,9 @@ const EvolutionChain = ({ evoChainProb }) => {
             const simplePokeData = {
                 name: singlePokemon.data.species.name,
                 sprite: singlePokemon.data.sprites.front_default,
-                stage: stage
+                stage: stage,
+                orderInNationalDex: singlePokemon.data.id,
+                type: singlePokemon.data.types
             };
             const evoData = {
                 pokemon: simplePokeData,
@@ -46,7 +48,7 @@ const EvolutionChain = ({ evoChainProb }) => {
         getEvolutionChain(evoChainProb);
     }, [evoChainProb]);
     return (
-        <div className="bg-slate-300 rounded-lg m-5 col-span-2">
+        <div className="bg-slate-300 rounded-lg m-5 col-span-2 grid grid-cols-1 ">
             <h1 className="text-lg font-bold mt-1">Evolution Chain</h1>
             {
                 evoChain.pokeMons ? <EvoChain chain={evoChain.pokeMons} />

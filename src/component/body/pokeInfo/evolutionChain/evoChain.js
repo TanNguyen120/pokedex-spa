@@ -12,7 +12,7 @@ const EvoChain = ({ chain }) => {
             {chain.map(element => (
                 <div key={element.pokemon.name} className={element.condition.length > 0 ? 'grid grid-cols-2 col-span-2' : 'col-span-1 grid-cols-1'}>
                     {element.condition.length > 0 && <ConditionArrow condition={element.condition} />}
-                    <Pokemon picUrl={element.pokemon.sprite} name={element.pokemon.name} />
+                    <Pokemon pokemon={element.pokemon} />
                 </div>
             ))}
         </div>
