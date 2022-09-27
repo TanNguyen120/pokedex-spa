@@ -2,6 +2,7 @@ import React from 'react';
 import { IoStatsChartSharp } from 'react-icons/io5';
 import statToColor from '../../../../tool/statToColor';
 import statToIcon from '../../../../tool/statToIcon';
+import toTitleCase from '../../../../tool/upperCaseString';
 const StatCanvas = ({ stat }) => {
     return (
         <div className="bg-slate-300 rounded-lg text-center font-mono font-semibold text-black m-1 p-1">
@@ -12,7 +13,7 @@ const StatCanvas = ({ stat }) => {
                 {stat.map((element, index) => {
                     const bgColor = statToColor(element.stat.name);
                     return (<div key={index} className={`rounded-lg m-2 border  border-indigo-600 text-black md:text-sm text-xs ${bgColor} font-semibold `}>
-                        <div className='mt-3'>{statToIcon(element.stat.name)} {element.base_stat}  </div>
+                        <div className='mt-3'>{statToIcon(toTitleCase(element.stat.name))} {element.base_stat}  </div>
                         <div className='mt-2 font-semibold'>{element.stat.name}</div>
                     </div>)
                 })}

@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { findPokeByID } from '../../../../reduxSlicer/findPokeInfoFlag';
 import TypeCanvas from '../infoCanvas/typeCanvas';
 import typeToColor from '../../../../tool/typeColor';
+import toTitleCase from '../../../../tool/upperCaseString';
 
 const QuickInfo = ({ pokemon }) => {
     const dispatch = useDispatch();
@@ -10,7 +11,7 @@ const QuickInfo = ({ pokemon }) => {
         <div className="bg-slate-300 text-center p-1 mx-8 mt-3 rounded-lg">
             <h3 className="font-semibold text-base hover:cursor-pointer" onClick={e => {
                 dispatch(findPokeByID(pokemon.name))
-            }}>#{pokemon.orderInNationalDex} {pokemon.name}</h3>
+            }}>#{pokemon.orderInNationalDex} {toTitleCase(pokemon.name)}</h3>
             <div className='bg-slate-300 rounded-lg items-center m-1'>
                 <div className='bg-white rounded-lg justify-center grid md:grid-cols-2 grid-cols-1'>
                     {pokemon.type.map((type, index) => (

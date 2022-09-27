@@ -14,6 +14,7 @@ import PokeGenera from './pokeGenera';
 import LoadingSpinner from '../../../loadingSpiner';
 import HabitatCanvas from './habitatCanvas';
 import StatCanvas from './statCanvas';
+import toTitleCase from '../../../../tool/upperCaseString';
 
 
 
@@ -28,7 +29,7 @@ const InfoCanvas = ({ pokemon }) => {
     return (
         <div className='bg-slate-400 grid grid-cols-1 md:grid-cols-2 rounded-lg p-4 md:ml-5 md:mr-2'>
             <div className='bg-white rounded-lg text-center text-black m-2 md:text-lg text-xl font-bold p-3'>
-                {pokemon.baseData.name} {pokemon.species ? <PokeGenera pokeGenera={pokemon.species.genera} /> : <LoadingSpinner />}
+                {toTitleCase(pokemon.baseData.name)} {pokemon.species ? <PokeGenera pokeGenera={pokemon.species.genera} /> : <LoadingSpinner />}
             </div>
             <InfoSmallComponent tile="Order In National Dex" detail_info={'# ' + pokemon.baseData.id} />
             <div className='grid grid-cols-2 rounded-lg bg-slate-300 m-1'>
