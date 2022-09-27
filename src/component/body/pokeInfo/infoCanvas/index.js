@@ -16,6 +16,7 @@ import HabitatCanvas from './habitatCanvas';
 import StatCanvas from './statCanvas';
 
 
+
 //-----------------------------------------------------------------------------------
 //icon for child component
 const weightIcon = <FaWeightHanging className="inline" />;

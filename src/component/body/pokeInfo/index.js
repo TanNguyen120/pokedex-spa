@@ -8,6 +8,7 @@ import LoadingSpinner from '../../loadingSpiner';
 import SpecieCanvas from './specieCanvas';
 import MoveSetCanvas from './infoCanvas/moveSetCanvas';
 import EvolutionChain from './evolutionChain';
+import Variations from './variations';
 
 
 
@@ -76,7 +77,13 @@ const PokeInfo = () => {
 
 
     return (
-        <div className='grid grid-cols-1 md:grid-cols-2 md:m-7 opacity-2 m-0'>
+        <div className='grid grid-cols-1 md:grid-cols-2 md:m-7 opacity-2 '>
+            {
+                pokeInfo.species ?
+                    <Variations varieties={pokeInfo.species.varieties} />
+                    :
+                    <LoadingSpinner />
+            }
             {
                 pokeInfo.baseData ?
                     <InfoCanvas pokemon={pokeInfo} />
