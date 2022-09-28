@@ -38,6 +38,9 @@ const smoothCondition = (obj) => {
             case "needs_overworld_rain":
                 result = result + " in raining environment ";
                 break
+            case "time_of_day":
+                result = result + " at " + value + " time";
+                break
             default:
                 result = JSON.stringify(obj)
                 break;

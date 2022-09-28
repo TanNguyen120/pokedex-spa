@@ -34,7 +34,7 @@ const InfoCanvas = ({ pokemon }) => {
             <InfoSmallComponent tile="Order In National Dex" detail_info={'# ' + pokemon.baseData.id} />
             <div className='grid grid-cols-2 rounded-lg bg-slate-300 m-1'>
                 <PokemonFormPic picUrl={pokemon.baseData.sprites.back_default} type='back' />
-                <PokemonFormPic picUrl={pokemon.baseData.sprites.front_default} type='font' />
+                <PokemonFormPic picUrl={pokemon.baseData.sprites.front_default} type='front' />
                 <PokemonFormPic picUrl={pokemon.baseData.sprites.back_shiny} type='shiny back' />
                 <PokemonFormPic picUrl={pokemon.baseData.sprites.front_shiny} type='shiny front' />
             </div>

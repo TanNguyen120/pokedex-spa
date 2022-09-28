@@ -5,6 +5,7 @@ const initialState = {
     species: null,
     abilities: null,
     shape: null,
+    varieties: null,
 }
 
 // redux tool sử dụng createSlice để giúp chúng ta vừa tạo state vừa tạo các action cho state đó trong khi redux core ta cần phải tạo ra từng thành phần
@@ -36,12 +37,15 @@ export const singlePokeSlice = createSlice({
         },
         setPokeShape: (state, action) => {
             state.shape = action.payload
+        },
+        setPokeVariations: (state, action) => {
+            state.varieties = action.payload
         }
     },
 })
 
 // Action creators are generated for each case reducer function
 // we export two thing in this file the action so we can dispatch it in other component AND the reducer for the store to save our state and reducer
-export const { setBasePokeData, clearSinglePokeData, setPokeSpecie, setPokeAbilities, clearPokeAbility, setPokeShape } = singlePokeSlice.actions
+export const { setBasePokeData, clearSinglePokeData, setPokeSpecie, setPokeAbilities, clearPokeAbility, setPokeShape, setPokeVariations } = singlePokeSlice.actions
 
 export default singlePokeSlice.reducer
