@@ -9,10 +9,10 @@ const ConditionArrow = ({ condition }) => {
         <div className="grid grid-cols-1 place-items-center text-center">
             <div>
                 {
-                    condition.map(element => {
+                    condition.map((element, index) => {
                         const triggerName = smoothTriggerName(element.trigger.name);
                         const condition = smoothCondition(filterDummyCondition(element));
-                        return <span className="font-semibold text-base"> ( {triggerName} {condition} )  </span>
+                        return <span key={index} className="font-semibold text-base"> ( {triggerName} {condition} )  </span>
                     })
                 }
                 {/* <img className=" w-9 h-16 md:w-18 md:h-44 -rotate-90" src="/arrowYellow.png" alt="poke sprite" /> */}
