@@ -1,7 +1,8 @@
 import axios from 'axios';
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setEvolutionChain, setPokemonInChain } from '../../../../reduxSlicer/evolutionChain';
+import { setEvolutionChain, setPokemonInChain, setEvolutionTree } from '../../../../reduxSlicer/evolutionChain';
+import buildTree from '../../../../tool/getEvochainData';
 import LoadingSpinner from '../../../loadingSpiner';
 import EvoChain from './evoChain';
 
@@ -13,6 +14,7 @@ const EvolutionChain = ({ evoChainProb }) => {
     const dispatch = useDispatch();
     // the ascnycrom axios function
     const getEvolutionChain = async (url) => {
+        // get the evolution chain object from the API
         const res = await axios.get(url);
         dispatch(setEvolutionChain(res.data));
         const pokeArray = [];
@@ -43,6 +45,11 @@ const EvolutionChain = ({ evoChainProb }) => {
         }
         //===========================================================================================================================
         dispatch(setPokemonInChain(pokeArray));
+
+        const evoTree = await buildTree(res.data.chain);
+        console.log(JSON.stringify(evoTree))
+        dispatch(setEvolutionTree(evoTree))
+
     }
     useEffect(() => {
         getEvolutionChain(evoChainProb);
