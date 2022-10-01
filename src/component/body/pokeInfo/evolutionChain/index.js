@@ -47,7 +47,6 @@ const EvolutionChain = ({ evoChainProb }) => {
         dispatch(setPokemonInChain(pokeArray));
 
         const evoTree = await buildTree(res.data.chain);
-        console.log(JSON.stringify(evoTree))
         dispatch(setEvolutionTree(evoTree))
 
     }

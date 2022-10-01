@@ -12,7 +12,6 @@ const smoothTriggerName = (name) => {
 const smoothCondition = (obj) => {
     let result = "";
     for (const [key, value] of Object.entries(obj)) {
-        console.log(key);
         switch (key) {
             case "min_level":
                 result = result + " to level " + value;

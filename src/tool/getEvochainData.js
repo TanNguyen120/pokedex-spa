@@ -33,26 +33,28 @@ const buildTree = async (chainData) => {
     const pokeSimpleData = await getSimpleData(chainData.species.name)
     const rootNode = new TreeNode(null, chainData.evolves_to, pokeSimpleData)
     // The Next Verticals Array have one element
-    const nextVerticals = [rootNode];
+    let nextVerticals = [rootNode];
     // The Loop to build The evolution Tree :()
     while (nextVerticals.length > 0) {
         let currentNode = nextVerticals.pop();
         // add the node to the tree
         evoTree = [...evoTree, currentNode];
+        console.log(JSON.stringify(currentNode))
         // check if current node have children
         if (currentNode.children.length > 0) {
             // find all children of node
-            for (const element of currentNode.children) {
-                // get the poke data of this node
-                const pokeData = await getSimpleData(element.species.name);
-                const node = new TreeNode(currentNode, element.evolves_to, pokeData);
-                // check if current ventricles have children
-                // and add any children to the nextVertical stack
-                if (node.children.length > 0) {
-                    node.children.forEach(element => {
-                        nextVerticals.push(element)
-                    });
+            for await (const element of currentNode.children) {
+                try {
+
+                    const pokeData = await getSimpleData(element.species.name);
+                    // prepare node
+                    const node = new TreeNode(currentNode, element.evolves_to, pokeData);
+                    // and throw the to the next vertical array
+                    nextVerticals.push(node);
+                } catch (err) {
+                    alert(err)
                 }
+                // get the poke data of this node
             };
         }
         // go through all the child node of root
