@@ -3,13 +3,13 @@
 import axios from "axios";
 
 
-class TreeNode {
-    constructor(parent, children, data) {
-        this.parent = parent;
-        this.children = children;
-        this.data = data
-    }
-}
+// class TreeNode {
+//     constructor(parent, children, data) {
+//         this.parent = parent;
+//         this.children = children;
+//         this.data = data
+//     }
+// }
 
 
 const getSimpleData = async (name) => {
@@ -31,7 +31,7 @@ const buildTree = async (chainData) => {
     // WE USE DFS Algorithm to build The evoTree
     // create root node
     const pokeSimpleData = await getSimpleData(chainData.species.name)
-    const rootNode = new TreeNode(null, chainData.evolves_to, pokeSimpleData)
+    const rootNode = { parent: null, children: chainData.evolves_to, data: pokeSimpleData }
     // The Next Verticals Array have one element
     let nextVerticals = [rootNode];
     // The Loop to build The evolution Tree :()
@@ -39,7 +39,7 @@ const buildTree = async (chainData) => {
         let currentNode = nextVerticals.pop();
         // add the node to the tree
         evoTree = [...evoTree, currentNode];
-        console.log(JSON.stringify(currentNode))
+
         // check if current node have children
         if (currentNode.children.length > 0) {
             // find all children of node
@@ -48,7 +48,7 @@ const buildTree = async (chainData) => {
 
                     const pokeData = await getSimpleData(element.species.name);
                     // prepare node
-                    const node = new TreeNode(currentNode, element.evolves_to, pokeData);
+                    const node = { parent: currentNode, children: element.evolves_to, data: pokeData };
                     // and throw the to the next vertical array
                     nextVerticals.push(node);
                 } catch (err) {
@@ -61,7 +61,6 @@ const buildTree = async (chainData) => {
     }
     // After all of that we return the tree
     return evoTree;
-
 }
 
 export default buildTree

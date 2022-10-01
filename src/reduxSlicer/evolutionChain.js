@@ -4,6 +4,7 @@ const initialState = {
     pokeMons: null,
     allInfo: null,
     evolutionTree: null,
+    evoChains: null
 }
 
 // redux tool sử dụng createSlice để giúp chúng ta vừa tạo state vừa tạo các action cho state đó trong khi redux core ta cần phải tạo ra từng thành phần
@@ -24,11 +25,14 @@ export const evoChainSlice = createSlice({
         },
         setEvolutionTree: (state, actions) => {
             state.evolutionTree = actions.payload
+        },
+        setChain: (state, actions) => {
+            state.evoChains = actions.payload
         }
     },
 })
 
 // Action creators are generated for each case reducer function
-export const { setEvolutionChain, clearEvolutionChain, setPokemonInChain, setEvolutionTree } = evoChainSlice.actions
+export const { setEvolutionChain, clearEvolutionChain, setPokemonInChain, setEvolutionTree, setChain } = evoChainSlice.actions
 
 export default evoChainSlice.reducer

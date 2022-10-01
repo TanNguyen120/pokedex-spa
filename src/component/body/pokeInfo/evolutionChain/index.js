@@ -1,7 +1,8 @@
 import axios from 'axios';
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setEvolutionChain, setPokemonInChain, setEvolutionTree } from '../../../../reduxSlicer/evolutionChain';
+import { setEvolutionChain, setPokemonInChain, setEvolutionTree, setChain } from '../../../../reduxSlicer/evolutionChain';
+import treeToChain from '../../../../tool/buildChainFromTree';
 import buildTree from '../../../../tool/getEvochainData';
 import LoadingSpinner from '../../../loadingSpiner';
 import EvoChain from './evoChain';
@@ -47,12 +48,17 @@ const EvolutionChain = ({ evoChainProb }) => {
         dispatch(setPokemonInChain(pokeArray));
 
         const evoTree = await buildTree(res.data.chain);
-        dispatch(setEvolutionTree(evoTree))
+        dispatch(setEvolutionTree(evoTree));
+
+        const evoChains = await treeToChain(evoTree);
+        dispatch(setChain(evoChains));
 
     }
     useEffect(() => {
         getEvolutionChain(evoChainProb);
     }, [evoChainProb]);
+
+
     return (
         <div className="bg-slate-300 rounded-lg m-5 col-span-2 grid grid-cols-1 ">
             <h1 className="text-lg font-bold mt-1">Evolution Chain</h1>
