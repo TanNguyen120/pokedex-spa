@@ -31,7 +31,12 @@ const buildTree = async (chainData) => {
     // WE USE DFS Algorithm to build The evoTree
     // create root node
     const pokeSimpleData = await getSimpleData(chainData.species.name)
-    const rootNode = { parent: null, children: chainData.evolves_to, data: pokeSimpleData }
+    const rootNode = {
+        parent: null,
+        children: chainData.evolves_to,
+        pokemon: pokeSimpleData,
+        condition: chainData.evolution_details
+    };
     // The Next Verticals Array have one element
     let nextVerticals = [rootNode];
     // The Loop to build The evolution Tree :()
@@ -45,10 +50,14 @@ const buildTree = async (chainData) => {
             // find all children of node
             for await (const element of currentNode.children) {
                 try {
-
                     const pokeData = await getSimpleData(element.species.name);
                     // prepare node
-                    const node = { parent: currentNode, children: element.evolves_to, data: pokeData };
+                    const node = {
+                        parent: currentNode,
+                        children: element.evolves_to,
+                        pokemon: pokeData,
+                        condition: element.evolution_details
+                    };
                     // and throw the to the next vertical array
                     nextVerticals.push(node);
                 } catch (err) {

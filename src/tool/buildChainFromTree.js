@@ -1,12 +1,23 @@
+// The comment In this file is refer to tree structure in graph theory
+//============================================================================================
 const treeToChain = async (tree) => {
     const leafNode = await getLeafNode(tree)
-    const chains = await buildPathFromLeaf(leafNode, tree)
+    const chains = [];
+    leafNode.forEach(async element => {
+        const chain = await buildPathFromLeaf(element);
+        chains.push(chain);
+    })
     return chains
 }
 
+//============================================================================================
+
+// Get all none children node
+// Fact: the number of leaf node in tree is the number of path or evolution chain 
 const getLeafNode = async (tree) => {
     let leafNode = [];
     await tree.forEach(element => {
+        // leaf node is the node with out children
         if (element.children.length === 0) {
             leafNode.push(element)
         }
@@ -14,21 +25,26 @@ const getLeafNode = async (tree) => {
     return leafNode
 }
 
-const buildPathFromLeaf = async (leaf, tree) => {
-    let chains = [];
-    await leaf.forEach(async element => {
-        let leafChain = [];
-        leafChain.push(element);
-        let parentNode = element.parent
-        while (parentNode != null) {
-            await tree.forEach(element => {
-                if (element.data.name == parentNode.data.name) {
-                    leafChain.push(element);
-                    parentNode = element;
-                }
-            })
+//============================================================================================
+
+// get all parent of leaf node
+// Fact the last node in this path is always the root node 
+const buildPathFromLeaf = async (leaf) => {
+    let chain = [];
+    let currentNode = leaf;
+    // Path traverse with while loop
+    while (currentNode != null) {
+        // formatting data to match the evoChain prob component
+        const prepData = {
+            pokemon: currentNode.pokemon,
+            condition: currentNode.condition
         }
-    })
-    return chains;
+        // we push data in reverse order because the root node is alway the 1st evolution state
+        chain = [prepData, ...chain];
+
+        currentNode = currentNode.parent;
+    }
+    return chain;
 }
+
 export default treeToChain;
