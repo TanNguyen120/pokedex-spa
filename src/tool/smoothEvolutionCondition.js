@@ -40,6 +40,15 @@ const smoothCondition = (obj) => {
             case "time_of_day":
                 result = result + " at " + value + " time";
                 break
+            case "location":
+                result = result + " in " + value.name;
+                break
+            case "known_move_type":
+                result = result + " and know " + value.name + " type move";
+                break
+            case "min_affection":
+                result = result + " with min " + value + " affection";
+                break
             default:
                 result = JSON.stringify(obj)
                 break;

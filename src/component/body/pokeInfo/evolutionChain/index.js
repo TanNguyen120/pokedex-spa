@@ -38,7 +38,7 @@ const EvolutionChain = ({ evoChainProb }) => {
             <h1 className="text-lg font-bold mt-1">Evolution Chain</h1>
             {
                 evoChain.allChains ?
-                    evoChain.allChains.map(element => <EvoChain chain={element} />)
+                    evoChain.allChains.map((element, index) => <EvoChain chain={element} key={index} />)
                     : <h1> This pokémon dosen`t Evolving</h1>
             }
         </div>
