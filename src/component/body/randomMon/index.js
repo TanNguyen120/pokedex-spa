@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import axios from 'axios';
 import { setCount } from "../../../reduxSlicer/pokemonCount"
-import { setBasePokeData } from '../../../reduxSlicer/singlePokemon';
 import { addPokemon, clearPokemonArray } from '../../../reduxSlicer/radomPokemons';
 import { FaRegHandPointUp } from 'react-icons/fa'
 import PokeFrame from './pokeFrame';

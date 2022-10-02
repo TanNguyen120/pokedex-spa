@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
 import PokeVersionDiv from './pokeVersionDiv';
 
 
@@ -22,7 +21,7 @@ const PokedexDescription = ({ pokeEntry }) => {
                 setUiDescription(element.flavor_text)
             }
         });
-    }, [currentGameVer])
+    }, [currentGameVer, pokeEntry])
 
     // side effect of changing prob. We have to update the state
     useEffect(() => {

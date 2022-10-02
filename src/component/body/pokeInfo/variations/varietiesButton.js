@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
 import { findPokeByID } from '../../../../reduxSlicer/findPokeInfoFlag';
 import toTitleCase from '../../../../tool/upperCaseString';

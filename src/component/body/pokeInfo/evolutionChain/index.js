@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setEvolutionChain, setChain, clearEvolutionChain } from '../../../../reduxSlicer/evolutionChain';
 import treeToChain from '../../../../tool/buildChainFromTree';
 import buildTree from '../../../../tool/getEvochainData';
-import LoadingSpinner from '../../../loadingSpiner';
 import EvoChain from './evoChain';
 
 

@@ -1,7 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
 import { findPokeByID } from '../../../../reduxSlicer/findPokeInfoFlag';
-import TypeCanvas from '../infoCanvas/typeCanvas';
 import typeToColor from '../../../../tool/typeColor';
 import toTitleCase from '../../../../tool/upperCaseString';
 

@@ -28,7 +28,6 @@ const PokeInfo = () => {
         dispatch(setPokeSpecie(pokeSpecie.data));
         //get list of detail abilities
         dispatch(clearPokeAbility);
-        const tempArray = [];
         // await baseData.data.abilities.forEach(async element => {
         //     // axios.get(element.ability.url).then(
         //     //     (res) => {

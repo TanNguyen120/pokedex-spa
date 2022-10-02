@@ -4,7 +4,7 @@ import { FaRandom } from 'react-icons/fa'
 import { useSelector, useDispatch } from 'react-redux'
 import { setInput } from '../../../reduxSlicer/searchBarState'
 import { toggleFlag } from '../../../reduxSlicer/reloadFlag'
-import { findPokeByID, findPokeByName } from '../../../reduxSlicer/findPokeInfoFlag'
+import { findPokeByID } from '../../../reduxSlicer/findPokeInfoFlag'
 
 const SearchBar = () => {
     const searchInput = useSelector((state) => state.searchInput);

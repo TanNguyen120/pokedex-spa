@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { FaWeightHanging } from 'react-icons/fa';
 import { GiBodyHeight, GiHealthIncrease } from 'react-icons/gi';
 import { AiOutlineExperiment } from 'react-icons/ai'
