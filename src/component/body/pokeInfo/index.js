@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import axios from 'axios';
-import { setBasePokeData, clearSinglePokeData, setPokeSpecie, setPokeAbilities, clearPokeAbility, setPokeShape } from '../../../reduxSlicer/singlePokemon';
+import { setBasePokeData, clearSinglePokeData, setPokeSpecie, setPokeAbilities, clearPokeAbility, setPokeShape, setPokeForm } from '../../../reduxSlicer/singlePokemon';
 import InfoCanvas from './infoCanvas';
 import LoadingSpinner from '../../loadingSpiner';
 import SpecieCanvas from './specieCanvas';
@@ -62,6 +62,10 @@ const PokeInfo = () => {
 
         const pokeShape = await (await axios.get(pokeSpecie.data.shape.url)).data;
         dispatch(setPokeShape(pokeShape));
+
+        const pokeForm = await (axios.get(baseData.data.forms[0].url));
+        dispatch(setPokeForm(pokeForm.data));
+
     }
 
     // get pokemon info base on findPokeFlag

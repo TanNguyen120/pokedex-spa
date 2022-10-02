@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setEvolutionChain, setChain } from '../../../../reduxSlicer/evolutionChain';
+import { setEvolutionChain, setChain, clearEvolutionChain } from '../../../../reduxSlicer/evolutionChain';
 import treeToChain from '../../../../tool/buildChainFromTree';
 import buildTree from '../../../../tool/getEvochainData';
 import LoadingSpinner from '../../../loadingSpiner';
@@ -17,6 +17,10 @@ const EvolutionChain = ({ evoChainProb }) => {
     const getEvolutionChain = async (url) => {
         // get the evolution chain object from the API
         const res = await axios.get(url);
+        if (res.status !== 200) {
+            dispatch(clearEvolutionChain());
+            return
+        }
         dispatch(setEvolutionChain(res.data));
 
         // The below code part is for retrieve the pokemon info in evolution chain
@@ -34,7 +38,7 @@ const EvolutionChain = ({ evoChainProb }) => {
 
 
     return (
-        <div className="bg-slate-300 rounded-lg m-5 col-span-2 grid grid-cols-1 ">
+        <div className="bg-slate-300 rounded-lg m-5 md:col-span-2 col-span-1 grid grid-cols-1 ">
             <h1 className="text-lg font-bold mt-1">Evolution Chain</h1>
             {
                 evoChain.allChains ?

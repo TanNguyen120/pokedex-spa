@@ -49,6 +49,9 @@ const smoothCondition = (obj) => {
             case "min_affection":
                 result = result + " with min " + value + " affection";
                 break
+            case "party_type":
+                result = result + " while have " + value.name + " pokemon in party";
+                break
             default:
                 result = JSON.stringify(obj)
                 break;

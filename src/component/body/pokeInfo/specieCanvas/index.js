@@ -41,7 +41,7 @@ const SpecieCanvas = ({ specieInfo, abilityDetail, pokeShape }) => {
                     <PokeColor pokeColor={specieInfo.color} />
                     <ShapeCanvas pokeShape={pokeShape} />
                 </div>
-                <div className="col-span-3 grid grid-cols-1">
+                <div className="md:col-span-3 col-span-1 grid grid-cols-1">
                     <AbilitiesDetail abilities={abilityDetail} />
                     <CheckCanvas isBaby={specieInfo.is_baby} isLegend={specieInfo.is_legendary} isMythical={specieInfo.is_mythical} />
                     <NumberInOtherDex pokedexNumber={specieInfo.pokedex_numbers} />
