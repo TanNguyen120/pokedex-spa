@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <div className="grid grid-cols-3 md:grid-cols-8 bg-slate-100 p-2 md:p-5 divide-x-2">
             <div div className='text-base ' >
-                <div className='text-center font-semibold'><img className="h-10 w-10 mx-6 py-1.5 object-cover inline" src="/footerLogo.png" alt="poke footer Logo" />Project T-Pokedex</div>
+                <div className='text-center font-semibold'><img className="h-10 w-10 mx-6 py-1.5 object-cover inline" src={process.env.PUBLIC_URL + "/footerLogo.png"} alt="poke footer Logo" />Project T-Pokedex</div>
             </div >
             <div className='flex items-center'>
                 <div

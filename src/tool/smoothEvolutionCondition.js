@@ -9,6 +9,7 @@ const smoothTriggerName = (name) => {
     }
 };
 
+// this function will read the condition object and base on what key the object have it will translate to normal sentence easy for human to understand
 const smoothCondition = (obj) => {
     let result = "";
     for (const [key, value] of Object.entries(obj)) {
@@ -51,7 +52,20 @@ const smoothCondition = (obj) => {
                 break
             case "party_type":
                 result = result + " while have " + value.name + " pokemon in party";
-                break
+                break;
+            case "relative_physical_stats":
+                switch (value) {
+                    case 0:
+                        result = result + " and have atk stat equal def stat";
+                        break;
+                    case -1:
+                        result = result + " and have atk stat less than def stat";
+                        break;
+                    case 1:
+                        result = result + " and have atk stat greater than def stat"
+                        break;
+                }
+                break;
             default:
                 result = JSON.stringify(obj)
                 break;
