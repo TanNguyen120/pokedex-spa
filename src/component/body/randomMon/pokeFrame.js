@@ -2,6 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import LoadingSpinner from '../../loadingSpiner'
 import { findPokeByID } from '../../../reduxSlicer/findPokeInfoFlag'
+import { clearSinglePokeData } from '../../../reduxSlicer/singlePokemon'
 
 const PokeFrame = ({ pokeImg, pokeId }) => {
     const dispatch = useDispatch();
@@ -14,6 +15,7 @@ const PokeFrame = ({ pokeImg, pokeId }) => {
                     <div className='bg-magic-circle bg-cover hover:cursor-help'>
                         <img className=" w-full h-full" src={pokeImg} alt="poke sprite" onClick={
                             e => {
+                                dispatch(clearSinglePokeData());
                                 dispatch(findPokeByID(pokeId));
                             }
                         } />
