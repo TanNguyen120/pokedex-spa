@@ -19,7 +19,7 @@ const getLeafNode = async (tree) => {
     await tree.forEach(element => {
         // leaf node is the node with out children
         if (element.children.length === 0) {
-            leafNode.push(element)
+            leafNode = [element, ...leafNode];
         }
     });
     return leafNode

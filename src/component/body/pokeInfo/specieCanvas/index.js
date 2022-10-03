@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaBirthdayCake } from 'react-icons/fa';
+
 import { IoFootstepsSharp } from 'react-icons/io5';
 import { GiBugNet } from 'react-icons/gi';
 
@@ -15,6 +15,7 @@ import AbilitiesDetail from './abilitesDetail';
 import ShapeCanvas from './shapeCanvas';
 import CheckCanvas from './checkCanvas';
 import NumberInOtherDex from './numberInOtherDex';
+import DebutInfo from './debutInfo';
 
 
 const SpecieCanvas = ({ specieInfo, abilityDetail, pokeShape }) => {
@@ -24,7 +25,8 @@ const SpecieCanvas = ({ specieInfo, abilityDetail, pokeShape }) => {
                 <PokedexEntry pokedexEntry={specieInfo.flavor_text_entries} />
             </div>
             <div className='grid grid-cols-2 '>
-                <InfoSmallComponent tile="Debuts" detail_info={specieInfo.generation.name} icon={<FaBirthdayCake className='inline' />} />
+                <DebutInfo generation={specieInfo.generation.name} />
+                {/* <InfoSmallComponent tile="Debuts" detail_info={specieInfo.generation.name} icon={<FaBirthdayCake className='inline' />} /> */}
                 <EggGroup eggGroup={specieInfo.egg_groups} />
             </div>
             <div className='grid grid-cols-2 '>

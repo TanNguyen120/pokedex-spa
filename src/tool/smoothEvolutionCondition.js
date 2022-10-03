@@ -30,10 +30,10 @@ const smoothCondition = (obj) => {
                 result = result + " and know move: " + value.name;
                 break
             case "held_item":
-                result = result + "while hold " + value.name;
+                result = result + " while hold " + value.name;
                 break
             case "min_beauty":
-                result = result + "with min " + value + " beauty";
+                result = result + " with min " + value + " beauty";
                 break
             case "needs_overworld_rain":
                 result = result + " in raining environment ";
