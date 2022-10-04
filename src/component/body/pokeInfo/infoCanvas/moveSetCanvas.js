@@ -2,7 +2,7 @@ import React from 'react'
 import { GiBroadsword } from "react-icons/gi"
 const MoveSetCanvas = ({ moveSets }) => {
     return (
-        <div className="bg-slate-300 rounded-lg text-center font-mono font-semibold text-black m-5 p-2 md:col-span-2">
+        <div className="bg-slate-300 rounded-lg text-center font-mono font-semibold text-black md:m-5 p-2 md:col-span-2">
             <h3 className='text-lg font-mono font-bold'>
                 Move Set <GiBroadsword className='inline' />
             </h3>

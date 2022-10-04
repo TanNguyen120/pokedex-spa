@@ -37,7 +37,7 @@ const EvolutionChain = ({ evoChainProb }) => {
 
 
     return (
-        <div className="bg-slate-300 rounded-lg m-5 md:col-span-2 col-span-1 grid grid-cols-1 ">
+        <div className="bg-slate-300 rounded-lg md:m-5 md:col-span-2 col-span-1 grid grid-cols-1 ">
             <h1 className="text-lg font-bold mt-1">Evolution Chain</h1>
             {
                 evoChain.allChains ?

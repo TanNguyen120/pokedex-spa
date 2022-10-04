@@ -3,8 +3,8 @@ import React from 'react'
 const OfficalAccount = () => {
     return (
         <div>
-            <h3>Official Pokémon Account </h3>
-            <ul>
+            <h3 className="font-mono font-semibold">Official Pokémon Account </h3>
+            <ul className="mt-4 md:mt-10">
                 <li>
                     <a href='https://www.facebook.com/Pokemon/' target='_blank' rel="noreferrer" >
                         <img className="h-10 w-10 mx-6 py-1.5 object-cover inline" src={process.env.PUBLIC_URL + "/faceBookimg.jpg"} alt="face book Logo" />

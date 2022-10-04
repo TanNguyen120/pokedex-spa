@@ -12,9 +12,9 @@ const QuickInfo = ({ pokemon }) => {
                 dispatch(findPokeByID(pokemon.name))
             }}>#{pokemon.orderInNationalDex} {toTitleCase(pokemon.name)}</h3>
             <div className='bg-slate-300 rounded-lg items-center m-1'>
-                <div className='bg-white rounded-lg justify-center grid md:grid-cols-2 grid-cols-1'>
+                <div className='bg-white rounded-lg justify-center flex flex-col md:flex-row py-2 items-center'>
                     {pokemon.type.map((type, index) => (
-                        <div className={`${typeToColor(type.type.name)} rounded-md text-white text-center text-base font-semibold border border-indigo-600 m-1 px-1 font-mono hover:cursor-pointer`} key={index}>
+                        <div className={`${typeToColor(type.type.name)} rounded-md text-white text-center text-base font-semibold border border-indigo-600 m-1 px-3 font-mono hover:cursor-pointer`} key={index}>
                             {type.type.name[0].toUpperCase() + type.type.name.slice(1)}
                         </div>
                     ))}

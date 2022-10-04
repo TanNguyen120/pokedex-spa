@@ -66,6 +66,19 @@ const smoothCondition = (obj) => {
                         break;
                 }
                 break;
+            case "gender":
+                switch (value) {
+                    case 1:
+                        result = result + " [female]";
+                        break;
+                    case 2:
+                        result = result + " [male]";
+                        break;
+                    default:
+                        result = JSON.stringify(obj)
+                        break;
+                }
+                break
             default:
                 result = JSON.stringify(obj)
                 break;

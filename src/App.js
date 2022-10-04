@@ -9,7 +9,7 @@ function App() {
       <Body />
       <Footer />
     </div>
-  );
+  )
 }
 
 export default App;

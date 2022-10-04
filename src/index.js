@@ -12,7 +12,7 @@ root.render(
     {/* Provider giúp cho toàn bộ các component của app truy cập được vào store mà nó khai báo */}
     <Provider store={store}>
       <App />
-    </Provider>,
+    </Provider>
   </React.StrictMode>
 );
 
