@@ -15,6 +15,7 @@ import LoadingSpinner from '../../../loadingSpiner';
 import HabitatCanvas from './habitatCanvas';
 import StatCanvas from './statCanvas';
 import toTitleCase from '../../../../tool/upperCaseString';
+import TypeEffectiveness from './typeEffectiveness';
 
 
 
@@ -56,15 +57,14 @@ const InfoCanvas = ({ pokemon }) => {
                             <InfoSmallComponent tile="Growth Rate" detail_info={pokemon.species.growth_rate.name} icon={<GiHealthIncrease className='inline' />} />
                             <HabitatCanvas habitat={pokemon.species.habitat} />
                         </div>
-
-
-
                         : <LoadingSpinner />
                 }
-
             </div>
             <div className='md:col-span-2'>
                 <StatCanvas stat={pokemon.baseData.stats} />
+            </div>
+            <div className='md:col-span-2'>
+                <TypeEffectiveness types={pokemon.baseData.types} />
             </div>
         </div>
     )
