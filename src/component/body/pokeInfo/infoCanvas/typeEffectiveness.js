@@ -5,7 +5,7 @@ const TypeEffectiveness = ({ types }) => {
     const [typeEffect, setTypeEffect] = useState("Some Thing Went Wrong")
     useEffect(() => {
         async function calculate(typeToCalculate) {
-            const result = await (damageCalculate(typeToCalculate[0]));
+            const result = await (damageCalculate(typeToCalculate));
             setTypeEffect(result);
         }
         calculate(types);
