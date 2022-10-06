@@ -9,6 +9,7 @@ import SpecieCanvas from './specieCanvas';
 import MoveSetCanvas from './infoCanvas/moveSetCanvas';
 import EvolutionChain from './evolutionChain';
 import Variations from './variations';
+import TypeEffectiveness from './typeEffectiveness';
 
 
 
@@ -100,6 +101,12 @@ const PokeInfo = () => {
                     <LoadingSpinner />
             }
             {
+                pokeInfo.baseData ?
+                    <TypeEffectiveness types={pokeInfo.baseData.types} />
+                    :
+                    <LoadingSpinner />
+            }
+            {
                 pokeInfo.species ?
                     <EvolutionChain evoChainProb={pokeInfo.species.evolution_chain.url} />
                     :
@@ -111,6 +118,7 @@ const PokeInfo = () => {
                     :
                     <LoadingSpinner />
             }
+
 
         </div>
     )
