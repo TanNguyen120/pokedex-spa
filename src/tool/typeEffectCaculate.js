@@ -1,6 +1,7 @@
 // So to calculate type effectiveness We will use matrix to store data
-// The matrix is just a simple two dimension array, because we are not do calculate operation on it 
+// The matrix is just a simple two dimension array, because we are not do calculate operation on it
 
+//===============================================================================================
 
 // the matrix of type effectiveness
 const typeMatrix = [
@@ -24,6 +25,7 @@ const typeMatrix = [
     ['fairy', 1, 1 / 2, 1, 1, 1, 1, 2, 1 / 2, 1, 1, 1, 1, 1, 1, 2, 2, 1 / 2, 1]
 ]
 
+//===============================================================================================
 
 // the header of the matrix is array of type a
 const typeHead = [
@@ -46,51 +48,78 @@ const typeHead = [
     'steel',
     'fairy'
 ];
-
+//===============================================================================================
 // input: multiple damage to type array
 // multiple: damage from each damage array 
 // output: a single damage array
-const combineDamageFromEachType = (typesDamage) => {
-    let resultDamageVector = typesDamage[0];
-    // remove the name
-    resultDamageVector.pop();
-    for (let index = 1; index < typesDamage.length; index++) {
-        let damageVector = typesDamage[index];
-        // also remove the name cell in this vector too
-        damageVector.pop();
-        for (let j = 0; j < damageVector.length; j++) {
-            resultDamageVector = resultDamageVector[j] * damageVector[j];
+const combineDamageFromEachType = async (typesDamage) => {
+    if (typesDamage.length < 2) {
+        const result = typesDamage[0];
+        return result;
+    } else {
+        let result = [];
+        const previousVector = typesDamage[0];
+        for (let index = 1; index < typesDamage.length; index++) {
+            const currentVector = typesDamage[index];
+            for (let j = 0; j < previousVector.length; j++) {
+                const element = previousVector[j];
+                const damageValue = element * currentVector[j];
+                result.push(damageValue);
+            }
+            const previousVector = typesDamage[index];
         }
+        return result;
     }
-    return resultDamageVector;
+}
+
+//===============================================================================================
+const getAttackDamageTypeVectors = async (types) => {
+    let vectors = [];
+    types.forEach(element => {
+        for (let index = 0; index < typeMatrix.length; index++) {
+            const matrixVector = typeMatrix[index];
+            if (element.type.name === matrixVector[0]) {
+                vectors.push(matrixVector);
+                break;
+            }
+        }
+    })
+    return vectors;
+}
+//===============================================================================================
+const getDefendDamageTypeVectors = async (types) => {
+    let result = [];
+
 }
 
 
+
+//
+
 // map the typeHead and effective value in typeMatrix of the input pokemon type
-const attackDamageCalculate = (pokemonType) => {
+const damageVectorToDamageObject = async (damageVector) => {
     const result = [];
-    typeMatrix.forEach(element => {
-        if (pokemonType.type.name === element[0]) {
-            for (let i = 1; i <= typeHead.length; i++) {
-                const headType = typeHead[i];
-                const typeValue = { type: headType, damage: element[i + 1] };
-                result.push(typeValue);
-            }
-        }
-    });
+    for (let index = 0; index < typeHead.length; index++) {
+        const type = typeHead[index];
+        const damageTypeObject = {
+            type: type,
+            effect: damageVector[index + 1]
+        };
+        result.push(damageTypeObject);
+    }
     return result;
 }
 
 
+//===============================================================================================
 
 // read the pokemon type array and calculate attack and defend damage from it
 const damageCalculate = async (pokemonTypes) => {
-    const attackDamageToType = [];
-    for await (const pokemonType of pokemonTypes) {
-        const damageResult = attackDamageCalculate(pokemonType);
-        attackDamageToType.push(damageResult);
-    }
-    return attackDamageToType;
+    const damageTypeVectors = await getAttackDamageTypeVectors(pokemonTypes);
+    const combineDamageVector = await combineDamageFromEachType(damageTypeVectors);
+    const resultDamageVector = await damageVectorToDamageObject(combineDamageVector);
+    return resultDamageVector;
 }
+//===============================================================================================
 
 export default damageCalculate;
