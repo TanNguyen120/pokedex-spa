@@ -58,7 +58,7 @@ const combineDamageFromEachType = async (typesDamage) => {
         return result;
     } else {
         let result = [];
-        const previousVector = typesDamage[0];
+        let previousVector = typesDamage[0];
         for (let index = 1; index < typesDamage.length; index++) {
             const currentVector = typesDamage[index];
             for (let j = 0; j < previousVector.length; j++) {
@@ -66,7 +66,7 @@ const combineDamageFromEachType = async (typesDamage) => {
                 const damageValue = element * currentVector[j];
                 result.push(damageValue);
             }
-            const previousVector = typesDamage[index];
+            previousVector = typesDamage[index];
         }
         return result;
     }
@@ -88,13 +88,27 @@ const getAttackDamageTypeVectors = async (types) => {
 }
 //===============================================================================================
 const getDefendDamageTypeVectors = async (types) => {
-    let result = [];
+    let vectors = [];
+    types.forEach(element => {
+        for (let index = 0; index < typeHead.length; index++) {
+            const type = typeHead[index];
+            if (type === element.type.name) {
+                let vector = [type];
+                typeMatrix.forEach(matrixRow => {
+                    vector.push(matrixRow[index + 1]);
+                });
+                vectors.push(vector);
+                break;
+            }
+        }
+    })
+    return vectors
 
 }
 
 
 
-//
+//=================================================================================================
 
 // map the typeHead and effective value in typeMatrix of the input pokemon type
 const damageVectorToDamageObject = async (damageVector) => {
@@ -115,9 +129,16 @@ const damageVectorToDamageObject = async (damageVector) => {
 
 // read the pokemon type array and calculate attack and defend damage from it
 const damageCalculate = async (pokemonTypes) => {
-    const damageTypeVectors = await getAttackDamageTypeVectors(pokemonTypes);
-    const combineDamageVector = await combineDamageFromEachType(damageTypeVectors);
-    const resultDamageVector = await damageVectorToDamageObject(combineDamageVector);
+    // get attack damage effect
+    const attackDamageTypeVectors = await getAttackDamageTypeVectors(pokemonTypes);
+    const combineAttackDamageVector = await combineDamageFromEachType(attackDamageTypeVectors);
+    const resultAttackDamageVector = await damageVectorToDamageObject(combineAttackDamageVector);
+    // get defend damage effect
+    const defendDamageTypeVectors = await getDefendDamageTypeVectors(pokemonTypes);
+    const combineDefendDamageVector = await combineDamageFromEachType(defendDamageTypeVectors);
+    const resultDefendDamageVector = await damageVectorToDamageObject(combineDefendDamageVector);
+
+    const resultDamageVector = [resultAttackDamageVector, resultDefendDamageVector];
     return resultDamageVector;
 }
 //===============================================================================================
