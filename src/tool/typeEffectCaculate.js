@@ -18,7 +18,7 @@ const typeMatrix = [
     ['psychic', 1, 1, 1, 1, 1, 1, 2, 2, 1, 1, 1 / 2, 1, 1, 1, 1, 0, 1 / 2, 1],
     ['bug', 1, 1 / 2, 1, 1, 2, 1, 1 / 2, 1 / 2, 1, 1 / 2, 2, 1, 1, 1 / 2, 1, 2, 1 / 2, 1 / 2],
     ['rock', 1, 2, 1, 1, 1, 2, 1 / 2, 1, 1 / 2, 2, 1, 2, 1, 1, 1, 1, 1 / 2, 1],
-    ['ghost', 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1 / 2, 1, 1],
+    ['ghost', 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 2, 1, 1 / 2, 1, 1],
     ['dragon', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1 / 2, 0],
     ['dark', 1, 1, 1, 1, 1, 1, 1 / 2, 1, 1, 1, 2, 1, 1, 2, 1, 1 / 2, 1, 1 / 2],
     ['steel', 1, 1 / 2, 1 / 2, 1 / 2, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1 / 2, 2],
@@ -76,6 +76,7 @@ const combineDamageFromEachType = async (typesDamage) => {
 const getAttackDamageTypeVectors = async (types) => {
     let vectors = [];
     types.forEach(element => {
+        // read the row of the matrix base on types
         for (let index = 0; index < typeMatrix.length; index++) {
             const matrixVector = typeMatrix[index];
             if (element.type.name === matrixVector[0]) {
@@ -90,6 +91,7 @@ const getAttackDamageTypeVectors = async (types) => {
 const getDefendDamageTypeVectors = async (types) => {
     let vectors = [];
     types.forEach(element => {
+        // read the column of the matrix base on type
         for (let index = 0; index < typeHead.length; index++) {
             const type = typeHead[index];
             if (type === element.type.name) {

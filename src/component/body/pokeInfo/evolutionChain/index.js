@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { AiOutlineApartment } from 'react-icons/ai';
 import { setEvolutionChain, setChain, clearEvolutionChain } from '../../../../reduxSlicer/evolutionChain';
 import treeToChain from '../../../../tool/buildChainFromTree';
 import buildTree from '../../../../tool/getEvochainData';
@@ -38,7 +39,7 @@ const EvolutionChain = ({ evoChainProb }) => {
 
     return (
         <div className="bg-slate-300 rounded-lg md:m-5 md:col-span-2 col-span-1 grid grid-cols-1 ">
-            <h1 className="text-lg font-bold mt-1">Evolution Chain</h1>
+            <h1 className="text-lg font-bold mt-1">Evolution Chain <AiOutlineApartment className='inline' /></h1>
             {
                 evoChain.allChains ?
                     evoChain.allChains.map((element, index) => <EvoChain chain={element} key={index} />)
