@@ -7,6 +7,7 @@ const initialState = {
     shape: null,
     varieties: null,
     form: null,
+    locationEncounter: null,
 }
 
 // redux tool sử dụng createSlice để giúp chúng ta vừa tạo state vừa tạo các action cho state đó trong khi redux core ta cần phải tạo ra từng thành phần
@@ -19,7 +20,7 @@ export const singlePokeSlice = createSlice({
         setBasePokeData: (state, action) => {
             state.baseData = action.payload
         },
-        clearSinglePokeData: (state, action) => {
+        clearSinglePokeData: () => {
             return initialState
         },
         setPokeSpecie: (state, action) => {
@@ -44,6 +45,9 @@ export const singlePokeSlice = createSlice({
         },
         setPokeForm: (state, action) => {
             state.form = action.payload
+        },
+        setPokeLocationEncounter: (state, action) => {
+            state.locationEncounter = action.payload
         }
     },
 })
@@ -59,6 +63,7 @@ export const {
     setPokeShape,
     setPokeVariations,
     setPokeForm,
+    setPokeLocationEncounter
 } = singlePokeSlice.actions
 
 export default singlePokeSlice.reducer

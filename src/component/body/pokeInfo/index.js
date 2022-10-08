@@ -10,6 +10,7 @@ import MoveSetCanvas from './infoCanvas/moveSetCanvas';
 import EvolutionChain from './evolutionChain';
 import Variations from './variations';
 import TypeEffectiveness from './typeEffectiveness';
+import PokemonLocation from './pokemonLocation';
 
 
 
@@ -114,10 +115,16 @@ const PokeInfo = () => {
             }
             {
                 pokeInfo.baseData ?
+                    <PokemonLocation /> :
+                    <LoadingSpinner />
+            }
+            {
+                pokeInfo.baseData ?
                     <MoveSetCanvas moveSets={pokeInfo.baseData.moves} />
                     :
                     <LoadingSpinner />
             }
+
 
 
         </div>
