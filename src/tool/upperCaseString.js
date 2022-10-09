@@ -13,4 +13,11 @@
 
 const toTitleCase = str => str.replace(/(^\w|\s\w)(\S*)/g, (_, m1, m2) => m1.toUpperCase() + m2.toLowerCase())
 
+const snakeToTileCase = (s) =>
+    s.replace(/^[-_]*(.)/, (_, c) => c.toUpperCase())       // Initial char (after -/_)
+        .replace(/[-_]+(.)/g, (_, c) => ' ' + c.toUpperCase()) // First char after each -/_
+
+
 export default toTitleCase
+
+export { snakeToTileCase }
