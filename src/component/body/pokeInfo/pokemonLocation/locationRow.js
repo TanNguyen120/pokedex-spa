@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import gameToTextColor from '../../../../tool/gameToColorText';
 import { snakeToTileCase } from '../../../../tool/upperCaseString';
 
 const LocationRow = ({ location }) => {
@@ -22,7 +23,7 @@ const LocationRow = ({ location }) => {
             versionName.push(element.version.name);
             // find the max value of max chance in the loop
             if (element.max_chance > maxChance) {
-                maxChance = element.max_chance
+                maxChance = parseInt(element.max_chance * (100 / 255))
             };
             await element.encounter_details.forEach(encounterDetail => {
                 if (method.indexOf(encounterDetail.method.name) === -1) {
@@ -45,20 +46,20 @@ const LocationRow = ({ location }) => {
         setLocationRowData(location);
     }, [location])
     return (
-        <div className=' grid grid-cols-5 md:grid-cols-8 text-left m-2 p-3'>
+        <div className=' grid grid-cols-5 sm:grid-cols-8  m-2 p-3'>
             <div>
                 {
-                    version.map(element => <div> {element}</div>)
+                    version.map(element => <div key={element} className={gameToTextColor(element)}>{element}</div>)
                 }
             </div>
-            <div className='col-span-2'>
+            <div className='sm:col-span-2'>
                 {locationName}
             </div>
             <div className=''>
-                {method.map(element => <span>{element}</span>)}
+                {method.map(element => <span key={element}>{element}, </span>)}
             </div>
-            <div className=''>
-                {encounterCondition.map(element => <span>{element}</span>)}
+            <div className='sm:col-span-2'>
+                {encounterCondition.map(element => <span key={element}>{element}, </span>)}
             </div>
             <div className=''>
                 {maxChance}% chance

@@ -28,7 +28,9 @@ const PokemonLocation = () => {
             <div className=' bg-slate-200 rounded-lg m-2 p-4 grid grid-cols-1 divide-gray-400 divide-y'>
                 {
                     pokeInfo.locationEncounter ?
-                        pokeInfo.locationEncounter.map((element, index) => <LocationRow location={element} key={index} />) :
+                        pokeInfo.locationEncounter.length > 0 ?
+                            pokeInfo.locationEncounter.map((element, index) => <LocationRow location={element} key={index} />) :
+                            <span>This Pokémon does not appear in the wild </span> :
                         <LoadingSpinner />
                 }
             </div>
