@@ -4,7 +4,7 @@ import { FaRandom } from 'react-icons/fa'
 import { useSelector, useDispatch } from 'react-redux'
 import { setInput } from '../../../reduxSlicer/searchBarState'
 import { toggleFlag } from '../../../reduxSlicer/reloadFlag'
-import { findPokeByID } from '../../../reduxSlicer/findPokeInfoFlag'
+import { findPokeByID, findPokeByName } from '../../../reduxSlicer/findPokeInfoFlag'
 import axios from 'axios'
 import SearchSuggestion from './searchSuggestion'
 
@@ -23,7 +23,15 @@ const SearchBar = () => {
 
                 dispatch(findPokeByID(searchInput.text))
             }
+        } else {
+            if (cache.find(element => element.name === searchInput.text) === undefined) {
+                alert("There no such pokemon with that name or id")
+            }
+            else {
+                dispatch(findPokeByName(searchInput.text));
+            }
         }
+
     }
 
     //========================================================================================================================================================
