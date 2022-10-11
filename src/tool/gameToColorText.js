@@ -36,15 +36,15 @@ const gameToTextColor = (game) => {
             return "text-slate-300"
         case "white":
             return "text-stone-300"
-        case "white2":
+        case "white-2":
             return "text-stone-400"
         case "x":
             return "text-sky-500"
         case "y":
             return "text-rose-500"
-        case "omegaruby":
+        case "omega-ruby":
             return "text-pink-600"
-        case "alphasapphire":
+        case "alpha-sapphire":
             return "text-indigo-600"
         case "sun":
             return "text-orange-600"

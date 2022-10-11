@@ -49,7 +49,7 @@ const LocationRow = ({ location }) => {
         <div className=' grid grid-cols-5 sm:grid-cols-8  m-2 p-3'>
             <div>
                 {
-                    version.map(element => <div key={element} className={gameToTextColor(element)}>{element}</div>)
+                    version.map(element => <div key={element} className={`${gameToTextColor(element)} font-medium`}>{element}</div>)
                 }
             </div>
             <div className='sm:col-span-2'>

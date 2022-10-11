@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { TbPokeball } from 'react-icons/tb'
 import { FaRandom } from 'react-icons/fa'
 import { useSelector, useDispatch } from 'react-redux'
 import { setInput } from '../../../reduxSlicer/searchBarState'
 import { toggleFlag } from '../../../reduxSlicer/reloadFlag'
 import { findPokeByID } from '../../../reduxSlicer/findPokeInfoFlag'
+import axios from 'axios'
 
 const SearchBar = () => {
     const searchInput = useSelector((state) => state.searchInput);
@@ -23,6 +24,23 @@ const SearchBar = () => {
             }
         }
     }
+
+    //========================================================================================================================================================
+    // because there just 1300 pokemon so we can do some name cache for name search
+    const [cache, setCache] = useState([]);
+
+    const getCacheData = async (numberOfPokeMon) => {
+        const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/?limit=${numberOfPokeMon}&offset=0`)
+        setCache(res.data.results);
+    }
+
+    useEffect(() => {
+        getCacheData(numberOfMon.value);
+    }, [numberOfMon])
+
+
+
+    //========================================================================================================================================================
     return (
         <div className="grid md:grid-cols-4 grid-cols-1 gap-3 md:py-10 py-3 m-5 md:px-32 px-6">
             <div className="md:col-span-2">
@@ -35,7 +53,6 @@ const SearchBar = () => {
                         <input type="search" id="default-search"
                             onChange={e => {
                                 dispatch(setInput(e.target.value));
-
                             }}
                             className="block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-full border border-gray-300 focus:ring-red-500 focus:border-red-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500" placeholder="Search with name or number in pokedex" required />
                         <button

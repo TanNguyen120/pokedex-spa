@@ -30,7 +30,7 @@ const PokemonLocation = () => {
                     pokeInfo.locationEncounter ?
                         pokeInfo.locationEncounter.length > 0 ?
                             pokeInfo.locationEncounter.map((element, index) => <LocationRow location={element} key={index} />) :
-                            <span>This Pokémon does not appear in the wild </span> :
+                            <span>This Pokémon does not appear in the wild OR does not have data yet </span> :
                         <LoadingSpinner />
                 }
             </div>
