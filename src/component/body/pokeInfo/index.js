@@ -75,6 +75,9 @@ const PokeInfo = () => {
             case "id":
                 getAllData(findPokeFlag.id);
                 break;
+            case "name":
+                getAllData(findPokeFlag.name);
+                break
             default:
                 break;
         }
