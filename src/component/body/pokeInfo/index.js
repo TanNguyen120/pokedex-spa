@@ -6,11 +6,11 @@ import { setBasePokeData, clearSinglePokeData, setPokeSpecie, setPokeAbilities, 
 import InfoCanvas from './infoCanvas';
 import LoadingSpinner from '../../loadingSpiner';
 import SpecieCanvas from './specieCanvas';
-import MoveSetCanvas from './infoCanvas/moveSetCanvas';
 import EvolutionChain from './evolutionChain';
 import Variations from './variations';
 import TypeEffectiveness from './typeEffectiveness';
 import PokemonLocation from './pokemonLocation';
+import MoveSetCanvas from './moveSet';
 
 
 

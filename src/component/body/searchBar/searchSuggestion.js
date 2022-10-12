@@ -22,12 +22,12 @@ const SearchSuggestion = ({ cache, searchInput }) => {
         }
     }, [searchInput]);
     return (
-        <div className='bg-white font-mono text-base mx-16 grid grid-cols-1 rounded-sm divide-y divide-neutral-400'>
+        <div className='bg-white font-mono text-lg ml-9 grid grid-cols-1 rounded-sm divide-y divide-neutral-400 md:w-80 w-32'>
             {
                 suggestion.map(
                     element => <div
                         key={element.name}
-                        className=" hover:bg-slate-400 hover:cursor-pointer text-left font-medium m-2 p-2"
+                        className=" hover:bg-slate-400 hover:cursor-pointer text-left font-semibold pl-4 px-2"
                         onClick={e => {
                             dispatch(findPokeByName(element.name));
                             dispatch(setInput(element.name))
