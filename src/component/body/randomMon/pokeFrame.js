@@ -12,7 +12,7 @@ const PokeFrame = ({ pokeImg, pokeId }) => {
                 // render loading spinner if the prob is loading
                 pokeImg !== 'loading'
                     ?
-                    <div className='bg-magic-circle bg-cover hover:cursor-help'>
+                    <div className='bg-magic-circle bg-cover hover:cursor-pointer'>
                         <img className=" w-full h-full" src={pokeImg} alt="poke sprite" onClick={
                             e => {
                                 dispatch(clearSinglePokeData());

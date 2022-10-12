@@ -12,6 +12,11 @@ const MoveSetCanvas = ({ moveSets }) => {
                 <thead className=' bg-slate-200 text-lg font-semibold'>
                     <tr>
                         <th className={borderTailWind}>Move</th>
+                        <th className={borderTailWind}>Type</th>
+                        <th className={borderTailWind}>Category</th>
+                        <th className={borderTailWind}>Power</th>
+                        <th className={borderTailWind}>Accuracy</th>
+                        <th className={borderTailWind}>PP</th>
                         <th className={borderTailWind}>Method</th>
                         <th className={borderTailWind}>Require</th>
                     </tr>
