@@ -12,9 +12,14 @@ const GameVersionBtn = ({ gameVersionName }) => {
         bg = 'bg-white '
     }
     return (
-        <div className={`${bg} rounded-lg m-3 p-2 hover:bg-slate-400 hover:cursor-pointer text-center `} onClick={e => {
-            dispatch(setCurrentGame(gameVersionName));
-        }}>
+        <div
+            className={
+                `${bg} rounded-lg m-3 p-2 hover:cursor-pointer text-center 
+            transition ease-in-out delay-50 hover:-translate-y-1 
+            hover:scale-110 hover:bg-slate-400 duration-150  `}
+            onClick={e => {
+                dispatch(setCurrentGame(gameVersionName));
+            }}>
             {gameVersionName}
         </div>
     )

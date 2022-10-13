@@ -10,7 +10,9 @@ const Pokemon = ({ pokemon }) => {
             <div className='bg-magic-circle h-38 w-38 md:h-60 md:w-60 bg-cover bg-center'>
                 <img
                     className=" h-full w-full md:h-full md:w-full 
-                                hover:cursor-pointer self-center 
+                                hover:cursor-pointer self-center
+                                transition ease-in-out delay-50 hover:-translate-y-1 
+                                hover:scale-110 duration-150
                                 "
                     src={pokemon.sprite} alt="poke sprite"
                     onClick={

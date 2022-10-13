@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 import { GiBroadsword } from "react-icons/gi"
 import GameVersionRow from './gameVersionRow';
 import MoveRow from './moveRow'
 import { setCurrentGame } from '../../../../reduxSlicer/currentGameVersion';
+import LoadingSpinner from '../../../loadingSpiner';
 const MoveSetCanvas = ({ moveSets }) => {
     const [gameVersionList, setGameVersionList] = useState(null);
+    const [moveInGameVersion, setMoveInGameVersion] = useState(null);
+    const currentGame = useSelector(state => state.currentGameVersionMove);
     const dispatch = useDispatch();
     // get the list of game version that pokemon move appears
     const getGameVersionList = async () => {
@@ -23,9 +26,30 @@ const MoveSetCanvas = ({ moveSets }) => {
         // set default game version
         dispatch(setCurrentGame(gameList[0]))
     }
+
+
+    // get all the move of the current game version
+    const getMoveFromCurrentGame = async () => {
+        let moveList = [];
+        await moveSets.forEach(async moveSet => {
+            await moveSet.version_group_details.forEach(moveDetails => {
+                if (moveDetails.version_group.name === currentGame.game) {
+                    moveList.push({
+                        move: moveSet.move,
+                        version_group_details: [moveDetails]
+                    })
+                }
+            })
+        })
+        setMoveInGameVersion(moveList)
+    }
     useEffect(() => {
         getGameVersionList();
     }, [moveSets])
+
+    useEffect(() => {
+        getMoveFromCurrentGame();
+    }, [currentGame])
     const borderTailWind = 'border border-slate-300';
     return (
         <div className="bg-slate-300 rounded-lg text-center font-mono font-semibold text-black md:m-5 p-2 md:col-span-2 col-span-1 grid grid-cols-1">
@@ -48,9 +72,11 @@ const MoveSetCanvas = ({ moveSets }) => {
                 </thead>
                 <tbody className='text-left divide-y'>
                     {
-                        moveSets.map((element, index) => (
-                            <MoveRow key={index} moveData={element} borderTailWind={borderTailWind} />
-                        ))
+                        moveInGameVersion ?
+                            moveInGameVersion.map((element, index) => (
+                                <MoveRow key={index} moveData={element} borderTailWind={borderTailWind} />
+                            )) :
+                            <LoadingSpinner />
                     }
                 </tbody>
             </table>

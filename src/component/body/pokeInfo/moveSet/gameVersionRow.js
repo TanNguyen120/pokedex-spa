@@ -8,7 +8,7 @@ const GameVersionRow = ({ gamesVersion }) => {
             <div className=' text-left text-lg font-semibold'>
                 Game:
             </div>
-            <div className=' text-left p-2 grid grid-cols-4 rounded-lg bg-slate-200 m-2'>
+            <div className=' text-left p-2 grid md:grid-cols-4 grid-cols-2 rounded-lg bg-slate-200 m-2'>
                 {
                     gamesVersion ?
                         gamesVersion.map(element => <GameVersionBtn gameVersionName={element} key={element} />) :
