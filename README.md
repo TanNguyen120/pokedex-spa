@@ -1,12 +1,6 @@
-# This Project use react framework, redux and reduxtoolkit framework for the logic
+# T-Pokedex a frontend webapp project for pokéapi
 
-# This Project use tailwind css library for styling
-
-# This Project use Axios library for calling API
-
-## All data in this project is call from https://pokeapi.co/
-
-# Getting Started with Create React App
+---
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

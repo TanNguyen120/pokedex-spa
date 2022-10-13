@@ -1,13 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-    value: "loading",
+    game: [],
 }
 
 // redux tool sử dụng createSlice để giúp chúng ta vừa tạo state vừa tạo các action cho state đó trong khi redux core ta cần phải tạo ra từng thành phần
 // ta sẽ khai báo slice này vào store để lưu state toàn cục
 
-export const homeResultSlice = createSlice({
+export const currentGameVerSlice = createSlice({
     name: 'homeResult',
     initialState,
     reducers: {
@@ -24,8 +24,8 @@ export const homeResultSlice = createSlice({
         // incrementByAmount: (state, action) => {
         //     state.value += action.payload
         // },
-        setResultValue(state, action) {
-            state.value = { ...action.payload }
+        setCurrentGame(state, action) {
+            state.game = action.payload
         }
     },
 })
@@ -33,6 +33,6 @@ export const homeResultSlice = createSlice({
 // Action creators are generated for each case reducer function
 // we export two thing in this file the action so we can dispatch it in other component AND the reducer for the store to save our state and reducer
 
-export const { setResultValue } = homeResultSlice.actions
+export const { setCurrentGame } = currentGameVerSlice.actions
 
-export default homeResultSlice.reducer
+export default currentGameVerSlice.reducer
