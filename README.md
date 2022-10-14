@@ -1,10 +1,16 @@
-# T-Pokedex a frontend webapp project for pokéapi
+# T-Pokedex (a frontend webapp project for pokéapi)
 
 ---
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 1. Project Description
 
-## Available Scripts
+Inspired by (https://bulbagarden.net/) UI and the compact data showing of (https://pokemondb.net/), this web app is born with the hope of combine good aspect of both website. Build with React framework and Tailwind library for a modern experiment in both developing and feature. ReactJS and javascript web framework can changing constantly so this project may have active maintain for longest time possible.
+
+Please visit this website github page for a quick look
+
+---
+
+## 2. How To Run Project
 
 In the project directory, you can run:
 
