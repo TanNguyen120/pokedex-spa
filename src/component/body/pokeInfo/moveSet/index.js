@@ -57,29 +57,31 @@ const MoveSetCanvas = ({ moveSets }) => {
             <h3 className='text-lg font-mono font-bold'>
                 Move Set <GiBroadsword className='inline' />
             </h3>
-            <table className="table-auto p-2 m-2 bg-white border-collapse border border-slate-400 rounded-lg">
-                <thead className=' bg-slate-200 text-lg font-semibold'>
-                    <tr className=' rounded-lg'>
-                        <th className={borderTailWind}>Move</th>
-                        <th className={borderTailWind}>Type</th>
-                        <th className={borderTailWind}>Category</th>
-                        <th className={borderTailWind}>Power</th>
-                        <th className={borderTailWind}>Accuracy</th>
-                        <th className={borderTailWind}>PP</th>
-                        <th className={borderTailWind}>Method</th>
-                        <th className={borderTailWind}>Require</th>
-                    </tr>
-                </thead>
-                <tbody className='text-left divide-y'>
-                    {
-                        moveInGameVersion ?
-                            moveInGameVersion.map((element, index) => (
-                                <MoveRow key={index} moveData={element} borderTailWind={borderTailWind} />
-                            )) :
-                            <LoadingSpinner />
-                    }
-                </tbody>
-            </table>
+            <div className=' p-2 overflow-auto'>
+                <table className="table-auto overflow-scroll w-full p-2 m-2 bg-white border-collapse border border-slate-400 rounded-lg">
+                    <thead className=' bg-slate-200 text-lg font-semibold'>
+                        <tr className=' rounded-lg'>
+                            <th className={borderTailWind}>Move</th>
+                            <th className={borderTailWind}>Type</th>
+                            <th className={borderTailWind}>Category</th>
+                            <th className={borderTailWind}>Power</th>
+                            <th className={borderTailWind}>Accuracy</th>
+                            <th className={borderTailWind}>PP</th>
+                            <th className={borderTailWind}>Method</th>
+                            <th className={borderTailWind}>Require</th>
+                        </tr>
+                    </thead>
+                    <tbody className='text-left divide-y'>
+                        {
+                            moveInGameVersion ?
+                                moveInGameVersion.map((element, index) => (
+                                    <MoveRow key={index} moveData={element} borderTailWind={borderTailWind} />
+                                )) :
+                                <LoadingSpinner />
+                        }
+                    </tbody>
+                </table>
+            </div>
         </div>
     )
 }

@@ -46,22 +46,22 @@ const LocationRow = ({ location }) => {
         setLocationRowData(location);
     }, [location])
     return (
-        <div className=' grid grid-cols-5 sm:grid-cols-8  m-2 p-3'>
-            <div>
+        <div className=' flex flex-row   m-2 p-3 text-center '>
+            <div className=' w-24 mx-4'>
                 {
                     version.map(element => <div key={element} className={`${gameToTextColor(element)} font-medium`}>{element}</div>)
                 }
             </div>
-            <div className='sm:col-span-2'>
+            <div className='w-96 mx-4 '>
                 {locationName}
             </div>
-            <div className=''>
+            <div className='w-28  mx-4'>
                 {method.map(element => <span key={element}>{element}, </span>)}
             </div>
-            <div className='sm:col-span-2'>
+            <div className='w-96 mx-4'>
                 {encounterCondition.map(element => <span key={element}>{element}, </span>)}
             </div>
-            <div className=''>
+            <div className='w-40 mx-4'>
                 {maxChance}% chance
             </div>
 
