@@ -7,6 +7,7 @@ import reloadFlag from '../reduxSlicer/reloadFlag';
 import findPokeInfoFlag from '../reduxSlicer/findPokeInfoFlag';
 import evolutionChain from '../reduxSlicer/evolutionChain';
 import currentGameVer from '../reduxSlicer/currentGameVersion';
+import webSettings from '../reduxSlicer/webSettings';
 // ta sử dụng toolkit để khai báo một store để chứa các reducer
 export const store = configureStore({
     reducer: {
@@ -17,6 +18,7 @@ export const store = configureStore({
         reloadFlag: reloadFlag,
         findPokeInfoFlag: findPokeInfoFlag,
         evolutionChain: evolutionChain,
-        currentGameVersionMove: currentGameVer
+        currentGameVersionMove: currentGameVer,
+        webSettings: webSettings
     },
 })
