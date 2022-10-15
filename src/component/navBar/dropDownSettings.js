@@ -12,7 +12,7 @@ const DropDownSettings = () => {
                 <BsFillGearFill className=' hover:animate-spin' />
             </div>
             {
-                clickToggle && <div className=' rounded-lg grid grid-cols-1 text-left p-2 bg-slate-200 text-black'>
+                clickToggle && <div className=' rounded-lg grid grid-cols-1 text-left p-2 bg-slate-200 text-black ring-0 ring-black absolute mt-4'>
                     <PictureSetting />
                 </div>
             }
