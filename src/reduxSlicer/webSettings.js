@@ -11,8 +11,8 @@ export const webSettingSlice = createSlice({
     name: 'searchText',
     initialState,
     reducers: {
-        setPictureMode: (state) => {
-            state.pictureMode = !state.reload;
+        setPictureMode: (state, action) => {
+            state.pictureMode = action.payload;
         }
     },
 })
