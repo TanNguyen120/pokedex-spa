@@ -21,8 +21,8 @@ const PokeFrame = ({ pokeImg, pokeId }) => {
             } />
     </div>);
     const drawMode = (pokeId) => {
+        // add zero to match the id length of the picture API 
         let officialIndex = String(pokeId).padStart(3, '0');
-        console.log(officialIndex)
         return (
             <div
                 className='bg-magic-circle bg-cover hover:cursor-pointer 

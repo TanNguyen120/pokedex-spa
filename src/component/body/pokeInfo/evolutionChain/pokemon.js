@@ -1,9 +1,22 @@
-import React from 'react'
-import { useDispatch } from 'react-redux';
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import { findPokeByID } from '../../../../reduxSlicer/findPokeInfoFlag';
 import QuickInfo from './quickInfo';
 
 const Pokemon = ({ pokemon }) => {
+    const pictureMode = useSelector((state) => state.webSettings.pictureMode);
+
+    const [pictureSrc, setPictureSrc] = useState(pokemon.sprite);
+
+    useEffect(() => {
+        const modeToUrl = (pokeId) => {
+            let officialIndex = String(pokeId).padStart(3, '0');
+            return `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${officialIndex}.png`;
+        }
+
+        pictureMode === "sprite" ? setPictureSrc(pokemon.sprite) : setPictureSrc(modeToUrl(pokemon.orderInNationalDex));
+    }, [pictureMode, pokemon])
+
     const dispatch = useDispatch();
     return (
         <div className='text-center text-black m-2  p-2 columns-1 '>
@@ -14,7 +27,7 @@ const Pokemon = ({ pokemon }) => {
                                 transition ease-in-out delay-50 hover:-translate-y-1 
                                 hover:scale-110 duration-150
                                 "
-                    src={pokemon.sprite} alt="poke sprite"
+                    src={pictureSrc} alt="poke sprite"
                     onClick={
                         e => {
                             dispatch(findPokeByID(pokemon.name));
