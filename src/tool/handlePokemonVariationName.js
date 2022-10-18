@@ -9,7 +9,6 @@ const refactorName = (name) => {
             return "pikachu-lets-go"
         case name.search("gmax") !== -1:
             return name.replace("gmax", "gigantamax")
-
         default:
             return name
     }

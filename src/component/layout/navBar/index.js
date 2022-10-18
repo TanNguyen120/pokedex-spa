@@ -12,7 +12,7 @@ const NavBar = () => {
             }}>
                 <img className="h-full w-full mx-6 py-1.5 object-scale-down" src={process.env.PUBLIC_URL + '/pokedexLogo.png'} alt="pokedex Logo" />
             </div>
-            <div className=' md:col-span-9 grid md:grid-cols-8 grid-cols- 4'>
+            <div className=' md:col-span-9 grid md:grid-cols-8 grid-cols-4'>
                 <div className='md:ml-8 text-sm font-mono mt-8'>
                     <DropDownSettings />
                 </div>

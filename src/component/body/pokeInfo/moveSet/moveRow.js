@@ -61,7 +61,7 @@ const MoveRow = ({ moveData, borderTailWind }) => {
     }, [moveData])
 
     return (
-        <tr>
+        <tr className=' odd:bg-white even:bg-slate-50'>
             <td className={borderTailWind + ' p-3'}>{moveData.move.name}</td>
             <td className={borderTailWind + ' p-3'}>
                 {

@@ -26,7 +26,7 @@ const PokemonLocation = () => {
         <div className='bg-slate-300 rounded-lg md:m-5 md:col-span-2 col-span-1 '>
             <h1 className="text-lg font-bold mt-1"> Encounter Detail Of {toTitleCase(pokeInfo.baseData.name)} <FaWalking className='inline' /></h1>
             <div className=' bg-slate-200 rounded-lg m-2 p-4 '>
-                <div className=' m-1 rounded-lg bg-white overflow-x-auto w-full  divide-slate-300 divide-y'>
+                <div className=' m-1 rounded-lg bg-white overflow-x-auto w-full  divide-slate-300 divide-y odd:bg-white even:bg-slate-50'>
                     {
                         pokeInfo.locationEncounter ?
                             pokeInfo.locationEncounter.length > 0 ?
