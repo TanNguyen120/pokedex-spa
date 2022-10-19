@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import GameItemNav from './gameItemsNav';
 
 import DropDownSettings from './webSettingNav/dropDownSettings';
@@ -7,10 +8,10 @@ import DropDownSettings from './webSettingNav/dropDownSettings';
 const NavBar = () => {
     return (
         <div className="bg-slate-300  text-left text-slate-700 grid  md:grid-cols-12 grid-cols-1">
-            <div className="mt-1.25 hover:cursor-pointer  md:col-span-3 md:w-full md:h-full w-1/3 h-9/11 col-span-1 " onClick={e => {
-                window.location.reload()
-            }}>
-                <img className="h-full w-full mx-6 py-1.5 object-scale-down" src={process.env.PUBLIC_URL + '/pokedexLogo.png'} alt="pokedex Logo" />
+            <div className="mt-1.25 hover:cursor-pointer  md:col-span-3 md:w-full md:h-full w-1/3 h-9/11 col-span-1 ">
+                <Link to="/">
+                    <img className="h-full w-full mx-6 py-1.5 object-scale-down" src={process.env.PUBLIC_URL + '/pokedexLogo.png'} alt="pokedex Logo" />
+                </Link>
             </div>
             <div className=' md:col-span-9 grid md:grid-cols-8 grid-cols-4'>
                 <div className='md:ml-8 text-sm font-mono mt-8'>
