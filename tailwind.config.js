@@ -12,6 +12,7 @@ module.exports = {
       'main-bg': "url('../public/bodyBG.png')",
       'evoPokeBg': "url('../public/pokeBorder.png')",
       'gold-frame': "url('../public/gold-frame.png')",
+      'blue-abstract': "url('../public/abstract-background-blue.jpg')"
     },
   },
   plugins: [],
