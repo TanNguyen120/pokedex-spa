@@ -12,7 +12,7 @@ const ErrorPage = () => {
                 <h1 className=" text-6xl font-semibold animate-bounce m-11">Oops!</h1>
                 <p className=" text-lg font-semibold">Sorry, an unexpected error has occurred.</p>
                 <div className=" p-3 m-1">
-                    <img src="https://media1.giphy.com/media/xTiQygXSRBzi6XLSzS/giphy.gif?cid=ecf05e477iz3kwv1z10ogcbf13puymdyi0q0mfqcz2cdpci5&rid=giphy.gif&ct=g" />
+                    <img src="https://media1.giphy.com/media/xTiQygXSRBzi6XLSzS/giphy.gif?cid=ecf05e477iz3kwv1z10ogcbf13puymdyi0q0mfqcz2cdpci5&rid=giphy.gif&ct=g" alt="crying togepi" />
                 </div>
                 <p className=" text-slate-500 text-base">
                     <i>{error.statusText || error.message}</i>

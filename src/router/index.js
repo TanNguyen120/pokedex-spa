@@ -1,11 +1,12 @@
 import {
     createBrowserRouter,
-    Route,
 } from "react-router-dom";
 import Body from "../component/body";
 import Layout from "../component/layout";
+import BerryDetails, { loader as berryLoader } from "../subPages/berryDetails";
 import BerriesList from "../subPages/berryList";
 import ErrorPage from "../subPages/errorPage";
+
 
 const router = createBrowserRouter([
     {
@@ -18,8 +19,13 @@ const router = createBrowserRouter([
                 element: <BerriesList />,
             },
             {
-                path: "/",
+                path: "/t-pokedex",
                 element: <Body />
+            },
+            {
+                path: "/berries/:berryName",
+                element: <BerryDetails />,
+                loader: berryLoader
             }
         ]
     },

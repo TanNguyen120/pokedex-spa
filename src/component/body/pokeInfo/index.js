@@ -16,7 +16,7 @@ import MoveSetCanvas from './moveSet';
 
 const PokeInfo = () => {
     const findPokeFlag = useSelector((state) => state.findPokeInfoFlag);
-    const pokeInfo = useSelector((state) => state.singlePokemon)
+    const pokeInfo = useSelector((state) => state.singlePokemon);
     const dispatch = useDispatch();
 
     // the function to get all pokemon data with it relate data
