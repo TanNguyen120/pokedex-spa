@@ -1,19 +1,21 @@
 import React, { useEffect, useState } from 'react'
+import flavorToColor from '../../../tool/flavorsToColor';
 
 const FlavorColumn = ({ flavorDetails }) => {
-    const [potenHeight, setPotenHeight] = useState("0");
-
+    const [potenHeight, setPotenHeight] = useState(0);
+    const [bgColor, setBgColor] = useState("");
     useEffect(() => {
         setPotenHeight(flavorDetails.potency);
-    }, [flavorDetails.potency])
+        setBgColor(flavorToColor(flavorDetails.flavor.name));
+    }, [flavorDetails])
     return (
-        <div className=' h-48 bg-slate-200 rounded-lg p-2 grid grid-cols-1 text-center'>
-            <div className=' h-40 grid grid-cols-1'>
-                <div className={` h-${potenHeight} bg-slate-600 place-self-end w-full text-center`}>
+        <div className=' h-48 bg-slate-200 rounded-lg py-2 px-9 grid grid-cols-1 text-center'>
+            <div className=' h-40 grid grid-cols-1 '>
+                <div className={` ${bgColor} place-self-end w-full text-center rounded-sm`} style={{ height: potenHeight * 4 }}>
                     {potenHeight > 0 && potenHeight}
                 </div>
             </div>
-            <div>
+            <div className=' '>
                 {flavorDetails.flavor.name}
             </div>
         </div>
