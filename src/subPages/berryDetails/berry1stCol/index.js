@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import BerryName from './berryName';
+import NatureGiftDetails from './natureGiftDetails';
 
 const BerryDetail1 = ({ berryData }) => {
     const pictureMode = useSelector(state => state.webSettings.pictureMode);
@@ -15,6 +16,7 @@ const BerryDetail1 = ({ berryData }) => {
                     Number No.{String(berryData.berryDetails.id).padStart(3, '0')}
                 </div>
             </div>
+            <NatureGiftDetails type={berryData.berryDetails.natural_gift_type} power={berryData.berryDetails.natural_gift_power} />
         </div>
     )
 }

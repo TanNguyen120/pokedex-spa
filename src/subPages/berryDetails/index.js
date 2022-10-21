@@ -1,7 +1,8 @@
 import axios from 'axios'
 import React from 'react'
 import { useLoaderData } from 'react-router-dom'
-import BerryDetail1 from './berry1stCol/berryDetail1'
+import BerryCol1 from './berry1stCol'
+
 
 // in react router v6.4 we can define a loader function that can access to url param to call api 
 // loader function later will be call in the router 
@@ -23,7 +24,7 @@ const BerryDetails = () => {
             <div className='md:container md:mx-auto'>
                 <div className=' grid grid-cols-1'>
                     <div className=' bg-slate-200 p-2 m-10 font-medium text-base rounded-lg grid md:grid-cols-2 grid-cols-1'>
-                        <BerryDetail1 berryData={berryData} />
+                        <BerryCol1 berryData={berryData} />
                     </div>
                 </div>
             </div>

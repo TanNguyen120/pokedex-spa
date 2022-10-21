@@ -17,7 +17,7 @@ const ErrorPage = () => {
                 <p className=" text-slate-500 text-base">
                     <i>{error.statusText || error.message}</i>
                 </p>
-                <Link to="/">
+                <Link to="/t-pokedex">
                     <div className=" bg-slate-400 hover:bg-slate-500 text-center rounded-lg p-4 my-9 w-full text-2xl font-semibold">
                         Back To Home <FaHome className="inline pb-1" />
                     </div>
