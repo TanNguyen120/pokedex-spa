@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import BerryFlavors from './berryFlavors';
 import BerryName from './berryName';
 import NatureGiftDetails from './natureGiftDetails';
 
@@ -17,6 +18,7 @@ const BerryDetail1 = ({ berryData }) => {
                 </div>
             </div>
             <NatureGiftDetails type={berryData.berryDetails.natural_gift_type} power={berryData.berryDetails.natural_gift_power} />
+            <BerryFlavors flavors={berryData.berryDetails.flavors} />
         </div>
     )
 }

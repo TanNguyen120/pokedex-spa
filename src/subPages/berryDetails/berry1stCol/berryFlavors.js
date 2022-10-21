@@ -1,8 +1,18 @@
 import React from 'react'
-
-const BerryFlavors = () => {
+import { GiSaltShaker } from 'react-icons/gi'
+import FlavorColumn from './flavorColumn'
+const BerryFlavors = ({ flavors }) => {
     return (
-        <div>BerryFlavors</div>
+        <div className='  p-2 m-2  bg-slate-300 rounded-lg grid grid-cols-1'>
+            <div className=' bg-slate-400 border-b-4 border-slate-500 p-2 rounded-t-lg text-lg'>
+                Flavor <GiSaltShaker className=' inline' />
+            </div>
+            <div className=' grid grid-flow-col'>
+                {
+                    flavors.map(flavor => <FlavorColumn flavorDetails={flavor} />)
+                }
+            </div>
+        </div>
     )
 }
 

@@ -4,7 +4,12 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      height: {
+        '30': '90px',
+        '10': '30px',
+      }
+    },
     backgroundImage: {
       'red-space': "url('../public/spaceBG.jpg')",
       'magic-circle': "url('../public/borderPoke.png')",
