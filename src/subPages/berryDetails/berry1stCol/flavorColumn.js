@@ -9,13 +9,13 @@ const FlavorColumn = ({ flavorDetails }) => {
         setBgColor(flavorToColor(flavorDetails.flavor.name));
     }, [flavorDetails])
     return (
-        <div className=' h-48 bg-slate-200 rounded-lg py-2 px-9 grid grid-cols-1 text-center'>
+        <div className=' h-52 bg-slate-200 rounded-lg py-2 px-9 grid grid-cols-1 text-center'>
             <div className=' h-40 grid grid-cols-1 '>
-                <div className={` ${bgColor} place-self-end w-full text-center rounded-sm`} style={{ height: potenHeight * 4 }}>
+                <div className={` ${bgColor} place-self-end w-full text-center rounded-sm border-1 border-indigo-800`} style={{ height: (potenHeight * 4) + 2 }}>
                     {potenHeight > 0 && potenHeight}
                 </div>
             </div>
-            <div className=' '>
+            <div className=' mt-2'>
                 {flavorDetails.flavor.name}
             </div>
         </div>

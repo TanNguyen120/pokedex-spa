@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import BerryFlavors from './berryFlavors';
 import BerryName from './berryName';
 import NatureGiftDetails from './natureGiftDetails';
+import NumberInfo from './numberInfo';
 
 const BerryDetail1 = ({ berryData }) => {
     const pictureMode = useSelector(state => state.webSettings.pictureMode);
@@ -19,6 +20,7 @@ const BerryDetail1 = ({ berryData }) => {
             </div>
             <NatureGiftDetails type={berryData.berryDetails.natural_gift_type} power={berryData.berryDetails.natural_gift_power} />
             <BerryFlavors flavors={berryData.berryDetails.flavors} />
+            <NumberInfo soilDryness={berryData.berryDetails.soil_dryness} berrySmoothness={berryData.berryDetails.smoothness} maxHarvest={berryData.berryDetails.max_harvest} />
         </div>
     )
 }
