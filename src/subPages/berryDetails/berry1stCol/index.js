@@ -20,7 +20,14 @@ const BerryDetail1 = ({ berryData }) => {
             </div>
             <NatureGiftDetails type={berryData.berryDetails.natural_gift_type} power={berryData.berryDetails.natural_gift_power} />
             <BerryFlavors flavors={berryData.berryDetails.flavors} />
-            <NumberInfo soilDryness={berryData.berryDetails.soil_dryness} berrySmoothness={berryData.berryDetails.smoothness} maxHarvest={berryData.berryDetails.max_harvest} />
+            <NumberInfo
+                soilDryness={berryData.berryDetails.soil_dryness}
+                berrySmoothness={berryData.berryDetails.smoothness}
+                maxHarvest={berryData.berryDetails.max_harvest}
+                firmness={berryData.berryDetails.firmness}
+                size={berryData.berryDetails.size}
+                growthTime={berryData.berryDetails.growth_time}
+            />
         </div>
     )
 }

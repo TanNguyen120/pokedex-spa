@@ -1,14 +1,19 @@
-# T-Pokedex (a frontend webapp project for pokéapi)
+# ![Alt](/pokeWebicon.webp 'logo') T-Pokedex (a frontend webapp project for pokéapi)
 
 ## 1. Project Description
 
-Inspired by (https://bulbagarden.net/) UI and the compact data showing of (https://pokemondb.net/), this web app is born with the hope of combine good aspect of both website. Build with React framework and Tailwind library for a modern experiment in both developing and website feature. ReactJS and javascript web framework can changing constantly so this project may have active maintain for longest time possible.
+Inspired by (https://bulbagarden.net/) UI and the compact data showing and Game oriented data of (https://pokemondb.net/), this web app is born with the hope of combine good aspect of both website. Build with React framework and Tailwind library for a modern experiment in both developing and website feature. ReactJS and javascript web framework can changing constantly so this project may have active maintain for longest time possible.
 
 Please visit this website github page for a quick look (https://tannguyen120.github.io/t-pokedex/)
 
 ---
 
-## 2. Feature
+## 2.Key Feature
+
+- Responsive
+- Dynamic
+- Modern ReactJs
+- Tailwind Css
 
 ## 3. How To Run Project
 
