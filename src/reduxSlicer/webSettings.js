@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-    pictureMode: "sprite"
+    pictureMode: "sprite",
+    language: "en"
 }
 
 // redux tool sử dụng createSlice để giúp chúng ta vừa tạo state vừa tạo các action cho state đó trong khi redux core ta cần phải tạo ra từng thành phần
@@ -13,6 +14,9 @@ export const webSettingSlice = createSlice({
     reducers: {
         setPictureMode: (state, action) => {
             state.pictureMode = action.payload;
+        },
+        setLanguage: (state, action) => {
+            state.language = action.payload
         }
     },
 })

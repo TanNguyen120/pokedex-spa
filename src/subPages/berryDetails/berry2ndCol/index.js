@@ -1,6 +1,7 @@
 import React from 'react'
 import AppearInGen from './appearInGen'
 import BerryDescription from './berryDescription'
+import BerryFlavourText from './berryFlavourText'
 import BerryItemAttribute from './berryItemAttribute'
 
 const BerryCol2 = ({ berryItemsData }) => {
@@ -9,6 +10,7 @@ const BerryCol2 = ({ berryItemsData }) => {
             <BerryDescription berryEffect={berryItemsData.effect_entries[0]} />
             <BerryItemAttribute berryAttribute={berryItemsData.attributes[0]} berryItemCategory={berryItemsData.category} berryItemCost={berryItemsData.cost} />
             <AppearInGen gameIndices={berryItemsData.game_indices} />
+            <BerryFlavourText flavorTexts={berryItemsData.flavor_text_entries} />
         </div>
     )
 }
