@@ -7,7 +7,7 @@ const BerryFlavors = ({ flavors }) => {
             <div className=' bg-slate-400 border-b-4 border-slate-500 p-2 rounded-t-lg text-lg font-semibold'>
                 Flavor <GiSaltShaker className=' inline' />
             </div>
-            <div className=' grid grid-flow-col'>
+            <div className=' grid md:grid-cols-5 grid-cols-3'>
                 {
                     flavors.map(flavor => <FlavorColumn flavorDetails={flavor} />)
                 }
