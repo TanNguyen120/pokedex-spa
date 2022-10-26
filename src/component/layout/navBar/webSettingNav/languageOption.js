@@ -4,7 +4,7 @@ import { setLanguage } from '../../../../reduxSlicer/webSettings';
 const LanguageOption = ({ langName }) => {
     const dispatch = useDispatch();
     return (
-        <div className='p-3 hover:bg-slate-100 hover:cursor-pointer' onClick={e => { dispatch(setLanguage(langName)) }}>{langName}</div>
+        <div className='p-3 hover:bg-slate-100 hover:cursor-pointer rounded-lg' onClick={e => { dispatch(setLanguage(langName)) }}>{langName}</div>
     )
 }
 

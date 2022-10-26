@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { TbPokeball } from 'react-icons/tb';
+import { useSelector } from 'react-redux';
 import LoadingSpinner from '../../../loadingSpiner';
 import AbilitiesName from './abilitiesName';
 
 
 
 const AbilitiesDetail = ({ abilities }) => {
+    const webLanguage = useSelector(state => state.webSettings.language);
     const [activeAbility, setActiveAbility] = useState(null);
     // the function to set active ability to pass down to child component
     const setActiveFromChild = (ability) => {
@@ -31,12 +33,12 @@ const AbilitiesDetail = ({ abilities }) => {
             await mabilities.forEach(async element => {
                 const languageAndAbility = { name: null, flavorText: null };
                 await element.name.forEach(elementName => {
-                    if (elementName.language.name === "en") {
+                    if (elementName.language.name === webLanguage) {
                         languageAndAbility.name = elementName.name;
                     }
                 });
                 await element.flavor_text.forEach(flavorElement => {
-                    if (flavorElement.language.name === "en") {
+                    if (flavorElement.language.name === webLanguage) {
                         languageAndAbility.flavorText = flavorElement.flavor_text;
                     }
                 })
@@ -46,7 +48,7 @@ const AbilitiesDetail = ({ abilities }) => {
             setLangueAbilities(tempArray);
         }
         filterLanguage(abilities);
-    }, [abilities])
+    }, [abilities, webLanguage])
 
 
 
