@@ -7,7 +7,7 @@ const ListBerries = ({ berriesList }) => {
             <div className=' mb-3 border border-b-slate-300 text-lg font-medium text-left pl-2'> Berries List: </div>
             <div className=' grid md:grid-cols-9 grid-cols-3 p-2'>
                 {
-                    berriesList.map(berry => <BerriesRow berry={berry} />)
+                    berriesList.map(berry => <BerriesRow berry={berry} key={berry.name} />)
                 }
             </div>
         </div>

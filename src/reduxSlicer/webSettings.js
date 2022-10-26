@@ -24,6 +24,6 @@ export const webSettingSlice = createSlice({
 // Action creators are generated for each case reducer function
 // we export two thing in this file the action so we can dispatch it in other component AND the reducer for the store to save our state and reducer
 
-export const { setPictureMode } = webSettingSlice.actions
+export const { setPictureMode, setLanguage } = webSettingSlice.actions
 
 export default webSettingSlice.reducer

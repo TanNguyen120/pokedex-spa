@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { BsFillGearFill } from 'react-icons/bs'
+import Language from './language'
 import PictureSetting from './pictureSetting'
 const DropDownSettings = () => {
     return (
@@ -11,8 +12,9 @@ const DropDownSettings = () => {
                     <BsFillGearFill className=' hover:animate-spin inline' /> Settings
                 </span>
             </div>
-            <div className=' rounded-lg group-hover:grid grid-cols-1 text-left p-2 bg-slate-400 text-black hidden w-56 absolute md:mt-9 mt-1'>
+            <div className=' rounded-lg group-hover:grid grid-cols-1 text-left p-2 bg-slate-400 text-black hidden w-56 absolute md:mt-9 mt-1 divide-y divide-slate-100'>
                 <PictureSetting />
+                <Language />
             </div>
         </div>
     )
