@@ -23,3 +23,4 @@ const Contest = () => {
 }
 
 export default Contest
+export { loader }
