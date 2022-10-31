@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React from 'react'
+import { useLoaderData } from 'react-router-dom';
 
 
 // in react router v6.4 we can define a loader function that can access to url param to call api 
@@ -17,8 +18,11 @@ const loader = async () => {
     }
 }
 const Contest = () => {
+    const contestData = useLoaderData();
     return (
-        <div>Contest</div>
+        <div>
+            {JSON.stringify(contestData)}
+        </div>
     )
 }
 
