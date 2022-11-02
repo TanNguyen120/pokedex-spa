@@ -6,7 +6,13 @@ import LanguageOption from './languageOption';
 const Language = () => {
 
     const languageWebSetting = useSelector(state => state.webSettings.language);
-    const [languageList, setLanguageList] = useState([])
+    const [languageList, setLanguageList] = useState([]);
+    const [languageListToggle, setLanguageListToggle] = useState(false);
+
+    // toggle function for showing language option
+    const toggleLanguageOption = () => {
+        setLanguageListToggle(preStage => !preStage);
+    }
 
     useEffect(() => {
         const getLanguage = async () => {
@@ -22,13 +28,15 @@ const Language = () => {
                 Language:
             </div>
             <div className=' group rounded-lg ml-4 bg-slate-300 px-4'>
-                {languageWebSetting}
-                <div className=' rounded-lg group-hover:grid grid-cols-1 text-left p-2 bg-slate-400 text-black hidden w-56 absolute  mt-1'>
-                    {
-                        languageList.length > 0 && languageList.map((element, index) =>
-                            <LanguageOption langName={element.name} key={index} />
-                        )}
-                </div>
+                <div onClick={e => { toggleLanguageOption() }}> {languageWebSetting} </div>
+                {
+                    languageListToggle && <div className=' rounded-lg grid-cols-1 text-left p-2 bg-slate-400 text-black w-56 absolute  mt-1'>
+                        {
+                            languageList.length > 0 && languageList.map((element, index) =>
+                                <LanguageOption langName={element.name} key={index} langOptionToggle={toggleLanguageOption} />
+                            )}
+                    </div>
+                }
             </div>
         </div>
     )
