@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 import flavorToColor from '../../../tool/flavorsToColor';
 
 const FlavorColumn = ({ flavorDetails }) => {
@@ -15,9 +16,11 @@ const FlavorColumn = ({ flavorDetails }) => {
                     {potenHeight > 0 && potenHeight}
                 </div>
             </div>
-            <div className=' mt-2'>
-                {flavorDetails.flavor.name}
-            </div>
+            <Link className=' mt-2 hover:cursor-pointer' to={`/berries/flavor/${flavorDetails.flavor.name}`}>
+                <div >
+                    {flavorDetails.flavor.name}
+                </div>
+            </Link>
         </div>
     )
 }

@@ -7,6 +7,7 @@ import BerryDetails, { loader as berryLoader } from "../subPages/berryDetails";
 import Contest, { loader as contestLoader } from "../subPages/contest"
 import BerriesList from "../subPages/berryList";
 import ErrorPage from "../subPages/errorPage";
+import BerryFlavorList, { loader as berryFlavorListLoader } from "../subPages/berryFlavorList";
 
 
 const router = createBrowserRouter([
@@ -27,6 +28,11 @@ const router = createBrowserRouter([
                 path: "/berries/:berryName",
                 element: <BerryDetails />,
                 loader: berryLoader
+            },
+            {
+                path: "/berries/flavor/:flavorName",
+                element: <BerryFlavorList />,
+                loader: berryFlavorListLoader
             },
             {
                 path: "/contest",
