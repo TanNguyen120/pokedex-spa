@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React from 'react'
 import { useLoaderData } from 'react-router-dom';
+import flavorToColor from '../../tool/flavorsToColor';
 
 import ListBerries from '../berryList/list';
 
@@ -24,7 +25,7 @@ const BerryFlavorList = () => {
             <div className='md:container md:mx-auto'>
                 <div className=' grid grid-cols-1'>
                     <div className=' rounded-lg ring-4 ring-slate-400 bg-slate-300 text-lg font-semibold m-3 p-3'>
-                        Berries Have {berryListData.flavorName} flavor:
+                        Berries Have <span className={` rounded-lg ${flavorToColor(berryListData.flavorName)} p-2 mx-2`}>  {berryListData.flavorName}  </span>flavor:
                     </div>
                     <ListBerries berriesList={berryListData.list} />
                 </div>
