@@ -8,6 +8,7 @@ import Contest, { loader as contestLoader } from "../subPages/contest"
 import BerriesList from "../subPages/berryList";
 import ErrorPage from "../subPages/errorPage";
 import BerryFlavorList, { loader as berryFlavorListLoader } from "../subPages/berryFlavorList";
+import BerryFirmnessLis, { loader as berryFirmnessListLoader } from "../subPages/berryFirmnessList";
 
 
 const router = createBrowserRouter([
@@ -33,6 +34,11 @@ const router = createBrowserRouter([
                 path: "/berries/flavor/:flavorName",
                 element: <BerryFlavorList />,
                 loader: berryFlavorListLoader
+            },
+            {
+                path: "/berries/firmness/:firmnessType",
+                element: <BerryFirmnessLis />,
+                loader: berryFirmnessListLoader
             },
             {
                 path: "/contest",
