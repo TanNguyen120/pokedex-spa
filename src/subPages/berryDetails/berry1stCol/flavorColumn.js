@@ -16,7 +16,7 @@ const FlavorColumn = ({ flavorDetails }) => {
                     {potenHeight > 0 && potenHeight}
                 </div>
             </div>
-            <Link className=' mt-2 hover:cursor-pointer' to={`/berries/flavor/${flavorDetails.flavor.name}`}>
+            <Link className=' mt-2 hover:cursor-pointer hover:text-lg hover:text-rose-700' to={`/berries/flavor/${flavorDetails.flavor.name}`}>
                 <div >
                     {flavorDetails.flavor.name}
                 </div>
