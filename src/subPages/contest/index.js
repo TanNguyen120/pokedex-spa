@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React from 'react'
 import { useLoaderData } from 'react-router-dom';
+import contestTypeToColor from '../../tool/contestTypeToColor';
+import ContestAndBerries from './contestAndBerries';
 
 
 // in react router v6.4 we can define a loader function that can access to url param to call api 
@@ -13,7 +15,7 @@ const loader = async () => {
         contestDetailsResult.push(contestDetails);
     });
     return {
-        contestList: contestList,
+        contestList: contestList.results,
         contestDetails: contestDetailsResult
     }
 }
@@ -32,8 +34,16 @@ const Contest = () => {
                                         first-letter:mr-3 first-letter:float-left'>
                             Pokémon Contests (Japanese: ポケモンコンテスト Pokémon Contest) are a type of competition often contrasted with Pokémon battles and held in Contest Halls. Pokémon are judged on their condition and moves in two rounds, to determine which one is the best of its category.
                         </p>
+                        <div className=' mr-9 ml-2 my-5 border-t-2 border-slate-400'>
+                            <div className=' text-left mx-4 text-lg font-semibold'>Contest Type: </div>
+                            <div className=' grid grid-cols-4'>
+                                {
+                                    contestData.contestList.map((element, index) => <div className={` rounded-lg m-1 p-1 ${contestTypeToColor(element.name)} capitalize`} key={index}>{element.name}</div>)
+                                }
+                            </div>
+                        </div>
                     </div>
-
+                    <ContestAndBerries contestType={contestData.contestDetails} />
                 </div>
             </div>
         </div>
