@@ -1,6 +1,7 @@
 import axios from 'axios';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useLoaderData } from 'react-router-dom';
+import LoadingSpinner from '../../component/loadingSpiner';
 import contestTypeToColor from '../../tool/contestTypeToColor';
 import ContestAndBerries from './contestAndBerries';
 
@@ -9,18 +10,35 @@ import ContestAndBerries from './contestAndBerries';
 // loader function later will be call in the router 
 const loader = async () => {
     const contestList = (await (axios.get(`https://pokeapi.co/api/v2/contest-type/`))).data
-    let contestDetailsResult = [];
-    await contestList.results.forEach(async element => {
-        const contestDetails = (await (axios.get(`https://pokeapi.co/api/v2/contest-type/${element.name}`))).data;
-        contestDetailsResult.push(contestDetails);
-    });
-    return {
-        contestList: contestList.results,
-        contestDetails: contestDetailsResult
-    }
+    // let contestDetailsResult = [];
+    // // await contestList.results.forEach(async element => {
+    // //     const contestDetails = (await (axios.get(`https://pokeapi.co/api/v2/contest-type/${element.name}`))).data;
+    // //     contestDetailsResult.push(contestDetails);
+    // // });
+    // // use promise all to call api inside a loop
+    // Promise.all(contestList.results.map(async element => {
+    //     const contestDetails = (await (axios.get(`https://pokeapi.co/api/v2/contest-type/${element.name}`))).data;
+    //     contestDetailsResult.push(contestDetails);
+    // }))
+    return contestList
 }
 const Contest = () => {
     const contestData = useLoaderData();
+    const [contestDetails, setContestDetails] = useState(null)
+
+    useEffect(() => {
+        setContestDetails([]);
+        const getContestBerryDetails = async (contestData, setContestDetails) => {
+            const contestDetailsData = await
+                Promise.all(contestData.results.map(async element => {
+                    const contestDetailsRes = (await (axios.get(`https://pokeapi.co/api/v2/contest-type/${element.name}`))).data;
+                    // have to make new array out side of set state function
+                    return contestDetailsRes
+                }))
+            setContestDetails(contestDetailsData)
+        }
+        getContestBerryDetails(contestData, setContestDetails)
+    }, [contestData])
     return (
         <div className=' bg-grey-abstract bg-repeat min-h-screen font-serif'>
             <div className='md:container md:mx-auto'>
@@ -38,12 +56,15 @@ const Contest = () => {
                             <div className=' text-left mx-4 text-lg font-semibold'>Contest Type: </div>
                             <div className=' grid grid-cols-4'>
                                 {
-                                    contestData.contestList.map((element, index) => <div className={` rounded-lg m-1 p-1 ${contestTypeToColor(element.name)} capitalize`} key={index}>{element.name}</div>)
+                                    contestDetails ? contestDetails.map((element, index) => <div className={` rounded-lg m-1 p-1 ${contestTypeToColor(element.name)} capitalize`} key={index}>{element.name}</div>)
+                                        : <LoadingSpinner />
                                 }
                             </div>
                         </div>
                     </div>
-                    <ContestAndBerries contestType={contestData.contestDetails} />
+                    {
+                        contestDetails && <ContestAndBerries contestType={contestDetails} />
+                    }
                 </div>
             </div>
         </div>

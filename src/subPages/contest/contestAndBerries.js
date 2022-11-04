@@ -18,7 +18,8 @@ const ContestAndBerries = ({ contestType }) => {
                     </thead>
                     <tbody>
                         {
-                            contestType.map(element => <ContestBerryRow rowData={element} />)
+
+                            contestType.map(element => <ContestBerryRow rowData={element} key={element.name} />)
                         }
                     </tbody>
                 </table>
