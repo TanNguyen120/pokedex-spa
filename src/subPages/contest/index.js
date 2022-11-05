@@ -4,6 +4,7 @@ import { useLoaderData } from 'react-router-dom';
 import LoadingSpinner from '../../component/loadingSpiner';
 import contestTypeToColor from '../../tool/contestTypeToColor';
 import ContestAndBerries from './contestAndBerries';
+import ContestEntryText from './contestEntryText';
 
 
 // in react router v6.4 we can define a loader function that can access to url param to call api 
@@ -65,6 +66,7 @@ const Contest = () => {
                     {
                         contestDetails && <ContestAndBerries contestType={contestDetails} />
                     }
+                    <ContestEntryText />
                 </div>
             </div>
         </div>
