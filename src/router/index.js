@@ -9,6 +9,7 @@ import BerriesList from "../subPages/berryList";
 import ErrorPage from "../subPages/errorPage";
 import BerryFlavorList, { loader as berryFlavorListLoader } from "../subPages/berryFlavorList";
 import BerryFirmnessLis, { loader as berryFirmnessListLoader } from "../subPages/berryFirmnessList";
+import SuperContest, { loader as superContesLoader } from "../subPages/superContest";
 
 
 const router = createBrowserRouter([
@@ -44,6 +45,12 @@ const router = createBrowserRouter([
                 path: "/contest",
                 element: <Contest />,
                 loader: contestLoader
+            },
+            {
+
+                path: "/super-contest",
+                element: <SuperContest />,
+                loader: superContesLoader
             }
         ]
     },

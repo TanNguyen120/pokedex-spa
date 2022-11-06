@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { SiNintendo3Ds } from 'react-icons/si'
+
 import ContestNav from './contestNav'
+import SuperContestNav from './superContestNav'
 const GameMechanicNav = () => {
     return (
         <div className='group relative h-full '>
@@ -13,6 +15,7 @@ const GameMechanicNav = () => {
             </div>
             <div className=' rounded-lg group-hover:grid grid-cols-1 text-left p-2 bg-slate-400 text-black hidden w-56 absolute md:mt-9 mt-1'>
                 <ContestNav />
+                <SuperContestNav />
             </div>
         </div>
     )

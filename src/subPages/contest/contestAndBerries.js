@@ -7,7 +7,7 @@ const ContestAndBerries = ({ contestType }) => {
             <div className=' font-semibold text-xl text-left m-4'>
                 Each Berry flavor and color represents a specific condition stat that can boost the contest point of pokemon, as shown below.
             </div>
-            <div className=' w-1/2'>
+            <div className=' md:w-1/2 w-full'>
                 <table className=" table-fixed border-collapse border border-slate-400 w-full rounded-lg">
                     <thead className=' bg-slate-100'>
                         <tr >
@@ -18,7 +18,6 @@ const ContestAndBerries = ({ contestType }) => {
                     </thead>
                     <tbody>
                         {
-
                             contestType.map(element => <ContestBerryRow rowData={element} key={element.name} />)
                         }
                     </tbody>
