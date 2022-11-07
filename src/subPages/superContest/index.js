@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useLoaderData } from 'react-router-dom';
 import LoadingSpinner from '../../component/loadingSpiner';
 import contestTypeToColor from '../../tool/contestTypeToColor';
+import SuperContestEntryText from './supperContestEntry';
 // import LoadingSpinner from '../../component/loadingSpiner';
 // import contestTypeToColor from '../../tool/contestTypeToColor';
 // import ContestAndBerries from './contestAndBerries';
@@ -67,10 +68,7 @@ const SuperContest = () => {
                             </div>
                         </div>
                     </div>
-                    {/* {
-                        contestDetails && <ContestAndBerries contestType={contestDetails} />
-                    }
-                    <ContestEntryText /> */}
+                    <SuperContestEntryText />
                 </div>
             </div>
         </div>

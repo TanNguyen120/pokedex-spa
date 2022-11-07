@@ -4,17 +4,24 @@ import LoadingSpinner from '../../component/loadingSpiner';
 import ContestEntryRow from '../contest/contestEntryRow';
 
 const SuperContestEntryText = () => {
-    const [effectText, setEffectText] = useState([]);
+    const [effectText, setEffectText] = useState(null);
 
     useEffect(() => {
         const getEntryText = async () => {
 
             const effectNumber = (await axios.get('https://pokeapi.co/api/v2/super-contest-effect/')).data.count;
+            const urlLists = (await axios.get(`https://pokeapi.co/api/v2/super-contest-effect/?limit=${effectNumber}&offset=0`).data)
             let effectResult = [];
-            for (let i = 1; i <= effectNumber; i++) {
-                const entryData = (await axios.get(`https://pokeapi.co/api/v2/super-contest-effect/${i}`)).data
-                effectResult.push(entryData)
+            try {
+                await urlLists.forEach(async element => {
+
+                    const entryData = (await axios.get(element)).data;
+                    effectResult.push(entryData);
+                });
+            } catch (error) {
+                console.log(error);
             }
+
             return effectResult;
         }
         const setStateData = async () => {
@@ -45,7 +52,6 @@ const SuperContestEntryText = () => {
                     }
                 </tbody>
             </table>
-
         </div>
     )
 }
