@@ -11,7 +11,7 @@ const SuperContestEntryText = () => {
         const getEntryText = async () => {
             const effectNumber = (await axios.get('https://pokeapi.co/api/v2/super-contest-effect/')).data.count;
             const urlLists = (await axios.get(`https://pokeapi.co/api/v2/super-contest-effect/?limit=${effectNumber}&offset=0`)).data;
-            let effectResult = [];
+
             const getContestFlavor = await
                 Promise.all(urlLists.results.map(async element => {
                     const contestDetailsRes = (await (axios.get(element.url))).data;

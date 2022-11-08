@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 import { useLoaderData } from 'react-router-dom';
 import LoadingSpinner from '../../component/loadingSpiner';
 import contestTypeToColor from '../../tool/contestTypeToColor';
-import ContestEntryDetails from './contestEntryDetails';
 import SuperContestEntryText from './supperContestEntry';
 // import LoadingSpinner from '../../component/loadingSpiner';
 // import contestTypeToColor from '../../tool/contestTypeToColor';
