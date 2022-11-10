@@ -16,8 +16,8 @@ module.exports = {
       'evoPokeBg': "url('../public/pokeBorder.png')",
       'gold-frame': "url('../public/gold-frame.png')",
       'blue-abstract': "url('../public/abstract-background-blue.jpg')",
-      'grey-abstract': "url('../public/abstractGrey.jpg')"
-
+      'grey-abstract': "url('../public/abstractGrey.jpg')",
+      'whitePatternDiamond': "url('../public/patternDiamonWhite.jpg')"
     },
   },
   plugins: [],
