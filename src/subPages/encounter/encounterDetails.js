@@ -1,5 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import LoadingSpinner from '../../component/loadingSpiner';
+import EncounterRow from './encounterRow';
 
 const EncounterDetails = () => {
     const [encounterDetails, setEncounterDetails] = useState(null);
@@ -8,13 +10,33 @@ const EncounterDetails = () => {
         const getEncounterDetails = async () => {
             const encounterNumber = (await axios.get(`https://pokeapi.co/api/v2/encounter-method/`)).data.count;
             const encounterList = (await axios.get(`https://pokeapi.co/api/v2/encounter-method/?offset=0&limit=${encounterNumber}`)).data;
-            setEncounterDetails(encounterList)
+            const encounterDetailsData = await
+                Promise.all(encounterList.results.map(async element => {
+                    const contestDetailsRes = (await (axios.get(element.url))).data;
+                    // have to make new array out side of set state function
+                    return contestDetailsRes
+                }))
+
+            setEncounterDetails(encounterDetailsData);
         }
 
         getEncounterDetails();
     }, [])
     return (
-        <div className=' m-2 p-2 ring-2 bg-slate-300 ring-slate-400'>{encounterDetails}</div>
+        <div className=' m-2 p-2 ring-2 bg-slate-300 ring-slate-400 rounded-lg'>
+            <div className=' font-base font-medium text-left m-4'>
+                Below is the list contain all know method to encounter wild pokémon:
+            </div>
+            <div className=' bg-slate-200 rounded-lg divide-y'>
+                <div className=' bg-slate-100 rounded-lg grid grid-cols-2 divide-x divide-slate-300 gap-2'>
+                    <div className='p-3'> Method Name </div>
+                    <div className='p-3'> Description </div>
+                </div>
+                {
+                    encounterDetails ? encounterDetails.map(element => <EncounterRow key={element.name} name={element.name} description={element.names} />) : <LoadingSpinner />
+                }
+            </div>
+        </div>
     )
 }
 
