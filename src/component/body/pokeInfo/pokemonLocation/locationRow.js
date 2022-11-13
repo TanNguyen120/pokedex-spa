@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 import gameToTextColor from '../../../../tool/gameToColorText';
 import { snakeToTileCase } from '../../../../tool/upperCaseString';
 
@@ -56,10 +57,14 @@ const LocationRow = ({ location }) => {
                 {locationName}
             </div>
             <div className='w-28  mx-4'>
-                {method.map(element => <span key={element}>{element}, </span>)}
+                <Link to='/encounter' className=' hover:cursor-pointer hover:scale-125'>
+                    {method.map(element => <span key={element}>{element}, </span>)}
+                </Link>
             </div>
             <div className='w-96 mx-4'>
+
                 {encounterCondition.map(element => <span key={element}>{element}, </span>)}
+
             </div>
             <div className='w-40 mx-4'>
                 {maxChance}% chance

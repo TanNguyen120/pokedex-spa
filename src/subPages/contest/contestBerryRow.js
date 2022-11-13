@@ -21,7 +21,7 @@ const ContestBerryRow = ({ rowData }) => {
     return (
         <tr className=' p-1 text-white font-semibold'>
             <td className={` w-1/3 border border-slate-400 ${contestTypeToColor(rowData.name)}`}>{rowData.name}</td>
-            <td className={` border border-slate-400 ${flavorToColor(rowData.berry_flavor.name)}`}><Link to={`/berries/flavor/${rowData.berry_flavor.name}`} className=" hover:cursor-pointer hover:scale-125 hover:text-red-500">{rowData.berry_flavor.name} </Link> </td>
+            <td className={` border border-slate-400 ${flavorToColor(rowData.berry_flavor.name)}`}><Link to={`/t-pokedex/berries/flavor/${rowData.berry_flavor.name}`} className=" hover:cursor-pointer hover:scale-125 hover:text-red-500">{rowData.berry_flavor.name} </Link> </td>
             <td className={` border border-slate-400 text-black`}>{contestColor && contestColor.color}</td>
         </tr>
     )

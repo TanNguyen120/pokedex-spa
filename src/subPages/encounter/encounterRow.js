@@ -18,7 +18,7 @@ const EncounterRow = ({ name, description }) => {
     }, [webLanguage, description])
     return (
         <div className=' grid grid-cols-2 divide-x divide-slate-300 bg-slate-50 gap-2 text-left'>
-            <div className='p-3'> {name} </div>
+            <div className='p-3 capitalize'> {name} </div>
             <div className='p-3'> {langDescription ? langDescription.name : description[0].name}</div>
         </div>
     )

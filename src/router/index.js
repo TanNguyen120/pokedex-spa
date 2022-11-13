@@ -15,46 +15,46 @@ import Encounter from "../subPages/encounter";
 
 const router = createBrowserRouter([
     {
-        path: "/",
+        path: "/t-pokedex",
         element: <Layout />,
         errorElement: <ErrorPage />,
         children: [
             {
-                path: "/berries",
+                path: "/t-pokedex/berries",
                 element: <BerriesList />,
             },
             {
-                path: "/t-pokedex",
+                path: "/t-pokedex/",
                 element: <Body />
             },
             {
-                path: "/berries/:berryName",
+                path: "/t-pokedex/berries/:berryName",
                 element: <BerryDetails />,
                 loader: berryLoader
             },
             {
-                path: "/berries/flavor/:flavorName",
+                path: "/t-pokedex/berries/flavor/:flavorName",
                 element: <BerryFlavorList />,
                 loader: berryFlavorListLoader
             },
             {
-                path: "/berries/firmness/:firmnessType",
+                path: "/t-pokedex/berries/firmness/:firmnessType",
                 element: <BerryFirmnessLis />,
                 loader: berryFirmnessListLoader
             },
             {
-                path: "/contest",
+                path: "/t-pokedex/contest",
                 element: <Contest />,
                 loader: contestLoader
             },
             {
 
-                path: "/super-contest",
+                path: "/t-pokedex/super-contest",
                 element: <SuperContest />,
                 loader: superContesLoader
             },
             {
-                path: "/encounter",
+                path: "/t-pokedex/encounter",
                 element: <Encounter />,
 
             }

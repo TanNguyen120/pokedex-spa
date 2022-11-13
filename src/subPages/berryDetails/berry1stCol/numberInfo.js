@@ -16,7 +16,7 @@ const NumberInfo = ({ berrySmoothness, soilDryness, maxHarvest, size, firmness, 
             <InfoSmallComponent tile='Growth Time Each State' detail_info={`${growthTime}`} metric="hr" />
             <InfoSmallComponent tile='Growth Time Total' icon={<GiTreeGrowth className=' inline' />} detail_info={`${totalGrowthTime}`} metric="hr" />
             <InfoSmallComponent tile='Size' icon={<TfiRuler className=' inline' />} detail_info={(size * 0.1).toFixed(1)} metric='cm' />
-            <InfoSmallComponent tile='Firmness' icon={<GiBlender className=' inline' />} detail_info={firmness.name} metric='' link={`/berries/firmness/${firmness.name}`} />
+            <InfoSmallComponent tile='Firmness' icon={<GiBlender className=' inline' />} detail_info={firmness.name} metric='' link={`/t-pokedex/berries/firmness/${firmness.name}`} />
         </div>
     )
 }

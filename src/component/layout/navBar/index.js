@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import GameGenNav from './gameGenNav';
 import GameItemNav from './gameItemsNav';
 import GameMechanicNav from './gameMechanicNav';
 
@@ -23,6 +24,9 @@ const NavBar = () => {
                 </div>
                 <div className=' mt-8'>
                     <GameMechanicNav />
+                </div>
+                <div className=' mt-8'>
+                    <GameGenNav />
                 </div>
                 <div className="md:col-start-8 pt-12 font-mono text-sm ">
                     A Web By Tan Nguyen
