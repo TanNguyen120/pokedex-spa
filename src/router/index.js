@@ -11,6 +11,7 @@ import BerryFlavorList, { loader as berryFlavorListLoader } from "../subPages/be
 import BerryFirmnessLis, { loader as berryFirmnessListLoader } from "../subPages/berryFirmnessList";
 import SuperContest, { loader as superContesLoader } from "../subPages/superContest";
 import Encounter from "../subPages/encounter";
+import GameGenerations from "../subPages/gameGeneration";
 
 
 const router = createBrowserRouter([
@@ -56,7 +57,10 @@ const router = createBrowserRouter([
             {
                 path: "/t-pokedex/encounter",
                 element: <Encounter />,
-
+            },
+            {
+                path: "/t-pokedex/generations",
+                element: <GameGenerations />
             }
         ]
     },

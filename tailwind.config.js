@@ -17,7 +17,8 @@ module.exports = {
       'gold-frame': "url('../public/gold-frame.png')",
       'blue-abstract': "url('../public/abstract-background-blue.jpg')",
       'grey-abstract': "url('../public/abstractGrey.jpg')",
-      'whitePatternDiamond': "url('../public/patternDiamonWhite.jpg')"
+      'whitePatternDiamond': "url('../public/patternDiamonWhite.jpg')",
+      "whiteTriPattern": "url('../public/whiteTriPat.jpg')"
     },
   },
   plugins: [],
