@@ -10,12 +10,11 @@ const flavorToColor = (flavor) => {
             return 'bg-lime-500'
         case "sour":
             return 'bg-yellow-300'
-            break;
-
         default:
             break;
     }
 }
+
 
 
 export default flavorToColor

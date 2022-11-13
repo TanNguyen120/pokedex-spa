@@ -20,7 +20,7 @@ const Footer = () => {
             </div>
             <OfficalAccount />
             <div className='flex items-center flex-col'>
-                <span className="font-mono font-semibold"> Special Thank To </span>  <span> <img className='h-10 w-10 md:h-28 md:w-28' src={`${process.env.PUBLIC_URL}/pokeApi.png`} /></span>
+                <span className="font-mono font-semibold"> Special Thank To </span>  <span> <img className='h-10 w-10 md:h-28 md:w-28' src={`${process.env.PUBLIC_URL}/pokeApi.png`} alt=' poke api' /></span>
                 <div>
                     Visit <a href="https://pokeapi.co/" target="_blank" rel="noreferrer" className="text-blue-400 hover:text-pink-400 hover:cursor-pointer hover:text-lg">
                         https://pokeapi.co/ </a>  for more info

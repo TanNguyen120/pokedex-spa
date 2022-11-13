@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { RiInkBottleLine } from 'react-icons/ri'
 import GameItemsMenu from './gameItemsMenu';
 const GameItemNav = () => {

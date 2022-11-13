@@ -64,6 +64,8 @@ const smoothCondition = (obj) => {
                     case 1:
                         result = result + " and have atk stat greater than def stat"
                         break;
+                    default:
+                        return
                 }
                 break;
             case "gender":
