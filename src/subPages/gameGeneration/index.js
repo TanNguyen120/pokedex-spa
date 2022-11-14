@@ -1,15 +1,17 @@
 import axios from 'axios'
 import React from 'react'
+import { useLoaderData } from 'react-router-dom';
+import GameGenBtn from './gameGenBtn';
 
 // in react router v6.4 we can define a loader function that can access to url param to call api 
 // loader function later will be call in the router 
 const loader = async () => {
-    const genList = await (axios.get('https://pokeapi.co/api/v2/generation/')).data;
-
+    const genList = (await (axios.get('https://pokeapi.co/api/v2/generation/'))).data;
     return genList;
 }
 
 const GameGenerations = () => {
+    const gameGenList = useLoaderData();
     return (
         <div className=' bg-whiteTriPattern bg-repeat min-h-screen font-serif'>
             <div className='md:container md:mx-auto'>
@@ -31,6 +33,11 @@ const GameGenerations = () => {
                         </p>
                     </div>
 
+                    <div className=' bg-slate-200 rounded-lg m-8 grid grid-cols-4'>
+                        {
+                            gameGenList.results.map(element => <GameGenBtn genName={element.name} link={element.url} key={element.name} />)
+                        }
+                    </div>
                 </div>
             </div>
         </div>

@@ -11,7 +11,7 @@ import BerryFlavorList, { loader as berryFlavorListLoader } from "../subPages/be
 import BerryFirmnessLis, { loader as berryFirmnessListLoader } from "../subPages/berryFirmnessList";
 import SuperContest, { loader as superContesLoader } from "../subPages/superContest";
 import Encounter from "../subPages/encounter";
-import GameGenerations from "../subPages/gameGeneration";
+import GameGenerations, { loader as gameGenerationLoader } from "../subPages/gameGeneration";
 
 
 const router = createBrowserRouter([
@@ -23,44 +23,54 @@ const router = createBrowserRouter([
             {
                 path: "/t-pokedex/berries",
                 element: <BerriesList />,
+                errorElement: <ErrorPage />,
             },
             {
                 path: "/t-pokedex/",
-                element: <Body />
+                element: <Body />,
+                errorElement: <ErrorPage />,
             },
             {
                 path: "/t-pokedex/berries/:berryName",
                 element: <BerryDetails />,
-                loader: berryLoader
+                loader: berryLoader,
+                errorElement: <ErrorPage />,
             },
             {
                 path: "/t-pokedex/berries/flavor/:flavorName",
                 element: <BerryFlavorList />,
-                loader: berryFlavorListLoader
+                loader: berryFlavorListLoader,
+                errorElement: <ErrorPage />,
             },
             {
                 path: "/t-pokedex/berries/firmness/:firmnessType",
                 element: <BerryFirmnessLis />,
-                loader: berryFirmnessListLoader
+                loader: berryFirmnessListLoader,
+                errorElement: <ErrorPage />,
             },
             {
                 path: "/t-pokedex/contest",
                 element: <Contest />,
-                loader: contestLoader
+                loader: contestLoader,
+                errorElement: <ErrorPage />,
             },
             {
 
                 path: "/t-pokedex/super-contest",
                 element: <SuperContest />,
-                loader: superContesLoader
+                loader: superContesLoader,
+                errorElement: <ErrorPage />,
             },
             {
                 path: "/t-pokedex/encounter",
                 element: <Encounter />,
+                errorElement: <ErrorPage />,
             },
             {
                 path: "/t-pokedex/generations",
-                element: <GameGenerations />
+                element: <GameGenerations />,
+                loader: gameGenerationLoader,
+                errorElement: <ErrorPage />,
             }
         ]
     },
