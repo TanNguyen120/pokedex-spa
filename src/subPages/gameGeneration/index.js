@@ -33,9 +33,9 @@ const GameGenerations = () => {
                         </p>
                     </div>
 
-                    <div className=' bg-slate-200 rounded-lg m-8 grid grid-cols-4'>
+                    <div className=' bg-slate-200 rounded-lg m-8 grid grid-cols-6'>
                         {
-                            gameGenList.results.map(element => <GameGenBtn genName={element.name} link={element.url} key={element.name} />)
+                            gameGenList.results.map(element => <GameGenBtn genName={element.name} key={element.name} />)
                         }
                     </div>
                 </div>

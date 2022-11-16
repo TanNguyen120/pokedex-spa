@@ -12,6 +12,7 @@ import BerryFirmnessLis, { loader as berryFirmnessListLoader } from "../subPages
 import SuperContest, { loader as superContesLoader } from "../subPages/superContest";
 import Encounter from "../subPages/encounter";
 import GameGenerations, { loader as gameGenerationLoader } from "../subPages/gameGeneration";
+import GameGenDetails, { loader as gameGenLoader } from "../subPages/gameGenDetails";
 
 
 const router = createBrowserRouter([
@@ -71,6 +72,12 @@ const router = createBrowserRouter([
                 element: <GameGenerations />,
                 loader: gameGenerationLoader,
                 errorElement: <ErrorPage />,
+            },
+            {
+                path: "/t-pokedex/generations/:gameGen",
+                element: <GameGenDetails />,
+                loader: gameGenLoader,
+                errorElement: <ErrorPage />
             }
         ]
     },
