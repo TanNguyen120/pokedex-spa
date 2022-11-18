@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaBirthdayCake } from 'react-icons/fa';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import LoadingSpinner from '../../../loadingSpiner';
 
 const DebutInfo = ({ generation }) => {
@@ -10,9 +11,9 @@ const DebutInfo = ({ generation }) => {
             <h3>
                 Debut <FaBirthdayCake className='inline' />
             </h3>
-            <div className='bg-white rounded-lg text-center text-black m-2 font-medium'>
+            <Link to={`/t-pokedex/generations/${generation}`} className='bg-white rounded-lg text-center text-black m-2 font-medium'>
                 {generation}
-            </div>
+            </Link>
             <div className='bg-white rounded-lg text-center text-black m-2 font-medium'>
                 {pokeForm ? <span> {`pokémon ${pokeForm.version_group.name}  `} </span> : <LoadingSpinner />}
             </div>

@@ -1,3 +1,5 @@
+// a big switch statement to get the background color of each pokemon type
+
 const typeToColor = (type) => {
     switch (type) {
         case "normal":
@@ -36,6 +38,8 @@ const typeToColor = (type) => {
             return "bg-gray-400"
         case "fairy":
             return "bg-pink-300"
+        case "shadow":
+            return "bg-purple-900"
         default:
             break;
     }

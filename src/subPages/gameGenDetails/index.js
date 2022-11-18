@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react'
 import { useLoaderData } from 'react-router-dom';
 import GameGenName from './gameGenName';
+import GameversioGroup from './gameversionGroup';
 import GenTypes from './genType';
 
 // in react router v6.4 we can define a loader function that can access to url param to call api 
@@ -20,6 +21,7 @@ const GameGenDetails = () => {
                     <div className=' rounded-xl p-3 bg-slate-200 border border-indigo-800  m-10'>
                         <GameGenName gameGenName={gameGenDetails.names} />
                         <GenTypes genTypes={gameGenDetails.types} />
+                        <GameversioGroup gameVersion={gameGenDetails.version_groups} />
                         {JSON.stringify(gameGenDetails)}
                     </div>
                 </div>
