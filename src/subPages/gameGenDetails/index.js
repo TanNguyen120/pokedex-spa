@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React from 'react'
 import { useLoaderData } from 'react-router-dom';
+import { MdOutlinePlace } from 'react-icons/md'
+import InfoSmallComponent from '../../component/body/pokeInfo/infoCanvas/inforSmallComponent';
 import GameGenName from './gameGenName';
 import GameversioGroup from './gameversionGroup';
 import GenTypes from './genType';
@@ -21,7 +23,12 @@ const GameGenDetails = () => {
                     <div className=' rounded-xl p-3 bg-slate-200 border border-indigo-800  m-10'>
                         <GameGenName gameGenName={gameGenDetails.names} />
                         <GenTypes genTypes={gameGenDetails.types} />
-                        <GameversioGroup gameVersion={gameGenDetails.version_groups} />
+                        <div className=' grid grid-cols-2'>
+                            <GameversioGroup gameVersion={gameGenDetails.version_groups} />
+                            <div className='  rounded-lg border-2 border-slate-500 bg-slate-200 p-3 m-2'>
+                                <InfoSmallComponent tile='Main Region' detail_info={gameGenDetails.main_region.name} icon={<MdOutlinePlace className=' inline' />} />
+                            </div>
+                        </div>
                         {JSON.stringify(gameGenDetails)}
                     </div>
                 </div>
