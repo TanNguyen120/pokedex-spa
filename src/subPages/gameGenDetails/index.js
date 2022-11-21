@@ -7,6 +7,7 @@ import GameGenName from './gameGenName';
 import GameversioGroup from './gameversionGroup';
 import GenTypes from './genType';
 import GameGenPokemons from './gameGenPokemons';
+import GenMoves from './genMoves';
 
 // in react router v6.4 we can define a loader function that can access to url param to call api 
 // loader function later will be call in the router 
@@ -31,6 +32,7 @@ const GameGenDetails = () => {
                             </div>
                         </div>
                         <GameGenPokemons pokemonSpecies={gameGenDetails.pokemon_species} />
+                        <GenMoves moves={gameGenDetails.moves} />
                         {JSON.stringify(gameGenDetails)}
                     </div>
                 </div>
