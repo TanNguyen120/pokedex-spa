@@ -40,6 +40,8 @@ const typeToColor = (type) => {
             return "bg-pink-300"
         case "shadow":
             return "bg-purple-900"
+        case "unknown":
+            return "bg-slate-900"
         default:
             break;
     }

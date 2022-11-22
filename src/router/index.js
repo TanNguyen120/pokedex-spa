@@ -13,8 +13,8 @@ import SuperContest, { loader as superContesLoader } from "../subPages/superCont
 import Encounter from "../subPages/encounter";
 import GameGenerations, { loader as gameGenerationLoader } from "../subPages/gameGeneration";
 import GameGenDetails, { loader as gameGenLoader } from "../subPages/gameGenDetails";
-
 import PokemonDetails from "../subPages/pokemonDetails";
+import PokeDexList, { loader as pokedexListLoader } from "../subPages/pokedex";
 
 
 const router = createBrowserRouter([
@@ -92,6 +92,12 @@ const router = createBrowserRouter([
                 path: "/t-pokedex/pokemon/:pokemonName",
                 element: <PokemonDetails />,
                 errorElement: <ErrorPage />
+            },
+            {
+                path: "/t-pokedex/pokedex",
+                element: <PokeDexList />,
+                errorElement: <ErrorPage />,
+                loader: pokedexListLoader
             },
         ]
     },

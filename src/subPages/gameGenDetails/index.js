@@ -33,7 +33,6 @@ const GameGenDetails = () => {
                         </div>
                         <GameGenPokemons pokemonSpecies={gameGenDetails.pokemon_species} />
                         <GenMoves moves={gameGenDetails.moves} />
-                        {JSON.stringify(gameGenDetails)}
                     </div>
                 </div>
             </div>
