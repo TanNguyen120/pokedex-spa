@@ -15,6 +15,7 @@ import GameGenerations, { loader as gameGenerationLoader } from "../subPages/gam
 import GameGenDetails, { loader as gameGenLoader } from "../subPages/gameGenDetails";
 import PokemonDetails from "../subPages/pokemonDetails";
 import PokeDexList, { loader as pokedexListLoader } from "../subPages/pokedex";
+import PokeDexDetails, { loader as pokedexDetailsLoader } from "../subPages/pokedexDetails";
 
 
 const router = createBrowserRouter([
@@ -94,10 +95,16 @@ const router = createBrowserRouter([
                 errorElement: <ErrorPage />
             },
             {
-                path: "/t-pokedex/pokedex",
+                path: "/t-pokedex/pokedexs",
                 element: <PokeDexList />,
                 errorElement: <ErrorPage />,
                 loader: pokedexListLoader
+            },
+            {
+                path: "/t-pokedex/pokedexs/:pokedex",
+                element: <PokeDexDetails />,
+                errorElement: <ErrorPage />,
+                loader: pokedexDetailsLoader
             },
         ]
     },

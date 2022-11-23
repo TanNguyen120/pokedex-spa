@@ -18,7 +18,8 @@ module.exports = {
       'blue-abstract': "url('../public/abstract-background-blue.jpg')",
       'grey-abstract': "url('../public/abstractGrey.jpg')",
       'whitePatternDiamond': "url('../public/patternDiamonWhite.jpg')",
-      "whiteTriPattern": "url('../public/whiteTriPat.jpg')"
+      "whiteTriPattern": "url('../public/whiteTriPat.jpg')",
+      "smallGreyWhite": "url('../public/smallGreyWhiteBG.jpg')"
     },
   },
   plugins: [],
