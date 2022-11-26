@@ -9,7 +9,7 @@ const GameItemsMenu = () => {
                     Berries
                 </div>
             </Link>
-            <Link to="/t-pokedex/pokedex">
+            <Link to="/t-pokedex/pokedexs">
                 <div className=' hover:bg-slate-300 hover:rounded-lg hover:text-lg hover:font-semibold p-2 '>
                     PokéDex
                 </div>

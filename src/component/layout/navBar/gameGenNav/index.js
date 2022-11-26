@@ -21,7 +21,7 @@ const GameGenNav = () => {
                 </Link>
                 <Link to='/t-pokedex/pokedexs'>
                     <div className=' hover:bg-slate-300 hover:rounded-lg hover:text-lg hover:font-semibold p-2 '>
-                        <IoIosCalculator className='inline' /> Pokedexs
+                        <IoIosCalculator className='inline' /> PoKéDex
                     </div>
                 </Link>
             </div>

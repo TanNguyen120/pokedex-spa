@@ -1,5 +1,5 @@
 import React from 'react'
-import { Outlet } from 'react-router-dom'
+import { Outlet, ScrollRestoration } from 'react-router-dom'
 import NavBar from './navBar'
 import Footer from './footer'
 
@@ -9,6 +9,7 @@ const Layout = () => {
             <NavBar />
             <Outlet />
             <Footer />
+            <ScrollRestoration />
         </>
     )
 }

@@ -10,14 +10,14 @@ const PokemonBtn = ({ pokemon }) => {
         dispatch(findPokeByName(pokeName))
     }
     return (
-        <Link to={`/t-pokedex/pokemon/${pokemon.pokemon_species.name}`} className=' rounded-lg bg-slate-50 hover:scale-125 hover:bg-slate-300 hover:cursor-pointer grid grid-cols-1 p-3' onClick={e => { setPokeFlag(pokemon.name) }}>
-            <img src={pictureMode === 'sprite' ? `https://img.pokemondb.net/sprites/sword-shield/icon/${pokemon.pokemon_species.name}.png` : `https://img.pokemondb.net/artwork/large/${pokemon.pokemon_species.name}.jpg`} alt={pokemon.pokemon_species.name} className='h-24 w-24 ' />
+        <Link to={`/t-pokedex/pokemon/${pokemon.pokemon_species.name}`} preventScrollReset={false} className=' rounded-lg bg-slate-50 hover:scale-125 hover:bg-slate-300 hover:cursor-pointer grid grid-cols-1 p-3' onClick={e => { setPokeFlag(pokemon.pokemon_species.name) }}>
+            <img src={pictureMode === 'sprite' ? `https://img.pokemondb.net/sprites/sword-shield/icon/${pokemon.pokemon_species.name}.png` : `https://img.pokemondb.net/artwork/large/${pokemon.pokemon_species.name}.jpg`} alt={pokemon.pokemon_species.name} className='h-24 w-28 ' />
             <div className=' m-1 capitalize'>
                 {pokemon.pokemon_species.name}
             </div>
-            <div className=' m-1 capitalize' >
+            <div className=' m-1 capitalize font-semibold' >
                 {
-                    'No.' + pokemon.entry_number
+                    'No.' + String(pokemon.entry_number).padStart(3, '0')
                 }
             </div>
         </Link>
