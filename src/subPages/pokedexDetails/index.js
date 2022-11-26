@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import { useLoaderData } from "react-router-dom";
 import InfoSmallComponent from "../../component/body/pokeInfo/infoCanvas/inforSmallComponent";
 import LoadingSpinner from "../../component/loadingSpiner";
+import PokemonBtn from "./pokemonBtn";
 import VersionGroupBtn from "./versionGroupBtn";
 
 // loader function later will be call in the router 
@@ -43,6 +44,11 @@ const PokeDexDetails = () => {
                             <InfoSmallComponent tile='Main Serries' detail_info={pokeDexDetails.is_main_series ? 'Yes' : 'No'} />
                             <InfoSmallComponent tile='Region' detail_info={pokeDexDetails.region ? pokeDexDetails.region.name : 'None'} />
                             <InfoSmallComponent tile='Version Group' detail_info={pokeDexDetails.version_groups.length > 0 ? pokeDexDetails.version_groups.map(e => <VersionGroupBtn versionName={e.name} />) : 'None'} />
+                        </div>
+                        <div className=" grid md:grid-cols-12 grid-cols-6 gap-5 mt-9 mx-4">
+                            {
+                                pokeDexDetails.pokemon_entries.map(element => <PokemonBtn pokemon={element} key={element.entry_number} />)
+                            }
                         </div>
                     </div>
                 </div>
