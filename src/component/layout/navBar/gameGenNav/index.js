@@ -1,8 +1,10 @@
 import React from 'react'
+
+import { FaLayerGroup } from 'react-icons/fa'
 import { SiNintendoswitch } from 'react-icons/si'
 import { MdHolidayVillage } from 'react-icons/md'
 import { IoIosCalculator } from 'react-icons/io'
-import { Link } from 'react-router-dom'
+import GamesNavLink from './gamesNavLink'
 const GameGenNav = () => {
     return (
         <div className='group relative h-full '>
@@ -14,16 +16,9 @@ const GameGenNav = () => {
                 </span>
             </div>
             <div className=' rounded-lg group-hover:grid grid-cols-1 text-left p-2 bg-slate-400 text-black hidden w-56 absolute md:mt-9 mt-1'>
-                <Link to='/t-pokedex/generations'>
-                    <div className=' hover:bg-slate-300 hover:rounded-lg hover:text-lg hover:font-semibold p-2 '>
-                        <MdHolidayVillage className='inline' /> Generations
-                    </div>
-                </Link>
-                <Link to='/t-pokedex/pokedexs'>
-                    <div className=' hover:bg-slate-300 hover:rounded-lg hover:text-lg hover:font-semibold p-2 '>
-                        <IoIosCalculator className='inline' /> PoKéDex
-                    </div>
-                </Link>
+                <GamesNavLink name='Generations' path='/t-pokedex/generations' icon={<MdHolidayVillage className='inline' />} />
+                <GamesNavLink name='PoKéDex' path='/t-pokedex/pokedexs' icon={<IoIosCalculator className='inline' />} />
+                <GamesNavLink name='Version Group' path='/t-pokedex/version-group' icon={<FaLayerGroup className='inline' />} />
             </div>
         </div>
     )

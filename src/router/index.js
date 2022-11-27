@@ -16,6 +16,7 @@ import GameGenDetails, { loader as gameGenLoader } from "../subPages/gameGenDeta
 import PokemonDetails from "../subPages/pokemonDetails";
 import PokeDexList, { loader as pokedexListLoader } from "../subPages/pokedex";
 import PokeDexDetails, { loader as pokedexDetailsLoader } from "../subPages/pokedexDetails";
+import VersionGroupList from "../subPages/versionGroup.js/list";
 
 
 const router = createBrowserRouter([
@@ -105,6 +106,12 @@ const router = createBrowserRouter([
                 element: <PokeDexDetails />,
                 errorElement: <ErrorPage />,
                 loader: pokedexDetailsLoader
+            },
+            {
+                path: "/t-pokedex/version-group/",
+                element: <VersionGroupList />,
+                errorElement: <ErrorPage />,
+
             },
         ]
     },
