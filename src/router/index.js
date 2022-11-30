@@ -17,6 +17,7 @@ import PokemonDetails from "../subPages/pokemonDetails";
 import PokeDexList, { loader as pokedexListLoader } from "../subPages/pokedex";
 import PokeDexDetails, { loader as pokedexDetailsLoader } from "../subPages/pokedexDetails";
 import VersionGroupList, { loader as versionGroupLoader } from "../subPages/versionGroup.js/list";
+import VersionGroupDetails, { loader as versionGroupDetailsLoader } from "../subPages/versionGroup.js/versionGroupDetails";
 
 
 const router = createBrowserRouter([
@@ -112,6 +113,12 @@ const router = createBrowserRouter([
                 element: <VersionGroupList />,
                 errorElement: <ErrorPage />,
                 loader: versionGroupLoader
+            },
+            {
+                path: "/t-pokedex/version-group/:versionName",
+                element: <VersionGroupDetails />,
+                errorElement: <ErrorPage />,
+                loader: versionGroupDetailsLoader
             },
         ]
     },
