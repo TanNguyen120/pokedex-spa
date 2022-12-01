@@ -17,8 +17,20 @@ const VersionGroupDetails = () => {
         <div className=' bg-smallGreyWhite bg-repeat min-h-screen font-serif'>
             <div className='md:container md:mx-auto'>
                 <div className='grid grid-cols-1'>
-                    <div className=' rounded-xl p-3 bg-slate-200 border border-indigo-800  m-10 grid grid-cols-2'>
-                        {JSON.stringify(versionGroupDetails)}
+                    <div className=' rounded-xl p-3 bg-slate-200 border   m-10 grid grid-cols-1'>
+                        <div className=' font-semibold tex'>
+                            {versionGroupDetails.name}  Version Group
+                        </div>
+                        <div className=' m-3 grid grid-cols-1'>
+                            <div className=' text-left ml-5 text-base font-semibold'>
+                                Games:
+                            </div>
+                            <div className=' flex flex-row'>
+                                {
+                                    versionGroupDetails.versions.map(element => <img src={`https://img.pokemondb.net/boxes/avif/${element.name}.avif`} alt='game box art' />)
+                                }
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
