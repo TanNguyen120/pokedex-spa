@@ -2,6 +2,7 @@ import axios from 'axios'
 import React from 'react'
 import { Link, useLoaderData } from 'react-router-dom'
 import GameBoxArt from './gameBoxArt'
+import MoveLearnMethod from './moveLearnMethod'
 
 // in react router v6.4 we can define a loader function that can access to url param to call api 
 // loader function later will be call in the router 
@@ -31,6 +32,7 @@ const VersionGroupDetails = () => {
                                     versionGroupDetails.versions.map(element => <GameBoxArt versionName={element.name} />)
                                 }
                             </div>
+                            <MoveLearnMethod genName={versionGroupDetails.name} moveLearn={versionGroupDetails.move_learn_methods} />
                         </div>
                     </div>
                 </div>
