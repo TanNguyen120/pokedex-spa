@@ -1,6 +1,9 @@
 import axios from 'axios'
 import React from 'react'
 import { Link, useLoaderData } from 'react-router-dom'
+import { IoEarth } from 'react-icons/io5'
+import { GrPersonalComputer } from 'react-icons/gr'
+import InfoSmallComponent from '../../component/body/pokeInfo/infoCanvas/inforSmallComponent'
 import GameBoxArt from './gameBoxArt'
 import MoveLearnMethod from './moveLearnMethod'
 
@@ -33,6 +36,14 @@ const VersionGroupDetails = () => {
                                 }
                             </div>
                             <MoveLearnMethod genName={versionGroupDetails.name} moveLearn={versionGroupDetails.move_learn_methods} />
+                            <div className=' m-2 grid grid-cols-6'>
+                                {
+                                    versionGroupDetails.regions.map((element, index) => <InfoSmallComponent key={index} tile='Regions' icon={<IoEarth className='inline' />} detail_info={element.name} link={`/t-pokedex/region/${element.name}`} />)
+                                }
+                                {
+                                    versionGroupDetails.pokedexes.map((element, index) => <InfoSmallComponent key={index} tile='Pokédex' icon={<GrPersonalComputer className='inline' />} detail_info={element.name} link={`/t-pokedex/pokedexs/${element.name}`} />)
+                                }
+                            </div>
                         </div>
                     </div>
                 </div>
