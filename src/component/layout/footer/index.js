@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaHandPointLeft } from 'react-icons/fa'
 import OfficalAccount from './officalAccount'
+import PagesLink from './pagesLink'
 const Footer = () => {
     return (
         <div className="grid grid-cols-3 md:grid-cols-6 bg-slate-100 p-2 md:p-5 divide-x-2">
@@ -24,6 +25,13 @@ const Footer = () => {
                 <div>
                     Visit <a href="https://pokeapi.co/" target="_blank" rel="noreferrer" className="text-blue-400 hover:text-pink-400 hover:cursor-pointer hover:text-lg">
                         https://pokeapi.co/ </a>  for more info
+                </div>
+            </div>
+            <div>
+                <div className="font-mono font-semibold"> Quick Link </div>
+                <div className=' m-5'>
+
+                    <PagesLink />
                 </div>
             </div>
         </div >
