@@ -27,10 +27,9 @@ const Footer = () => {
                         https://pokeapi.co/ </a>  for more info
                 </div>
             </div>
-            <div>
+            <div className=' md:col-span-2'>
                 <div className="font-mono font-semibold"> Quick Link </div>
                 <div className=' m-5'>
-
                     <PagesLink />
                 </div>
             </div>
