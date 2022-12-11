@@ -18,6 +18,7 @@ import PokeDexList, { loader as pokedexListLoader } from "../subPages/pokedex";
 import PokeDexDetails, { loader as pokedexDetailsLoader } from "../subPages/pokedexDetails";
 import VersionGroupList, { loader as versionGroupLoader } from "../subPages/versionGroup.js/list";
 import VersionGroupDetails, { loader as versionGroupDetailsLoader } from "../subPages/versionGroup.js/versionGroupDetails";
+import ItemList, { loader as itemsListLoader } from "../subPages/items/itemsList";
 
 
 const router = createBrowserRouter([
@@ -94,7 +95,8 @@ const router = createBrowserRouter([
             {
                 path: "/t-pokedex/pokemon/:pokemonName",
                 element: <PokemonDetails />,
-                errorElement: <ErrorPage />
+                errorElement: <ErrorPage />,
+
             },
             {
                 path: "/t-pokedex/pokedexs",
@@ -119,6 +121,12 @@ const router = createBrowserRouter([
                 element: <VersionGroupDetails />,
                 errorElement: <ErrorPage />,
                 loader: versionGroupDetailsLoader
+            },
+            {
+                path: "/t-pokedex/items-list",
+                element: <ItemList />,
+                errorElement: <ErrorPage />,
+                loader: itemsListLoader
             },
         ]
     },

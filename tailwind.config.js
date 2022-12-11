@@ -19,7 +19,8 @@ module.exports = {
       'grey-abstract': "url('../public/abstractGrey.jpg')",
       'whitePatternDiamond': "url('../public/patternDiamonWhite.jpg')",
       "whiteTriPattern": "url('../public/whiteTriPat.jpg')",
-      "smallGreyWhite": "url('../public/smallGreyWhiteBG.jpg')"
+      "smallGreyWhite": "url('../public/smallGreyWhiteBG.jpg')",
+      "seaWhite": "url('../public/seaWhite.jpg')"
     },
   },
   plugins: [],
