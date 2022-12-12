@@ -47,7 +47,7 @@ const ItemList = () => {
                             In Generation 5, there was a major change to TMs: they can now be used infinitely. Berries do not grow natively in Unova, but can be obtained from the Pokémon Dream World and transferred to the game. Notable new items include Gems - hold items that enhance moves of a specific type, but are then consumed.
                         </div>
                     </div>
-                    <div className=' bg-slate-300 rounded-lg m-8 grid grid-cols-3 md:grid-cols-5 lg:grid-cols-12 gap-5'>
+                    <div className=' bg-slate-300 rounded-lg m-8 grid grid-cols-3 md:grid-cols-5 lg:grid-cols-9 gap-5'>
                         {
                             itemsList.map(element => <ItemsBtn name={element.name} />)
                         }
