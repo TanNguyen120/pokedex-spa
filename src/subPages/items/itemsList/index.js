@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useLoaderData } from 'react-router-dom';
 import ItemsBtn from './itemsBtn';
 
@@ -11,12 +11,28 @@ import ItemsBtn from './itemsBtn';
 const loader = async () => {
     const itemsNumber = ((await (axios.get('https://pokeapi.co/api/v2/item'))).data).count;
     const itemsList = (await (await (axios.get(`https://pokeapi.co/api/v2/item?offset=0&&limit=${itemsNumber}`))).data).results
-    return itemsList;
+    return { itemsList: itemsList, count: itemsNumber };
 }
 
 
 const ItemList = () => {
-    const itemsList = useLoaderData()
+    const loaderData = useLoaderData()
+    const [showList, setShowList] = useState(loaderData.itemsList);
+    const [filterData, setFilterData] = useState("");
+
+    useEffect(() => {
+        const getFilterResult = async () => {
+            if (filterData.length > 0) {
+                const filterResult = await loaderData.itemsList.filter(item => item.name.includes(filterData))
+                setShowList(filterResult)
+            } else {
+                setShowList(loaderData.itemsList)
+            }
+        }
+        getFilterResult();
+
+    }, [filterData, loaderData])
+
     return (
         <div className=' bg-seaWhite bg-repeat min-h-screen font-serif'>
             <div className='md:container md:mx-auto'>
@@ -47,10 +63,18 @@ const ItemList = () => {
                             In Generation 5, there was a major change to TMs: they can now be used infinitely. Berries do not grow natively in Unova, but can be obtained from the Pokémon Dream World and transferred to the game. Notable new items include Gems - hold items that enhance moves of a specific type, but are then consumed.
                         </div>
                     </div>
-                    <div className=' bg-slate-300 rounded-lg m-8 grid grid-cols-3 md:grid-cols-5 lg:grid-cols-9 gap-5'>
-                        {
-                            itemsList.map(element => <ItemsBtn name={element.name} />)
-                        }
+
+                    <div className=' bg-slate-200 rounded-lg m-8 border border-slate-400'>
+                        <div className=' flex flex-row px-9 m-8 rounded-lg '>
+                            <div className=' text-lg my-4 p-2 '> Filter: </div>
+                            <input type='text' className=' w-1/3 h-9 rounded-lg border border-slate-400 my-4 p-4 bg-white' onChange={e => { setFilterData(e.target.value) }}></input>
+                        </div>
+                        <div className='grid grid-cols-3 md:grid-cols-5 lg:grid-cols-9 gap-5 p-6'>
+
+                            {
+                                showList.map(element => <ItemsBtn name={element.name} />)
+                            }
+                        </div>
                     </div>
                 </div>
             </div>
