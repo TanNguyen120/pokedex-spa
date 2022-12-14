@@ -34,7 +34,7 @@ const ItemList = () => {
     }, [filterData, loaderData])
 
     return (
-        <div className=' bg-seaWhite bg-repeat min-h-screen font-serif'>
+        <div className=' bg-seaWhite bg-repeat font-serif'>
             <div className='md:container md:mx-auto'>
                 <div className='grid grid-cols-1'>
                     <div className=' rounded-xl p-3 bg-slate-200 border border-slate-600  m-10'>

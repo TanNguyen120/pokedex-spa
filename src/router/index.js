@@ -19,6 +19,7 @@ import PokeDexDetails, { loader as pokedexDetailsLoader } from "../subPages/poke
 import VersionGroupList, { loader as versionGroupLoader } from "../subPages/versionGroup.js/list";
 import VersionGroupDetails, { loader as versionGroupDetailsLoader } from "../subPages/versionGroup.js/versionGroupDetails";
 import ItemList, { loader as itemsListLoader } from "../subPages/items/itemsList";
+import ItemsDetails, { loader as itemDetailsLoader } from "../subPages/items/itemDetails";
 
 
 const router = createBrowserRouter([
@@ -127,6 +128,12 @@ const router = createBrowserRouter([
                 element: <ItemList />,
                 errorElement: <ErrorPage />,
                 loader: itemsListLoader
+            },
+            {
+                path: "/t-pokedex/item/:itemName",
+                element: <ItemsDetails />,
+                errorElement: <ErrorPage />,
+                loader: itemDetailsLoader
             },
         ]
     },
