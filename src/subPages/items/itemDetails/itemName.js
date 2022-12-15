@@ -47,7 +47,7 @@ const ItemName = ({ itemNames }) => {
 
 
     return (
-        <div className=' rounded-lg md:col-span-3 col-span-2  border-4 border-slate-500 bg-slate-200 grid grid-cols-1 m-2 p-2'>
+        <div className=' rounded-lg lg:col-span-5 md:col-span-4 col-span-2  border-4 border-slate-500 bg-slate-100 grid grid-cols-1 m-2 p-2'>
             {
                 names && (<>
                     <div className=' font-semibold text-lg'>
