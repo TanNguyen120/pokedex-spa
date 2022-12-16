@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaHandHoldingWater } from "react-icons/fa"
+import { Link } from 'react-router-dom'
 
 const HeldItems = ({ heldItems }) => {
     return (
@@ -9,7 +10,7 @@ const HeldItems = ({ heldItems }) => {
                 {
                     heldItems.length > 0 ?
                         heldItems.map((item, index) => (
-                            <div key={index} className="border-b border-slate-400 p-1 hover:cursor-pointer">{item.item.name}</div>
+                            <Link to={`/t-pokedex/item/${item.item.name}`} key={index} className="border-b border-slate-400 p-1 hover:cursor-pointer">{item.item.name}</Link>
                         )) : "none"
                 }
             </div>
