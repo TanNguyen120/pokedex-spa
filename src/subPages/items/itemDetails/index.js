@@ -1,6 +1,10 @@
 import axios from 'axios';
 import React from 'react'
 import { useLoaderData } from 'react-router-dom';
+import { FaObjectUngroup } from 'react-icons/fa'
+import { AiOutlineMoneyCollect } from 'react-icons/ai'
+import { RiMoneyCnyCircleFill } from 'react-icons/ri'
+import InfoSmallComponent from '../../../component/body/pokeInfo/infoCanvas/inforSmallComponent';
 import Attribute from './attribute';
 import ItemName from './itemName';
 import SpriteFrame from './spriteFrame';
@@ -23,6 +27,10 @@ const ItemsDetails = () => {
                         <ItemName itemNames={itemDetails.names} />
                     </div>
                     <Attribute attributeList={itemDetails.attributes} />
+                    <div className=' m-3 p-4 grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-4 bg-slate-100 rounded-lg'>
+                        <InfoSmallComponent tile='Category' link={`t-pokedex/category/${itemDetails.category.name}`} detail_info={itemDetails.category.name} icon={<FaObjectUngroup className='inline' />} />
+                        <InfoSmallComponent tile='Cost' detail_info={itemDetails.cost} icon={<AiOutlineMoneyCollect className='inline' />} metric={<RiMoneyCnyCircleFill className='inline' />} />
+                    </div>
                 </div>
             </div>
         </div>
