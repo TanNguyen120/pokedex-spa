@@ -14,9 +14,9 @@ const DebutInfo = ({ generation }) => {
             <Link to={`/t-pokedex/generations/${generation}`} className='bg-white rounded-lg text-center text-black m-2 font-medium'>
                 {generation}
             </Link>
-            <div className='bg-white rounded-lg text-center text-black m-2 font-medium'>
+            <Link to={`/t-pokedex/version-group/${pokeForm.version_group.name}`} className='bg-white rounded-lg text-center text-black m-2 font-medium'>
                 {pokeForm ? <span> {`pokémon ${pokeForm.version_group.name}  `} </span> : <LoadingSpinner />}
-            </div>
+            </Link>
         </div>
     )
 }
