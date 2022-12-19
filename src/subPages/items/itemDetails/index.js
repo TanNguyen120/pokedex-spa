@@ -8,6 +8,7 @@ import InfoSmallComponent from '../../../component/body/pokeInfo/infoCanvas/info
 import Attribute from './attribute';
 import ItemName from './itemName';
 import SpriteFrame from './spriteFrame';
+import ItemDescription from './itemDescription';
 
 
 // in react router v6.4 we can define a loader function that can access to url param to call api 
@@ -26,7 +27,10 @@ const ItemsDetails = () => {
                         <SpriteFrame itemName={itemDetails.name} spriteUrl={itemDetails.sprites.default} />
                         <ItemName itemNames={itemDetails.names} />
                     </div>
-                    <Attribute attributeList={itemDetails.attributes} />
+                    <div className=' grid md:grid-cols-2 grid-cols-1'>
+                        <Attribute attributeList={itemDetails.attributes} />
+                        <ItemDescription description={itemDetails.effect_entries[0]} />
+                    </div>
                     <div className=' m-3 p-4 grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-4 bg-slate-100 rounded-lg'>
                         <InfoSmallComponent tile='Category' link={`t-pokedex/category/${itemDetails.category.name}`} detail_info={itemDetails.category.name} icon={<FaObjectUngroup className='inline' />} />
                         <InfoSmallComponent tile='Cost' detail_info={itemDetails.cost} icon={<AiOutlineMoneyCollect className='inline' />} metric={<RiMoneyCnyCircleFill className='inline' />} />
