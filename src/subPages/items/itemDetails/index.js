@@ -9,6 +9,7 @@ import Attribute from './attribute';
 import ItemName from './itemName';
 import SpriteFrame from './spriteFrame';
 import ItemDescription from './itemDescription';
+import ItemFlavorText from './itemFlavorText';
 
 
 // in react router v6.4 we can define a loader function that can access to url param to call api 
@@ -35,6 +36,7 @@ const ItemsDetails = () => {
                         <InfoSmallComponent tile='Category' link={`t-pokedex/category/${itemDetails.category.name}`} detail_info={itemDetails.category.name} icon={<FaObjectUngroup className='inline' />} />
                         <InfoSmallComponent tile='Cost' detail_info={itemDetails.cost} icon={<AiOutlineMoneyCollect className='inline' />} metric={<RiMoneyCnyCircleFill className='inline' />} />
                     </div>
+                    <ItemFlavorText flavorText={itemDetails.flavor_text_entries} />
                 </div>
             </div>
         </div>
