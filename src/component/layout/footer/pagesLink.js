@@ -16,6 +16,7 @@ const PagesLink = () => {
         <div className=' grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 text-left'>
             <div className='grid grid-cols-1'>
                 <SingleLink name='Berries' url={'/t-pokedex/berries'} />
+                <SingleLink name='Items' url={'/t-pokedex/item'} />
             </div>
             <div className='grid grid-cols-1'>
                 <SingleLink name={'Generation'} url='/t-pokedex/generation' />
