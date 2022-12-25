@@ -14,6 +14,16 @@ const GameItemsMenu = () => {
                     Berries
                 </div>
             </Link>
+            <Link to="/t-pokedex/category-list">
+                <div className=' hover:bg-slate-300 hover:rounded-lg hover:text-lg hover:font-semibold p-2 '>
+                    Items Category
+                </div>
+            </Link>
+            <Link to="/t-pokedex/item-attribute">
+                <div className=' hover:bg-slate-300 hover:rounded-lg hover:text-lg hover:font-semibold p-2 '>
+                    Items Attribute
+                </div>
+            </Link>
         </>
     )
 }
