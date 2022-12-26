@@ -7,7 +7,8 @@ import GroupBtn from './groupBtn'
 // in react router v6.4 we can define a loader function that can access to url param to call api 
 // loader function later will be call in the router 
 const loader = async () => {
-    const versionGroupList = (await (axios.get(`https://pokeapi.co/api/v2/version-group/`))).data
+    const versionGroupNumber = ((await (axios.get(`https://pokeapi.co/api/v2/version-group/`))).data).count;
+    const versionGroupList = (await (axios.get(`https://pokeapi.co/api/v2/version-group/?offset=0&limit=${versionGroupNumber}`))).data
 
     return versionGroupList
 }

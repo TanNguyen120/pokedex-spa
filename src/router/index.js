@@ -141,13 +141,13 @@ const router = createBrowserRouter([
                 path: "/t-pokedex/item-category",
                 element: <ItemCategory />,
                 errorElement: <ErrorPage />,
-                loader: itemDetailsLoader
+
             },
             {
                 path: "/t-pokedex/item-attribute",
                 element: <ItemAttribute />,
                 errorElement: <ErrorPage />,
-                loader: itemDetailsLoader
+
             },
         ]
     },

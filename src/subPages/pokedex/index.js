@@ -8,7 +8,9 @@ import PokeDexBtn from './pokeDexBtn'
 // in react router v6.4 we can define a loader function that can access to url param to call api 
 // loader function later will be call in the router 
 const loader = async () => {
-    const pokeDexList = (await (axios.get(`https://pokeapi.co/api/v2/pokedex/`))).data
+    const pokeDexListNumber = ((await (axios.get(`https://pokeapi.co/api/v2/pokedex/`))).data).count;
+    const pokeDexList = (await (axios.get(`https://pokeapi.co/api/v2/pokedex/?offset=0&limit=${pokeDexListNumber}`))).data;
+
     // let contestDetailsResult = [];
     // // await contestList.results.forEach(async element => {
     // //     const contestDetails = (await (axios.get(`https://pokeapi.co/api/v2/contest-type/${element.name}`))).data;
