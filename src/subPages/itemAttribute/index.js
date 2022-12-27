@@ -1,6 +1,20 @@
-import React from 'react'
+import axios from 'axios';
+import React from 'react';
+import { useLoaderData } from 'react-router-dom';
 
+
+
+// in react router v6.4 we can define a loader function that can access to url param to call api 
+// loader function later will be call in the router 
+const loader = async () => {
+    const itemAttributeNumber = ((await (axios.get(`https://pokeapi.co/api/v2/item-attribute/`))).data).count;
+    const itemAttributes = (await (axios.get(`https://pokeapi.co/api/v2/item-attribute/?offset=0&limit=${itemAttributeNumber}`))).data;
+
+
+    return itemAttributes
+}
 const ItemAttribute = () => {
+    const itemAttributes = useLoaderData();
     return (
         <div className=' bg-smallGreyWhite bg-repeat min-h-screen font-serif'>
             <div className='md:container md:mx-auto'>
@@ -15,7 +29,7 @@ const ItemAttribute = () => {
                             </div>
                             <div className=' grid md:grid-cols-4 grid-cols-2 gap-y-5 mt-8'>
                                 {
-
+                                    itemAttributes.map(e => <div>{JSON.stringify(e)}</div>)
                                 }
                             </div>
                         </div>
@@ -26,4 +40,5 @@ const ItemAttribute = () => {
     )
 }
 
-export default ItemAttribute
+export { loader };
+export default ItemAttribute;
