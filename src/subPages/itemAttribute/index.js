@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import ItemAttributeBtn from './itemAttributeBtn';
 
 
 
@@ -27,10 +28,12 @@ const ItemAttribute = () => {
                                     Item attributes define particular aspects of items, e.g. "usable in battle" or "consumable".
                                 </p>
                             </div>
-                            <div className=' grid md:grid-cols-4 grid-cols-2 gap-y-5 mt-8'>
-                                {
-                                    itemAttributes.map(e => <div>{JSON.stringify(e)}</div>)
-                                }
+                            <div className=' grid lg-grid-cols-6 md:grid-cols-4 grid-cols-2 gap-y-5 mt-8'>
+                                <div className=' grid grid-cols-1 p-3 m-3 divide-y divide-slate-300 '>
+                                    {
+                                        itemAttributes.results.map(element => <ItemAttributeBtn attributeName={element.name} />)
+                                    }
+                                </div>
                             </div>
                         </div>
                     </div>

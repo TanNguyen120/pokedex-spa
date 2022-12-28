@@ -20,8 +20,8 @@ import VersionGroupList, { loader as versionGroupLoader } from "../subPages/vers
 import VersionGroupDetails, { loader as versionGroupDetailsLoader } from "../subPages/versionGroup.js/versionGroupDetails";
 import ItemList, { loader as itemsListLoader } from "../subPages/items/itemsList";
 import ItemsDetails, { loader as itemDetailsLoader } from "../subPages/items/itemDetails";
-import ItemCategory from "../subPages/itemCategory";
-import ItemAttribute from "../subPages/itemAttribute";
+import ItemCategory, { loader as itemCategoryLoader } from "../subPages/itemCategory";
+import ItemAttribute, { loader as itemAttributeLoader } from "../subPages/itemAttribute";
 
 
 const router = createBrowserRouter([
@@ -141,13 +141,14 @@ const router = createBrowserRouter([
                 path: "/t-pokedex/item-category",
                 element: <ItemCategory />,
                 errorElement: <ErrorPage />,
+                //loader: itemCategoryLoader
 
             },
             {
                 path: "/t-pokedex/item-attribute",
                 element: <ItemAttribute />,
                 errorElement: <ErrorPage />,
-
+                loader: itemAttributeLoader
             },
         ]
     },
