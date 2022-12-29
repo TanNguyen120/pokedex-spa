@@ -6,9 +6,11 @@ import React from 'react'
 // in react router v6.4 we can define a loader function that can access to url param to call api 
 // loader function later will be call in the router 
 const loader = async () => {
-    const versionGroupList = (await (axios.get(`https://pokeapi.co/api/v2/version-group/`))).data
+    const itemCategoryNumber = ((await (axios.get(`https://pokeapi.co/api/v2/item-Category/`))).data).count;
+    const itemCategories = (await (axios.get(`https://pokeapi.co/api/v2/item-Category/?offset=0&limit=${itemCategoryNumber}`))).data;
 
-    return versionGroupList
+
+    return itemCategories
 }
 
 const ItemCategory = () => {
@@ -38,4 +40,5 @@ const ItemCategory = () => {
     )
 }
 
+export { loader };
 export default ItemCategory
