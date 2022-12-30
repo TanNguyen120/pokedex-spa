@@ -17,7 +17,7 @@ const loader = async () => {
 const ItemAttribute = () => {
     const itemAttributes = useLoaderData();
     return (
-        <div className=' bg-smallGreyWhite bg-repeat min-h-screen font-serif'>
+        <div className=' bg-seaWhite bg-repeat min-h-screen font-serif'>
             <div className='md:container md:mx-auto'>
                 <div className='grid grid-cols-1'>
                     <div className=' rounded-xl p-3 bg-slate-200 border border-indigo-800  m-10'>

@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React from 'react'
 import { useLoaderData } from 'react-router-dom';
+import ItemCategoryBtn from './itemCategoryBtn';
 
 
 
@@ -27,9 +28,9 @@ const ItemCategory = () => {
                                     Item categories determine where items will be placed in the players bag.
                                 </p>
                             </div>
-                            <div className=' grid md:grid-cols-4 grid-cols-2 gap-y-5 mt-8'>
+                            <div className=' grid lg:grid-cols-6 md:grid-cols-4 grid-cols-2 gap-y-5 mt-8'>
                                 {
-                                    JSON.stringify(itemCategories)
+                                    itemCategories.result.map(element => <ItemCategoryBtn categoryName={element.name} />)
                                 }
                             </div>
                         </div>
