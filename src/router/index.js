@@ -22,6 +22,7 @@ import ItemList, { loader as itemsListLoader } from "../subPages/items/itemsList
 import ItemsDetails, { loader as itemDetailsLoader } from "../subPages/items/itemDetails";
 import ItemCategory, { loader as itemCategoryLoader } from "../subPages/itemCategory";
 import ItemAttribute, { loader as itemAttributeLoader } from "../subPages/itemAttribute";
+import AttributeDetails, { loader as attributeLoader } from "../subPages/itemAttribute/attributeDetails";
 
 
 const router = createBrowserRouter([
@@ -149,6 +150,12 @@ const router = createBrowserRouter([
                 element: <ItemAttribute />,
                 errorElement: <ErrorPage />,
                 loader: itemAttributeLoader
+            },
+            {
+                path: "/t-pokedex/item-attribute/:attributeName",
+                element: <AttributeDetails />,
+                errorElement: <ErrorPage />,
+                loader: attributeLoader
             },
         ]
     },

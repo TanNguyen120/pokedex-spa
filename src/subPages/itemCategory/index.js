@@ -20,17 +20,15 @@ const ItemCategory = () => {
             <div className='md:container md:mx-auto'>
                 <div className='grid grid-cols-1'>
                     <div className=' rounded-xl p-3 bg-slate-200 border border-indigo-800  m-10'>
-
                         <div className=' grid grid-cols-1'>
                             <div>
-                                <p className='text-lg font-medium first-letter:text-7xl first-letter:font-bold first-letter:text-slate-900
-                                        first-letter:mr-3 first-letter:float-left'>
+                                <p className='text-lg font-medium first-letter:text-7xl first-letter:font-bold '>
                                     Item categories determine where items will be placed in the players bag.
                                 </p>
                             </div>
                             <div className=' grid lg:grid-cols-6 md:grid-cols-4 grid-cols-2 gap-y-5 mt-8'>
                                 {
-                                    itemCategories.result.map(element => <ItemCategoryBtn categoryName={element.name} />)
+                                    itemCategories.results.map(element => <ItemCategoryBtn categoryName={element.name} />)
                                 }
                             </div>
                         </div>
