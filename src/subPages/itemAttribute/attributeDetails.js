@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react'
 import { useLoaderData } from 'react-router-dom';
 import AttributeDescription from './attributeDescription';
+import ItemsAttributeList from './itemsAttributeList';
 
 // in react router v6.4 we can define a loader function that can access to url param to call api 
 // loader function later will be call in the router 
@@ -23,7 +24,7 @@ const AttributeDetails = () => {
                             {attributeDetails.name} Items
                         </div>
                         <AttributeDescription attributeDescription={attributeDetails.descriptions[0].description} />
-                        {JSON.stringify(attributeDetails)}
+                        <ItemsAttributeList attributeName={attributeDetails.name} itemList={attributeDetails.items} />
                     </div>
                 </div>
             </div>
