@@ -1,4 +1,5 @@
 import React from 'react'
+import ItemCategoryRow from './itemCategoryRow'
 
 const ItemInCategory = ({ itemList, categoryName }) => {
     return (
@@ -6,8 +7,8 @@ const ItemInCategory = ({ itemList, categoryName }) => {
             <div className=' text-left font-semibold pl-5 m-3'>
                 Item in {categoryName} category:
             </div>
-            <div>
-
+            <div className=' divide-y divide-gray-100'>
+                {itemList.map((element, index) => <ItemCategoryRow itemName={element.name} key={index} />)}
             </div>
         </div>
     )
