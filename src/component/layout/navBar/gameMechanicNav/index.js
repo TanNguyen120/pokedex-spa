@@ -3,6 +3,7 @@ import { SiNintendo3Ds } from 'react-icons/si'
 
 import ContestNav from './contestNav'
 import EncounterNav from './encounterNav'
+import FlingMoveNav from './flingMoveNav'
 import SuperContestNav from './superContestNav'
 const GameMechanicNav = () => {
     return (
@@ -18,6 +19,7 @@ const GameMechanicNav = () => {
                 <ContestNav />
                 <SuperContestNav />
                 <EncounterNav />
+                <FlingMoveNav />
             </div>
         </div>
     )
