@@ -1,15 +1,22 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import LoadingSpinner from '../../component/loadingSpiner'
 
 
 const ItemFlingDetails = ({ itemFlingDetails }) => {
     return (
-        <div className=' flex flex-row'>
-            <div className=' text-left'>{itemFlingDetails.name}</div>
-            <div className=' flex flex-row'>
+        <div className=' grid grid-cols-1'>
+            <div className=' text-left font-semibold ml-3'>Effect: {itemFlingDetails.name}</div>
+
+            <div className=' grid lg:grid-cols-6 md:grid-cols-4 grid-cols-3 bg-white rounded-lg p-3 m-3'>
                 {
-                    itemFlingDetails.map((element, index) => <div key={index}> {element}</div>)
+                    itemFlingDetails.items.map((element, index) => <Link to={`/t-pokedex/item/${element.name}`} key={index} className=' flex flex-row hover:cursor-pointer hover:bg-slate-400'>
+                        <img className=' h-9 w-9' src={`https://img.pokemondb.net/sprites/items/${element.name}.png`} alt={element.name} onError={e => { e.target.onError = null; e.target.src = `https://img.pokemondb.net/sprites/items/${element.name}.png` }} />
+                        <div className=' pt-1'>
+                            {element.name}
+                        </div>
+                    </Link>)
                 }
             </div>
         </div>
