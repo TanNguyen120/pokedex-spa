@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 const FlavorTextContent = ({ text, versionGroup }) => {
     const versionGroupColor = []
     return (
         <div className=' grid grid-cols-5 m-4'>
-            <div>{versionGroup}</div>
+            <Link className=' hover:cursor-pointer hover:bg-slate-300 hover:rounded-lg' to={`/t-pokedex/version-group/${versionGroup}`}>{versionGroup}</Link>
             <div className=' col-span-4'>{text}</div>
         </div>
     )
@@ -30,7 +31,7 @@ const ItemFlavorText = ({ flavorText }) => {
     }, [webLanguage, flavorText])
 
     return (
-        <div className=' rounded-lg bg-slate-200 p-4 m-3'>
+        <div className=' rounded-lg bg-slate-100 p-3 m-3'>
             <div className=' text-left pl-5 text-lg font-semibold'>
                 Flavor Text:
             </div>

@@ -1,27 +1,30 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { FaRegListAlt, FaRaspberryPi } from 'react-icons/fa'
+import { MdCategory } from 'react-icons/md'
+import { CgAttribution } from 'react-icons/cg'
 
 const GameItemsMenu = () => {
     return (
         <>
             <Link to="/t-pokedex/items-list">
                 <div className=' hover:bg-slate-300 hover:rounded-lg hover:text-lg hover:font-semibold p-2 '>
-                    Items List
+                    <FaRegListAlt className=' inline' /> Items List
                 </div>
             </Link>
             <Link to="/t-pokedex/berries">
                 <div className=' hover:bg-slate-300 hover:rounded-lg hover:text-lg hover:font-semibold p-2 '>
-                    Berries
+                    <FaRaspberryPi className='inline' /> Berries
                 </div>
             </Link>
             <Link to="/t-pokedex/item-category">
                 <div className=' hover:bg-slate-300 hover:rounded-lg hover:text-lg hover:font-semibold p-2 '>
-                    Items Category
+                    <MdCategory className=' inline' />Items Category
                 </div>
             </Link>
             <Link to="/t-pokedex/item-attribute">
                 <div className=' hover:bg-slate-300 hover:rounded-lg hover:text-lg hover:font-semibold p-2 '>
-                    Items Attribute
+                    <CgAttribution className=' inline' /> Items Attribute
                 </div>
             </Link>
         </>
