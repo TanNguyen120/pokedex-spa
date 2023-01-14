@@ -25,6 +25,7 @@ import ItemAttribute, { loader as itemAttributeLoader } from "../subPages/itemAt
 import AttributeDetails, { loader as attributeLoader } from "../subPages/itemAttribute/attributeDetails";
 import ItemCategoryDetails, { loader as categoryDetailsLoader } from "../subPages/itemCategory/itemCategoryDetails";
 import ItemWithFlingMove, { loader as itemWithFlingLoader } from "../subPages/itemWithFlingMove";
+import ItemPocket, { loader as itemPocketLoader } from "../subPages/itemPocket";
 
 
 const router = createBrowserRouter([
@@ -170,6 +171,12 @@ const router = createBrowserRouter([
                 element: <ItemWithFlingMove />,
                 errorElement: <ErrorPage />,
                 loader: itemWithFlingLoader
+            },
+            {
+                path: "/t-pokedex/item-pocket/",
+                element: <ItemPocket />,
+                errorElement: <ErrorPage />,
+                loader: itemPocketLoader
             },
         ]
     },
