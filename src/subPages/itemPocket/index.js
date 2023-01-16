@@ -24,7 +24,7 @@ const ItemPocket = () => {
                                     Pockets within the players bag used for storing items by category.
                                 </p>
                             </div>
-                            <div className=' grid lg:grid-cols-6 md:grid-cols-4 grid-cols-2 gap-y-5 mt-8'>
+                            <div className=' grid grid-col-1 gap-y-5 mt-8'>
                                 {
                                     itemPocket.results.map((element, index) => <ItemPocketRow key={index} pocketName={element.name} />)
                                 }
