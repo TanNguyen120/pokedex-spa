@@ -4,6 +4,7 @@ import { FaLayerGroup } from 'react-icons/fa'
 import { SiNintendoswitch } from 'react-icons/si'
 import { MdHolidayVillage } from 'react-icons/md'
 import { IoIosCalculator } from 'react-icons/io'
+import { GrMapLocation } from 'react-icons/gr'
 import GamesNavLink from './gamesNavLink'
 const GameGenNav = () => {
     return (
@@ -19,6 +20,7 @@ const GameGenNav = () => {
                 <GamesNavLink name='Generations' path='/t-pokedex/generations' icon={<MdHolidayVillage className='inline' />} />
                 <GamesNavLink name='PoKéDex' path='/t-pokedex/pokedexs' icon={<IoIosCalculator className='inline' />} />
                 <GamesNavLink name='Version Group' path='/t-pokedex/version-group' icon={<FaLayerGroup className='inline' />} />
+                <GamesNavLink name='Location' path='/t-pokedex/location' icon={<GrMapLocation className=' inline' />} />
             </div>
         </div>
     )

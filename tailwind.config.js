@@ -20,7 +20,8 @@ module.exports = {
       'whitePatternDiamond': "url('../public/patternDiamonWhite.jpg')",
       "whiteTriPattern": "url('../public/whiteTriPat.jpg')",
       "smallGreyWhite": "url('../public/smallGreyWhiteBG.jpg')",
-      "seaWhite": "url('../public/seaWhite.jpg')"
+      "seaWhite": "url('../public/seaWhite.jpg')",
+      "whiteWallPaint": "url('../public/whiteWall.jpg')"
     },
   },
   plugins: [],
