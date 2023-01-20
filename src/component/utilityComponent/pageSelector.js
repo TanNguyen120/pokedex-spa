@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react'
 import LoadingSpinner from '../loadingSpiner'
 
 
-const PageBtn = ({ pageNumber }) => {
+const PageBtn = ({ pageNumber, setCurrentPage }) => {
+    const [stateBg, setStateBg] = useState(null)
     return (
-        <div className=' rounded-lg bg-slate-100 border border-'>
+        <div className=' rounded-lg bg-slate-100 border border-slate-600 hover:cursor-pointer hover:bg-slate-400 hover:scale-125' onClick={e => { setCurrentPage(pageNumber) }}>
             {pageNumber}
         </div>
     )
@@ -21,13 +22,13 @@ const PageSelector = ({ numberOfPage, currentPage, setCurrentPage }) => {
         } else if (currentPage > numberOfPage - 2) {
             setVisiblePages([numberOfPage - 3, numberOfPage - 2, numberOfPage - 1, numberOfPage])
         } else {
-            setVisiblePages([numberOfPage - 2, numberOfPage - 1, numberOfPage, numberOfPage + 1, numberOfPage + 2])
+            setVisiblePages([currentPage - 2, currentPage - 1, currentPage, currentPage + 1, currentPage + 2])
         }
     }, [currentPage, numberOfPage])
     return (
-        <div>
+        <div className=' grid grid-cols-6'>
             {
-                visiblePages ? visiblePages.map(element => <PageBtn pageNumber={element} key={element} />) : <LoadingSpinner />
+                visiblePages ? visiblePages.map(element => <PageBtn pageNumber={element} key={element} setCurrentPage={setCurrentPage} />) : <LoadingSpinner />
             }
         </div>
     )
