@@ -7,7 +7,7 @@ const LocationList = ({ pageCount }) => {
     const [currentPage, setCurrentPage] = useState(0)
     const [locationList, setLocationList] = useState(null)
     const setCurPage = (pageNumber) => {
-        setCurrentPage(pageNumber)
+        setCurrentPage(pageNumber - 1)
     }
     useEffect(() => {
 
