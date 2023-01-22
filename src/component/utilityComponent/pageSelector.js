@@ -5,15 +5,16 @@ import LoadingSpinner from '../loadingSpiner'
 const PageBtn = ({ pageNumber, setCurrentPage, currentPage }) => {
     const [stateBg, setStateBg] = useState("bg-slate-100");
     useEffect(() => {
-        currentPage === pageNumber && setStateBg("bg-slate-400")
+        currentPage === pageNumber ? setStateBg("bg-slate-400") : setStateBg('bg-slate-100')
     }, [currentPage, pageNumber])
     return (
-        <div className={`rounded-lg ${stateBg} border border-slate-600 hover:cursor-pointer hover:bg-slate-400 hover:scale-125`} onClick={e => { setCurrentPage(pageNumber) }}>
+        <div className={`py-5 rounded-lg ${stateBg} border border-slate-600 hover:cursor-pointer hover:bg-slate-400 hover:scale-125`} onClick={e => { setCurrentPage(pageNumber) }}>
             {pageNumber}
         </div>
     )
 }
 
+const PageFowardBtn = () => { }
 
 
 const PageSelector = ({ numberOfPage, currentPage, setCurrentPage }) => {
@@ -29,7 +30,7 @@ const PageSelector = ({ numberOfPage, currentPage, setCurrentPage }) => {
         }
     }, [currentPage, numberOfPage])
     return (
-        <div className=' grid grid-cols-6'>
+        <div className=' grid grid-cols-6 gap-5 px-28 py-7'>
             {
                 visiblePages ? visiblePages.map((element, index) => <PageBtn pageNumber={element} key={index} setCurrentPage={setCurrentPage} currentPage={currentPage} />) : <LoadingSpinner />
             }
