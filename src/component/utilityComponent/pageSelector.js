@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { CgArrowRightR } from 'react-icons/cg'
 import LoadingSpinner from '../loadingSpiner'
 
 
@@ -14,7 +15,24 @@ const PageBtn = ({ pageNumber, setCurrentPage, currentPage }) => {
     )
 }
 
-const PageFowardBtn = () => { }
+const PageFowardBtn = ({ currentPage, setCurrentPage, pageNumber }) => {
+    const pageForwardHandle = () => {
+        if (currentPage < pageNumber) {
+            const newPage = currentPage + 1;
+            alert(newPage)
+            setCurrentPage(newPage)
+        } else (
+            setCurrentPage(currentPage)
+        )
+    }
+    return (
+        <div className={`py-5 rounded-lg border border-slate-600 hover:cursor-pointer hover:bg-slate-400 hover:scale-125`} onClick={e => { pageForwardHandle() }}>
+            {
+                <CgArrowRightR />
+            }
+        </div>
+    )
+}
 
 
 const PageSelector = ({ numberOfPage, currentPage, setCurrentPage }) => {
@@ -34,6 +52,8 @@ const PageSelector = ({ numberOfPage, currentPage, setCurrentPage }) => {
             {
                 visiblePages ? visiblePages.map((element, index) => <PageBtn pageNumber={element} key={index} setCurrentPage={setCurrentPage} currentPage={currentPage} />) : <LoadingSpinner />
             }
+            <PageFowardBtn currentPage={currentPage} setCurrentPage={setCurrentPage} pageNumber={numberOfPage} />
+
         </div>
     )
 }
