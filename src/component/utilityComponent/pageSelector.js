@@ -19,7 +19,7 @@ const PageFowardBtn = ({ currentPage, setCurrentPage, pageNumber }) => {
     const pageForwardHandle = () => {
         if (currentPage < pageNumber) {
             const newPage = currentPage + 1;
-            alert(newPage)
+
             setCurrentPage(newPage)
         } else (
             setCurrentPage(currentPage)
@@ -28,12 +28,30 @@ const PageFowardBtn = ({ currentPage, setCurrentPage, pageNumber }) => {
     return (
         <div className={`py-5 rounded-lg border border-slate-600 hover:cursor-pointer hover:bg-slate-400 hover:scale-125`} onClick={e => { pageForwardHandle() }}>
             {
-                <CgArrowRightR />
+                <CgArrowRightR className=" w-full h-full" />
             }
         </div>
     )
 }
 
+const PagePrevBtn = ({ currentPage, setCurrentPage, pageNumber }) => {
+    const pageForwardHandle = () => {
+        if (currentPage > 1) {
+            const newPage = currentPage - 1;
+
+            setCurrentPage(newPage)
+        } else (
+            setCurrentPage(currentPage)
+        )
+    }
+    return (
+        <div className={`py-5 rounded-lg border border-slate-600 hover:cursor-pointer hover:bg-slate-400 hover:scale-125`} onClick={e => { pageForwardHandle() }}>
+            {
+                <CgArrowRightR className=" w-full h-full" />
+            }
+        </div>
+    )
+}
 
 const PageSelector = ({ numberOfPage, currentPage, setCurrentPage }) => {
     const [visiblePages, setVisiblePages] = useState(null)
@@ -49,6 +67,7 @@ const PageSelector = ({ numberOfPage, currentPage, setCurrentPage }) => {
     }, [currentPage, numberOfPage])
     return (
         <div className=' grid grid-cols-6 gap-5 px-28 py-7'>
+            <PagePrevBtn currentPage={currentPage} setCurrentPage={setCurrentPage} pageNumber={numberOfPage} />
             {
                 visiblePages ? visiblePages.map((element, index) => <PageBtn pageNumber={element} key={index} setCurrentPage={setCurrentPage} currentPage={currentPage} />) : <LoadingSpinner />
             }
