@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { CgArrowRightR } from 'react-icons/cg'
+import { CgArrowRightR, CgArrowLeftR } from 'react-icons/cg'
 import LoadingSpinner from '../loadingSpiner'
 
 
@@ -9,13 +9,13 @@ const PageBtn = ({ pageNumber, setCurrentPage, currentPage }) => {
         currentPage === pageNumber ? setStateBg("bg-slate-400") : setStateBg('bg-slate-100')
     }, [currentPage, pageNumber])
     return (
-        <div className={`py-5 rounded-lg ${stateBg} border border-slate-600 hover:cursor-pointer hover:bg-slate-400 hover:scale-125`} onClick={e => { setCurrentPage(pageNumber) }}>
+        <div className={`rounded-lg ${stateBg} border border-slate-600 hover:cursor-pointer hover:bg-slate-400 hover:scale-125`} onClick={e => { setCurrentPage(pageNumber) }}>
             {pageNumber}
         </div>
     )
 }
 
-const PageFowardBtn = ({ currentPage, setCurrentPage, pageNumber }) => {
+const PageForwardBtn = ({ currentPage, setCurrentPage, pageNumber }) => {
     const pageForwardHandle = () => {
         if (currentPage < pageNumber) {
             const newPage = currentPage + 1;
@@ -26,16 +26,16 @@ const PageFowardBtn = ({ currentPage, setCurrentPage, pageNumber }) => {
         )
     }
     return (
-        <div className={`py-5 rounded-lg border border-slate-600 hover:cursor-pointer hover:bg-slate-400 hover:scale-125`} onClick={e => { pageForwardHandle() }}>
+        <div className={`rounded-lg border border-slate-600 hover:cursor-pointer hover:bg-slate-400 hover:scale-125`} onClick={e => { pageForwardHandle() }}>
             {
-                <CgArrowRightR className=" w-full h-full" />
+                <CgArrowRightR className=" w-9 h-9 float-right" />
             }
         </div>
     )
 }
 
-const PagePrevBtn = ({ currentPage, setCurrentPage, pageNumber }) => {
-    const pageForwardHandle = () => {
+const PagePrevBtn = ({ currentPage, setCurrentPage }) => {
+    const pagePrevHandle = () => {
         if (currentPage > 1) {
             const newPage = currentPage - 1;
 
@@ -45,9 +45,9 @@ const PagePrevBtn = ({ currentPage, setCurrentPage, pageNumber }) => {
         )
     }
     return (
-        <div className={`py-5 rounded-lg border border-slate-600 hover:cursor-pointer hover:bg-slate-400 hover:scale-125`} onClick={e => { pageForwardHandle() }}>
+        <div className={`rounded-lg border border-slate-600 hover:cursor-pointer hover:bg-slate-400 hover:scale-125 `} onClick={e => { pagePrevHandle() }}>
             {
-                <CgArrowRightR className=" w-full h-full" />
+                <CgArrowLeftR className=" w-9 h-9" />
             }
         </div>
     )
@@ -58,7 +58,7 @@ const PageSelector = ({ numberOfPage, currentPage, setCurrentPage }) => {
     useEffect(() => {
         // some condition to render pages when in some first page and last page
         if (currentPage < 4) {
-            setVisiblePages([1, 2, 3, 4])
+            setVisiblePages([1, 2, 3, 4, 5])
         } else if (currentPage > numberOfPage - 2) {
             setVisiblePages([numberOfPage - 3, numberOfPage - 2, numberOfPage - 1, numberOfPage])
         } else {
@@ -66,12 +66,12 @@ const PageSelector = ({ numberOfPage, currentPage, setCurrentPage }) => {
         }
     }, [currentPage, numberOfPage])
     return (
-        <div className=' grid grid-cols-6 gap-5 px-28 py-7'>
+        <div className=' grid grid-cols-7 gap-5 px-96'>
             <PagePrevBtn currentPage={currentPage} setCurrentPage={setCurrentPage} pageNumber={numberOfPage} />
             {
                 visiblePages ? visiblePages.map((element, index) => <PageBtn pageNumber={element} key={index} setCurrentPage={setCurrentPage} currentPage={currentPage} />) : <LoadingSpinner />
             }
-            <PageFowardBtn currentPage={currentPage} setCurrentPage={setCurrentPage} pageNumber={numberOfPage} />
+            <PageForwardBtn currentPage={currentPage} setCurrentPage={setCurrentPage} pageNumber={numberOfPage} />
 
         </div>
     )
