@@ -24,6 +24,9 @@ const LocationRow = ({ locationName }) => {
                             locationDetalis.region.name
                         }
                     </div>
+                    <div>
+                        {locationDetalis.game_indices[0].generation.name}
+                    </div>
                 </> : <LoadingSpinner />
             }
         </div>

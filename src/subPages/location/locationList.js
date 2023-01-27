@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import LoadingSpinner from '../../component/loadingSpiner'
 import PageSelector from '../../component/utilityComponent/pageSelector'
+import LocationRow from './locationRow'
 
 const LocationList = ({ pageCount }) => {
     const [currentPage, setCurrentPage] = useState(0)
@@ -19,7 +20,7 @@ const LocationList = ({ pageCount }) => {
     }, [currentPage]
     )
     return (
-        <div>{locationList ? JSON.stringify(locationList) : <LoadingSpinner />}
+        <div>{locationList ? locationList.results.map((element, index) => <LocationRow key={index} locationName={element.name} />) : <LoadingSpinner />}
             <PageSelector numberOfPage={pageCount} currentPage={currentPage + 1} setCurrentPage={setCurPage} />
         </div>
     )
