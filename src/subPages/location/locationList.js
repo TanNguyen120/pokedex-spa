@@ -20,7 +20,24 @@ const LocationList = ({ pageCount }) => {
     }, [currentPage]
     )
     return (
-        <div>{locationList ? locationList.results.map((element, index) => <LocationRow key={index} locationName={element.name} />) : <LoadingSpinner />}
+        <div>
+            <table class="table-auto">
+                <thead>
+                    <tr>
+                        <th>Location</th>
+                        <th>Region</th>
+                        <th>Game Indices</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
+                        <td>Malcolm Lockyer</td>
+                        <td>1961</td>
+                    </tr>
+                    {locationList ? locationList.results.map((element, index) => <LocationRow key={index} locationName={element.name} />) : <LoadingSpinner />}
+                </tbody>
+            </table>
             <PageSelector numberOfPage={pageCount} currentPage={currentPage + 1} setCurrentPage={setCurPage} />
         </div>
     )
