@@ -13,23 +13,23 @@ const LocationRow = ({ locationName }) => {
         getLocationData();
     }, [locationName])
     return (
-        <div className=' grid grid-cols-3'>
+        <tr className=' border border-slate-300  odd:bg-white even:bg-slate-50 m-3'>
             {
                 locationDetalis ? <>
-                    <div>
+                    <td className='p-4'>
                         {locationDetalis.name}
-                    </div>
-                    <div>
+                    </td>
+                    <td className='p-4'>
                         {
                             locationDetalis.region.name
                         }
-                    </div>
-                    <div>
+                    </td>
+                    <td className='p-4'>
                         {locationDetalis.game_indices[0].generation.name}
-                    </div>
+                    </td>
                 </> : <LoadingSpinner />
             }
-        </div>
+        </tr>
     )
 }
 

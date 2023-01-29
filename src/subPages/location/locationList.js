@@ -21,20 +21,15 @@ const LocationList = ({ pageCount }) => {
     )
     return (
         <div>
-            <table class="table-auto">
-                <thead>
+            <table className="table-fixed w-full p-3 bg-white border-collapse border border-slate-400 rounded-lg">
+                <thead className=' rounded-lg p-4 m-4 bg-slate-100 font-semibold text-base'>
                     <tr>
                         <th>Location</th>
                         <th>Region</th>
                         <th>Game Indices</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
-                        <td>Malcolm Lockyer</td>
-                        <td>1961</td>
-                    </tr>
+                <tbody className='text-left divide-y'>
                     {locationList ? locationList.results.map((element, index) => <LocationRow key={index} locationName={element.name} />) : <LoadingSpinner />}
                 </tbody>
             </table>
