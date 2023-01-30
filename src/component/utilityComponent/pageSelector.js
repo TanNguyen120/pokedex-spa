@@ -3,6 +3,11 @@ import { CgArrowRightR, CgArrowLeftR } from 'react-icons/cg'
 import LoadingSpinner from '../loadingSpiner'
 
 
+// Pagination is essential for many web app. It help with loading time and save bandwidth when communicate with api
+// Pagination also help with user experiment. No one want to read 2000 rows of results
+
+
+// Display Page Number and Help Navigate to desire page
 const PageBtn = ({ pageNumber, setCurrentPage, currentPage }) => {
     const [stateBg, setStateBg] = useState("bg-slate-100");
     useEffect(() => {
@@ -15,6 +20,8 @@ const PageBtn = ({ pageNumber, setCurrentPage, currentPage }) => {
     )
 }
 
+// Usually use when people want to looping through list of pages we use page forward button or previous button
+// We have some restriction to prevent the page overflow
 const PageForwardBtn = ({ currentPage, setCurrentPage, pageNumber }) => {
     const pageForwardHandle = () => {
         if (currentPage < pageNumber) {

@@ -1,5 +1,7 @@
 import React from 'react'
 
+// The Bane Icon of digital era 
+// Indicate for user that the web is loading something or not
 const LoadingSpinner = () => {
     return (
         <div role="status">
