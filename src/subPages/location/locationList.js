@@ -20,20 +20,22 @@ const LocationList = ({ pageCount }) => {
     }, [currentPage]
     )
     return (
-        <div>
-            <table className="table-fixed w-full p-3 bg-white border-collapse border border-slate-400 rounded-lg">
+        <div className=' grid grid-cols-1 p-4'>
+            <table className="table-fixed  p-3 bg-white border-collapse border border-slate-400 rounded-lg">
                 <thead className=' rounded-lg p-4 m-4 bg-slate-100 font-semibold text-base'>
-                    <tr>
-                        <th>Location</th>
-                        <th>Region</th>
-                        <th>Game Indices</th>
+                    <tr className=' divide-x divide-slate-400'>
+                        <th className=' p-4'>Location</th>
+                        <th className=' p-4'>Region</th>
+                        <th className=' p-4'>Game Indices</th>
                     </tr>
                 </thead>
                 <tbody className='text-left divide-y'>
                     {locationList ? locationList.results.map((element, index) => <LocationRow key={index} locationName={element.name} />) : <LoadingSpinner />}
                 </tbody>
             </table>
-            <PageSelector numberOfPage={pageCount} currentPage={currentPage + 1} setCurrentPage={setCurPage} />
+            <div className=' p-3'>
+                <PageSelector numberOfPage={pageCount} currentPage={currentPage + 1} setCurrentPage={setCurPage} />
+            </div>
         </div>
     )
 }
