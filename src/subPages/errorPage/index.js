@@ -22,6 +22,9 @@ const ErrorPage = () => {
                         Back To Home <FaHome className="inline pb-1" />
                     </div>
                 </Link>
+                <div className=' text-center bg-red-200 border border-red-600 text-red-500 text-base'>
+                    If you still encounter this page after clicked Back To Home Please Press <span className=" font-semibold"> CTRL + SHIFT + R</span>
+                </div>
             </div>
         </div>
     );

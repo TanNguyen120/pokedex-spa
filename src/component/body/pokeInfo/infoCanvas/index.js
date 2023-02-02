@@ -53,7 +53,7 @@ const InfoCanvas = ({ pokemon }) => {
                 <AbilityCanvas abilities={pokemon.baseData.abilities} />
                 <div className='grid grid-cols-2'>
 
-                    <InfoSmallComponent tile="Base Experience" detail_info={pokemon.baseData.base_experience} icon={expIcon} />
+                    <InfoSmallComponent tile="Base Experience" detail_info={pokemon.baseData.base_experience ? pokemon.baseData.base_experience : 'No Data'} icon={expIcon} />
                     <HeldItems heldItems={pokemon.baseData.held_items} />
                 </div>
                 {
