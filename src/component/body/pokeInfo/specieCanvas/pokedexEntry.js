@@ -18,7 +18,7 @@ const PokedexEntry = ({ pokedexEntry }) => {
                 }
             });
             setLanguageEntries(langEntry);
-            alert(JSON.stringify(langEntry))
+
         }
         getPokedexEntriesBaseOnLanguage(pokedexEntry, webLanguage);
     }, [webLanguage, pokedexEntry])
@@ -27,7 +27,7 @@ const PokedexEntry = ({ pokedexEntry }) => {
     return (
 
         <div>
-            {languageEntries.length > 0 ? languageEntries && <PokedexDescription pokeEntry={languageEntries} /> : 'No Data'}
+            {languageEntries.length > 0 ? languageEntries && <PokedexDescription pokeEntry={languageEntries} /> : <div className=' text-lg text-red-600 font-semibold m-5'>No Data</div>}
         </div>
     )
 }

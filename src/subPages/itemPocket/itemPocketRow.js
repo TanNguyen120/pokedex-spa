@@ -9,14 +9,14 @@ const ItemPocketDetails = ({ pocketDetails }) => {
     return (
         <div className=' grid grid-cols-1'>
             <div className=' text-left m-3 p-3 font-semibold'>
-                Pocket: {pocketDetails.name}
+                {pocketDetails.name}
             </div>
             <div className=' text-left m-3 p-3 font-semibold'>
                 Category in {pocketDetails.name} pocket:
             </div>
             <div className=' bg-slate-50 rounded-lg m-4 p-4 grid grid-cols-3 md:grid-cols-6 lg:grid-cols-9'>
                 {
-                    pocketDetails.categories.map((element, index) => <Link className=' hover:bg-slate-400' key={index} to={`/t-pokedex/item-category/${element.name}`}> {element.name}</Link>)
+                    pocketDetails.categories.map((element, index) => <Link className=' hover:bg-slate-400 rounded-lg hover:scale-105' key={index} to={`/t-pokedex/item-category/${element.name}`}> {element.name}</Link>)
                 }
             </div>
         </div>
