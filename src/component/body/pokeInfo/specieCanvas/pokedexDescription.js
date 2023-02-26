@@ -3,6 +3,9 @@ import PokeVersionDiv from './pokeVersionDiv';
 
 
 const PokedexDescription = ({ pokeEntry }) => {
+    // emergency hot fix for the new scarlet and violet version
+
+
     // current game version flag
     const [currentGameVer, setCurrentGameVer] = useState(pokeEntry[0].version.name);
 
@@ -16,11 +19,16 @@ const PokedexDescription = ({ pokeEntry }) => {
 
     // the components will update description when current game version is change
     useEffect(() => {
-        pokeEntry.forEach(element => {
-            if (element.version.name === currentGameVer) {
-                setUiDescription(element.flavor_text)
-            }
-        });
+        if (pokeEntry.length > 0 && currentGameVer !== null) {
+
+            pokeEntry.forEach(element => {
+                if (element.version.name === currentGameVer) {
+                    setUiDescription(element.flavor_text)
+                }
+            });
+        } else {
+            setUiDescription('no data')
+        }
     }, [currentGameVer, pokeEntry])
 
     // side effect of changing prob. We have to update the state
@@ -32,7 +40,7 @@ const PokedexDescription = ({ pokeEntry }) => {
             <div className='grid grid-cols-3 md:grid-cols-12 m-2'>
                 {
                     pokeEntry.map((element, index) => (
-                        <PokeVersionDiv selectedVersion={currentGameVer} version={element.version.name} updateGameVer={updateCurrentGameVer} key={index} />
+                        <PokeVersionDiv selectedVersion={currentGameVer} version={element.version ? element.version.name : 'no data'} updateGameVer={updateCurrentGameVer} key={index} />
                     ))
                 }
             </div>
