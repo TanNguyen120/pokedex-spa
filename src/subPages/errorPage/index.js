@@ -25,6 +25,10 @@ const ErrorPage = () => {
                 <div className=' text-center bg-red-200 border border-red-600 text-red-500 text-base'>
                     If you still encounter this page after clicked Back To Home Please Press <span className=" font-semibold"> CTRL + SHIFT + R</span>
                 </div>
+                <div className=' text-center bg-red-200 border border-red-600 text-yellow-500 text-base'>
+                    Bug Report ?
+                    Contact me via: tannguyen1220@gmail.com
+                </div>
             </div>
         </div>
     );

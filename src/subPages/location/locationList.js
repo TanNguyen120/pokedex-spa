@@ -11,14 +11,17 @@ const LocationList = ({ pageCount }) => {
         setCurrentPage(pageNumber - 1)
     }
     useEffect(() => {
-
+        // et list back to null when choose another page
+        setLocationList(null)
         const getLocationData = async () => {
             const locationData = await (await (axios.get(`https://pokeapi.co/api/v2/location/?offset=${(currentPage) * 20}&limit=20`))).data
             setLocationList(locationData);
         }
         getLocationData();
     }, [currentPage]
-    )
+    );
+
+
     return (
         <div className=' grid grid-cols-1 p-4'>
             <table className="table-fixed  p-3 bg-white border-collapse border border-slate-400 rounded-lg">
