@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React from 'react'
 import { useLoaderData } from 'react-router-dom';
+import DropdownSection from './dropdownSection';
 import LocationList from './locationList';
 
 // in react router v6.4 we can define a loader function that can access to url param to call api 
@@ -28,6 +29,7 @@ const LocationIndex = () => {
                             Locations that can be visited within the games. Locations make up sizable portions of regions, like cities or routes.
                         </p>
                     </div>
+                    <DropdownSection />
                     <div className=' rounded-lg bg-slate-200 border border-slate-400'>
                         <LocationList pageCount={locationList.count} />
                     </div>
