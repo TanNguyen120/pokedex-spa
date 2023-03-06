@@ -9,11 +9,9 @@ const TypeCanvas = ({ types }) => {
                 {types.map((type, index) => (
                     <div className={`${typeToColor(type.type.name)} rounded-md text-white text-center text-lg font-semibold border border-indigo-600 m-1 px-2 font-mono hover:cursor-pointer w-24 h-8`} key={index}>
                         {type.type.name[0].toUpperCase() + type.type.name.slice(1)}
-
                     </div>
                 ))}
             </div>
-
         </div>
     )
 }
