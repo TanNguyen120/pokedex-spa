@@ -23,6 +23,7 @@ const PagesLink = () => {
             <div className='grid grid-cols-1'>
                 <SingleLink name={'Generation'} url='/t-pokedex/generation' />
                 <SingleLink name={'Version Group'} url='/t-pokedex/version-group' />
+                <SingleLink name={'Location'} url='/t-pokedex/location' />
             </div>
             <div className='grid grid-cols-1'>
                 <SingleLink name='Contest' url={'/t-pokedex/contest'} />
