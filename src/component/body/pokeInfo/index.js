@@ -23,49 +23,53 @@ const PokeInfo = () => {
 
     const getAllData = async (searchCond) => {
         dispatch(clearSinglePokeData);
-        const baseData = await (axios.get('https://pokeapi.co/api/v2/pokemon/' + searchCond));
-        dispatch(setBasePokeData(baseData.data));
-        // get specie detail info
-        const pokeSpecie = await axios.get(baseData.data.species.url);
-        dispatch(setPokeSpecie(pokeSpecie.data));
-        //get list of detail abilities
-        dispatch(clearPokeAbility);
-        // await baseData.data.abilities.forEach(async element => {
-        //     // axios.get(element.ability.url).then(
-        //     //     (res) => {
-        //     //         // we just need the flavor text for the pokemon page and it name
-        //     //         const saveData = {
-        //     //             name: res.data.names,
-        //     //             flavor_text: res.data.flavor_text_entries
-        //     //         };
-        //     //         dispatch(setPokeAbilities(saveData))
-        //     //     }
-        //     // )
-        //     const res = await axios.get(element.ability.url);
-        //     const saveData = {
-        //         name: res.data.names,
-        //         flavor_text: res.data.flavor_text_entries
-        //     };
-        //     tempArray.push(saveData);
+        try {
+            const baseData = await (axios.get('https://pokeapi.co/api/v2/pokemon/' + searchCond));
+            dispatch(setBasePokeData(baseData.data));
+            // get specie detail info
+            const pokeSpecie = await axios.get(baseData.data.species.url);
+            dispatch(setPokeSpecie(pokeSpecie.data));
+            //get list of detail abilities
+            dispatch(clearPokeAbility);
+            // await baseData.data.abilities.forEach(async element => {
+            //     // axios.get(element.ability.url).then(
+            //     //     (res) => {
+            //     //         // we just need the flavor text for the pokemon page and it name
+            //     //         const saveData = {
+            //     //             name: res.data.names,
+            //     //             flavor_text: res.data.flavor_text_entries
+            //     //         };
+            //     //         dispatch(setPokeAbilities(saveData))
+            //     //     }
+            //     // )
+            //     const res = await axios.get(element.ability.url);
+            //     const saveData = {
+            //         name: res.data.names,
+            //         flavor_text: res.data.flavor_text_entries
+            //     };
+            //     tempArray.push(saveData);
 
-        // });
-        // NOTE: TO AWAIT A LIST OF PROMISE USE await promise all 
-        // IF YOU WANT TO DO SOME ASCNYCROM IN THE LOOP WE HAVE TO CALL Promise.all (that all)
-        const ablityList = await Promise.all(baseData.data.abilities.map(async element => {
-            const res = await axios.get(element.ability.url);
-            const returnData = {
-                name: res.data.names,
-                flavor_text: res.data.flavor_text_entries
-            };
-            return returnData;
-        }));
-        dispatch(setPokeAbilities(ablityList));
+            // });
+            // NOTE: TO AWAIT A LIST OF PROMISE USE await promise all 
+            // IF YOU WANT TO DO SOME ASCNYCROM IN THE LOOP WE HAVE TO CALL Promise.all (that all)
+            const ablityList = await Promise.all(baseData.data.abilities.map(async element => {
+                const res = await axios.get(element.ability.url);
+                const returnData = {
+                    name: res.data.names,
+                    flavor_text: res.data.flavor_text_entries
+                };
+                return returnData;
+            }));
+            dispatch(setPokeAbilities(ablityList));
 
-        const pokeShape = await (await axios.get(pokeSpecie.data.shape.url)).data;
-        dispatch(setPokeShape(pokeShape));
+            const pokeShape = await (await axios.get(pokeSpecie.data.shape.url)).data;
+            dispatch(setPokeShape(pokeShape));
 
-        const pokeForm = await (axios.get(baseData.data.forms[0].url));
-        dispatch(setPokeForm(pokeForm.data));
+            const pokeForm = await (axios.get(baseData.data.forms[0].url));
+            dispatch(setPokeForm(pokeForm.data));
+        } catch (error) {
+            alert(error)
+        }
 
     }
 

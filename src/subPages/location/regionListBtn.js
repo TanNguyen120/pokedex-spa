@@ -1,8 +1,14 @@
-import React, { useState } from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 
 const RegionListBtn = () => {
     const [show, setShow] = useState(false);
     const [regionList, setRegionList] = useState(null)
+    useEffect(() => {
+        const getRegionData = async () => {
+            const resData = axios.get('')
+        }
+    }, [])
     return (
         <div class="relative inline-block text-left p-20">
             <div>

@@ -32,7 +32,8 @@ const RadomMonSection = () => {
         // empty random pokemon array;
         dispatch(clearPokemonArray());
         for (let index = 0; index < 5; index++) {
-            const randomID = Math.floor(Math.random() * numberOfMon.value);
+
+            let randomID = Math.floor(Math.random() * numberOfMon.value);
             // check if we had already get number of this pokemon before and if it a number
             if (randomID !== 0 && randomID !== selectedNumber[index]) {
                 axios.get(`https://pokeapi.co/api/v2/pokemon/${randomID}/`).then(
@@ -40,6 +41,7 @@ const RadomMonSection = () => {
                         dispatch(addPokemon(res.data));
                         // show the information of middle pokemon
                         if (index === 2) {
+
                             dispatch(findPokeByID(res.data.id))
                         }
                     }
