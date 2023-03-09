@@ -30,6 +30,7 @@ const LocationList = ({ pageCount }) => {
                         <th className=' p-4'>Location</th>
                         <th className=' p-4'>Region</th>
                         <th className=' p-4'>Game Indices</th>
+                        <th className=' p-4'>Areas</th>
                     </tr>
                 </thead>
                 <tbody className='text-left divide-y'>

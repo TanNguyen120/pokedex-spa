@@ -14,7 +14,7 @@ const LocationRow = ({ locationName }) => {
         getLocationData();
     }, [locationName])
     return (
-        <tr className=' border border-slate-300  odd:bg-white even:bg-slate-50 m-3 divide-x divide-slate-400  hover:bg-slate-300 hover:cursor-pointer'>
+        <tr className=' border border-slate-300  odd:bg-white even:bg-slate-50 m-3 divide-x divide-slate-400 text-slate-600  hover:bg-slate-300 hover:cursor-pointer'>
             {
                 locationDetalis ? <>
                     <td className='p-4 capitalize'>
@@ -27,6 +27,17 @@ const LocationRow = ({ locationName }) => {
                     </td>
                     <td className='p-4 capitalize'>
                         {locationDetalis.game_indices[0] ? <Link className=' hover:text-cyan-600 hover:underline' to={`/t-pokedex/generations/${locationDetalis.game_indices[0].generation.name}`}> {locationDetalis.game_indices[0].generation.name} </Link> : 'error'}
+                    </td>
+                    <td className='p-4 capitalize'>
+                        <ul className=' list-none hover:list-disc ml-6'>
+                            {locationDetalis.areas ? locationDetalis.areas.map((element, index) =>
+                                <li>
+                                    <Link className=' hover:text-cyan-600 hover:underline rounded-lg my-2' to={`/t-pokedex/location-areas/${element.name}`} key={index}>
+                                        {element.name}
+                                    </Link>
+                                </li>
+                            ) : <LoadingSpinner />}
+                        </ul>
                     </td>
                 </> : <LoadingSpinner />
             }
