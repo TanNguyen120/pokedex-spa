@@ -27,6 +27,7 @@ import ItemCategoryDetails, { loader as categoryDetailsLoader } from "../subPage
 import ItemWithFlingMove, { loader as itemWithFlingLoader } from "../subPages/itemWithFlingMove";
 import ItemPocket, { loader as itemPocketLoader } from "../subPages/itemPocket";
 import LocationIndex, { loader as locationLoader } from "../subPages/location";
+import Regions, { loader as RegionsLoader } from "../subPages/regions";
 
 
 const router = createBrowserRouter([
@@ -185,6 +186,12 @@ const router = createBrowserRouter([
                 errorElement: <ErrorPage />,
                 loader: locationLoader
             },
+            {
+                path: "/t-pokedex/regions/:regionName",
+                element: <Regions />,
+                errorElement: <ErrorPage />,
+                loader: RegionsLoader
+            }
         ]
     },
 
