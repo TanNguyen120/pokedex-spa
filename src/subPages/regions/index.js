@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React from 'react'
 import { useLoaderData } from 'react-router-dom';
+import RegionName from './regionName';
 
 
 // in react router v6.4 we can define a loader function that can access to url param to call api 
@@ -14,9 +15,7 @@ const Regions = () => {
     return (
         <div className=' bg-regionBg bg-repeat min-w-screen-xl min-h-screen font-serif'>
             <div className=' lg:container lg:mx-auto grid grid-cols-1 bg-slate-50'>
-                {
-                    JSON.stringify(regionDetails)
-                }
+                <RegionName regionNames={regionDetails.names} />
             </div>
         </div>
     )

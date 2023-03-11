@@ -12,6 +12,7 @@ const PokedexEntry = ({ pokedexEntry }) => {
         const getPokedexEntriesBaseOnLanguage = async (pokedexEntry, language) => {
             // get all description of pokedex entry in webLanguage
             const langEntry = [];
+            // use async to wait for for loop result
             await pokedexEntry.forEach(element => {
                 if (element.language.name === language) {
                     langEntry.push(element);
