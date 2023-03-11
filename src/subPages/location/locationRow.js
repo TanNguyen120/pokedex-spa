@@ -22,7 +22,7 @@ const LocationRow = ({ locationName }) => {
                     </td>
                     <td className='p-4 capitalize '>
                         {
-                            locationDetalis.region.name ? <Link className=' hover:text-cyan-600 hover:underline' to={`/t-pokedex/region/${locationDetalis.region.name}`}>  {locationDetalis.region.name} </Link> : 'error'
+                            locationDetalis.region.name ? <Link className=' hover:text-cyan-600 hover:underline' to={`/t-pokedex/regions/${locationDetalis.region.name}`}>  {locationDetalis.region.name} </Link> : 'error'
                         }
                     </td>
                     <td className='p-4 capitalize'>

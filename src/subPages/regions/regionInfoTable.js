@@ -6,7 +6,7 @@ const RegionInfoTable = ({ tileLabel, contentList }) => {
             <div className=' m-3 font-semibold'>
                 {tileLabel}
             </div>
-            <div className=' m-2 bg-white rounded-lg grid-cols-1'>
+            <div className=' m-2 bg-white rounded-lg grid-cols-1 p-3'>
                 {
                     contentList.map((element, index) => <div key={index}>{element}</div>)
                 }
