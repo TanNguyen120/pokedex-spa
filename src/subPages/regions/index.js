@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react'
 import { useLoaderData } from 'react-router-dom';
 import LinkBtn from './linkBtn';
+import LocationList from './locationList';
 import RegionInfoTable from './regionInfoTable';
 import RegionName from './regionName';
 
@@ -18,7 +19,7 @@ const Regions = () => {
         <div className=' bg-regionBg bg-repeat min-w-screen-xl min-h-screen font-serif'>
             <div className=' lg:container lg:mx-auto grid grid-cols-1 bg-slate-50'>
                 <RegionName regionNames={regionDetails.names} />
-                <div className=' grid md:grid-cols-3 grid-cols-1 my-4 gap-2 border-b border-slate-600 pb-3'>
+                <div className=' grid md:grid-cols-3 grid-cols-1 my-4 gap-2  pb-3'>
                     {/* The main series the region belong to */}
                     <RegionInfoTable
                         tileLabel={'Main Generation'}
@@ -38,6 +39,7 @@ const Regions = () => {
                         contentList={regionDetails.version_groups.map((element) =>
                             <LinkBtn content={element.name} link={`/t-pokedex/version_groups/${element.name}`} />)} />
                 </div>
+                <LocationList locationList={regionDetails.locations} regionName={regionDetails.name} />
             </div>
         </div>
     )
