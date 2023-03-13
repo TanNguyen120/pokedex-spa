@@ -8,16 +8,20 @@ import { useLoaderData } from 'react-router-dom'
 const loader = async ({ params }) => {
 
     const locationList = (await (axios.get(`https://pokeapi.co/api/v2/location/${params.locationName}`))).data
+    let areaList = [];
+
     return locationList
 }
 
 const LocationDetails = () => {
     const locationDetails = useLoaderData();
     return (
-        <div>
-            {
-                JSON.stringify(locationDetails)
-            }
+        <div className=' bg-whiteWallPaint bg-scroll   font-serif'>
+            <div className='md:container md:mx-auto'>
+                <div className='grid grid-cols-1'>
+                    {JSON.stringify(locationDetails)}
+                </div>
+            </div>
         </div>
     )
 }
