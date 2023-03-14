@@ -37,7 +37,7 @@ const Regions = () => {
                     <RegionInfoTable
                         tileLabel={'Version Group'}
                         contentList={regionDetails.version_groups.map((element) =>
-                            <LinkBtn content={element.name} link={`/t-pokedex/version_groups/${element.name}`} />)} />
+                            <LinkBtn content={element.name} link={`/t-pokedex/version-group/${element.name}`} />)} />
                 </div>
                 <LocationList locationList={regionDetails.locations} regionName={regionDetails.name} />
             </div>

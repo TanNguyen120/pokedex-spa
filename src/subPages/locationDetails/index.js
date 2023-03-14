@@ -9,7 +9,6 @@ import TileArea from './tileArea'
 const loader = async ({ params }) => {
 
     const locationList = (await (axios.get(`https://pokeapi.co/api/v2/location/${params.locationName}`))).data
-    let areaList = [];
 
     return locationList
 }
@@ -17,10 +16,10 @@ const loader = async ({ params }) => {
 const LocationDetails = () => {
     const locationDetails = useLoaderData();
     return (
-        <div className=' bg-whiteWallPaint bg-scroll   font-serif'>
+        <div className=' bg-regionBg bg-repeat  min-w-screen-xl bg-[length:1920px_1080px]  min-h-screen font-serif'>
             <div className='md:container md:mx-auto'>
                 <div className='grid grid-cols-1'>
-                    <TileArea locationName={locationDetails.name} regionName={locationDetails.region.name} generationName={locationDetails.game_indices[0].generation.name} />
+                    <TileArea locationName={locationDetails.name} regionName={locationDetails.region.name} generationName={locationDetails.game_indices} />
                 </div>
             </div>
         </div>
