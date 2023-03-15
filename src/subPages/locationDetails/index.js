@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React from 'react'
 import { useLoaderData } from 'react-router-dom'
+import AreaComponent from './areaComponent'
 import TileArea from './tileArea'
 
 
@@ -20,6 +21,9 @@ const LocationDetails = () => {
             <div className='md:container md:mx-auto'>
                 <div className='grid grid-cols-1'>
                     <TileArea locationName={locationDetails.name} regionName={locationDetails.region.name} generationName={locationDetails.game_indices} />
+                </div>
+                <div>
+                    <AreaComponent areas={locationDetails.areas} />
                 </div>
             </div>
         </div>

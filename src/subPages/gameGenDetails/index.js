@@ -28,7 +28,11 @@ const GameGenDetails = () => {
                         <div className=' grid grid-cols-2'>
                             <GameversioGroup gameVersion={gameGenDetails.version_groups} />
                             <div className='  rounded-lg border-2 border-slate-500 bg-slate-200 p-3 m-2'>
-                                <InfoSmallComponent tile='Main Region' detail_info={gameGenDetails.main_region.name} icon={<MdOutlinePlace className=' inline' />} />
+                                <InfoSmallComponent
+                                    tile='Main Region'
+                                    detail_info={gameGenDetails.main_region.name}
+                                    icon={<MdOutlinePlace className=' inline' />}
+                                    link={`/t-pokedex/regions/${gameGenDetails.main_region.name}`} />
                             </div>
                         </div>
                         <GameGenPokemons pokemonSpecies={gameGenDetails.pokemon_species} />

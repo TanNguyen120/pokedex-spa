@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const GameversioGroup = ({ gameVersion }) => {
     return (
@@ -8,7 +9,7 @@ const GameversioGroup = ({ gameVersion }) => {
             </div>
             <ul className=' bg-slate-100 rounded-lg m-3 p-2 text-left'>
                 {
-                    gameVersion.map(element => <li className=' capitalize m-3 ' key={element.name}> {element.name}</li>)
+                    gameVersion.map(element => <li className=' capitalize m-3 ' key={element.name}> <Link className=' hover:cursor-pointer hover:text-blue-400 hover:underline' to={`/t-pokedex/version-group/${element.name}`}>{element.name}</Link> </li>)
                 }
             </ul>
         </div>

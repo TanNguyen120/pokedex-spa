@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const TileArea = ({ locationName, regionName, generationName }) => {
     return (
-        <div className=' grid grid-cols-1 rounded-lg bg-slate-200 p-4'>
+        <div className=' grid grid-cols-1 rounded-lg bg-slate-200 p-4  border-b border-slate-500 '>
             <div className=' font-semibold text-lg capitalize'>{locationName}</div>
             <div className=' grid grid-cols-2'>
                 <div className='  mx-auto'>
