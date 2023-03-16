@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import smoothTile from '../../tool/smoothTile';
 import LocationArea from './locationArea';
 
 
@@ -10,7 +11,7 @@ const AreaBtn = ({ areaName, activeArea, setActiveArea }) => {
     }, [activeArea, areaName])
     return (
         <div className={` rounded-t-lg ${bgColor} hover:bg-slate-300 hover:cursor-pointer  p-3`} onClick={e => { setActiveArea(areaName) }}>
-            {areaName}
+            {smoothTile(areaName)}
         </div>
     )
 }
