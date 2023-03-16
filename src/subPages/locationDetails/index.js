@@ -18,7 +18,7 @@ const LocationDetails = () => {
     const locationDetails = useLoaderData();
     return (
         <div className=' bg-regionBg bg-repeat  min-w-screen-xl bg-[length:1920px_1080px]  min-h-screen font-serif'>
-            <div className='md:container md:mx-auto'>
+            <div className='md:container md:mx-auto bg-slate-200'>
                 <div className='grid grid-cols-1'>
                     <TileArea locationName={locationDetails.name} regionName={locationDetails.region.name} generationName={locationDetails.game_indices} />
                 </div>
