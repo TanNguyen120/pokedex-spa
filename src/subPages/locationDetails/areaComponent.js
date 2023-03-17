@@ -26,7 +26,7 @@ const AreaComponent = ({ areas }) => {
     }
     return (
         <div className=' grid grid-cols-1 m-5'>
-            <div className=' flex flex-row'>
+            <div className=' flex flex-row ml-4'>
                 {areas.map((element, index) => <AreaBtn key={index} areaName={element.name} activeArea={activeArea} setActiveArea={toggleActiveArea} />)}
             </div>
             <LocationArea areaName={activeArea} />

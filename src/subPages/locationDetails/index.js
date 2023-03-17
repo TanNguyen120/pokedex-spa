@@ -23,7 +23,7 @@ const LocationDetails = () => {
                     <TileArea locationName={locationDetails.name} regionName={locationDetails.region.name} generationName={locationDetails.game_indices} />
                 </div>
                 <div>
-                    <AreaComponent areas={locationDetails.areas} />
+                    {locationDetails.areas.length > 0 ? <AreaComponent areas={locationDetails.areas} /> : <div> This Location Does not have an area</div>}
                 </div>
             </div>
         </div>

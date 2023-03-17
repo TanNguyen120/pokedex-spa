@@ -1,5 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import LoadingSpinner from '../../component/loadingSpiner'
+import PokemonInArea from './pokemonInArea'
 
 const LocationArea = ({ areaName }) => {
     const [areaDetails, setAreaDetails] = useState(null)
@@ -13,7 +15,9 @@ const LocationArea = ({ areaName }) => {
         getAreaData();
     }, [areaName])
     return (
-        <div>{JSON.stringify(areaDetails)}</div>
+        <div>
+            {areaDetails ? <PokemonInArea encounter={areaDetails.pokemon_encounters} /> : <LoadingSpinner />}
+        </div>
     )
 }
 
