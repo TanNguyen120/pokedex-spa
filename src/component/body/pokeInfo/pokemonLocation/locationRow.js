@@ -54,10 +54,10 @@ const LocationRow = ({ location }) => {
                 }
             </div>
             <div className='w-96 mx-4 '>
-                {locationName}
+                <Link to={`/t-pokedex/area/${locationName}`}> {locationName}</Link>
             </div>
             <div className='w-28  mx-4'>
-                <Link to='/encounter' className=' hover:cursor-pointer hover:scale-125'>
+                <Link to='/t-pokedex/encounter' className=' hover:cursor-pointer hover:scale-125'>
                     {method.map(element => <span key={element}>{element}, </span>)}
                 </Link>
             </div>

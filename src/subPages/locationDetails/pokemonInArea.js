@@ -44,7 +44,7 @@ const PokeEncounterVersion = ({ versionEncounter }) => {
                     <tbody className=' divide-y'>
                         {
                             versionEncounter.encounter_details.map(element => <tr className=' py-6'>
-                                <td className=' lg:px-32 my-6'><Link to={`/t-pokedex/method/${element.method.name}`} className=' hover:text-blue-300 hover:cursor-pointer hover:underline'>  {element.method.name}</Link></td>
+                                <td className=' lg:px-32 my-6'><Link to={`/t-pokedex/encounter/`} className=' hover:text-blue-300 hover:cursor-pointer hover:underline'>  {element.method.name}</Link></td>
                                 <td className=' lg:px-32 my-6'>{element.chance} %</td>
                                 <td className=' lg:px-32 my-6'>{element.min_level}</td>
                                 <td className=' lg:px-32 my-6'>{element.max_level}</td>
