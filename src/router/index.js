@@ -29,7 +29,7 @@ import ItemPocket, { loader as itemPocketLoader } from "../subPages/itemPocket";
 import LocationIndex, { loader as locationLoader } from "../subPages/location";
 import Regions, { loader as RegionsLoader } from "../subPages/regions";
 import LocationDetails, { loader as locationDetailsLoader } from "../subPages/locationDetails";
-
+import AreaDetails, { loader as areaLoader } from "../subPages/areaDetails";
 
 const router = createBrowserRouter([
     {
@@ -198,6 +198,12 @@ const router = createBrowserRouter([
                 element: <LocationDetails />,
                 errorElement: <ErrorPage />,
                 loader: locationDetailsLoader
+            },
+            {
+                path: "/t-pokedex/area/:areaName",
+                element: <AreaDetails />,
+                errorElement: <ErrorPage />,
+                loader: areaLoader
             },
         ]
     },

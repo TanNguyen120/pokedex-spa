@@ -34,7 +34,7 @@ const LocationRow = ({ locationName }) => {
                         <ul className=' list-none hover:list-disc ml-6'>
                             {locationDetalis.areas ? locationDetalis.areas.map((element, index) =>
                                 <li>
-                                    <Link className=' hover:text-cyan-600 hover:underline rounded-lg my-2' to={`/t-pokedex/location-areas/${element.name}`} key={index}>
+                                    <Link className=' hover:text-cyan-600 hover:underline rounded-lg my-2' to={`/t-pokedex/area/${element.name}`} key={index}>
                                         {element.name}
                                     </Link>
                                 </li>
