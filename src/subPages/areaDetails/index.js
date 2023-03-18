@@ -24,7 +24,7 @@ const LocationDetails = () => {
                     <div className=' text-lg font-semibold p-6 border-b border-slate-400'>
                         <span className=' text-slate-400'>{
                             areaDetails.name
-                        } area </span>  in <Link className=' inline hover:text-blue-300 hover:underline hover:cursor-pointer text-slate-300'> {areaDetails.location.name}</Link>
+                        } area </span>  in <Link to={`/t-pokedex/location/${areaDetails.location.name}`} className=' inline hover:text-blue-300 hover:underline hover:cursor-pointer text-slate-300'> {areaDetails.location.name}</Link>
                     </div>
                     <div className=' p-6'>
                         <LocationArea areaName={areaDetails.name} />
