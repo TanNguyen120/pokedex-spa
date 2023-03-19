@@ -8,13 +8,16 @@ const LocationRow = ({ location }) => {
     const [maxChance, setMaxChance] = useState(0);
     const [version, setVersion] = useState([]);
     const [locationName, setLocationName] = useState("");
+    const [locationLinkName, setLocationLinkName] = useState("");
     const [encounterCondition, setEncounterCondition] = useState([]);
 
 
     // function to handle location data
     const setLocationRowData = async (location) => {
         const s = location.location_area.name;
+        setLocationLinkName(s);
         const locationNameResult = snakeToTileCase(s);
+
         setLocationName(locationNameResult);
 
         // flag for the below loop
@@ -54,7 +57,7 @@ const LocationRow = ({ location }) => {
                 }
             </div>
             <div className='w-96 mx-4 '>
-                <Link to={`/t-pokedex/area/${locationName}`}> {locationName}</Link>
+                <Link to={`/t-pokedex/area/${locationLinkName}`}> {locationName}</Link>
             </div>
             <div className='w-28  mx-4'>
                 <Link to='/t-pokedex/encounter' className=' hover:cursor-pointer hover:scale-125'>

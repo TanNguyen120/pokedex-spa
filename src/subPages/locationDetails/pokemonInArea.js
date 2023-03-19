@@ -1,18 +1,31 @@
-import React from 'react'
-import { useDispatch } from 'react-redux';
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom'
 import { findPokeByName } from '../../reduxSlicer/findPokeInfoFlag';
 
 const PokeFrame = ({ pokename }) => {
     const dispatch = useDispatch();
+    const pictureMode = useSelector((state) => state.webSettings.pictureMode);
+    const [picUrl, setPicUrl] = useState(`https://img.pokemondb.net/sprites/home/normal/2x/avif/${pokename}.avif`);
+    useEffect(() => {
+        switch (pictureMode) {
+            case "draw":
+                setPicUrl(`https://img.pokemondb.net/artwork/${pokename}.jpg`);
+                break;
+            default:
+                setPicUrl(`https://img.pokemondb.net/sprites/home/normal/2x/avif/${pokename}.avif`)
+                break;
+        }
+    }, [pictureMode, pokename])
     const setPokeFlag = (pokeName) => {
         dispatch(findPokeByName(pokeName))
     }
+
     return (
         <div className=' grid grid-cols-1 w-fit mt-6 mb-3 ml-7'>
-            <div className='  rounded-full bg-white border-8 border-slate-400 hover:cursor-pointer w-40 h-40 p-6'>
+            <div className='  rounded-full bg-white border-8 border-slate-400 hover:cursor-pointer w-56 h-56 p-8 '>
                 <Link className=' hover:cursor-pointer' to={`/t-pokedex/pokemon/${pokename}`} onClick={e => { setPokeFlag(pokename) }}>
-                    <img alt={pokename} src={`https://img.pokemondb.net/sprites/home/normal/2x/avif/${pokename}.avif`} className=' object-scale-down ' />
+                    <img alt={pokename} src={picUrl} className=' w-32 h-32' />
                 </Link>
             </div>
             <div className=' font-base text-center capitalize'>
