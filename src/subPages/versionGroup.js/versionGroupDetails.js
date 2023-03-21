@@ -38,7 +38,7 @@ const VersionGroupDetails = () => {
                             <MoveLearnMethod genName={versionGroupDetails.name} moveLearn={versionGroupDetails.move_learn_methods} />
                             <div className=' m-2 grid grid-cols-6'>
                                 {
-                                    versionGroupDetails.regions.map((element, index) => <InfoSmallComponent key={index} tile='Regions' icon={<IoEarth className='inline' />} detail_info={element.name} link={`/t-pokedex/region/${element.name}`} />)
+                                    versionGroupDetails.regions.map((element, index) => <InfoSmallComponent key={index} tile='Regions' icon={<IoEarth className='inline' />} detail_info={element.name} link={`/t-pokedex/regions/${element.name}`} />)
                                 }
                                 {
                                     versionGroupDetails.pokedexes.map((element, index) => <InfoSmallComponent key={index} tile='Pokédex' icon={<GrPersonalComputer className='inline' />} detail_info={element.name} link={`/t-pokedex/pokedexs/${element.name}`} />)

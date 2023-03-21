@@ -33,7 +33,7 @@ const ItemsDetails = () => {
                         <ItemDescription description={itemDetails.effect_entries[0]} />
                     </div>
                     <div className=' m-3 p-4 grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-4 bg-slate-100 rounded-lg'>
-                        <InfoSmallComponent tile='Category' link={`t-pokedex/item-category/${itemDetails.category.name}`} detail_info={itemDetails.category.name} icon={<FaObjectUngroup className='inline' />} />
+                        <InfoSmallComponent tile='Category' link={`/t-pokedex/item-category/${itemDetails.category.name}`} detail_info={itemDetails.category.name} icon={<FaObjectUngroup className='inline' />} />
                         <InfoSmallComponent tile='Cost' detail_info={itemDetails.cost} icon={<AiOutlineMoneyCollect className='inline' />} metric={<RiMoneyCnyCircleFill className='inline' />} />
                     </div>
                     <ItemFlavorText flavorText={itemDetails.flavor_text_entries} />
