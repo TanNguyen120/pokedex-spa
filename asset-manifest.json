@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/t-pokedex/static/css/main.babe9b3c.css",
-    "main.js": "/t-pokedex/static/js/main.fde3b742.js",
+    "main.css": "/t-pokedex/static/css/main.a4704e02.css",
+    "main.js": "/t-pokedex/static/js/main.66a4e86e.js",
     "static/js/787.93efac9a.chunk.js": "/t-pokedex/static/js/787.93efac9a.chunk.js",
     "static/media/borderPoke.png": "/t-pokedex/static/media/borderPoke.f9fee76c6dc10617afab.png",
     "static/media/whiteTriPat.jpg": "/t-pokedex/static/media/whiteTriPat.04e4d7fafa2706e84732.jpg",
@@ -12,12 +12,12 @@
     "static/media/seaWhite.jpg": "/t-pokedex/static/media/seaWhite.1ff84317b67f2d8a8ddc.jpg",
     "static/media/regionBg.jpg": "/t-pokedex/static/media/regionBg.c140184394d4ec3b76bc.jpg",
     "index.html": "/t-pokedex/index.html",
-    "main.babe9b3c.css.map": "/t-pokedex/static/css/main.babe9b3c.css.map",
-    "main.fde3b742.js.map": "/t-pokedex/static/js/main.fde3b742.js.map",
+    "main.a4704e02.css.map": "/t-pokedex/static/css/main.a4704e02.css.map",
+    "main.66a4e86e.js.map": "/t-pokedex/static/js/main.66a4e86e.js.map",
     "787.93efac9a.chunk.js.map": "/t-pokedex/static/js/787.93efac9a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.babe9b3c.css",
-    "static/js/main.fde3b742.js"
+    "static/css/main.a4704e02.css",
+    "static/js/main.66a4e86e.js"
   ]
 }
