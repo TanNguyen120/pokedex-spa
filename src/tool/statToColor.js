@@ -5,9 +5,9 @@ const statToColor = (type) => {
         case "attack":
             return "bg-amber-500"
         case "defense":
-            return "bg-yellow-200"
+            return "bg-yellow-400"
         case "special-attack":
-            return "bg-blue-300"
+            return "bg-blue-400"
         case "special-defense":
             return "bg-lime-400"
         case "speed":

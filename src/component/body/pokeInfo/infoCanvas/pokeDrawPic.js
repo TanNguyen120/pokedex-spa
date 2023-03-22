@@ -18,7 +18,7 @@ const PokeDrawPic = ({ pokeId, pokeName }) => {
     return (
         <div className='bg-white rounded-lg text-center text-black m-2 p-2 grid grid-cols-1'>
             <img className="" src={idToURL(pokeId, pokeName)} alt="poke draw" />
-            <div className=' text-lg font-semibold'> Official Artwork</div>
+            <div className=' text-lg font-semibold text-slate-500'> Official Artwork</div>
         </div>
     )
 }

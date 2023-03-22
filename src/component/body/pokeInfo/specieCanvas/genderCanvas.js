@@ -8,8 +8,8 @@ const GenderCanvas = ({ genderRatio }) => {
     const malePercent = 1 - femalePercent;
     return (
 
-        <div className="bg-slate-300 rounded-lg text-center font-mono font-semibold text-black m-1">
-            <h3>
+        <div className="bg-slate-300 rounded-lg text-center font-mono  text-black m-1">
+            <h3 className=' font-semibold text-slate-500'>
                 Gender Rate <BsGenderTrans className='inline' />
             </h3>
             {

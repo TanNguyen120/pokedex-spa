@@ -110,6 +110,7 @@ const SearchBar = () => {
                 border-gray-500 rounded-full 
                 font-medium md:text-lg 
                 text-xl font-mono 
+                text-slate-600
                 lg:col-start-4 my-6 md:my-0"
                 onClick={(e) => {
                     dispatch(dispatch(toggleFlag()));

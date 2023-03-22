@@ -7,8 +7,8 @@ import LoadingSpinner from '../../../loadingSpiner';
 const DebutInfo = ({ generation }) => {
     const pokeForm = useSelector(state => state.singlePokemon.form)
     return (
-        <div className="bg-slate-300 rounded-lg text-center font-mono font-semibold text-black m-1 flex flex-col">
-            <h3>
+        <div className="bg-slate-300 rounded-lg text-center font-mono  text-black m-1 flex flex-col capitalize">
+            <h3 className=' font-semibold text-slate-500'>
                 Debut <FaBirthdayCake className='inline' />
             </h3>
             <Link to={`/t-pokedex/generations/${generation}`} className='bg-white rounded-lg text-center text-black m-2 font-medium'>

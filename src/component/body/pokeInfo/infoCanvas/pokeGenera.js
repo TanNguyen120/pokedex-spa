@@ -13,7 +13,7 @@ const PokeGenera = ({ pokeGenera }) => {
         })
     }, [pokeGenera])
     return (
-        <div className="text-sm font-light" >
+        <div className="text-sm font-light text-slate-700" >
             {genera}
         </div>
     )
