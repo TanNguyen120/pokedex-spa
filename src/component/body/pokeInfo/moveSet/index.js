@@ -52,7 +52,7 @@ const MoveSetCanvas = ({ moveSets }) => {
     }, [currentGame])
     const borderTailWind = 'border border-slate-300';
     return (
-        <div className="bg-slate-300 rounded-lg text-center font-mono font-semibold text-black md:m-5 p-2 md:col-span-2 col-span-1 grid grid-cols-1">
+        <div className="bg-slate-300 rounded-lg text-center font-mono font-semibold text-black m-5 md:mx-9 md:my-5 lg:m-5 p-2 lg:col-span-2 col-span-1 grid grid-cols-1">
             <GameVersionRow gamesVersion={gameVersionList} />
             <h3 className='text-lg font-mono font-bold'>
                 Move Set <GiBroadsword className='inline' />

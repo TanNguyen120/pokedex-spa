@@ -29,21 +29,23 @@ const expIcon = <AiOutlineExperiment className='inline' />;
 const InfoCanvas = ({ pokemon }) => {
     const pictureMode = useSelector((state) => state.webSettings.pictureMode);
     return (
-        <div className='bg-slate-400 grid grid-cols-1 md:grid-cols-2 rounded-lg p-4 md:ml-5 md:mr-2'>
+        <div className='bg-slate-400 grid grid-cols-1 md:grid-cols-2 rounded-lg p-4 lg:ml-5 lg:mr-2 md:mx-9 md:mb-3 lg:mb-0'>
             <div className='bg-white rounded-lg text-center text-black m-2 md:text-lg text-xl font-bold p-3'>
                 {toTitleCase(pokemon.baseData.name)} {pokemon.species ? <PokeGenera pokeGenera={pokemon.species.genera} /> : <LoadingSpinner />}
             </div>
             <InfoSmallComponent tile="Order In National Dex" detail_info={'# ' + pokemon.baseData.id} />
-            {
-                pictureMode === "sprite" ?
-                    (<div className='grid grid-cols-2 rounded-lg bg-slate-300 m-1'>
-                        <PokemonFormPic picUrl={pokemon.baseData.sprites.back_default} type='back' />
-                        <PokemonFormPic picUrl={pokemon.baseData.sprites.front_default} type='front' />
-                        <PokemonFormPic picUrl={pokemon.baseData.sprites.back_shiny} type='shiny back' />
-                        <PokemonFormPic picUrl={pokemon.baseData.sprites.front_shiny} type='shiny front' />
-                    </div>) :
-                    <PokeDrawPic pokeId={pokemon.baseData.id} pokeName={pokemon.baseData.name} />
-            }
+            <div>
+                {
+                    pictureMode === "sprite" ?
+                        (<div className='grid grid-cols-2 rounded-lg bg-slate-300 m-1'>
+                            <PokemonFormPic picUrl={pokemon.baseData.sprites.back_default} type='back' />
+                            <PokemonFormPic picUrl={pokemon.baseData.sprites.front_default} type='front' />
+                            <PokemonFormPic picUrl={pokemon.baseData.sprites.back_shiny} type='shiny back' />
+                            <PokemonFormPic picUrl={pokemon.baseData.sprites.front_shiny} type='shiny front' />
+                        </div>) :
+                        <PokeDrawPic pokeId={pokemon.baseData.id} pokeName={pokemon.baseData.name} />
+                }
+            </div>
             <div className='grid grid-cols-1'>
                 <div className='grid grid-cols-2'>
                     <InfoSmallComponent tile="Weight" detail_info={(pokemon.baseData.weight * 0.1).toFixed(2)} metric=" kg" icon={weightIcon} />

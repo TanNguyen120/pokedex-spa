@@ -20,8 +20,8 @@ import DebutInfo from './debutInfo';
 
 const SpecieCanvas = ({ specieInfo, abilityDetail, pokeShape }) => {
     return (
-        <div className='bg-slate-400 rounded-lg p-4 md:mr-5 md:ml-2 grid grid-cols-1 md:grid-cols-2 '>
-            <div className="md:col-span-2 col-span-1">
+        <div className='bg-slate-400 rounded-lg p-4 lg:mr-5 lg:ml-2 grid grid-cols-1 md:grid-cols-2 md:mx-9 '>
+            <div className="md:col-span-2">
                 <PokedexEntry pokedexEntry={specieInfo.flavor_text_entries} />
             </div>
             <div className='grid grid-cols-2 '>

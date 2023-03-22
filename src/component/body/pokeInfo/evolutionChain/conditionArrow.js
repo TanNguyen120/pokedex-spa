@@ -47,7 +47,7 @@ const ConditionArrow = ({ condition }) => {
                     <p className="font-semibold text-base">( {stateCondition} )</p>
                 </div>
                 {/* <img className=" w-9 h-16 md:w-18 md:h-44 -rotate-90" src="/arrowYellow.png" alt="poke sprite" /> */}
-                <div className='text-center md:rotate-0 rotate-90'>
+                <div className='text-center lg:rotate-0 rotate-90'>
                     <IconContext.Provider value={{ color: 'navy', size: 98 }}>
                         <BsArrowRight />
                     </IconContext.Provider>

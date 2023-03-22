@@ -30,7 +30,7 @@ const PokeFrame = ({ pokeImg, pokeId }) => {
                         hover:scale-200 duration-150'>
                 <img className=" w-full h-full 
                                 transition ease-in-out delay-50 hover:-translate-y-1 
-                                hover:scale-200 duration-150" src={`https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${officialIndex}.png`} alt="poke sprite"
+                                 hover:animate-bounce duration-150" src={`https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${officialIndex}.png`} alt="poke sprite"
                     onClick={e => {
                         dispatch(clearSinglePokeData());
                         dispatch(findPokeByID(pokeId));

@@ -23,7 +23,7 @@ const ItemCategoryDetails = () => {
                             {itemCategory.name}
                         </div>
                         <div className=' m-4 grid grid-cols-3 lg:grid-cols-9 md:grid-cols-6'>
-                            <InfoSmallComponent tile='Pocket Name' detail_info={itemCategory.pocket.name} icon={<GiPocketWatch className=' inline' />} link={`/t-pokedex/pocket-name/${itemCategory.pocket.name}`} />
+                            <InfoSmallComponent tile='Pocket Name' detail_info={itemCategory.pocket.name} icon={<GiPocketWatch className=' inline' />} link={`/t-pokedex/item-pocket`} />
                         </div>
                         <ItemInCategory categoryName={itemCategory.name} itemList={itemCategory.items} />
                     </div>

@@ -51,7 +51,7 @@ const SearchBar = () => {
 
     //========================================================================================================================================================
     return (
-        <div className="grid md:grid-cols-4 grid-cols-1 gap-3 md:py-10 py-3 m-5 md:px-32 px-6">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-3 md:py-10 py-3 m-5 md:px-32 px-6">
             <div className="md:col-span-2">
                 <form >
                     <label
@@ -110,7 +110,7 @@ const SearchBar = () => {
                 border-gray-500 rounded-full 
                 font-medium md:text-lg 
                 text-xl font-mono 
-                md:col-start-4 my-6 md:my-0"
+                lg:col-start-4 my-6 md:my-0"
                 onClick={(e) => {
                     dispatch(dispatch(toggleFlag()));
                 }}

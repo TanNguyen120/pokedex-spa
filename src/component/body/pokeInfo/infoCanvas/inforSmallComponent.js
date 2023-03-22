@@ -6,7 +6,7 @@ const InfoSmallComponent = ({ tile, detail_info, metric, icon, link }) => {
     return (
 
         <div className="bg-slate-300 rounded-lg text-center font-mono font-semibold text-black m-1">
-            <h3>
+            <h3 className=' text-slate-500'>
                 {tile} {icon}
             </h3>
             <div className='bg-white rounded-lg text-center text-black m-2 font-medium'>
