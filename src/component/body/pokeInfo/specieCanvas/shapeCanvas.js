@@ -24,8 +24,8 @@ const ShapeCanvas = ({ pokeShape }) => {
                     <LoadingSpinner />
 
             }
-            <div className="bg-slate-300 rounded-lg text-center font-mono font-semibold text-black m-1">
-                <h3>
+            <div className="bg-slate-300 rounded-lg text-center font-mono  text-black m-1">
+                <h3 className=' font-semibold text-slate-500'>
                     Scientific Name <GiMicroscope className='inline' />
                 </h3>
                 {

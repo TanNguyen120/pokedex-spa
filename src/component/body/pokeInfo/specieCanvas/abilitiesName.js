@@ -3,10 +3,10 @@ import React from 'react'
 
 
 const AbilitiesName = ({ ability, setActive, activeAbility }) => {
-    let style = "bg-inherit hover:bg-slate-400";
+    let style = "bg-inherit hover:bg-slate-400 text-white border-t border-l border-r border-slate-500";
 
     if (ability.name === activeAbility.name) {
-        style = "bg-white";
+        style = "bg-white text-slate-600";
     }
 
     // the function handle onclick event to set activeAbility to the current div

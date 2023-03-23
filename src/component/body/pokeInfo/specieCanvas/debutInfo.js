@@ -11,10 +11,10 @@ const DebutInfo = ({ generation }) => {
             <h3 className=' font-semibold text-slate-500'>
                 Debut <FaBirthdayCake className='inline' />
             </h3>
-            <Link to={`/t-pokedex/generations/${generation}`} className='bg-white rounded-lg text-center text-black m-2 font-medium'>
+            <Link to={`/t-pokedex/generations/${generation}`} className='bg-white  hover:bg-slate-400 hover:text-white rounded-lg text-center text-black m-2 font-medium'>
                 {generation}
             </Link>
-            <Link to={`/t-pokedex/version-group/${pokeForm ? pokeForm.version_group.name : ""}`} className='bg-white rounded-lg text-center text-black m-2 font-medium'>
+            <Link to={`/t-pokedex/version-group/${pokeForm ? pokeForm.version_group.name : ""}`} className='bg-white rounded-lg text-center text-black m-2 font-medium hover:bg-slate-400 hover:text-white'>
                 {pokeForm ? <span> {`pokémon ${pokeForm.version_group.name}  `} </span> : <LoadingSpinner />}
             </Link>
         </div>

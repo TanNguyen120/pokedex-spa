@@ -10,7 +10,7 @@ const InfoSmallComponent = ({ tile, detail_info, metric, icon, link }) => {
                 {tile} {icon}
             </h3>
             <div className='bg-white rounded-lg text-center text-black m-2 font-medium'>
-                {link ? <Link to={link} className="hover:text-lg hover:text-rose-600 hover:cursor-pointer">{detail_info} {metric}</Link> : <>{detail_info} {metric}</>}
+                {link ? <Link to={link} className="hover:text-lg hover:text-rose-600 hover:cursor-pointer hover:bg-slate-300">{detail_info} {metric}</Link> : <>{detail_info} {metric}</>}
             </div>
         </div>
 

@@ -16,8 +16,8 @@ const CheckCanvas = ({ isBaby, isLegend, isMythical }) => {
     const SmallBtn = ({ tile, value }) => {
         return (
             <div className='bg-slate-300 p-2 rounded-lg mx-2 font-md md:mt-0 mt-2'>
-                <div className="font-semibold text-sm">{tile}</div>
-                <div className='bg-white rounded-lg mx-1 p-1'>
+                <div className="text-slate-500 mb-3">{tile}</div>
+                <div className='bg-white rounded-lg mx-3 p-1'>
                     {<CheckValue value={value} />}
                 </div>
             </div>

@@ -39,11 +39,11 @@ const EvolutionChain = ({ evoChainProb }) => {
 
     return (
         <div className="bg-slate-300 rounded-lg lg:m-5 m-5 md:m-9 lg:col-span-2 col-span-1 grid grid-cols-1 ">
-            <h1 className="text-lg font-bold mt-1">Evolution Chain <AiOutlineApartment className='inline' /></h1>
+            <h1 className="text-lg font-semibold text-slate-500 mt-1">Evolution Chain <AiOutlineApartment className='inline' /></h1>
             {
                 evoChain.allChains ?
                     evoChain.allChains.map((element, index) => <EvoChain chain={element} key={index} />)
-                    : <h1 className=' font-semibold font-mono'> This pokémon dosen`t Evolving</h1>
+                    : <h1 className=' font-semibold font-mono text-slate-700'> This pokémon dosen`t Evolving</h1>
             }
         </div>
     )

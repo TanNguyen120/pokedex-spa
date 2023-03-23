@@ -64,7 +64,7 @@ const AbilitiesDetail = ({ abilities }) => {
 
     return (
         <div className="bg-slate-300 rounded-lg text-center font-mono font-semibold text-black m-1">
-            <h3>
+            <h3 className=' text-slate-500'>
                 Ability Detail <TbPokeball className='inline' />
             </h3>
             <div className="bg-slate-300 rounded-lg text-center font-mono font-semibold text-black m-1 p-2">

@@ -8,7 +8,7 @@ const QuickInfo = ({ pokemon }) => {
     const dispatch = useDispatch();
     return (
         <div className="bg-slate-300 text-center p-1 mx-8 mt-3 rounded-lg lg:m-3 md:mx-56">
-            <h3 className="font-semibold text-base hover:cursor-pointer" onClick={e => {
+            <h3 className="font-semibold text-base hover:cursor-pointer text-slate-600" onClick={e => {
                 dispatch(findPokeByID(pokemon.name))
             }}>#{pokemon.orderInNationalDex} {toTitleCase(pokemon.name)}</h3>
             <div className='bg-slate-300 rounded-lg items-center m-1'>
