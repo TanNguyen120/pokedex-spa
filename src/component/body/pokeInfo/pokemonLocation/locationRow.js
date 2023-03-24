@@ -57,7 +57,7 @@ const LocationRow = ({ location }) => {
                 }
             </div>
             <div className='w-96 mx-4 '>
-                <Link to={`/t-pokedex/area/${locationLinkName}`}> {locationName}</Link>
+                <Link className=' hover:text-blue-600 hover:underline' to={`/t-pokedex/area/${locationLinkName}`}> {locationName}</Link>
             </div>
             <div className='w-28  mx-4'>
                 <Link to='/t-pokedex/encounter' className=' hover:cursor-pointer hover:scale-125'>

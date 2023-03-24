@@ -31,7 +31,7 @@ const TypeEffectiveness = ({ types }) => {
                 </div>
                 <DamageCanvas damageVector={typeEffect[1]} />
             </div>
-            <div className='lg:col-span-2 text-xs font-mono text-left pl-3 col-span-1'>
+            <div className='lg:col-span-2 text-xs font-mono text-left pl-3 col-span-1 text-yellow-900'>
                 <div>This table is for games from 2013 onwards, older game have some minor differences</div>
                 <div> Type Effectiveness depend on the type of move of attack pokemon </div>
                 <div> Damage Deal table only accuracy for single type pokemon </div>

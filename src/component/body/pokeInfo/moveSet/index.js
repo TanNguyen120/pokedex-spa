@@ -54,13 +54,13 @@ const MoveSetCanvas = ({ moveSets }) => {
     return (
         <div className="bg-slate-300 rounded-lg text-center font-mono font-semibold text-black m-5 md:mx-9 md:my-5 lg:m-5 p-2 lg:col-span-2 col-span-1 grid grid-cols-1">
             <GameVersionRow gamesVersion={gameVersionList} />
-            <h3 className='text-lg font-mono font-bold'>
+            <h3 className='text-lg font-mono font-semibold text-slate-500'>
                 Move Set <GiBroadsword className='inline' />
             </h3>
             <div className=' p-2 overflow-auto'>
                 <table className="table-auto overflow-scroll w-full p-2 m-2 bg-white border-collapse border border-slate-400 rounded-lg">
                     <thead className=' bg-slate-200 text-lg font-semibold'>
-                        <tr className=' rounded-lg'>
+                        <tr className=' rounded-lg text-slate-500'>
                             <th className={borderTailWind}>Move</th>
                             <th className={borderTailWind}>Type</th>
                             <th className={borderTailWind}>Category</th>
