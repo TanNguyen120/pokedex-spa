@@ -11,7 +11,7 @@ const Variations = ({ varieties }) => {
         <>
             {
                 varieties.length < 5 ?
-                    (<div className="lg:col-span-2 px-4 grid lg:grid-cols-10 md:grid-cols-6 grid-cols-4 mx-4">
+                    (<div className="lg:col-span-2 px-4 grid lg:grid-cols-10 md:grid-cols-6 grid-cols-4  ml-9 lg:ml-2">
                         {
                             varieties.map(element => <VarietiesButton pokemon={element.pokemon} activeVarieties={pokeInfo.baseData.name} key={element.pokemon.name} />)
                         }
