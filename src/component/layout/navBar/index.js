@@ -15,20 +15,20 @@ const NavBar = () => {
                     <img className="h-full w-full mx-6 py-1.5 object-scale-down" src={process.env.PUBLIC_URL + '/pokedexLogo.png'} alt="pokedex Logo" />
                 </Link>
             </div>
-            <div className=' md:col-span-9 grid md:grid-cols-8 grid-cols-4'>
+            <div className=' md:col-span-9 grid lg:grid-cols-8 md:grid-cols-4 grid-cols-2'>
                 <div className='md:ml-8 text-sm font-mono mt-8'>
                     <DropDownSettings />
                 </div>
                 <div className=' mt-8'>
                     <GameItemNav />
                 </div>
-                <div className=' mt-8'>
+                <div className='mt-8'>
                     <GameMechanicNav />
                 </div>
-                <div className=' mt-8'>
+                <div className='mt-8'>
                     <GameGenNav />
                 </div>
-                <div className="md:col-start-8 pt-12 font-mono text-sm ">
+                <div className="lg:col-start-8 pt-12 font-mono text-sm ">
                     A Web By Tan Nguyen
                 </div>
             </div>

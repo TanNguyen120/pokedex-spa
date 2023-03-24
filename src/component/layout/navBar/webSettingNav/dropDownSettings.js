@@ -12,7 +12,7 @@ const DropDownSettings = () => {
                     <BsFillGearFill className=' hover:animate-spin inline' /> Settings
                 </span>
             </div>
-            <div className=' rounded-lg group-hover:grid grid-cols-1 text-left p-2 bg-slate-400 text-black hidden w-56 absolute md:mt-9 mt-1 divide-y divide-slate-100'>
+            <div className=' rounded-lg group-hover:grid grid-cols-1 text-left p-2 lg:pb-0 pb-44 bg-slate-400 text-black hidden w-56 relative lg:absolute lg:mt-9 divide-y divide-slate-100'>
                 <PictureSetting />
                 <Language />
             </div>

@@ -16,7 +16,7 @@ const GameGenNav = () => {
                     <SiNintendoswitch className='inline' /> Games
                 </span>
             </div>
-            <div className=' rounded-lg group-hover:grid grid-cols-1 text-left p-2 bg-slate-400 text-black hidden w-56 absolute md:mt-9 mt-1'>
+            <div className=' rounded-lg group-hover:grid grid-cols-1 text-left p-2 bg-slate-400 text-black hidden w-56 relative lg:absolute lg:mt-9 mt-1'>
                 <GamesNavLink name='Generations' path='/t-pokedex/generations' icon={<MdHolidayVillage className='inline' />} />
                 <GamesNavLink name='PoKéDex' path='/t-pokedex/pokedexs' icon={<IoIosCalculator className='inline' />} />
                 <GamesNavLink name='Version Group' path='/t-pokedex/version-group' icon={<FaLayerGroup className='inline' />} />

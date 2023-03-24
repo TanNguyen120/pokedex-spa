@@ -15,7 +15,7 @@ const GameMechanicNav = () => {
                     <SiNintendo3Ds className='inline' /> Game Mechanic
                 </span>
             </div>
-            <div className=' rounded-lg group-hover:grid grid-cols-1 text-left p-2 bg-slate-400 text-black hidden w-56 absolute md:mt-9 mt-1'>
+            <div className=' rounded-lg group-hover:grid grid-cols-1 text-left p-2 bg-slate-400 text-black hidden w-56 relative lg:absolute lg:mt-9 mt-1'>
                 <ContestNav />
                 <SuperContestNav />
                 <EncounterNav />
