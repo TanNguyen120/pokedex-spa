@@ -24,7 +24,7 @@ const BerryDetails = () => {
         <div className=' bg-blue-abstract bg-repeat min-h-screen font-serif'>
             <div className='md:container md:mx-auto'>
                 <div className=' grid grid-cols-1'>
-                    <div className=' bg-slate-200 p-2 md:m-10 font-medium text-base rounded-lg grid md:grid-cols-2 grid-cols-1'>
+                    <div className=' bg-slate-200 p-2 md:m-10 font-medium text-base rounded-lg grid lg:grid-cols-2 grid-cols-1'>
                         <BerryCol1 berryData={berryData} />
                         <BerryCol2 berryItemsData={berryData.itemDetails} />
                     </div>

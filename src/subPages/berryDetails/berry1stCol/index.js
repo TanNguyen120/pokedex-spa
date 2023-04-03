@@ -14,7 +14,7 @@ const BerryDetail1 = ({ berryData }) => {
                     <img className='h-full w-full' src={pictureMode === "sprite" ? berryData.itemDetails.sprites.default : `https://www.serebii.net/itemdex/sprites/pgl/${berryData.berryDetails.name + 'berry'}.png`} alt={berryData.itemDetails.name} />
                 </div>
                 <BerryName berryName={berryData.itemDetails.names} />
-                <div className='border-4 border-slate-500 bg-slate-200 m-2 p-2 rounded-xl col-span-1'>
+                <div className='border-4 border-slate-500 bg-slate-200 m-2 p-2 rounded-xl col-span-1 text-slate-600'>
                     Number No.{String(berryData.berryDetails.id).padStart(3, '0')}
                 </div>
             </div>

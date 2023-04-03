@@ -18,7 +18,7 @@ const BerriesList = () => {
             <div className='md:container md:mx-auto'>
                 <div className='grid grid-cols-1'>
                     <div className=' rounded-xl p-3 bg-slate-200 border border-indigo-800  m-10'>
-                        <div className='border border-slate-300 rounded-lg float-right m-1 p-1 '>
+                        <div className='border border-slate-300 rounded-lg float-right m-1 p-1 text-slate-500'>
                             <img src='https://static.wikia.nocookie.net/pokemon/images/5/52/Berry_Basket.png' alt='berry in anime' className='' />
                             Berry Appear In Anime
                         </div>

@@ -38,7 +38,7 @@ const BerryName = ({ berryName }) => {
                     <div className=' font-semibold text-lg'>
                         {names.engName}
                     </div>
-                    <div className=' grid grid-cols-2'>
+                    <div className=' grid grid-cols-2 text-slate-400'>
                         <div>
                             {names.japName}
                         </div>
