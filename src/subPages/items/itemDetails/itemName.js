@@ -26,10 +26,10 @@ const ItemName = ({ itemNames }) => {
                     case "ja":
                         resultNames.japHiName = element.name
                         break;
-                    case "ja-HrKt":
+                    case "it":
                         resultNames.japName = element.name
                         break;
-                    case "fr":
+                    case "es":
                         resultNames.fraName = element.name
                         break;
                     case "ko":
@@ -53,7 +53,7 @@ const ItemName = ({ itemNames }) => {
                     <div className=' font-semibold text-lg'>
                         {names.mainName}
                     </div>
-                    <div className=' grid grid-cols-5 mt-8'>
+                    <div className=' grid lg:grid-cols-5 grid-cols-2 md:grid-cols-3 mt-8 md:gap-4 lg:gap-0 gap-2 text-slate-400'>
                         <div>
                             {names.engName}
                         </div>

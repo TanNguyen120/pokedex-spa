@@ -23,12 +23,12 @@ const ItemsDetails = () => {
     return (
         <div className=' bg-seaWhite bg-repeat font-serif'>
             <div className='md:container md:mx-auto'>
-                <div className='grid grid-cols-1 bg-slate-200 rounded-lg p-16'>
-                    <div className='grid lg:grid-cols-6 md:grid-cols-5 grid-cols-3'>
+                <div className='grid grid-cols-1 bg-slate-200 rounded-lg lg:p-16 md:px-6 md:pt-6'>
+                    <div className='grid lg:grid-cols-6 md:grid-cols-4 grid-cols-3'>
                         <SpriteFrame itemName={itemDetails.name} spriteUrl={itemDetails.sprites.default} />
                         <ItemName itemNames={itemDetails.names} />
                     </div>
-                    <div className=' grid md:grid-cols-2 grid-cols-1'>
+                    <div className=' grid lg:grid-cols-2 grid-cols-1'>
                         <Attribute attributeList={itemDetails.attributes} />
                         <ItemDescription description={itemDetails.effect_entries[0]} />
                     </div>

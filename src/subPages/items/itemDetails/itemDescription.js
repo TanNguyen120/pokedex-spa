@@ -8,7 +8,7 @@ const EffectOption = ({ optionName, currentOption, setCurrentOption }) => {
 
     useEffect(() => {
         // set bg color base on current option
-        optionName === currentOption ? setStyle(' bg-slate-50 text-black') : setStyle(' bg-slate-200 text-slate-400');
+        optionName === currentOption ? setStyle(' bg-slate-50 text-slate-500') : setStyle(' bg-slate-200 text-slate-400');
     }, [currentOption, optionName])
 
 
@@ -34,11 +34,11 @@ const ItemDescription = ({ description }) => {
     }, [descriptionType, description])
     return (
         <div className=' grid grid-cols-1 p-3 '>
-            <div className=' grid grid-cols-5 ml-5'>
+            <div className=' grid grid-cols-5 ml-5 border-collapse'>
                 <EffectOption optionName={'Long Effect'} currentOption={descriptionType} setCurrentOption={setCurrentOption} />
                 <EffectOption optionName={'Short Effect'} currentOption={descriptionType} setCurrentOption={setCurrentOption} />
             </div>
-            <div className=' bg-slate-50 p-4 rounded-lg border border-slate-400 border-collapse '>
+            <div className=' bg-slate-50 p-4 rounded-lg border border-slate-400 border-collapse text-start first-letter:ml-9'>
                 {effect}
             </div>
         </div>
