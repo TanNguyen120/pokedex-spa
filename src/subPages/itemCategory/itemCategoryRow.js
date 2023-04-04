@@ -4,7 +4,7 @@ import SpriteFrame from '../items/itemDetails/spriteFrame'
 
 const ItemCategoryRow = ({ itemName }) => {
     return (
-        <div className='grid grid-cols-1'>
+        <div className='grid grid-cols-1 px-4'>
             <div className=''>
                 <Link to={`/t-pokedex/item/${itemName}`} className=' rounded-lg bg-white  grid grid-cols-1 hover:scale-125 hover:cursor-pointer'>
                     <div className=' rounded-lg bg-slate-100 p-3 m-3 ring-4 ring-slate-500'>
@@ -12,7 +12,7 @@ const ItemCategoryRow = ({ itemName }) => {
                     </div>
                 </Link>
             </div>
-            <div className=' text-base capitalize text-slate-400 m-3'>
+            <div className=' text-base capitalize text-slate-600 m-3'>
                 {itemName}
             </div>
 

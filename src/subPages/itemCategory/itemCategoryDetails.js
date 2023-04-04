@@ -14,22 +14,26 @@ const loader = async ({ params }) => {
 const ItemCategoryDetails = () => {
     const itemCategory = useLoaderData();
     return (
-        <div className='md:container md:mx-auto'>
-            <div className='grid grid-cols-1'>
-                <div className=' rounded-xl p-3 bg-slate-200 border border-indigo-800  m-10'>
-                    <div className=' grid grid-cols-1'>
-
-                        <div className=' font-bold text-lg capitalize  '>
-                            {itemCategory.name}
+        <div className=' min-h-screen bg-whitePatternDiamond bg-repeat'>
+            <div className='md:container md:mx-auto'>
+                <div className='grid grid-cols-1'>
+                    <div className=' rounded-xl p-3 bg-slate-200 border border-indigo-800  m-10'>
+                        <div className=' grid grid-cols-1'>
+                            <div className=' font-bold text-lg capitalize text-slate-600'>
+                                {itemCategory.name}
+                            </div>
+                            <div className=' rounded-lg bg-slate-50 p-4'>
+                                <div className=' m-4 grid grid-cols-3 lg:grid-cols-9 md:grid-cols-6'>
+                                    <InfoSmallComponent tile='Pocket Name' detail_info={itemCategory.pocket.name} icon={<GiPocketWatch className=' inline' />} link={`/t-pokedex/item-pocket`} />
+                                </div>
+                                <ItemInCategory categoryName={itemCategory.name} itemList={itemCategory.items} />
+                            </div>
                         </div>
-                        <div className=' m-4 grid grid-cols-3 lg:grid-cols-9 md:grid-cols-6'>
-                            <InfoSmallComponent tile='Pocket Name' detail_info={itemCategory.pocket.name} icon={<GiPocketWatch className=' inline' />} link={`/t-pokedex/item-pocket`} />
-                        </div>
-                        <ItemInCategory categoryName={itemCategory.name} itemList={itemCategory.items} />
                     </div>
                 </div>
             </div>
         </div>
+
     )
 }
 

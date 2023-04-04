@@ -22,7 +22,7 @@ const ItemCategory = () => {
                     <div className=' rounded-xl p-3 bg-slate-200 border border-indigo-800  m-10'>
                         <div className=' grid grid-cols-1'>
                             <div>
-                                <p className='text-lg font-medium first-letter:text-7xl first-letter:font-bold '>
+                                <p className='text-lg font-medium first-letter:text-7xl first-letter:font-bold text-slate-500'>
                                     Item categories determine where items will be placed in the players bag.
                                 </p>
                             </div>

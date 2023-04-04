@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { setCurrentGame } from '../../../../reduxSlicer/currentGameVersion';
+import gameToTextColor from '../../../../tool/gameToColorText';
 
 
 const GameVersionBtn = ({ gameVersionName }) => {
@@ -9,7 +10,8 @@ const GameVersionBtn = ({ gameVersionName }) => {
     let bg = 'bg-inherit text-slate-400'
 
     if (currentGame.game === gameVersionName) {
-        bg = 'bg-white '
+        let textColor = gameToTextColor(gameVersionName);
+        bg = 'bg-white ' + textColor
     }
     return (
         <div
