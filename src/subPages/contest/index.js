@@ -46,18 +46,18 @@ const Contest = () => {
                 <div className='grid grid-cols-1'>
                     <div className=' rounded-xl p-3 bg-slate-200 border border-indigo-800  m-10'>
                         <div className='border border-slate-300 rounded-lg float-right m-1 p-1 '>
-                            <img src='https://i.pinimg.com/originals/d4/e6/f5/d4e6f5f203e38e15cfcb18cad057562b.jpg' alt='contest artwork' className='' />
+                            <img src='https://i.pinimg.com/originals/d4/e6/f5/d4e6f5f203e38e15cfcb18cad057562b.jpg' alt='contest artwork' className=' text-slate-400' />
                             PokemonContest artwork
                         </div>
-                        <p className='text-lg font-medium first-letter:text-7xl first-letter:font-bold first-letter:text-slate-900
+                        <p className='text-lg font-medium first-letter:text-7xl first-letter:font-bold first-letter:text-slate-700 text-slate-700
                                         first-letter:mr-3 first-letter:float-left'>
                             Pokémon Contests (Japanese: ポケモンコンテスト Pokémon Contest) are a type of competition often contrasted with Pokémon battles and held in Contest Halls. Pokémon are judged on their condition and moves in two rounds, to determine which one is the best of its category.
                         </p>
                         <div className=' mr-9 ml-2 my-5 border-t-2 border-slate-400'>
-                            <div className=' text-left mx-4 text-lg font-semibold'>Contest Type: </div>
+                            <div className=' text-left mx-4 text-lg font-semibold text-slate-400 mt-10'>Contest Type: </div>
                             <div className=' grid grid-cols-4'>
                                 {
-                                    contestDetails ? contestDetails.map((element, index) => <div className={` rounded-lg m-1 p-1 ${contestTypeToColor(element.name)} capitalize`} key={index}>{element.name}</div>)
+                                    contestDetails ? contestDetails.map((element, index) => <div className={` rounded-lg m-1 p-1 text-white font-semibold ${contestTypeToColor(element.name)} capitalize`} key={index}>{element.name}</div>)
                                         : <LoadingSpinner />
                                 }
                             </div>
