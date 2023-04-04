@@ -21,7 +21,7 @@ const BerryFlavourText = ({ flavorTexts }) => {
 
     return (
         <div className=' bg-slate-300 rounded-lg m-2 p-2'>
-            <div className=' m-2 font-semibold '>
+            <div className=' m-2 font-semibold text-slate-400'>
                 Flavour Text:
             </div>
             <div className=' bg-slate-100 rounded-lg grid grid-cols-1 divide-y-2 gap-2'>

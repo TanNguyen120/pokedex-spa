@@ -7,7 +7,7 @@ const FlavorTextRow = ({ flavorTextRow }) => {
             <div className={`${gameToTextColor(flavorTextRow.version_group.name)} col-span-1 mt-2`}>
                 {flavorTextRow.version_group.name}
             </div>
-            <div className=' col-span-3 p-1 rounded-md bg-slate-50 m-1'>
+            <div className=' col-span-3 p-1 rounded-md bg-slate-50 m-1 text-slate-700'>
                 {flavorTextRow.text}
             </div>
         </div>
