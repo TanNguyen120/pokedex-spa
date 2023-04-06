@@ -1,13 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import gameToTextColor from '../../../tool/gameToColorText';
 
 const FlavorTextContent = ({ text, versionGroup }) => {
+    const [stateCss, setStateCss] = useState('');
 
+    useEffect(() => {
+        setStateCss(gameToTextColor(versionGroup));
+    }, [versionGroup])
     return (
         <div className=' grid grid-cols-5  lg:p-4 p-2'>
-            <Link className='text-slate-500 hover:cursor-pointer hover:bg-slate-300 hover:rounded-lg' to={`/t-pokedex/version-group/${versionGroup}`}>{versionGroup}</Link>
-            <div className=' col-span-4'>{text}</div>
+            <Link className={` hover:cursor-pointer hover:bg-slate-300 hover:rounded-lg ${stateCss} text-start`} to={`/t-pokedex/version-group/${versionGroup}`}>{versionGroup}</Link>
+            <div className=' col-span-4 text-start pl-10'>{text}</div>
         </div>
     )
 }
