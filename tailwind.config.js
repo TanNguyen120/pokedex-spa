@@ -6,6 +6,9 @@ module.exports = {
   theme: {
     extend: {
       height: {
+      },
+      linkStyle: {
+
       }
     },
     backgroundImage: {
@@ -23,6 +26,7 @@ module.exports = {
       "seaWhite": "url('../public/seaWhite.jpg')",
       "whiteWallPaint": "url('../public/whiteWall.jpg')",
       "regionBg": "url('../public/regionBg.jpg')",
+      "fabricBg": "url('../public/fabric.jpg')",
     },
   },
   plugins: [],

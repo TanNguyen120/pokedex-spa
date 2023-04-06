@@ -14,21 +14,23 @@ const loader = async ({ params }) => {
 const AttributeDetails = () => {
     const attributeDetails = useLoaderData();
     return (
+        <div className=' bg-fabricBg bg-repeat min-h-screen font-serif'>
+            <div className='lg:container md:mx-auto'>
+                <div className='grid grid-cols-1'>
+                    <div className=' rounded-xl p-3 bg-slate-200 border border-indigo-800  m-10'>
 
-        <div className='md:container md:mx-auto'>
-            <div className='grid grid-cols-1'>
-                <div className=' rounded-xl p-3 bg-slate-200 border border-indigo-800  m-10'>
-
-                    <div className=' grid grid-cols-1'>
-                        <div className=' font-bold text-lg capitalize'>
-                            {attributeDetails.name} Items
+                        <div className=' grid grid-cols-1'>
+                            <div className=' font-bold text-lg capitalize text-slate-400'>
+                                {attributeDetails.name} Items
+                            </div>
+                            <AttributeDescription attributeDescription={attributeDetails.descriptions[0].description} />
+                            <ItemsAttributeList attributeName={attributeDetails.name} itemList={attributeDetails.items} />
                         </div>
-                        <AttributeDescription attributeDescription={attributeDetails.descriptions[0].description} />
-                        <ItemsAttributeList attributeName={attributeDetails.name} itemList={attributeDetails.items} />
                     </div>
                 </div>
             </div>
         </div>
+
     )
 }
 

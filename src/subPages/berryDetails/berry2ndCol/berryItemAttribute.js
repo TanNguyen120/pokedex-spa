@@ -11,8 +11,8 @@ const BerryItemAttribute = ({ berryAttribute, berryItemCategory, berryItemCost }
     </>
     return (
         <div className=' m-2 grid grid-cols-3 '>
-            <InfoSmallComponent tile='Item Attribute' detail_info={berryAttribute ? berryAttribute.name : 'none'} icon={<FiBookOpen className='inline' />} />
-            <InfoSmallComponent tile='Item Category' detail_info={berryItemCategory.name} icon={<MdOutlineCategory className='inline' />} />
+            <InfoSmallComponent tile='Item Attribute' link={`/t-pokedex/item-attribute/${berryAttribute ? berryAttribute.name : ''}`} detail_info={berryAttribute ? berryAttribute.name : 'none'} icon={<FiBookOpen className='inline' />} />
+            <InfoSmallComponent tile='Item Category' link={`/t-pokedex/item-category/${berryItemCategory.name}`} detail_info={berryItemCategory.name} icon={<MdOutlineCategory className='inline' />} />
             <InfoSmallComponent tile='Cost' detail_info={berryItemCost} icon={<RiMoneyDollarCircleLine className='inline' />}
                 metric={pokeDollar} />
         </div>
