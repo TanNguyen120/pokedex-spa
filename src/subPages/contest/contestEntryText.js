@@ -26,12 +26,12 @@ const ContestEntryText = () => {
     }, [])
     return (
         <div className=' m-2 rounded-lg bg-slate-300 ring-2 ring-slate-400 p-3'>
-            <div className=' m-4 text-lg font-semibold'>
+            <div className=' m-4 text-lg font-semibold text-slate-500'>
                 In Normal Contest Each Pokemon Move Have one of these effect as List Below:
             </div>
             <table className=" table-fixed border-collapse border border-slate-400 w-full rounded-lg">
                 <thead className=' bg-slate-200'>
-                    <tr >
+                    <tr className=' text-slate-500'>
                         <th className=' border border-slate-400'>Appeal</th>
                         <th className=' border border-slate-400'>Effect Entries</th>
                         <th className=' border border-slate-400'>Flavour Text</th>
