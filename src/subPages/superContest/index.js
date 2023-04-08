@@ -48,21 +48,21 @@ const SuperContest = () => {
             <div className='md:container md:mx-auto'>
                 <div className='grid grid-cols-1'>
                     <div className=' rounded-xl p-3 bg-slate-200 border border-indigo-800  m-10'>
-                        <div className='border border-slate-300 rounded-lg float-right m-1 p-1 '>
+                        <div className='border border-slate-300 rounded-lg float-right m-1 p-1 text-slate-400'>
                             <img src='https://archives.bulbagarden.net/media/upload/5/5b/Super_Contest_Hall_DPPt.png' alt='contest artwork' className='' />
                             Supper Contest Hall
                         </div>
                         <p className='text-lg font-medium first-letter:text-7xl first-letter:font-bold first-letter:text-slate-900
-                                        first-letter:mr-3 first-letter:float-left'>
+                                        first-letter:mr-3 first-letter:float-left text-slate-600'>
                             Pokémon Super Contests (Japanese: ポケモンスーパーコンテスト Pokémon Super Contest) are an expanded format of the Pokémon Contests for the Generation IV games, specifically in Diamond, Pearl, and Platinum, and in their Generation VIII remakes Brilliant Diamond and Shining Pearl as Super Contest Shows (Japanese: スーパーコンテストショー！ Super Contest Show!). In it, Pokémon are rated on their appearance and performance, rather than strength. They are different from the previous generation's competitions in that not only do they have more rounds, but rounds from the earlier games have been altered. They come in four rankings in the same five categories as Generation III: Coolness, Beauty, Cuteness, Cleverness, or Toughness.
 
                             Super Contests of all ranks are held at the Super Contest Hall in Hearthome City.
                         </p>
                         <div className=' mr-9 ml-2 my-8 border-t-2 border-slate-400'>
-                            <div className=' text-left mx-4 text-lg font-semibold'>Contest Type: </div>
+                            <div className=' text-left mx-4 text-lg font-semibold text-slate-400'>Contest Type: </div>
                             <div className=' grid grid-cols-4'>
                                 {
-                                    contestDetails ? contestDetails.map((element, index) => <div className={` rounded-lg m-1 p-1 ${contestTypeToColor(element.name)} capitalize`} key={index}>{element.name}</div>)
+                                    contestDetails ? contestDetails.map((element, index) => <div className={` rounded-lg m-1 p-1 ${contestTypeToColor(element.name)} capitalize text-white font-semibold`} key={index}>{element.name}</div>)
                                         : <LoadingSpinner />
                                 }
                             </div>

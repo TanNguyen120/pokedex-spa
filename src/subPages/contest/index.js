@@ -43,7 +43,7 @@ const Contest = () => {
     return (
         <div className=' bg-grey-abstract bg-repeat min-h-screen font-serif'>
             <div className='lg:container md:mx-auto'>
-                <div className='grid grid-cols-1'>
+                <div className='grid grid-cols-1 mx-14'>
                     <div className=' rounded-xl p-3 bg-slate-200 border border-indigo-800  m-10'>
                         <div className='border border-slate-300 rounded-lg float-right m-1 p-1 '>
                             <img src='https://i.pinimg.com/originals/d4/e6/f5/d4e6f5f203e38e15cfcb18cad057562b.jpg' alt='contest artwork' className=' text-slate-400' />

@@ -38,7 +38,7 @@ const SuperContestEntryText = () => {
     }, [])
     return (
         <div className=' m-2 rounded-lg bg-slate-300 ring-2 ring-slate-400 p-3'>
-            <div className=' m-4 text-lg font-semibold'>
+            <div className=' m-4 text-lg font-semibold text-slate-400'>
                 In Super Contest Pokemon Moves Have one of these effect as List Below:
             </div>
 
