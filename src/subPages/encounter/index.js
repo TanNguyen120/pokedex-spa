@@ -8,7 +8,7 @@ const Encounter = () => {
                 <div className='grid grid-cols-1'>
                     <div className=' rounded-xl p-3 bg-slate-200 border border-indigo-800  m-10'>
                         <div className='border border-slate-300 rounded-lg float-right m-1 p-1 '>
-                            <img src='https://i.ytimg.com/vi/HAjtfXk-BFE/hqdefault.jpg' alt='an encounter' className='' />
+                            <img src='https://i.ytimg.com/vi/HAjtfXk-BFE/hqdefault.jpg' alt='an encounter' className=' text-slate-400' />
                             pokemon encounter in tall grass
                         </div>
                         <p className='text-lg font-medium first-letter:text-7xl first-letter:font-bold first-letter:text-slate-900

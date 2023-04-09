@@ -4,13 +4,13 @@ import MoveBtn from './moveBtn'
 const ContestEntryDetails = ({ entryRow }) => {
     return (
         <div className=' rounded-lg bg-slate-50 m-2 ring-1 ring-slate-400'>
-            <div className=' text-left p-3 text-lg font-semibold text-slate-600'>
+            <div className=' text-left p-3 text-lg font-semibold text-slate-500'>
                 Appeal: <span className=' p-2 m-2 rounded-lg bg-slate-100 text-black font-normal text-base'>{entryRow.appeal} </span>
             </div>
-            <div className=' text-lg font-semibold text-left p-3 text-slate-600'>
+            <div className=' text-lg font-semibold text-left p-3 text-slate-500'>
                 Flavor Text: <span className='text-black p-2 m-2 rounded-lg bg-slate-100 font-normal text-base'> {entryRow.flavor_text_entries[0].flavor_text}</span>
             </div>
-            <div className=' text-lg font-semibold text-left p-3 text-slate-600'>
+            <div className=' text-lg font-semibold text-left p-3 text-slate-500'>
                 Moves:
                 <div className=' grid md:grid-cols-10 grid-cols-5 gap-3 bg-slate-100 rounded-lg m-3 p-2 text-base font-normal'>
                     {

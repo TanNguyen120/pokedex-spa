@@ -23,7 +23,7 @@ const ItemWithFlingMove = () => {
         <div className=' bg-smallGreyWhite bg-repeat min-h-screen font-serif'>
             <div className='md:container md:mx-auto'>
                 <div className='grid grid-cols-1'>
-                    <div className=' rounded-xl p-3 bg-slate-200 border border-indigo-800  m-10'>
+                    <div className=' rounded-xl p-3 bg-slate-200 border border-indigo-800  m-10 text-slate-500'>
                         Item Fling Effects
                         The various effects of the move "Fling" when used with different item
                     </div>

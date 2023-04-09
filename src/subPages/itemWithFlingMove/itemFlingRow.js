@@ -7,11 +7,11 @@ import LoadingSpinner from '../../component/loadingSpiner'
 const ItemFlingDetails = ({ itemFlingDetails }) => {
     return (
         <div className=' grid grid-cols-1'>
-            <div className=' text-left font-semibold ml-3'>Effect: {itemFlingDetails.name}</div>
+            <div className=' text-left font-semibold ml-3 text-slate-500'>Effect: <span className=' text-slate-600'>{itemFlingDetails.name} </span></div>
 
-            <div className=' grid lg:grid-cols-6 md:grid-cols-4 grid-cols-3 bg-white rounded-lg p-3 m-3'>
+            <div className=' grid lg:grid-cols-6 md:grid-cols-4 grid-cols-3 gap-3 bg-white rounded-lg p-3 m-3'>
                 {
-                    itemFlingDetails.items.map((element, index) => <Link to={`/t-pokedex/item/${element.name}`} key={index} className=' flex flex-row hover:cursor-pointer hover:bg-slate-400'>
+                    itemFlingDetails.items.map((element, index) => <Link to={`/t-pokedex/item/${element.name}`} key={index} className=' flex flex-row hover:cursor-pointer hover:bg-slate-300 rounded-lg hover:scale-110'>
                         <img className=' h-9 w-9' src={`https://img.pokemondb.net/sprites/items/${element.name}.png`} alt={element.name} onError={e => { e.target.onError = null; e.target.src = `https://img.pokemondb.net/sprites/items/${element.name}.png` }} />
                         <div className=' pt-1'>
                             {element.name}
