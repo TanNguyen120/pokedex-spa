@@ -12,7 +12,7 @@ const PokemonSpeciesSprite = ({ pokemon }) => {
     return (
         <Link to={`/t-pokedex/pokemon/${pokemon.name}`} className=' rounded-lg bg-slate-50 hover:scale-125 hover:bg-slate-300 hover:cursor-pointer grid grid-cols-1' onClick={e => { setPokeFlag(pokemon.name) }}>
             <img src={pictureMode === 'sprite' ? `https://img.pokemondb.net/sprites/sword-shield/icon/${pokemon.name}.png` : `https://img.pokemondb.net/artwork/large/${pokemon.name}.jpg`} alt={pokemon.name} className=' h-24 w-28 ' />
-            <div className=' m-1 capitalize'>
+            <div className=' m-1 capitalize text-slate-500'>
                 {pokemon.name}
             </div>
         </Link>

@@ -7,15 +7,12 @@ const GenMoves = ({ moves }) => {
     return (
         <div className='rounded-lg md:col-span-3 col-span-2  border-2 border-slate-500 bg-slate-200 grid grid-cols-1 m-2 p-2'>
 
-            <div className=' font-semibold text-left text-base m-4'>Moves That Can Learn And Use In This Generation:</div>
-            <div className="bg-slate-300 rounded-lg text-center font-mono font-semibold text-black md:m-5 p-2 md:col-span-2 col-span-1 grid grid-cols-1">
-                <h3 className='text-lg font-mono font-bold'>
-                    Move Set
-                </h3>
+            <div className=' font-semibold text-left text-base m-4 text-slate-400'>Moves That Can Learn And Use In This Generation:</div>
+            <div className="bg-slate-200 rounded-lg text-center font-mono font-semibold text-black md:m-5 p-2 md:col-span-2 col-span-1 grid grid-cols-1">
                 <div className=' p-2 overflow-auto'>
                     <table className="table-auto overflow-scroll w-full p-2 m-2 bg-white border-collapse border border-slate-400 rounded-lg">
-                        <thead className=' bg-slate-200 text-lg font-semibold'>
-                            <tr className=' rounded-lg'>
+                        <thead className=' bg-slate-200 text-lg '>
+                            <tr className=' rounded-lg text-slate-600'>
                                 <th className={borderTailWind}>Move</th>
                                 <th className={borderTailWind}>Type</th>
                                 <th className={borderTailWind}>Category</th>

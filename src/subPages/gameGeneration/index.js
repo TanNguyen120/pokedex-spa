@@ -18,8 +18,8 @@ const GameGenerations = () => {
                 <div className='grid grid-cols-1'>
                     <div className=' rounded-xl p-3 bg-slate-200 border border-indigo-800  m-10'>
                         <div className='border border-slate-300 rounded-lg float-right m-8 p-1  '>
-                            <img src='https://truyengihotne.net/uploads/anime/cover_1641355936.jpg' alt='an encounter' className='w-96 h-64' />
-                            pokemons pic
+                            <img src='https://thestrongstylesmarkhome.files.wordpress.com/2019/01/allgens.jpg' alt='an encounter' className='w-960 h-640 text-slate-400' />
+                            pokemons generations
                         </div>
                         <p className='text-lg font-medium first-letter:text-7xl first-letter:font-bold first-letter:text-slate-900
                                         first-letter:mr-3 first-letter:float-left'>
@@ -33,7 +33,7 @@ const GameGenerations = () => {
                         </p>
                     </div>
 
-                    <div className=' bg-slate-200 rounded-lg m-8 grid grid-cols-6'>
+                    <div className=' bg-slate-200 rounded-lg m-8 grid grid-cols-6 gap-4'>
                         {
                             gameGenList.results.map(element => <GameGenBtn genName={element.name} key={element.name} />)
                         }

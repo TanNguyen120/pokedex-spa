@@ -34,18 +34,18 @@ const PokeDexDetails = () => {
     }, [pokeDexDetails, webLanguage])
     return (
         <div className=' bg-smallGreyWhite bg-repeat min-h-screen font-serif'>
-            <div className='md:container md:mx-auto'>
+            <div className='lg:container md:mx-auto'>
                 <div className='grid grid-cols-1'>
                     <div className=' rounded-xl p-3 bg-slate-200 border border-indigo-800  m-10'>
-                        <div className=" mx-8 my-3 text-lg font-semibold ">
+                        <div className=" mx-8 my-3 text-lg font-semibold text-slate-500">
                             {descriptionsLan ? descriptionsLan.description : <LoadingSpinner />}
                         </div>
                         <div className=" grid grid-cols-3">
                             <InfoSmallComponent tile='Main Serries' detail_info={pokeDexDetails.is_main_series ? 'Yes' : 'No'} />
-                            <InfoSmallComponent tile='Region' detail_info={pokeDexDetails.region ? pokeDexDetails.region.name : 'None'} />
+                            <InfoSmallComponent tile='Region' detail_info={pokeDexDetails.region ? pokeDexDetails.region.name : 'None'} link={`/t-pokedex/regions/${pokeDexDetails.region ? pokeDexDetails.region.name : ''}`} />
                             <InfoSmallComponent tile='Version Group' detail_info={pokeDexDetails.version_groups.length > 0 ? pokeDexDetails.version_groups.map(e => <VersionGroupBtn versionName={e.name} />) : 'None'} />
                         </div>
-                        <div className=" grid md:grid-cols-12 grid-cols-6 gap-5 mt-9 mx-4">
+                        <div className=" grid lg:grid-cols-10 md:grid-cols-6 grid-cols-4 gap-5 mt-9 mx-4">
                             {
                                 pokeDexDetails.pokemon_entries.map(element => <PokemonBtn pokemon={element} key={element.entry_number} />)
                             }

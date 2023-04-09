@@ -56,13 +56,13 @@ const GenMoveRow = ({ moveData, borderTailWind }) => {
     }, [moveData])
 
     return (
-        <tr className=' odd:bg-white even:bg-slate-50'>
+        <tr className=' odd:bg-white even:bg-slate-50 capitalize text-slate-700'>
             <td className={borderTailWind + ' p-3'}>{moveData.name}</td>
-            <td className={borderTailWind + ' p-3'}>
+            <td className={borderTailWind + ' py-3 px-6'}>
                 {
                     moveDetailData &&
                     <div
-                        className={`${typeToColor(moveDetailData.type.name)} rounded-md text-white text-center text-sm font-semibold border border-indigo-600 m-1 px-3 `}>
+                        className={`${typeToColor(moveDetailData.type.name)} rounded-md text-white text-center text-sm  border border-indigo-600 m-1 `}>
                         {moveDetailData.type.name}
                     </div>
                 }

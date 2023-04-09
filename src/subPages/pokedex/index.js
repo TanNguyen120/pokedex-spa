@@ -31,7 +31,7 @@ const PokeDexList = () => {
                 <div className='grid grid-cols-1'>
                     <div className=' rounded-xl p-3 bg-slate-200 border border-indigo-800  m-10'>
                         <div className='border border-slate-300 rounded-lg float-right m-1 p-1 '>
-                            <img src='https://i.pinimg.com/originals/72/54/c4/7254c46486cd6d46ce44304b7804cc50.png' alt='an encounter' className='' />
+                            <img src='https://i.pinimg.com/originals/72/54/c4/7254c46486cd6d46ce44304b7804cc50.png' alt='an encounter' className=' text-slate-400' />
                             pokedex in anime
                         </div>
                         <div>

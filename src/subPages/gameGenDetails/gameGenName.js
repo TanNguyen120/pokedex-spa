@@ -43,10 +43,10 @@ const GameGenName = ({ gameGenName }) => {
         <div className=' rounded-lg md:col-span-3 col-span-2  border-4 border-slate-500 bg-slate-200 grid grid-cols-1 m-2 p-2'>
             {
                 names && (<>
-                    <div className=' font-semibold text-lg'>
+                    <div className=' font-semibold text-lg text-slate-800'>
                         {names.engName}
                     </div>
-                    <div className=' grid grid-cols-4'>
+                    <div className=' grid grid-cols-4 text-slate-500 my-4'>
                         <div>
                             {names.japName}
                         </div>
