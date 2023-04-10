@@ -7,7 +7,7 @@ const GameBoxArt = ({ versionName }) => {
             <Link className=' hover:scale-125 hover:cursor-pointer' to={`/t-pokedex/game/${versionName}`}>
                 <img src={`https://img.pokemondb.net/boxes/avif/${versionName}.avif`} alt='game box art' />
             </Link>
-            <div className=' text-base font-semibold'>
+            <div className=' text-base font-semibold text-slate-500 capitalize'>
                 PokéMon {versionName}
             </div>
         </div>

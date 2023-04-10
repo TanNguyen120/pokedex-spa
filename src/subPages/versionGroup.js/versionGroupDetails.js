@@ -20,23 +20,25 @@ const VersionGroupDetails = () => {
     const versionGroupDetails = useLoaderData();
     return (
         <div className=' bg-smallGreyWhite bg-repeat min-h-screen font-serif'>
-            <div className='md:container md:mx-auto'>
+            <div className='lg:container md:mx-auto'>
                 <div className='grid grid-cols-1'>
                     <div className=' rounded-xl p-3 bg-slate-200 border   m-10 grid grid-cols-1'>
-                        <div className=' font-semibold tex'>
+                        <div className=' font-semibold text-slate-500'>
                             {versionGroupDetails.name}  Version Group <span> <Link className=' hover:scale-95 hover:cursor-pointer hover:text-red-500' to={`/t-pokedex/generations/${versionGroupDetails.generation.name}`}> ( {versionGroupDetails.generation.name} ) </Link></span>
                         </div>
-                        <div className=' m-3 grid grid-cols-1'>
-                            <div className=' text-left ml-5 text-base font-semibold'>
-                                Games:
-                            </div>
-                            <div className=' flex flex-row align-middle m-3 rounded-lg bg-slate-100 p-4   '>
-                                {
-                                    versionGroupDetails.versions.map(element => <GameBoxArt versionName={element.name} />)
-                                }
+                        <div className=' m-3 grid grid-cols-1 bg-slate-100 p-4 rounded-lg divide-y divide-slate-300'>
+                            <div>
+                                <div className=' text-left ml-5 text-base font-semibold text-slate-400'>
+                                    Games:
+                                </div>
+                                <div className=' flex flex-row align-middle m-3 rounded-lg '>
+                                    {
+                                        versionGroupDetails.versions.map(element => <GameBoxArt versionName={element.name} />)
+                                    }
+                                </div>
                             </div>
                             <MoveLearnMethod genName={versionGroupDetails.name} moveLearn={versionGroupDetails.move_learn_methods} />
-                            <div className=' m-2 grid grid-cols-6'>
+                            <div className=' m-2 grid grid-cols-6 pt-4'>
                                 {
                                     versionGroupDetails.regions.map((element, index) => <InfoSmallComponent key={index} tile='Regions' icon={<IoEarth className='inline' />} detail_info={element.name} link={`/t-pokedex/regions/${element.name}`} />)
                                 }
