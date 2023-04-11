@@ -73,7 +73,7 @@ const PageSelector = ({ numberOfPage, currentPage, setCurrentPage }) => {
         }
     }, [currentPage, numberOfPage])
     return (
-        <div className=' grid grid-cols-7 gap-5 px-96'>
+        <div className=' grid grid-cols-7 gap-5 lg:px-96 md:px-24 px-0'>
             <PagePrevBtn currentPage={currentPage} setCurrentPage={setCurrentPage} pageNumber={numberOfPage} />
             {
                 visiblePages ? visiblePages.map((element, index) => <PageBtn pageNumber={element} key={index} setCurrentPage={setCurrentPage} currentPage={currentPage} />) : <LoadingSpinner />

@@ -30,7 +30,7 @@ const RegionListBtn = () => {
                     {
                         regionList ?
                             regionList.map((element, index) =>
-                                <a href={`/t-pokedex/regions/${element.name}`} className="text-gray-700 block px-4 py-2 text-sm hover:bg-slate-500 hover:text-white" role="menuitem" tabindex="-1" id="menu-item-0" key={index}>{element.name}</a>
+                                <a href={`/t-pokedex/regions/${element.name}`} className="text-gray-700 block px-4 py-2 text-sm hover:bg-slate-300 hover:text-white" role="menuitem" tabindex="-1" id="menu-item-0" key={index}>{element.name}</a>
                             )
 
                             : <LoadingSpinner />
