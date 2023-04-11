@@ -30,7 +30,7 @@ import LocationIndex, { loader as locationLoader } from "../subPages/location";
 import Regions, { loader as RegionsLoader } from "../subPages/regions";
 import LocationDetails, { loader as locationDetailsLoader } from "../subPages/locationDetails";
 import AreaDetails, { loader as areaLoader } from "../subPages/areaDetails";
-
+import PalparkArea from "../subPages/palparkArea";
 const router = createBrowserRouter([
     {
         path: "/t-pokedex",
@@ -204,6 +204,11 @@ const router = createBrowserRouter([
                 element: <AreaDetails />,
                 errorElement: <ErrorPage />,
                 loader: areaLoader
+            },
+            {
+                path: "/t-pokedex/palpark_area/",
+                element: <PalparkArea />,
+                errorElement: <ErrorPage />,
             },
         ]
     },
