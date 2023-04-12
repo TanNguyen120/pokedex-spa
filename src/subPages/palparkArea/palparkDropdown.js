@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import LoadingSpinner from '../../component/loadingSpiner';
 
 const PalparkDropdown = ({ palparkList }) => {
     const [currentShow, setCurrentShow] = useState(null);
@@ -6,17 +7,22 @@ const PalparkDropdown = ({ palparkList }) => {
     const [show, setShow] = useState(false);
 
     useEffect(() => {
-        setCurrentShow(palparkList[0]);
+        // if element is mount set the current show to the 1st element of palpark list
+        currentShow && setCurrentShow(palparkList[0]);
+        // filter out the current show for the drop down section
         const setChooseList = async () => {
-            let result = [];
-            for (let index = 1; index < palparkList.length; index++) {
-                const element = palparkList[index];
-
-            }
+            const result = await palparkList.filter(currentShow);
+            setPalparkChoose(result)
         }
-    }, [palparkList])
+        setChooseList();
+    }, [palparkList, currentShow])
+
+    const hideDropdown = () => {
+        setShow(false);
+    }
+
     return (
-        <div class="relative inline-block text-left p-20">
+        <div class="relative inline-block text-left p-20" onMouseLeave={e => { hideDropdown() }}>
             <div>
                 <button onClick={e => { setShow(prevSate => !prevSate) }} type="button" class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" id="menu-button" aria-expanded="true" aria-haspopup="true">
                     {currentShow}
@@ -30,7 +36,7 @@ const PalparkDropdown = ({ palparkList }) => {
                 <div class="py-1" role="none">
                     {
                         currentShow ?
-                            regionList.map((element, index) =>
+                            palparkChoose.map((element, index) =>
                                 <a href={`/t-pokedex/regions/${element.name}`} className="text-gray-700 block px-4 py-2 text-sm hover:bg-slate-300 hover:text-white" role="menuitem" tabindex="-1" id="menu-item-0" key={index}>{element.name}</a>
                             )
 
