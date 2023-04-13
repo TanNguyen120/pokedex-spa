@@ -27,6 +27,7 @@ module.exports = {
       "whiteWallPaint": "url('../public/whiteWall.jpg')",
       "regionBg": "url('../public/regionBg.jpg')",
       "fabricBg": "url('../public/fabric.jpg')",
+      'whiteMoonBg': "url('../public/whiteMoon.jpg')"
     },
   },
   plugins: [],
