@@ -11,7 +11,7 @@ const colorToBg = (color) => {
         case "green":
             return "bg-green-400"
         case "black":
-            return "bg-black-400"
+            return "bg-slate-900"
         case "brown":
             return "bg-yellow-900"
         case "purple":
