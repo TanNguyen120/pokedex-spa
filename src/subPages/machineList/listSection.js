@@ -26,9 +26,7 @@ const ListSection = () => {
         getMachineData();
     }, [currentPage])
     return (
-        <div className=' grid grid-cols-1'>
-
-            <div className=' text-4xl'>maxMachine {maxMachine}</div>
+        <div className=' grid grid-cols-1 rounded-lg p-4 bg-slate-100'>
             {results ? <div>{JSON.stringify(results)}</div> : <LoadingSpinner />}
             {maxMachine ? <PageSelector currentPage={currentPage} numberOfPage={maxMachine} setCurrentPage={setCurrentPage} /> : <LoadingSpinner />}
         </div>
