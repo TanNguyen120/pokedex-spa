@@ -30,7 +30,7 @@ const LocationIndex = () => {
                         </p>
                     </div>
                     <DropdownSection />
-                    <div className=' rounded-lg bg-slate-200 border border-slate-400'>
+                    <div className=' rounded-lg bg-slate-200 border border-slate-400 '>
                         <LocationList pageCount={locationList.count} />
                     </div>
                 </div>
