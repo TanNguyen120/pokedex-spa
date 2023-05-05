@@ -4,6 +4,7 @@ import { FaRegListAlt, FaRaspberryPi } from 'react-icons/fa'
 import { MdCategory } from 'react-icons/md'
 import { CgAttribution } from 'react-icons/cg'
 import { GiPocketWatch } from 'react-icons/gi'
+import { RiAlbumLine } from 'react-icons/ri'
 
 const GameItemsMenu = () => {
     return (
@@ -31,6 +32,11 @@ const GameItemsMenu = () => {
             <Link to="/t-pokedex/item-pocket">
                 <div className=' hover:bg-slate-300 hover:rounded-lg hover:text-lg hover:font-semibold p-2 '>
                     <GiPocketWatch className=' inline' /> Items Pocket
+                </div>
+            </Link>
+            <Link to="/t-pokedex/machine">
+                <div className=' hover:bg-slate-300 hover:rounded-lg hover:text-lg hover:font-semibold p-2 '>
+                    <RiAlbumLine className=' inline' /> Machine
                 </div>
             </Link>
         </>
