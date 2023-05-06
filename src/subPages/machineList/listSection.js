@@ -20,7 +20,7 @@ const ListSection = () => {
     useEffect(() => {
         const getMachineData = async () => {
             const resData = (await (axios.get(`https://pokeapi.co/api/v2/machine/?offset=${currentPage}&limit=10`))).data;
-            setResults(resData)
+            setResults(resData.results)
         }
         setResults(null);
         getMachineData();
