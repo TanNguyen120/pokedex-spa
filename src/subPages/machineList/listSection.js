@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import PageSelector from '../../component/utilityComponent/pageSelector';
 import LoadingSpinner from '../../component/loadingSpiner';
+import ResultTable from './resultTable';
 
 const ListSection = () => {
     const [maxMachine, setMaxMachine] = useState(null);
@@ -27,7 +28,7 @@ const ListSection = () => {
     }, [currentPage])
     return (
         <div className=' grid grid-cols-1 rounded-lg p-4 bg-slate-100'>
-            {results ? <div>{JSON.stringify(results)}</div> : <LoadingSpinner />}
+            {results ? <ResultTable className=' m-5' machineList={results} /> : <LoadingSpinner />}
             {maxMachine ? <PageSelector currentPage={currentPage} numberOfPage={maxMachine} setCurrentPage={setCurrentPage} /> : <LoadingSpinner />}
         </div>
 
