@@ -7,7 +7,7 @@ const MachineList = () => {
             <div className='md:container md:mx-auto'>
                 <div className='grid grid-cols-1'>
                     <div className=' grid grid-cols-4 border border-slate-600 bg-slate-100 rounded-lg lg:m-4'>
-                        <div className=' col-span-3 text-left'>
+                        <div className=' col-span-3 text-left text-lg'>
                             <div className=' p-3 first-letter:ml-5'>
                                 A Technical Machine, or TM for short (Japanese: わざマシン Move Machine), is an item that can be used to teach a Pokémon a move.
 
