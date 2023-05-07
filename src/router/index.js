@@ -32,6 +32,7 @@ import LocationDetails, { loader as locationDetailsLoader } from "../subPages/lo
 import AreaDetails, { loader as areaLoader } from "../subPages/areaDetails";
 import PalparkArea from "../subPages/palparkArea";
 import MachineList from "../subPages/machineList";
+import MoveList from "../subPages/move";
 
 const router = createBrowserRouter([
     {
@@ -217,6 +218,12 @@ const router = createBrowserRouter([
                 element: <MachineList />,
                 errorElement: <ErrorPage />,
             },
+            {
+                path: "/t-pokedex/move/",
+                element: <MoveList />,
+                errorElement: <ErrorPage />,
+            },
+
         ]
     },
 
