@@ -3,11 +3,17 @@ import React, { useEffect, useState } from 'react'
 import PageSelector from '../../component/utilityComponent/pageSelector';
 import LoadingSpinner from '../../component/loadingSpiner';
 import ResultTable from './resultTable';
+import PageChooser from './pageSelector';
 
 const ListSection = () => {
     const [maxMachine, setMaxMachine] = useState(null);
     const [currentPage, setCurrentPage] = useState(1);
     const [results, setResults] = useState(null);
+
+    const setCurPage = (number) => {
+        isNaN(number) ? alert('Page must be a number') : setCurrentPage(number)
+    }
+
 
     useEffect(() => {
         const getMaxMachineNumber = async () => {
@@ -28,6 +34,9 @@ const ListSection = () => {
     }, [currentPage])
     return (
         <div className=' grid grid-cols-1 rounded-lg p-4 bg-slate-100'>
+            <div>
+                <PageChooser currentPage={currentPage} setCurrentPage={setCurPage} />
+            </div>
             {results ? <ResultTable className=' m-5' machineList={results} /> : <LoadingSpinner />}
             {maxMachine ? <PageSelector currentPage={currentPage} numberOfPage={maxMachine} setCurrentPage={setCurrentPage} /> : <LoadingSpinner />}
         </div>
