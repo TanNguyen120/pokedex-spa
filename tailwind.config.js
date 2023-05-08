@@ -28,7 +28,8 @@ module.exports = {
       "regionBg": "url('../public/regionBg.jpg')",
       "fabricBg": "url('../public/fabric.jpg')",
       'whiteMoonBg': "url('../public/whiteMoon.jpg')",
-      'whiteStripe': "url('../public/whiteStripe.jpg')"
+      'whiteStripe': "url('../public/whiteStripe.jpg')",
+      'whiteBowl': "url('../public/whiteBrige.jpg')",
     },
   },
   plugins: [],
