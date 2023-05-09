@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 
 import MoveTable from './moveTable';
 import LoadingSpinner from '../../component/loadingSpiner';
+import SearchBar from './searchBar';
 
 const MoveList = () => {
     const [moveList, setMoveList] = useState(null);
@@ -46,6 +47,7 @@ const MoveList = () => {
                         </div>
                     </div>
                     <div className='grid grid-cols-1 rounded-lg bg-slate-100 border border-slate-700'>
+                        {moveList && <SearchBar cache={moveList} />}
                         {moveList ? <MoveTable moveList={moveList} /> : <LoadingSpinner />}
                     </div>
                 </div>
