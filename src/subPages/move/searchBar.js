@@ -36,17 +36,24 @@ const SearchBar = ({ cache, setResult }) => {
     // The function will find in result state if it have any result set the move table base on result else warn about no result found 
     const handleFindMove = () => {
         findResult.length > 0 ? setResult(findResult) : alert('There no such move exist')
+        setFindResult([]);
+        setInputValue('');
+    }
+    // When click clear the page will reload
+    const handleClearSearch = () => {
+        setResult(cache);
+        setInputValue('');
     }
     return (
         <div className=" p-6">
-            <form>
+            <>
                 <div className="max-w-xl">
                     <div className="flex space-x-4">
                         <div className="flex rounded-md overflow-hidden w-full">
                             <input type="text" className="w-full pl-4 rounded-md rounded-r-none" value={inputValue} onChange={e => setInputValue(e.target.value)} />
                             <button className="bg-slate-600 text-white px-6 text-lg font-semibold py-4 rounded-r-md" onClick={e => handleFindMove()}>Find</button>
                         </div>
-                        <button className="bg-white px-6 text-lg font-semibold py-4 rounded-md">Clear</button>
+                        <button className="bg-white px-6 text-lg font-semibold py-4 rounded-md" onClick={e => handleClearSearch()}>Clear</button>
                     </div>
                     <div className=' rounded-lg bg-slate-300 grid grid-cols-1 gap-2 w-8/12'>
                         {
@@ -54,7 +61,7 @@ const SearchBar = ({ cache, setResult }) => {
                         }
                     </div>
                 </div>
-            </form>
+            </>
         </div>
     )
 }

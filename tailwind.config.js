@@ -30,6 +30,7 @@ module.exports = {
       'whiteMoonBg': "url('../public/whiteMoon.jpg')",
       'whiteStripe': "url('../public/whiteStripe.jpg')",
       'whiteBowl': "url('../public/whiteBrige.jpg')",
+      'whitePaper': "url('../public/whitePaper.jpg')",
     },
   },
   plugins: [],

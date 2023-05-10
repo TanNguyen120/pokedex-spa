@@ -47,7 +47,7 @@ const MoveList = () => {
                         </div>
                     </div>
                     <div className='grid grid-cols-1 rounded-lg bg-slate-100 border border-slate-700'>
-                        {moveList && <SearchBar cache={moveList} />}
+                        {moveList && <SearchBar cache={moveList} setResult={setMoveList} />}
                         {moveList ? <MoveTable moveList={moveList} /> : <LoadingSpinner />}
                     </div>
                 </div>
