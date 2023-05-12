@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import PalparkDropdown from './palparkDropdown';
 import LoadingSpinner from '../../component/loadingSpiner';
+import PalparkDetail from './palparkDetail';
 
 
 
@@ -9,10 +10,11 @@ import LoadingSpinner from '../../component/loadingSpiner';
 
 const PalparkArea = () => {
     const [palparkList, setPalparkList] = useState(null);
+    const [currentPalpark, setCurrentPalpark] = useState(null);
     useEffect(() => {
         const getPalparkList = async () => {
-            const palParkList = (await (axios.get(`https://pokeapi.co/api/v2/location/`))).data
-            setPalparkList(palParkList)
+            const palParkList = (await (axios.get(`https://pokeapi.co/api/v2/pal-park-area/`))).data
+            setPalparkList(palParkList.results)
         }
         getPalparkList();
     }, [])
@@ -23,8 +25,8 @@ const PalparkArea = () => {
                     <div className=' font-semibold text-lg text-slate-400'>Palpark Area</div>
                     <div className=' rounded-xl p-3 bg-slate-200 border border-indigo-800  m-10'>
                         <div className='border border-slate-300 rounded-lg float-right m-1 p-1 text-slate-400'>
-                            <img src='https://archives.bulbagarden.net/media/upload/thumb/1/15/Pal_Park_HGSS.png/726px-Pal_Park_HGSS.png' alt='a game map' className='' />
-                            Palpark in game
+                            <img src='https://www.serebii.net/heartgoldsoulsilver/palpark.png' alt='palpark in Heart Gold' className='' />
+                            Palpark in Heart Gold
                         </div>
                         <p className='text-lg font-medium first-letter:text-7xl first-letter:font-bold first-letter:text-slate-900
                                         first-letter:mr-3 first-letter:float-left'>
@@ -36,8 +38,9 @@ const PalparkArea = () => {
                         </p>
                     </div>
                     <div className='grid grid-cols-2'>
-                        {palparkList ? <PalparkDropdown palparkList={palparkList.results} /> : <LoadingSpinner />}
+                        {palparkList ? <PalparkDropdown palparkList={palparkList} setCurrentPalpark={setCurrentPalpark} currentPalpark={palparkList[0]} /> : <LoadingSpinner />}
                     </div>
+                    {currentPalpark ? <PalparkDetail palparkName={currentPalpark.name} /> : <LoadingSpinner />}
                 </div>
             </div>
         </div>
