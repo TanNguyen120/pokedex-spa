@@ -11,10 +11,15 @@ import PalparkDetail from './palparkDetail';
 const PalparkArea = () => {
     const [palparkList, setPalparkList] = useState(null);
     const [currentPalpark, setCurrentPalpark] = useState(null);
+    const handelPalParkChoose = (palparkName) => {
+        setCurrentPalpark(palparkName);
+    }
     useEffect(() => {
         const getPalparkList = async () => {
             const palParkList = (await (axios.get(`https://pokeapi.co/api/v2/pal-park-area/`))).data
-            setPalparkList(palParkList.results)
+            setPalparkList(palParkList.results);
+            const currPalPark = palParkList.results[0];
+            setCurrentPalpark(currPalPark.name);
         }
         getPalparkList();
     }, [])
@@ -38,9 +43,9 @@ const PalparkArea = () => {
                         </p>
                     </div>
                     <div className='grid grid-cols-2'>
-                        {palparkList ? <PalparkDropdown palparkList={palparkList} setCurrentPalpark={setCurrentPalpark} currentPalpark={palparkList[0]} /> : <LoadingSpinner />}
+                        {palparkList ? <PalparkDropdown palparkList={palparkList} setCurrentPalpark={handelPalParkChoose} /> : <LoadingSpinner />}
                     </div>
-                    {currentPalpark ? <PalparkDetail palparkName={currentPalpark.name} /> : <LoadingSpinner />}
+                    {currentPalpark ? <PalparkDetail palparkName={currentPalpark} /> : <LoadingSpinner />}
                 </div>
             </div>
         </div>
