@@ -5,7 +5,10 @@ const PalparkDropdown = ({ palparkList, setCurrentPalpark, currentPalPark }) => 
 
     // Because option work differently so we have to do with onchange event
     return (
-        <div>
+        <div className=' grid grid-cols-1'>
+            <div className=' text-slate-500 text-sm text-left pl-10'>
+                Choose Pal Park Area:
+            </div>
             <div className="relative w-full lg:max-w-sm p-8">
                 <select
                     value={currentPalPark}
