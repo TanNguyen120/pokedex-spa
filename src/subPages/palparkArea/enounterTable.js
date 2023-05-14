@@ -1,21 +1,37 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { findPokeByName } from '../../reduxSlicer/findPokeInfoFlag';
 
 const EnounterTable = ({ encounterTable }) => {
+    const dispatch = useDispatch();
+
+    const findPokemon = (pokeName) => {
+        dispatch(findPokeByName(pokeName))
+    }
     const rowClass = 'border border-slate-300 pl-4 py-3'
     return (
         <table class="table-fixed  border-collapse text-left mt-4 capitalize ">
             <thead>
                 <tr>
                     <th className={rowClass}>Specie</th>
+                    <th className={rowClass}>Sprite</th>
                     <th className={rowClass}>Rate</th>
                     <th className={rowClass}>Score</th>
                 </tr>
             </thead>
             <tbody>
                 {
-                    encounterTable.map((element, index) => <tr key={index} className=' even:bg-slate-200 hover:cursor-pointer hover:scale-105'>
-                        <td className={rowClass}><Link className=' hover:underline hover:text-blue-400' to={`/t-pokedex/pokemon/${element.pokemon_species.name}`}>{element.pokemon_species.name}</Link> </td>
+                    encounterTable.map((element, index) => <tr key={index} className=' even:bg-slate-200 hover:cursor-pointer hover:bg-slate-400'>
+                        <td className={rowClass}>
+                            <Link
+                                preventScrollReset={false}
+                                onClick={e => { findPokemon(element.pokemon_species.name) }}
+                                className=' hover:underline hover:text-blue-400' to={`/t-pokedex/pokemon/${element.pokemon_species.name}`}
+                            >
+                                {element.pokemon_species.name}
+                            </Link>
+                        </td>
                         <td className={rowClass}>{element.rate}</td>
                         <td className={rowClass}>{element.base_score}</td>
                     </tr>)
