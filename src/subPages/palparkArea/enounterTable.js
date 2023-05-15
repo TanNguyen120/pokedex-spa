@@ -9,15 +9,16 @@ const EnounterTable = ({ encounterTable }) => {
     const findPokemon = (pokeName) => {
         dispatch(findPokeByName(pokeName))
     }
-    const rowClass = 'border border-slate-300 pl-4 py-3'
+    const rowClass = 'border border-slate-300 pl-4 py-3';
+    const thClass = rowClass + ' hover:cursor-help';
     return (
         <table class="table-fixed  border-collapse text-left mt-4 capitalize ">
             <thead>
                 <tr>
-                    <th className={rowClass}>Specie</th>
+                    <th title='The Pokemon that appear in this pal park area' className={thClass}>Specie</th>
                     <th className={rowClass}>Sprite</th>
-                    <th className={rowClass}>Rate</th>
-                    <th className={rowClass}>Score</th>
+                    <th title='The base rate for encountering this Pokémon in this pal park area.' className={thClass}>Rate</th>
+                    <th title='The base score given to the player when this Pokémon is caught during a pal park run.' className={thClass}>Score</th>
                 </tr>
             </thead>
             <tbody>
