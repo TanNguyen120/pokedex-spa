@@ -10,7 +10,7 @@ const MoveTable = ({ moveList }) => {
                     moveList.map((element, index) => <Link
                         key={index}
                         to={`/t-pokedex/move/${element.name}`}
-                        className=' border-b border-slate-600 border-collapse p-4 text-left capitalize hover:bg-slate-300 hover:scale-105 hover:text-blue-400 hover:underline'
+                        className=' border-b border-slate-600 border-collapse p-4 text-left capitalize hover:bg-slate-300 hover:scale-105 hover:text-blue-400 hover:underline hover:cursor-pointer'
                     >
                         {element.name}
                     </Link>)

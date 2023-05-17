@@ -1,8 +1,15 @@
 import React, { useEffect, useState } from 'react'
 
 const SuggestionRow = ({ moveName, setInputValue, setFindResult }) => {
+    const handleFindSingleMove = () => {
+        const resultObj = [{
+            name: moveName
+        }];
+        setInputValue(moveName);
+        setFindResult(resultObj);
+    }
     return (
-        <div className=' px-4 capitalize hover:scale-105 hover:underline hover:text-yellow-600 hover:cursor-pointer' onClick={e => { setInputValue(moveName); setFindResult(moveName) }}>
+        <div className=' px-4 capitalize hover:scale-105 hover:underline hover:cursor-pointer hover:text-yellow-600 hover:cursor-pointer' onClick={e => { handleFindSingleMove() }}>
             {moveName}
         </div>
     )
@@ -25,7 +32,7 @@ const SearchBar = ({ cache, setResult }) => {
             if (cache.find(element => element.name === inputValue) === undefined) {
 
                 // filter the cache with element that have name includes the search input
-                const suggestionResult = cache.filter(pokemon => pokemon.name.includes(inputValue));
+                const suggestionResult = cache.filter(moves => moves.name.includes(inputValue));
                 setFindResult(suggestionResult)
             }
         } else {

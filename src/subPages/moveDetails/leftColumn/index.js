@@ -6,6 +6,7 @@ import { ImPower, ImTarget } from 'react-icons/im'
 import { SiRelianceindustrieslimited } from 'react-icons/si'
 
 import TypeArea from './typeArea'
+import MachineList from './machineList'
 
 const LeftColumn = ({ moveDetails }) => {
     return (
@@ -27,6 +28,7 @@ const LeftColumn = ({ moveDetails }) => {
 
             </div>
             {/* =========================================================================================================================== */}
+            <MachineList moveName={moveDetails.name} machineList={moveDetails.machines} />
         </div>
     )
 }
