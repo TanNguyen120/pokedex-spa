@@ -7,12 +7,16 @@ import { SiRelianceindustrieslimited } from 'react-icons/si'
 
 import TypeArea from './typeArea'
 import MachineList from './machineList'
+import DamageClass from './damageClass'
 
 const LeftColumn = ({ moveDetails }) => {
     return (
         <div className='grid grid-cols-1 rounded-lg bg-slate-200 p-2 m-2'>
             <EffectArea effectObject={moveDetails.effect_entries[0]} />
-            <TypeArea typeName={moveDetails.type.name} />
+            <div className=' grid grid-cols-2'>
+                <TypeArea typeName={moveDetails.type.name} />
+                <DamageClass damageClass={moveDetails.damage_class.name} />
+            </div>
             {/* Info can fit in the infosmallcomponent */}
             <div className=' grid grid-cols-3 my-3 gap-4 bg-slate-100 rounded-lg py-2'>
                 <InfoSmallComponent tile='Accuracy' detail_info={moveDetails.accuracy + ' %'} icon={<GiArrowScope className='inline' />} />
