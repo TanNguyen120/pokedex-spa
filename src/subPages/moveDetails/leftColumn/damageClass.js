@@ -18,9 +18,9 @@ const DamageClass = ({ damageClass }) => {
         }
     }, [damageClass])
     return (
-        <div className=' rounded-lg bg-slate-200 p-2 m-2'>
-            <div>Damage Class:</div>
-            <div title={damageClass}>
+        <div className=' rounded-lg bg-slate-100 p-2 m-4 grid grid-cols-1 '>
+            <div className=' text-left text-slate-600'>Damage Class:</div>
+            <div title={damageClass} className=' rounded-lg m-2 p-2 bg-white '>
                 <img src={classImg} alt={damageClass} />
             </div>
         </div>

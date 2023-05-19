@@ -3,6 +3,7 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import LeftColumn from './leftColumn';
 import NameSection from './leftColumn/nameSection';
+import RightColumn from './rightColumn';
 
 
 // loader function later will be call in the router 
@@ -22,6 +23,7 @@ const MoveDetails = () => {
                         <NameSection name={moveDetails.name} names={moveDetails.names} />
                     </div>
                     <LeftColumn moveDetails={moveDetails} />
+                    <RightColumn moveDetails={moveDetails} />
                 </div>
             </div>
         </div>
