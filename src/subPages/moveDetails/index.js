@@ -22,7 +22,9 @@ const MoveDetails = () => {
                     <div className=' md:col-span-2 col-span-1'>
                         <NameSection name={moveDetails.name} names={moveDetails.names} />
                     </div>
-                    <LeftColumn moveDetails={moveDetails} />
+                    <div>
+                        <LeftColumn moveDetails={moveDetails} />
+                    </div>
                     <RightColumn moveDetails={moveDetails} />
                 </div>
             </div>

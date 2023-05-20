@@ -8,6 +8,7 @@ import { SiRelianceindustrieslimited } from 'react-icons/si'
 import TypeArea from './typeArea'
 import MachineList from './machineList'
 import DamageClass from './damageClass'
+import StatChange from './statChange'
 
 const LeftColumn = ({ moveDetails }) => {
     return (
@@ -33,6 +34,7 @@ const LeftColumn = ({ moveDetails }) => {
             </div>
             {/* =========================================================================================================================== */}
             <MachineList moveName={moveDetails.name} machineList={moveDetails.machines} />
+            <StatChange statChange={moveDetails.stat_changes} />
         </div>
     )
 }
