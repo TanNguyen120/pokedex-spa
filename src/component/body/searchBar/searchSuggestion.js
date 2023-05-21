@@ -9,8 +9,9 @@ const SearchSuggestion = ({ cache, searchInput }) => {
 
     // every time the search input change we will check if it match some thing in cache
     useEffect(() => {
+        // we will only check for result if text input is more than 2 word
         if (cache.length > 0 && searchInput.text.length >= 2) {
-            // check if user already search the right name
+            // check if user already search the right name if it the right name we close the suggestion div else we filter the result using include and set it to suggestion div
             if (cache.find(element => element.name === searchInput.text) === undefined) {
 
                 // filter the cache with element that have name includes the search input

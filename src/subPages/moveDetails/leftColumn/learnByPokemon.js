@@ -14,7 +14,7 @@ const LearnByPokemon = ({ learnBy }) => {
             <div className=' text-slate-500 text-left'>
                 Learn By Pokemons:
             </div>
-            <div className=' rounded-lg m-2 p-2 bg-slate-50 divide-y'>
+            <div className=' rounded-lg  p-2 bg-slate-50 divide-y'>
                 {
                     learnBy.map((element, index) =>
                         <div className=' grid grid-cols-2 text-left capitalize pl-4 m-2' key={index}>
