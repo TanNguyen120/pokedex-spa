@@ -4,6 +4,7 @@ import { useLoaderData } from 'react-router-dom';
 import LeftColumn from './leftColumn';
 import NameSection from './leftColumn/nameSection';
 import RightColumn from './rightColumn';
+import LearnByPokemon from './leftColumn/learnByPokemon';
 
 
 // loader function later will be call in the router 

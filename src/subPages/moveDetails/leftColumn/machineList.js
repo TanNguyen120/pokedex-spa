@@ -52,7 +52,7 @@ const MachineList = ({ moveName, machineList }) => {
                         </div>
                     </>
                     :
-                    <div className=' text-lg text-yellow-500 font-semibold'>This Move Cannot Be Learn By Machine !!</div>
+                    <div className=' text-lg text-yellow-400 font-semibold'>This Move Cannot Be Learn By Machine !!</div>
             }
 
         </div>

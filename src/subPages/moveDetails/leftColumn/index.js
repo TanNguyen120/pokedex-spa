@@ -9,6 +9,7 @@ import TypeArea from './typeArea'
 import MachineList from './machineList'
 import DamageClass from './damageClass'
 import StatChange from './statChange'
+import LearnByPokemon from './learnByPokemon'
 
 const LeftColumn = ({ moveDetails }) => {
     return (
@@ -35,6 +36,7 @@ const LeftColumn = ({ moveDetails }) => {
             {/* =========================================================================================================================== */}
             <MachineList moveName={moveDetails.name} machineList={moveDetails.machines} />
             <StatChange statChange={moveDetails.stat_changes} />
+            <LearnByPokemon learnBy={moveDetails.learned_by_pokemon} />
         </div>
     )
 }
