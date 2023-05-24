@@ -2,6 +2,7 @@ import React from 'react'
 import FlavourText from './flavourText'
 import MetaStat from './metaStat'
 import ContestCombo from './contestCombo'
+import ContestEffect from './contestEffect'
 
 const RightColumn = ({ moveDetails }) => {
     return (
@@ -9,6 +10,7 @@ const RightColumn = ({ moveDetails }) => {
             <FlavourText flavourList={moveDetails.flavor_text_entries} />
             <MetaStat metaStat={moveDetails.meta} />
             <ContestCombo contestCombo={moveDetails.contest_combos} />
+            <ContestEffect url={moveDetails.contest_effect.url} />
         </div>
     )
 }
