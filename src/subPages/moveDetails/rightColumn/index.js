@@ -10,7 +10,7 @@ const RightColumn = ({ moveDetails }) => {
             <FlavourText flavourList={moveDetails.flavor_text_entries} />
             <MetaStat metaStat={moveDetails.meta} />
             <ContestCombo contestCombo={moveDetails.contest_combos} />
-            <ContestEffect url={moveDetails.contest_effect.url} />
+            <ContestEffect contestEffect={moveDetails.contest_effect} />
         </div>
     )
 }
