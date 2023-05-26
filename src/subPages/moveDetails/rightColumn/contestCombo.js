@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { GiBulletBill } from 'react-icons/gi'
 
 const ContestCombo = ({ contestCombo }) => {
+    const linkCss = ' ml-5 hover:underline hover:text-blue'
     return (
         <div className='rounded-lg bg-slate-100 m-4 p-2 grid grid-cols-1'>
             <div title='A detail of normal and super contest combos that require this move.' className=' text-slate-600 text-left ml-4'> Contest Combo: </div>
@@ -17,7 +18,7 @@ const ContestCombo = ({ contestCombo }) => {
                                     <div className=' bg-white rounded-lg capitalize pl-4 grid grid-cols-1 gap-4' >
                                         {
                                             contestCombo.normal.use_after ? contestCombo.normal.use_after.map(
-                                                (e, i) => <Link className=' ml-5' key={i} to={`/t-pokedex/move/${e.name}`}><GiBulletBill className='inline' /> {e.name}</Link>
+                                                (e, i) => <Link className={linkCss} key={i} to={`/t-pokedex/move/${e.name}`}><GiBulletBill className='inline' /> {e.name}</Link>
 
                                             )
                                                 :
@@ -30,7 +31,7 @@ const ContestCombo = ({ contestCombo }) => {
                                     <div className=' bg-white rounded-lg capitalize pl-4 grid grid-cols-1 gap-4'>
                                         {
                                             contestCombo.normal.use_before ? contestCombo.normal.use_before.map(
-                                                (e, i) => <Link className=' ml-5' key={i} to={`/t-pokedex/move/${e.name}`}><GiBulletBill className='inline' /> {e.name}</Link>
+                                                (e, i) => <Link className={linkCss} key={i} to={`/t-pokedex/move/${e.name}`}><GiBulletBill className='inline' /> {e.name}</Link>
                                             )
                                                 :
                                                 "No move"
