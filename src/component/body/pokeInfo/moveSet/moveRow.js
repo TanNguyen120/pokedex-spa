@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import damageCategoryIcon from '../../../../tool/damageCategoryIcon'
 import typeToColor from '../../../../tool/typeColor'
+import { Link } from 'react-router-dom'
 
 
 
@@ -62,7 +63,7 @@ const MoveRow = ({ moveData, borderTailWind }) => {
 
     return (
         <tr className=' odd:bg-white even:bg-slate-50'>
-            <td className={borderTailWind + ' p-3 capitalize'}>{moveData.move.name}</td>
+            <td className={borderTailWind + ' p-3 capitalize'}><Link to={`/t-pokedex/move/${moveData.move.name}`} className=' hover:cursor-pointer hover:text-blue-500 hover:underline'>{moveData.move.name} </Link></td>
             <td className={borderTailWind + ' p-3'}>
                 {
                     moveDetailData &&
