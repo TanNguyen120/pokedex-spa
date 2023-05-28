@@ -16,7 +16,13 @@ const loader = async () => {
 const MoveCategory = () => {
   const moveCategoryList = useLoaderData();
   return (
-    <div>{JSON.stringify(moveCategoryList)}</div>
+    <div className=' bg-xWhite bg-scroll   font-serif'>
+      <div className='md:container md:mx-auto'>
+        <div className='grid grid-cols-1'>
+          {JSON.stringify(moveCategoryList)}
+        </div>
+      </div>
+    </div>
   )
 }
 

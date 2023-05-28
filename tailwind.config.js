@@ -31,6 +31,7 @@ module.exports = {
       'whiteStripe': "url('../public/whiteStripe.jpg')",
       'whiteBowl': "url('../public/whiteBrige.jpg')",
       'whitePaper': "url('../public/whitePaper.jpg')",
+      "xWhite": "url('../public/xWhite.jpg')",
     },
   },
   plugins: [],
