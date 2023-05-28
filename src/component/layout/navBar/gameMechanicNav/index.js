@@ -7,6 +7,8 @@ import FlingMoveNav from './flingMoveNav'
 import SuperContestNav from './superContestNav'
 import { TbHandMove } from 'react-icons/tb'
 import { Link } from 'react-router-dom'
+import { MdCategory } from 'react-icons/md'
+
 const GameMechanicNav = () => {
     return (
         <div className='group relative h-full '>
@@ -25,6 +27,11 @@ const GameMechanicNav = () => {
                 <Link to='/t-pokedex/move/'>
                     <div className=' hover:bg-slate-300 hover:rounded-lg hover:text-lg hover:font-semibold p-2 '>
                         <TbHandMove className=' inline' /> Move
+                    </div>
+                </Link>
+                <Link to='/t-pokedex/move-category/'>
+                    <div className=' hover:bg-slate-300 hover:rounded-lg hover:text-lg hover:font-semibold p-2 '>
+                        <MdCategory className=' inline' /> Move Category
                     </div>
                 </Link>
             </div>

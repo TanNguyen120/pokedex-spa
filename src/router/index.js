@@ -34,6 +34,7 @@ import PalparkArea from "../subPages/palparkArea";
 import MachineList from "../subPages/machineList";
 import MoveList from "../subPages/move";
 import MoveDetails, { loader as moveLoader } from "../subPages/moveDetails";
+import MoveCategory, { loader as moveCategoryLoader } from "../subPages/moveCategory";
 
 const router = createBrowserRouter([
     {
@@ -230,6 +231,13 @@ const router = createBrowserRouter([
                 errorElement: <ErrorPage />,
                 loader: moveLoader
             },
+            {
+                path: "/t-pokedex/move-category",
+                element: <MoveCategory />,
+                errorElement: <ErrorPage />,
+                loader: moveCategoryLoader
+            },
+
 
         ]
     },

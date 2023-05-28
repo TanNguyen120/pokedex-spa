@@ -22,7 +22,7 @@ const ResultsRow = ({ url }) => {
                     <tr className=' p-5 odd:bg-slate-200 text-slate-600 hover:bg-slate-300 hover:scale-110'>
                         <th className=' p-4 border border-collapse border-slate-500'><Link className=' hover:text-blue-400 hover:underline' to={`/t-pokedex/item/${machineDetails.item.name}`}>{machineDetails.item.name} </Link> </th>
                         <th className=' p-4 border border-collapse border-slate-500'><Link className=' hover:text-blue-400 hover:underline' to={`/t-pokedex/move/${machineDetails.move.name}`}>{machineDetails.move.name} </Link> </th>
-                        <th className=' p-4 border border-collapse border-slate-500'><Link className=' hover:text-blue-400 hover:underline' to={`/t-pokedex/item/${machineDetails.version_group.name}`}>{machineDetails.version_group.name} </Link> </th>
+                        <th className=' p-4 border border-collapse border-slate-500'><Link className=' hover:text-blue-400 hover:underline' to={`/t-pokedex/version-group/${machineDetails.version_group.name}`}>{machineDetails.version_group.name} </Link> </th>
                     </tr> :
                     <LoadingSpinner />
             }
