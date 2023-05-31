@@ -35,6 +35,7 @@ import MachineList from "../subPages/machineList";
 import MoveList from "../subPages/move";
 import MoveDetails, { loader as moveLoader } from "../subPages/moveDetails";
 import MoveCategory, { loader as moveCategoryLoader } from "../subPages/moveCategory";
+import MoveDamageClass, { loader as moveDamageLoader } from "../subPages/moveDamgeClass";
 
 const router = createBrowserRouter([
     {
@@ -237,7 +238,12 @@ const router = createBrowserRouter([
                 errorElement: <ErrorPage />,
                 loader: moveCategoryLoader
             },
-
+            {
+                path: "/t-pokedex/move-damage-class",
+                element: <MoveDamageClass />,
+                errorElement: <ErrorPage />,
+                loader: moveDamageLoader
+            },
 
         ]
     },
