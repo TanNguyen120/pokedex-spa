@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import { useLoaderData } from 'react-router-dom'
+import DamageClassMenu from './menuChoose'
+import DamageClassMoveList from './damageClassMoveList'
 
 
 
@@ -16,20 +18,21 @@ const loader = async () => {
 
 const DamageClass = () => {
 
-    const moveCategoryList = useLoaderData();
+    const moveDamageList = useLoaderData();
 
-    const [currentDamgeClass, setCurrentDamageClass] = useState(moveCategoryList[0].name);
+    const [currentDamageClass, setCurrentDamageClass] = useState(moveDamageList[0].name);
     const setDamageClassChoose = (palparkName) => {
         setCurrentDamageClass(palparkName);
     }
     return (
-        <div className=' bg-xWhite bg-scroll   font-serif'>
+        <div className=' bg-whiteStripe2 bg-scroll   font-serif'>
             <div className='md:container md:mx-auto'>
                 <div className='grid grid-cols-1 bg-slate-50 rounded-lg p-4'>
                     <div className=' m-2 p-4 rounded-lg bg-white border border-slate-500 text-2xl'>
-                        Very general categories that loosely group move effects.
+                        Damage classes moves can have, e.g. physical, special, or non-damaging.
                     </div>
-                    {JSON.stringify(currentDamgeClass)}
+                    <DamageClassMenu currentDamageClass={currentDamageClass} setCurrentDamageClass={setDamageClassChoose} damageClassList={moveDamageList} />
+                    <DamageClassMoveList damageClassName={currentDamageClass} />
                 </div>
             </div>
         </div>
