@@ -33,7 +33,7 @@ module.exports = {
       'whitePaper': "url('../public/whitePaper.jpg')",
       "xWhite": "url('../public/xWhite.jpg')",
       "whiteStripe2": "url('../public/whiteStripe2.jpg')",
-
+      "whiteNature": "url('../public/whiteNature.jpg')",
     },
   },
   plugins: [],

@@ -9,6 +9,7 @@ import { TbHandMove } from 'react-icons/tb'
 import { Link } from 'react-router-dom'
 import { MdCategory } from 'react-icons/md'
 import { FaHouseDamage } from 'react-icons/fa'
+import { RiInputMethodLine } from 'react-icons/ri'
 
 const GameMechanicNav = () => {
     return (
@@ -38,6 +39,11 @@ const GameMechanicNav = () => {
                 <Link to='/t-pokedex/move-damage-class/'>
                     <div className=' hover:bg-slate-300 hover:rounded-lg hover:text-lg hover:font-semibold p-2 '>
                         <FaHouseDamage className=' inline' /> Move Damage Class
+                    </div>
+                </Link>
+                <Link to='/t-pokedex/move-learn-method/'>
+                    <div className=' hover:bg-slate-300 hover:rounded-lg hover:text-lg hover:font-semibold p-2 '>
+                        <RiInputMethodLine className=' inline' /> Move Learn Method
                     </div>
                 </Link>
             </div>
