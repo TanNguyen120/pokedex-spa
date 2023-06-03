@@ -1,6 +1,17 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+
+const VersionGroupList = ({ versionGroup }) => {
+    return (
+        <div className=' grid grid-cols-3 md:grid-cols-5 lg:grid-cols-8'>
+            {versionGroup.map((e, i) => <Link key={i} to={`/t-pokedex/version_group/${e.name}`}>{e.name}</Link>)}
+        </div>
+    )
+}
+
+
 
 const MoveLearnDetails = ({ methodName }) => {
     const [methodDetails, setMethodDetails] = useState(null);
@@ -27,13 +38,14 @@ const MoveLearnDetails = ({ methodName }) => {
     }, [methodDetails, webLanguage])
     return (
         <div className=' rounded-lg bg-slate-200 m-4 p-4 grid grid-cols-1 text-left'>
-            <div className=' text-slate-500'>Method: {methodDetails ? methodDetails.name : 'loading'} </div>
-            <div>
+            <div ><span className=' text-slate-500'>Method:</span>  {methodDetails ? methodDetails.name : 'loading'} </div>
+            <div className='px-3'>
                 {description}
             </div>
-            <div>
-                Version Group:
+            <div className='grid grid-cols-1 py-4 mt-2'>
+                <div className=' text-slate-500'>Version Group:</div>
 
+                {methodDetails ? <VersionGroupList versionGroup={methodDetails.version_groups} /> : 'loading'}
             </div>
         </div>
     )
