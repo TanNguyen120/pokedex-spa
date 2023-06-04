@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const VersionGroupList = ({ versionGroup }) => {
     return (
         <div className=' grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 rounded-lg bg-slate-50 p-2'>
-            {versionGroup.map((e, i) => <Link className=' hover:underline hover:text-blue-500 capitalize' key={i} to={`/t-pokedex/version_group/${e.name}`}>{e.name}</Link>)}
+            {versionGroup.map((e, i) => <Link className=' hover:underline hover:text-blue-500 capitalize' key={i} to={`/t-pokedex/version-group/${e.name}`}>{e.name}</Link>)}
         </div>
     )
 }
