@@ -15,9 +15,9 @@ const loader = async () => {
 const MoveLearnMethod = () => {
     const moveLearnList = useLoaderData();
     return (
-        <div className=' bg-whiteNature  bg-scroll   font-serif'>
+        <div className=' bg-whiteNature bg-repeat  font-serif'>
             <div className='md:container md:mx-auto'>
-                <div className='grid grid-cols-1 bg-slate-50 rounded-lg p-4'>
+                <div className='grid grid-cols-1 bg-slate-200 rounded-lg p-4'>
                     <div className=' m-2 p-4 rounded-lg bg-white border border-slate-500 text-2xl'>
                         Methods by which Pokémon can learn moves.
                     </div>
