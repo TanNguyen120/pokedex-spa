@@ -80,9 +80,9 @@ const MoveTarget = () => {
         setCurrentMoveTarget(moveTargetName);
     }
     return (
-        <div className=' bg-whiteThings min-h-screen bg-scroll   font-serif'>
-            <div className='md:container md:mx-auto '>
-                <div className='grid grid-cols-1 min-h-screen bg-slate-50 rounded-lg p-4'>
+        <div className=' bg-whiteThings  bg-scroll   font-serif'>
+            <div className='md:container min-h-screen bg-slate-50 md:mx-auto '>
+                <div className='grid grid-cols-1  rounded-lg p-4'>
                     <div className=' m-2 p-4 rounded-lg bg-white border border-slate-500 text-2xl'>
                         Targets moves can be directed at during battle. Targets can be Pokémon, environments or even other moves.
                     </div>
