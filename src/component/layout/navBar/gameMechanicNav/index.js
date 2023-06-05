@@ -46,6 +46,11 @@ const GameMechanicNav = () => {
                         <RiInputMethodLine className=' inline' /> Move Learn Method
                     </div>
                 </Link>
+                <Link to='/t-pokedex/move-target/'>
+                    <div className=' hover:bg-slate-300 hover:rounded-lg hover:text-lg hover:font-semibold p-2 '>
+                        <RiInputMethodLine className=' inline' /> Move Target
+                    </div>
+                </Link>
             </div>
         </div>
     )
