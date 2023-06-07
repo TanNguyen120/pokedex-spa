@@ -30,6 +30,8 @@ const PagesLink = () => {
                 <SingleLink name='Contest' url={'/t-pokedex/contest'} />
                 <SingleLink name='Super Contest' url={'/t-pokedex/super-contest'} />
                 <SingleLink name='Encounter' url={'/t-pokedex/encounter'} />
+                <SingleLink name='Move' url={'/t-pokedex/move'} />
+                <SingleLink name='Move Category' url={'/t-pokedex/move-category'} />
             </div>
         </div>
     )
