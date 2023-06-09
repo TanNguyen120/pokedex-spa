@@ -5,6 +5,7 @@ import GameItemNav from './gameItemsNav';
 import GameMechanicNav from './gameMechanicNav';
 
 import DropDownSettings from './webSettingNav/dropDownSettings';
+import PokemonNav from './pokemonNav';
 
 
 const NavBar = () => {
@@ -27,6 +28,9 @@ const NavBar = () => {
                 </div>
                 <div className='mt-8'>
                     <GameGenNav />
+                </div>
+                <div className='mt-8'>
+                    <PokemonNav />
                 </div>
                 <div className="lg:col-start-8 pt-12 font-mono text-sm ">
                     A Web By Tan Nguyen
