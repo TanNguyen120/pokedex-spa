@@ -14,7 +14,7 @@ const PokemonNav = () => {
                 </span>
             </div>
             <div className=' rounded-lg group-hover:grid grid-cols-1 text-left p-2 bg-slate-400 text-black hidden w-56 relative lg:absolute lg:mt-9 mt-1'>
-                <Link to="/t-pokedex/pokemon/ability/">
+                <Link to="/t-pokedex/pokemon-ability/">
                     <div className=' hover:bg-slate-300 hover:rounded-lg hover:text-lg hover:font-semibold p-2 '>
                         <GrVulnerability className=' inline' /> Ability
                     </div>
