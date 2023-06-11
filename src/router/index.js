@@ -39,6 +39,8 @@ import MoveDamageClass, { loader as moveDamageLoader } from "../subPages/moveDam
 import MoveLearnMethod, { loader as moveLearnLoader } from "../subPages/moveLearnMethod";
 import MoveTarget, { loader as moveTargetLoader } from "../subPages/moveTarget";
 import AbilityList, { loader as abilityLoader } from "../subPages/pokemonAbility";
+import AbilityDetails, { loader as abilityDetailsLoader } from "../subPages/pokemonAbilityDetails";
+
 const router = createBrowserRouter([
     {
         path: "/t-pokedex",
@@ -263,6 +265,12 @@ const router = createBrowserRouter([
                 element: <AbilityList />,
                 errorElement: <ErrorPage />,
                 loader: abilityLoader
+            },
+            {
+                path: "/t-pokedex/ability/:abilityName",
+                element: <AbilityDetails />,
+                errorElement: <ErrorPage />,
+                loader: abilityDetailsLoader
             },
         ]
     },
