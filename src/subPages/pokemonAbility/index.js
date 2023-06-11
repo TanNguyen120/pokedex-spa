@@ -1,5 +1,7 @@
 import axios from 'axios'
 import React from 'react'
+import { useLoaderData } from 'react-router-dom'
+import AbilityPage from './abilityPage'
 
 //===============================================================================================================================================================================
 
@@ -15,6 +17,7 @@ const loader = async () => {
 
 
 const AbilityList = () => {
+    const pageCount = useLoaderData();
     return (
         <div className=' bg-whiteShineyWave min-h-screen bg-repeat font-serif'>
             <div className='md:container md:mx-auto'>
@@ -35,8 +38,8 @@ const AbilityList = () => {
                             </div>
                         </div>
                     </div>
-                    <div>
-
+                    <div className=' bg-slate-200 rounded-lg p-4'>
+                        <AbilityPage pageCount={pageCount} />
                     </div>
                 </div>
             </div>
