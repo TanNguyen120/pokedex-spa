@@ -36,6 +36,7 @@ module.exports = {
       "whiteNature": "url('../public/whiteNature.jpg')",
       "whiteThings": "url('../public/whiteThings.jpg')",
       "whiteShineyWave": "url('../public/whiteShineyWave.jpg')",
+      "whiteMarble": "url('../public/whiteMarble.jpg')",
     },
   },
   plugins: [],

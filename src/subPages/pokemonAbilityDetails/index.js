@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React from 'react'
 import { useLoaderData } from 'react-router-dom';
+import NameSection from './nameSection';
 
 
 // in react router v6.4 we can define a loader function that can access to url param to call api 
@@ -16,7 +17,13 @@ const loader = async ({ params }) => {
 const AbilityDetails = () => {
     const abilityDetails = useLoaderData();
     return (
-        <div>{JSON.stringify(abilityDetails)}</div>
+        <div className=' bg-whiteMarble bg-repeat min-h-screen font-serif'>
+            <div className='lg:container md:mx-auto'>
+                <div className='grid grid-cols-1 bg-slate-300 rounded-lg m-2 p-4'>
+                    <NameSection name={abilityDetails.name} names={abilityDetails.names} />
+                </div>
+            </div>
+        </div>
     )
 }
 
