@@ -1,8 +1,13 @@
 import axios from 'axios'
 import React from 'react'
+
 import { useLoaderData } from 'react-router-dom';
+import { GiAtom } from 'react-icons/gi';
+import { MdOutlineDomain } from 'react-icons/md'
 import NameSection from './nameSection';
 import DescriptionSection from './descriptionSection';
+import InfoSmallComponent from '../../component/body/pokeInfo/infoCanvas/inforSmallComponent';
+
 
 
 // in react router v6.4 we can define a loader function that can access to url param to call api 
@@ -24,7 +29,10 @@ const AbilityDetails = () => {
                     <NameSection name={abilityDetails.name} names={abilityDetails.names} />
                     <div className=' grid grid-cols-2'>
                         <DescriptionSection description={abilityDetails.effect_entries} />
-
+                        <div className=' grid grid-cols-2 bg-slate-200 m-3 p-2 rounded-lg'>
+                            <InfoSmallComponent helperText={'The generation this ability originated in.'} tile={`Generation`} detail_info={abilityDetails.generation.name} icon={<GiAtom className='inline' />} link={`/t-pokedex/generation/${abilityDetails.generation.name}`} />
+                            <InfoSmallComponent helperText={'Whether or not this ability originated in the main series of the video games.'} tile={'Is Main Series'} detail_info={abilityDetails.is_main_series ? 'Yes' : 'No'} icon={<MdOutlineDomain className='inline' />} />
+                        </div>
                     </div>
                 </div>
             </div>
