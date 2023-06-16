@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom'
 const EffectRow = ({ changeRow }) => {
     return (
         <div className=' grid grid-cols-2 text-left'>
-            <Link title='version group the change happen' className=' pl-5 hover:cursor-pointer hover:underline hover:text-blue'>{changeRow.}</Link>
+            <Link title='version group the change happen' className=' pl-5 hover:cursor-pointer hover:underline hover:text-blue'>{changeRow.version_group.name}</Link>
+            <div>{changeRow.effect_entries.effect}</div>
         </div>
     )
 }
