@@ -7,6 +7,7 @@ import { MdOutlineDomain } from 'react-icons/md'
 import NameSection from './nameSection';
 import DescriptionSection from './descriptionSection';
 import InfoSmallComponent from '../../component/body/pokeInfo/infoCanvas/inforSmallComponent';
+import EffectChange from './effectChange';
 
 
 
@@ -34,6 +35,7 @@ const AbilityDetails = () => {
                             <InfoSmallComponent helperText={'Whether or not this ability originated in the main series of the video games.'} tile={'Is Main Series'} detail_info={abilityDetails.is_main_series ? 'Yes' : 'No'} icon={<MdOutlineDomain className='inline' />} />
                         </div>
                     </div>
+                    <EffectChange effectChange={abilityDetails.effect_changes} />
                 </div>
             </div>
         </div>
