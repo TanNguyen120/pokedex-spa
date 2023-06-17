@@ -43,7 +43,7 @@ const DescriptionSection = ({ description }) => {
                 <OptionBtn currentOption={currentOption} optionName={'short'} setCurrentOption={setCurrentOption} />
                 <OptionBtn currentOption={currentOption} optionName={'long'} setCurrentOption={setCurrentOption} />
             </div>
-            <div className=' rounded-lg bg-white p-4 mx-6'>
+            <div className=' rounded-lg bg-white p-4 mx-6 text-left'>
                 {showText}
             </div>
         </div>
