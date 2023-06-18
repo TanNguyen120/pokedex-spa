@@ -9,6 +9,7 @@ import DescriptionSection from './descriptionSection';
 import InfoSmallComponent from '../../component/body/pokeInfo/infoCanvas/inforSmallComponent';
 import EffectChange from './effectChange';
 import FlavourText from './flavourText';
+import LearnByPokemon from './learnByPokemon';
 
 
 
@@ -39,6 +40,7 @@ const AbilityDetails = () => {
                     <EffectChange effectChange={abilityDetails.effect_changes} />
                     <div className=' grid grid-cols-1 md:grid-cols-2'>
                         <FlavourText flavorTextEntries={abilityDetails.flavor_text_entries} />
+                        <LearnByPokemon pokeList={abilityDetails.pokemon} />
                     </div>
                 </div>
             </div>
