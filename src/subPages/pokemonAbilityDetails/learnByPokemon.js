@@ -16,20 +16,20 @@ const LearnByPokemon = ({ pokeList }) => {
                     <tr className=' bg-slate-100'>
                         <th >Pokemon</th>
                         <th>Sprite</th>
-                        <th>Is Hidden</th>
-                        <th>Slot</th>
+                        <th className=' cursor-help' title='Whether or not this a hidden ability for the referenced Pokémon.'>Is Hidden</th>
+                        <th className=' cursor-help' title={`Pokémon have 3 ability 'slots' which hold references to possible abilities they could have. This is the slot of this ability for the referenced pokemon.`}>Slot</th>
                     </tr>
                 </thead>
                 <tbody>
                     {
                         pokeList.map((e, i) => <tr key={i} className='border border-slate-400 odd:bg-white even:bg-slate-100 text-left'>
-                            <td onClick={e => setPokeFlag(e.pokemon.name)} className={' capitalize p-3'}><Link to={`/t-pokedex/pokemon/${e.pokemon.name}`} className=' hover:cursor-pointer hover:underline hover:text-blue-500'>{e.pokemon.name}</Link></td>
-                            <td className=' pl-5 p-3' onClick={e => setPokeFlag(e.pokemon.name)}>
-                                <Link to={`/t-pokedex/pokemon/${e.pokemon.name}`} className=' text-center'>
+                            <td className={' capitalize p-3'}><Link onClick={event => setPokeFlag(e.pokemon.name)} to={`/t-pokedex/pokemon/${e.pokemon.name}`} className=' hover:cursor-pointer hover:underline hover:text-blue-500'>{e.pokemon.name}</Link></td>
+                            <td className=' pl-5 p-3' >
+                                <Link onClick={event => setPokeFlag(e.pokemon.name)} to={`/t-pokedex/pokemon/${e.pokemon.name}`} className=' text-center'>
                                     <img class=' w-12 h-12' src={pictureMode === 'sprite' ? `https://img.pokemondb.net/sprites/sword-shield/icon/${e.pokemon.name}.png` : `https://img.pokemondb.net/artwork/large/${e.pokemon.name}.jpg`} alt={e.pokemon.name} className='h-24 w-28 ' />
                                 </Link>
                             </td>
-                            <td className=''>
+                            <td>
                                 {e.is_hidden ? 'yes' : 'no'}
                             </td>
                             <td>
