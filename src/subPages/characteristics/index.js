@@ -1,12 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import CharacterList from './characterList'
 
 
 
 
 const Characteristics = () => {
     return (
-        <div className=' bg-whiteStripe bg-contain min-h-screen bg-repeat font-serif'>
+        <div className=' bg-whiteBubble bg-contain min-h-screen bg-repeat font-serif'>
             <div className='md:container md:mx-auto'>
                 <div className='grid grid-cols-1'>
                     <div className=' grid grid-cols-4 border border-slate-600 bg-slate-100 rounded-lg lg:m-4'>
@@ -24,6 +25,9 @@ const Characteristics = () => {
                                 characteristic and it effect on stat
                             </div>
                         </div>
+                    </div>
+                    <div>
+                        <CharacterList />
                     </div>
 
                 </div>
