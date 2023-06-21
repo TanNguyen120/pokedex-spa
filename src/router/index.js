@@ -40,6 +40,7 @@ import MoveLearnMethod, { loader as moveLearnLoader } from "../subPages/moveLear
 import MoveTarget, { loader as moveTargetLoader } from "../subPages/moveTarget";
 import AbilityList, { loader as abilityLoader } from "../subPages/pokemonAbility";
 import AbilityDetails, { loader as abilityDetailsLoader } from "../subPages/pokemonAbilityDetails";
+import Characteristics from "../subPages/characteristics";
 
 const router = createBrowserRouter([
     {
@@ -271,6 +272,12 @@ const router = createBrowserRouter([
                 element: <AbilityDetails />,
                 errorElement: <ErrorPage />,
                 loader: abilityDetailsLoader
+            },
+            {
+                path: "/t-pokedex/characteristic/",
+                element: <Characteristics />,
+                errorElement: <ErrorPage />,
+
             },
         ]
     },
