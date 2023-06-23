@@ -5,9 +5,22 @@ import { Link } from 'react-router-dom'
 import LoadingSpinner from '../../component/loadingSpiner'
 import { useSelector } from 'react-redux'
 
-const CharacteristicCard = ({ characterDetails }) => {
+const CharacteristicCard = ({ url }) => {
     const [name, setName] = useState('');
+    const [characterDetails, setCharacterDetails] = useState(null)
     const webLanguage = useSelector(state => state.webSettings.language);
+
+    useEffect(() => {
+        const getDetails = async () => {
+            const resData = (await (axios.get(url))).data;
+            setCharacterDetails(resData)
+        }
+        getDetails();
+    }, [url])
+
+
+
+
     useEffect(() => {
         const getRightLanguage = async () => {
             let results = null;
@@ -75,7 +88,7 @@ const CharacterList = () => {
         <div className=' grid grid-cols-1 p-4'>
             <div className=' grid grid-cols-3 md:grid-cols-5 lg:grid-cols-8 gap-8'>
                 {
-                    CharacteristicList ? CharacteristicList.map((e, i) => <CharacteristicCard key={i} characterDetails={e} />) : <LoadingSpinner />
+                    CharacteristicList ? CharacteristicList.map((e, i) => <CharacteristicCard key={i} url={e.url} />) : <LoadingSpinner />
                 }
             </div>
             <div className=' p-3'>
