@@ -41,14 +41,36 @@ const CharacteristicCard = ({ url }) => {
         }
 
         getRightLanguage()
-    }, [webLanguage, characterDetails])
+    }, [webLanguage, characterDetails]);
+
+    const labelCss = 'text-slate-600 hover:cursor-help mr-3'
     return (
-        <div className=' grid grid-cols-1'>
-            <div className=' flex flex-row'>
-                <div>Name:</div>
-                <div>{name}</div>
-            </div>
-        </div>
+        <>
+            {
+                characterDetails ?
+                    <div className=' grid grid-cols-1 bg-slate-100 rounded-lg p-3 border border-slate-600 hover:skew-y-6'>
+                        <div className=' flex flex-row'>
+                            <div title='characteristic name' className={labelCss}>Name: </div>
+                            <div>{name}</div>
+                        </div>
+                        <div className=' flex flex-row'>
+                            <div title='the stat that affect by this characteristic' className={labelCss}>Highest Stat: </div>
+                            <Link to={`/t-pokedex/stat/${characterDetails.highest_stat.name}`} className=' capitalize hover:underline hover:text-blue-500'> {characterDetails.highest_stat.name}</Link>
+                        </div>
+                        <div className=' flex flex-row'>
+                            <div title='The remainder of the highest stat/IV divided by 5.' className={labelCss}>Gene Modulo: </div>
+                            <div>{characterDetails.gene_modulo}</div>
+                        </div>
+                        <div className=' flex flex-row'>
+                            <div title='The possible values of the highest stat that would result in a Pokémon recieving this characteristic when divided by 5.' className={labelCss}>Possible Values: </div>
+                            <div>{characterDetails.possible_values.map((e, i) => <div key={i}>{e}</div>)}</div>
+                        </div>
+                    </div>
+                    :
+                    <LoadingSpinner />
+            }
+        </>
+
     )
 }
 
@@ -86,7 +108,7 @@ const CharacterList = () => {
 
     return (
         <div className=' grid grid-cols-1 p-4'>
-            <div className=' grid grid-cols-3 md:grid-cols-5 lg:grid-cols-8 gap-8'>
+            <div className=' grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8'>
                 {
                     CharacteristicList ? CharacteristicList.map((e, i) => <CharacteristicCard key={i} url={e.url} />) : <LoadingSpinner />
                 }
