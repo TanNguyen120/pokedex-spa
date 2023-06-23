@@ -3,6 +3,44 @@ import React, { useEffect, useState } from 'react'
 import PageSelector from '../../component/utilityComponent/pageSelector'
 import { Link } from 'react-router-dom'
 import LoadingSpinner from '../../component/loadingSpiner'
+import { useSelector } from 'react-redux'
+
+const CharacteristicCard = ({ characterDetails }) => {
+    const [name, setName] = useState('');
+    const webLanguage = useSelector(state => state.webSettings.language);
+    useEffect(() => {
+        const getRightLanguage = async () => {
+            let results = null;
+            characterDetails.descriptions.forEach(element => {
+                if (element.language.name === webLanguage) {
+                    results = element;
+                }
+            });
+            if (results === null) {
+                characterDetails.descriptions.forEach(element => {
+                    if (element.language.name === 'en') {
+                        results = element;
+                    }
+                });
+            }
+
+            setName(results.description)
+        }
+
+        getRightLanguage()
+    }, [webLanguage, characterDetails])
+    return (
+        <div className=' grid grid-cols-1'>
+            <div className=' flex flex-row'>
+                <div>Name:</div>
+                <div>{name}</div>
+            </div>
+        </div>
+    )
+}
+
+
+
 
 const CharacterList = () => {
     const [pageCount, setPageCount] = useState(0)
@@ -37,7 +75,7 @@ const CharacterList = () => {
         <div className=' grid grid-cols-1 p-4'>
             <div className=' grid grid-cols-3 md:grid-cols-5 lg:grid-cols-8 gap-8'>
                 {
-                    CharacteristicList ? CharacteristicList.map((e, i) => <Link className=' capitalize p-4 hover:cursor-pointer hover:underline hover:bg-slate-200 bg-slate-100 hover:text-blue-500 rounded-lg' to={`/t-pokedex/Characteristic/${e.name}`} key={i}>{JSON.stringify(e)}</Link>) : <LoadingSpinner />
+                    CharacteristicList ? CharacteristicList.map((e, i) => <CharacteristicCard key={i} characterDetails={e} />) : <LoadingSpinner />
                 }
             </div>
             <div className=' p-3'>
