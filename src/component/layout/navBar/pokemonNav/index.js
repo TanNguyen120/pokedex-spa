@@ -1,7 +1,7 @@
 import React from 'react';
 import { GrVulnerability } from 'react-icons/gr';
 import { CgPokemon } from 'react-icons/cg';
-import { GiCharacter } from 'react-icons/gi'
+import { GiCharacter, GiNestEggs } from 'react-icons/gi'
 import { Link } from 'react-router-dom';
 
 const PokemonNav = () => {
@@ -24,6 +24,11 @@ const PokemonNav = () => {
                 <Link to="/t-pokedex/characteristic/">
                     <div className=' hover:bg-slate-300 hover:rounded-lg hover:text-lg hover:font-semibold p-2 '>
                         <GiCharacter className=' inline' /> Characteristic
+                    </div>
+                </Link>
+                <Link to="/t-pokedex/egg-group/">
+                    <div className=' hover:bg-slate-300 hover:rounded-lg hover:text-lg hover:font-semibold p-2 '>
+                        <GiNestEggs className=' inline' /> Egg Group
                     </div>
                 </Link>
             </div>
