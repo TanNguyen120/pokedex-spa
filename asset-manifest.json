@@ -1,10 +1,18 @@
 {
   "files": {
-    "main.css": "/t-pokedex/static/css/main.648bcefa.css",
-    "main.js": "/t-pokedex/static/js/main.b2bc7655.js",
+    "main.css": "/t-pokedex/static/css/main.b5efce04.css",
+    "main.js": "/t-pokedex/static/js/main.c20ae80e.js",
     "static/js/787.93efac9a.chunk.js": "/t-pokedex/static/js/787.93efac9a.chunk.js",
+    "static/media/xWhite.jpg": "/t-pokedex/static/media/xWhite.7f69f439cacf1af9cb52.jpg",
     "static/media/whiteMoon.jpg": "/t-pokedex/static/media/whiteMoon.9a8736fa35bcec9a98d7.jpg",
+    "static/media/whitePaper.jpg": "/t-pokedex/static/media/whitePaper.a5def62104af3b1b888b.jpg",
+    "static/media/whiteThings.jpg": "/t-pokedex/static/media/whiteThings.33cb4b7934ed97f4b284.jpg",
+    "static/media/whiteMarble.jpg": "/t-pokedex/static/media/whiteMarble.74b32650cc721869cc89.jpg",
+    "static/media/whiteNature.jpg": "/t-pokedex/static/media/whiteNature.62081a4d23cbce74afc9.jpg",
+    "static/media/whiteShineyWave.jpg": "/t-pokedex/static/media/whiteShineyWave.e4e8aef19c82dd8249e5.jpg",
+    "static/media/whiteBubble.jpg": "/t-pokedex/static/media/whiteBubble.87184115db6417fb347f.jpg",
     "static/media/whiteStripe.jpg": "/t-pokedex/static/media/whiteStripe.ddd1f27a83c621b12215.jpg",
+    "static/media/whiteStripe2.jpg": "/t-pokedex/static/media/whiteStripe2.12a314cb85686a7a7783.jpg",
     "static/media/borderPoke.png": "/t-pokedex/static/media/borderPoke.f9fee76c6dc10617afab.png",
     "static/media/fabric.jpg": "/t-pokedex/static/media/fabric.58329998644eaf2bd4ca.jpg",
     "static/media/whiteBrige.jpg": "/t-pokedex/static/media/whiteBrige.0f881d70d1d7a40f8ca0.jpg",
@@ -16,12 +24,12 @@
     "static/media/seaWhite.jpg": "/t-pokedex/static/media/seaWhite.1ff84317b67f2d8a8ddc.jpg",
     "static/media/regionBg.jpg": "/t-pokedex/static/media/regionBg.c140184394d4ec3b76bc.jpg",
     "index.html": "/t-pokedex/index.html",
-    "main.648bcefa.css.map": "/t-pokedex/static/css/main.648bcefa.css.map",
-    "main.b2bc7655.js.map": "/t-pokedex/static/js/main.b2bc7655.js.map",
+    "main.b5efce04.css.map": "/t-pokedex/static/css/main.b5efce04.css.map",
+    "main.c20ae80e.js.map": "/t-pokedex/static/js/main.c20ae80e.js.map",
     "787.93efac9a.chunk.js.map": "/t-pokedex/static/js/787.93efac9a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.648bcefa.css",
-    "static/js/main.b2bc7655.js"
+    "static/css/main.b5efce04.css",
+    "static/js/main.c20ae80e.js"
   ]
 }
