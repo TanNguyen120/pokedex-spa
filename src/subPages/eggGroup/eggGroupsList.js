@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { AiOutlineCaretDown } from 'react-icons/ai'
+import DropdownCard from './dropdownCard';
 
 const EggGroupBtn = ({ eggGroupName }) => {
     const [bgCss, setBgCss] = useState('')
 
-    // Flying	Amorphous
-    // Field	Water 2
-    // Fairy	Ditto
-    // Grass	Dragon
+    const [show, setShow] = useState(false);
+
     useEffect(() => {
         switch (eggGroupName) {
             case "monster":
@@ -62,9 +61,15 @@ const EggGroupBtn = ({ eggGroupName }) => {
                 break;
         }
     }, [eggGroupName])
-    return <div className={' ml-5 w-80 rounded-lg px-2 py-1 border border-slate-700 capitalize text-white font-semibold my-2' + bgCss}>
-        {eggGroupName} <AiOutlineCaretDown className='inline' />
-    </div>
+    return (
+        <div className='grid grid-cols-1'>
+            <div onClick={e => { setShow(state => !state) }} className={' ml-5 w-80 rounded-lg px-2 py-1 border border-slate-700 capitalize text-white font-semibold my-2 hover:cursor-pointer' + bgCss}>
+                {eggGroupName} <AiOutlineCaretDown className={show ? 'inline' : 'inline rotate-180'} />
+            </div>
+            <DropdownCard show={show} eggGroupName={eggGroupName} />
+        </div>
+    )
+
 }
 
 
