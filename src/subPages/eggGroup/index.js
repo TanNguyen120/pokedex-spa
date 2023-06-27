@@ -1,16 +1,18 @@
 import axios from 'axios'
 import React from 'react'
 import { useLoaderData } from 'react-router-dom'
+import EggGroupsList from './eggGroupsList';
 // in react router v6.4 we can define a loader function that can access to url param to call api 
 // loader function later will be call in the router 
 const loader = async () => {
 
-    const eggGroupList = (await (axios.get(`https://pokeapi.co/api/v2/egg-group/`))).data
-
-    return eggGroupList
+    const resData = (await (axios.get(`https://pokeapi.co/api/v2/egg-group/`))).data;
+    const count = resData.count
+    const eggGroupList = (await (axios.get(`https://pokeapi.co/api/v2/egg-group/?offset=0&limit=${count}`))).data
+    return eggGroupList.results;
 }
 const EggGroup = () => {
-    const EggGroups = useLoaderData();
+    const eggGroupsList = useLoaderData();
     return (
         <div className=' bg-whiteOpera bg-contain min-h-screen bg-repeat font-serif'>
             <div className='md:container md:mx-auto'>
@@ -34,7 +36,7 @@ const EggGroup = () => {
                         </div>
                     </div>
                     <div>
-
+                        <EggGroupsList eggGroupList={eggGroupsList} />
                     </div>
 
                 </div>
