@@ -42,6 +42,7 @@ import AbilityList, { loader as abilityLoader } from "../subPages/pokemonAbility
 import AbilityDetails, { loader as abilityDetailsLoader } from "../subPages/pokemonAbilityDetails";
 import Characteristics from "../subPages/characteristics";
 import EggGroup, { loader as EggGroupLoader } from "../subPages/eggGroup";
+import Gender, { loader as GenderLoader } from "../subPages/gender";
 
 const router = createBrowserRouter([
     {
@@ -284,6 +285,12 @@ const router = createBrowserRouter([
                 path: "/t-pokedex/egg-group/",
                 element: <EggGroup />,
                 loader: EggGroupLoader,
+                errorElement: <ErrorPage />,
+            },
+            {
+                path: "/t-pokedex/gender/",
+                element: <Gender />,
+                loader: GenderLoader,
                 errorElement: <ErrorPage />,
             },
         ]

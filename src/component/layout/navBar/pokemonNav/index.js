@@ -2,6 +2,7 @@ import React from 'react';
 import { GrVulnerability } from 'react-icons/gr';
 import { CgPokemon } from 'react-icons/cg';
 import { GiCharacter, GiNestEggs } from 'react-icons/gi'
+import { BsGenderAmbiguous } from 'react-icons/bs'
 import { Link } from 'react-router-dom';
 
 const PokemonNav = () => {
@@ -29,6 +30,11 @@ const PokemonNav = () => {
                 <Link to="/t-pokedex/egg-group/">
                     <div className=' hover:bg-slate-300 hover:rounded-lg hover:text-lg hover:font-semibold p-2 '>
                         <GiNestEggs className=' inline' /> Egg Group
+                    </div>
+                </Link>
+                <Link to="/t-pokedex/gender/">
+                    <div className=' hover:bg-slate-300 hover:rounded-lg hover:text-lg hover:font-semibold p-2 '>
+                        <BsGenderAmbiguous className=' inline' /> Gender
                     </div>
                 </Link>
             </div>
