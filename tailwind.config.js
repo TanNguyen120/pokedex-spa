@@ -39,6 +39,7 @@ module.exports = {
       "whiteMarble": "url('../public/whiteMarble.jpg')",
       "whiteBubble": "url('../public/whiteBubble.jpg')",
       "whiteOpera": "url('../public/whiteOpera.png')",
+      "whiteHair": "url('../public/whiteHair.png')"
     },
   },
   plugins: [],
