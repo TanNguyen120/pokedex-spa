@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 
-const GenderColumn = ({ genderLink }) => {
+const GenderColumn = ({ genderLink, name }) => {
     const [genderDetails, setGenderDetails] = useState(null);
     useEffect(() => {
         const getDetailsData = async () => {
@@ -11,7 +11,11 @@ const GenderColumn = ({ genderLink }) => {
         getDetailsData()
     }, [genderLink])
     return (
-        <div>
+        <div className=' flex flex-col items-start'>
+            <div className=' flex flex-row'>
+                <div>Gender: </div>
+                <div>{name}</div>
+            </div>
             {JSON.stringify(genderDetails)}
         </div>
     )
