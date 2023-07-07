@@ -34,7 +34,7 @@ const Gender = () => {
                             </div>
                         </div>
                     </div>
-                    <div className=' bg-slate-100 rounded-lg p-2 m-4 grid grid-cols-2'>
+                    <div className=' bg-slate-100 rounded-lg p-2 m-4 grid grid-cols-2 p-4 gap-4'>
                         {genderList.map((e, i) => <GenderColumn key={i} genderLink={e.url} name={e.name} />)}
                     </div>
 
