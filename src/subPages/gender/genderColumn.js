@@ -31,6 +31,9 @@ const PokeRow = ({ pokeGender }) => {
 const GenderColumn = ({ genderLink, name }) => {
     const [genderDetails, setGenderDetails] = useState(null);
     const [genderColor, setGenderColor] = useState('');
+    const [isExpand, setIsExpand] = useState(false);
+
+
 
     useEffect(() => {
         switch (name) {
