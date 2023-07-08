@@ -4,6 +4,7 @@ import LoadingSpinner from '../../component/loadingSpiner';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { findPokeByName } from '../../reduxSlicer/findPokeInfoFlag';
+import { AiOutlineArrowDown } from 'react-icons/ai'
 
 const PokeRow = ({ pokeGender }) => {
     const pictureMode = useSelector((state) => state.webSettings.pictureMode);
@@ -32,8 +33,11 @@ const GenderColumn = ({ genderLink, name }) => {
     const [genderDetails, setGenderDetails] = useState(null);
     const [genderColor, setGenderColor] = useState('');
     const [isExpand, setIsExpand] = useState(false);
+    const [btnCss, setBtnCss] = useState('');
 
-
+    useEffect(() => {
+        isExpand ? setBtnCss(' bg-slate-400 text-white rotate-180') : setBtnCss(' bg-slate-200')
+    }, [isExpand])
 
     useEffect(() => {
         switch (name) {
@@ -58,16 +62,17 @@ const GenderColumn = ({ genderLink, name }) => {
     }, [genderLink])
     return (
         <div className=' flex flex-col items-start w-full px-6 bg-slate-50 rounded-lg'>
-            <div className=' flex flex-row mb-5'>
+            <div className=' flex flex-row mb-5 items-center'>
                 <div>Gender: </div>
                 <div className={` ml-4 text-white rounded-lg py-2 px-4 border border-slate-500 capitalize my-2` + genderColor}>{name}</div>
+                <div className={' ml-5 rounded-full  p-1 '} ><AiOutlineArrowDown /></div>
             </div>
             <table class="table w-full">
                 <thead className=' bg-slate-200 border border-collapse border-slate-500'>
                     <tr>
                         <th>Pokémon</th>
                         <th>Sprite</th>
-                        <th>Ratio</th>
+                        <th><div title='The chance of this Pokémon being female, in eighths; or -1 for genderless.' className=' hover:cursor-help '>Ratio</div> </th>
                     </tr>
                 </thead>
                 <tbody>
