@@ -67,7 +67,7 @@ const GenderColumn = ({ genderLink, name }) => {
                 <div className={` ml-4 text-white rounded-lg py-2 px-4 border border-slate-500 capitalize my-2` + genderColor}>{name}</div>
                 <div className={' ml-5 rounded-full  p-1 '} ><AiOutlineArrowDown /></div>
             </div>
-            <table class="table w-full">
+            <table class={"table w-full " + isExpand ? " " : " hidden"}>
                 <thead className=' bg-slate-200 border border-collapse border-slate-500'>
                     <tr>
                         <th>Pokémon</th>
