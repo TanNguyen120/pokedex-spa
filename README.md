@@ -1,4 +1,5 @@
-# ![Alt](/pokeWebicon.webp 'logo') T-Pokedex (a frontend webapp project for pokéapi)
+# ![alt text](https://github.com/TanNguyen120/t-pokedex/blob/main/publi/pokeWebIcon.webpc?raw=true)
+ T-Pokedex (a frontend webapp project for pokéapi)
 
 ## 1. Project Description
 
