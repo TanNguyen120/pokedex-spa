@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
 // in react router v6.4 we can define a loader function that can access to url param to call api 
 // loader function later will be call in the router 
 const loader = async () => {
@@ -8,8 +9,36 @@ const loader = async () => {
 }
 
 const GrowthRate = () => {
+    const growthRate = useLoaderData();
     return (
-        <div>GrowthRate</div>
+        <div className=' bg-whiteGreen bg-cover min-h-screen bg-repeat-y font-serif'>
+            <div className='lg:container lg:mx-auto md:mx-1'>
+                <div className='grid grid-cols-1'>
+                    <div className=' grid lg:grid-cols-4 border border-slate-600 bg-slate-100 rounded-lg lg:m-4'>
+                        <div className=' lg:col-span-3 text-left text-lg'>
+                            <div className=' p-3 first-letter:ml-5'>
+                                If you've played any pokemon game, you'll know about Experience Points. Battle any pokemon and win, and you'll gain a set amount of experience for your pokemon. Get it to a certain point, and you level up. It's simple enough to understand for most people. The concept of battling many enemies to gain enough experience for your characters to level up is very commonly seen in RPG's. Of course, it's more complicated in Pokemon in a few not-so-obvious ways.                            </div>
+                            <div className=' p-3 first-letter:ml-5'>
+                                Say you just caught a Seviper, and you're training it to battle the Elite Four. By the time you get to the Elite Four, your Seviper is at a lower level than your other pokemon because you feel it's too hard to level up compared to your other pokemon. Why is this? It's because all pokemon have a set level growth rate. You are going to find, once you get to level 100, that your pokemon will have a number like 1,000,000 or 600,000 or in Seviper's case, 1,640,000 in your Experience Gained status. There's three other possible values it can be, and each pokemon is assigned one of them. Of course, these values are named with an adjective describing how fast they level up. Please note that the following numbers are for pokemon at level 100. (from https://www.serebii.net/games/exp.shtml)
+                            </div>
+
+                        </div>
+                        <div className=' items-center'>
+                            <img src='https://archives.bulbagarden.net/media/upload/0/0a/ExpGraphLv100.png' alt='growth exp graph' />
+                            <div className=' text-sm text-slate-500 mt-4'>
+                                growth exp graph
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        className=' grid grid-cols-1 rounded-lg bg-slate-50 p-4 lg:m-4'
+                    >
+                        {JSON.stringify(growthRate)}
+                    </div>
+
+                </div>
+            </div>
+        </div>
     )
 }
 

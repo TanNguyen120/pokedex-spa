@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React from 'react'
-import { json, useLoaderData } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
 import GenderColumn from './genderColumn';
 
 // in react router v6.4 we can define a loader function that can access to url param to call api 
