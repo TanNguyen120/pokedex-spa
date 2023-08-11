@@ -15,10 +15,10 @@ const Gender = () => {
     const genderList = useLoaderData();
     return (
         <div className=' bg-whiteHair bg-contain min-h-screen bg-repeat font-serif'>
-            <div className='md:container md:mx-auto'>
+            <div className='lg:container lg:mx-auto md:mx-1'>
                 <div className='grid grid-cols-1'>
-                    <div className=' grid grid-cols-4 border border-slate-600 bg-slate-100 rounded-lg lg:m-4'>
-                        <div className=' col-span-3 text-left text-lg'>
+                    <div className=' grid lg:grid-cols-4 border border-slate-600 bg-slate-100 rounded-lg lg:m-4'>
+                        <div className=' lg:col-span-3 text-left text-lg'>
                             <div className=' p-3 first-letter:ml-5'>
                                 Most Pokémon are either male or female. However, depending on the species, players are more likely to encounter a Pokémon of a specific gender than the other. Gender plays a vital role in breeding, as offspring inherit the species of the mother and compatible moves from the father. However, Pokémon of either gender can be used if the partner is a Ditto.
                             </div>
@@ -34,7 +34,7 @@ const Gender = () => {
                             </div>
                         </div>
                     </div>
-                    <div className=' bg-slate-100 rounded-lg p-2 m-4 grid grid-cols-2 p-4 gap-4'>
+                    <div className=' bg-slate-100 rounded-lg  m-4 grid md:grid-cols-2 lg:p-4 md:p-1 grid-cols-1 gap-4'>
                         {genderList.map((e, i) => <GenderColumn key={i} genderLink={e.url} name={e.name} />)}
                     </div>
 
