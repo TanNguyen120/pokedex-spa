@@ -33,10 +33,12 @@ const GenderColumn = ({ genderLink, name }) => {
     const [genderDetails, setGenderDetails] = useState(null);
     const [genderColor, setGenderColor] = useState('');
     const [isExpand, setIsExpand] = useState(false);
+    const [tableShow, setTableShow] = useState('')
     const [btnCss, setBtnCss] = useState('');
 
     useEffect(() => {
-        isExpand ? setBtnCss(' bg-slate-400 text-white rotate-180') : setBtnCss(' bg-slate-200')
+        isExpand ? setBtnCss(' bg-slate-400 text-white rotate-180') : setBtnCss(' bg-slate-200');
+        isExpand ? setTableShow('') : setTableShow('hidden');
     }, [isExpand])
 
     useEffect(() => {
@@ -65,9 +67,9 @@ const GenderColumn = ({ genderLink, name }) => {
             <div className=' flex flex-row mb-5 items-center'>
                 <div>Gender: </div>
                 <div className={` ml-4 text-white rounded-lg py-2 px-4 border border-slate-500 capitalize my-2` + genderColor}>{name}</div>
-                <div className={' ml-5 rounded-full  p-1 '} ><AiOutlineArrowDown /></div>
+                <div className={' ml-5 rounded-full  p-1 hover:cursor-pointer hover:bg-slate-500 hover:text-white' + btnCss} onClick={e => { setIsExpand(!isExpand) }} ><AiOutlineArrowDown /></div>
             </div>
-            <table class={"table w-full " + isExpand ? " " : " hidden"}>
+            <table class={`table w-full  ${tableShow}`}>
                 <thead className=' bg-slate-200 border border-collapse border-slate-500'>
                     <tr>
                         <th>Pokémon</th>
