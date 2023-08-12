@@ -1,17 +1,20 @@
 import axios from 'axios';
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import GrowthDropDown from './growthDropDown';
+import LoadingSpinner from '../../component/loadingSpiner';
 // in react router v6.4 we can define a loader function that can access to url param to call api 
 // loader function later will be call in the router 
 const loader = async () => {
-    const growthRate = (await (axios.get('https://pokeapi.co/api/v2/growth-rate/'))).data;
+    const growthRateNumber = ((await (axios.get('https://pokeapi.co/api/v2/growth-rate/'))).data).count;
+    const growthRate = (await (axios.get(`https://pokeapi.co/api/v2/growth-rate/?offset=0&limit=${growthRateNumber}`))).data;
     return growthRate;
 }
 
 const GrowthRate = () => {
     const growthRate = useLoaderData();
     return (
-        <div className=' bg-whiteGreen bg-cover min-h-screen bg-repeat-y font-serif'>
+        <div className=' bg-whiteGreen min-h-screen bg-repeat font-serif'>
             <div className='lg:container lg:mx-auto md:mx-1'>
                 <div className='grid grid-cols-1'>
                     <div className=' grid lg:grid-cols-4 border border-slate-600 bg-slate-100 rounded-lg lg:m-4'>
@@ -33,7 +36,7 @@ const GrowthRate = () => {
                     <div
                         className=' grid grid-cols-1 rounded-lg bg-slate-50 p-4 lg:m-4'
                     >
-                        {JSON.stringify(growthRate)}
+                        {growthRate ? growthRate.results.map((e, i) => <GrowthDropDown key={i} name={e.name} url={e.url} />) : <LoadingSpinner />}
                     </div>
 
                 </div>

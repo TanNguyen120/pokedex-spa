@@ -29,14 +29,15 @@ const ConditionArrow = ({ condition }) => {
         return result;
     }
 
-    const asyncSetCondition = async (condition) => {
-        const result = await conditionSlice(condition);
-        setStateCondition(result);
-    }
+
 
     const [stateCondition, setStateCondition] = useState("default");
 
     useEffect(() => {
+        const asyncSetCondition = async (condition) => {
+            const result = await conditionSlice(condition);
+            setStateCondition(result);
+        }
         asyncSetCondition(condition);
     }, [condition])
 
