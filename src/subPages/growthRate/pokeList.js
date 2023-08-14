@@ -28,7 +28,20 @@ const GrowthRatePokeList = () => {
                         </thead>
                         <tbody>
                             {
-                                pokeList.pokemon_species.map((e, i) => <tr className=' border-collapse border p-4 border-slate-500 odd:bg-slate-200' key={i} ><th className='border-collapse border border-slate-500 p-4 capitalize'>{e.name}</th><th className='border-collapse border-slate-500 border p-4'>{e.experience}</th></tr>)
+                                pokeList.pokemon_species.map((e, i) =>
+                                    <tr className=' border-collapse border p-4 border-slate-500 odd:bg-slate-200'
+                                        key={i} ><th
+                                            className='border-collapse border border-slate-500 p-4 capitalize'>{e.name}
+                                        </th>
+                                        <th
+                                            className='border-collapse border-slate-500 border p-4'>
+                                            <img className=' w-16 h-16' src={`https://img.pokemondb.net/sprites/sword-shield/icon/${e.name}.png`} alt='pokeSprite' />
+                                        </th>
+                                        <th
+                                            className='border-collapse border-slate-500 border p-4'>
+                                            <img src={`https://img.pokemondb.net/artwork/large/${e.name}.jpg`} alt='pokeDraw' className=' h-16' />
+                                        </th>
+                                    </tr>)
                             }
                         </tbody>
                     </table>
