@@ -46,6 +46,7 @@ import Gender, { loader as GenderLoader } from "../subPages/gender";
 import GrowthRate, { loader as GrowthLoader } from "../subPages/growthRate";
 import GrowthRatePokeList, { loader as PokeGrowthRateLoader } from "../subPages/growthRate/pokeList";
 import Nature, { loader as NatureLoader } from "../subPages/nature";
+import NatureDetails, { loader as natureDetailsLoader } from "../subPages/nature/natureDetails";
 
 const router = createBrowserRouter([
     {
@@ -312,6 +313,12 @@ const router = createBrowserRouter([
                 path: "/t-pokedex/nature",
                 element: <Nature />,
                 loader: NatureLoader,
+                errorElement: <ErrorPage />,
+            },
+            {
+                path: "/t-pokedex/nature/:natureName",
+                element: <NatureDetails />,
+                loader: natureDetailsLoader,
                 errorElement: <ErrorPage />,
             }
         ]

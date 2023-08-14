@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React from 'react'
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 // loader function later will be call in the router 
 const loader = async () => {
     const natureCount = ((await (axios.get(`https://pokeapi.co/api/v2/nature/`))).data).count;
@@ -35,7 +35,7 @@ const Nature = () => {
                     </div>
                     <div className=' rounded-lg p-3 bg-slate-200 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6'>
                         {
-                            natureList.map((e, i) => <div className=' capitalize hover:cursor-pointer rounded-lg px-8 py-3 hover:scale-110 hover:ring ring-slate-500 bg-slate-100' key={i}>{e.name}</div>)
+                            natureList.map((e, i) => <Link to={`/t-pokedex/nature/${e.name}`} className=' capitalize hover:cursor-pointer rounded-lg px-8 py-3 hover:scale-110 hover:ring ring-slate-500 bg-slate-100' key={i}>{e.name}</Link>)
                         }
                     </div>
                 </div>
