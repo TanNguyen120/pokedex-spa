@@ -1,5 +1,6 @@
 import React from 'react'
 import { BsGenderMale, BsGenderFemale, BsGenderTrans } from 'react-icons/bs'
+import { Link } from 'react-router-dom';
 
 
 
@@ -9,8 +10,9 @@ const GenderCanvas = ({ genderRatio }) => {
     return (
 
         <div className="bg-slate-300 rounded-lg text-center font-mono  text-black m-1">
-            <h3 className=' font-semibold text-slate-500'>
-                Gender Rate <BsGenderTrans className='inline' />
+            <h3 className=' hover:underline hover:text-blue-500 font-semibold text-slate-500'>
+                <Link to={`/t-pokedex/gender/`}>Gender Rate <BsGenderTrans className='inline' /></Link>
+
             </h3>
             {
                 genderRatio > 0 ?

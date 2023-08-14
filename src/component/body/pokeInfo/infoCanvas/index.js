@@ -61,7 +61,7 @@ const InfoCanvas = ({ pokemon }) => {
                 {
                     pokemon.species ?
                         <div className='grid grid-cols-2'>
-                            <InfoSmallComponent tile="Growth Rate" detail_info={pokemon.species.growth_rate.name} icon={<GiHealthIncrease className='inline' />} />
+                            <InfoSmallComponent tile="Growth Rate" detail_info={pokemon.species.growth_rate.name} link={`/t-pokedex/growth-rate/${pokemon.species.growth_rate.name}/pokeList/`} icon={<GiHealthIncrease className='inline' />} />
                             <HabitatCanvas habitat={pokemon.species.habitat} />
                         </div>
                         : <LoadingSpinner />
