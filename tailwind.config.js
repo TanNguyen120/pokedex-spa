@@ -40,7 +40,8 @@ module.exports = {
       "whiteBubble": "url('../public/whiteBubble.jpg')",
       "whiteOpera": "url('../public/whiteOpera.png')",
       "whiteHair": "url('../public/whiteHair.png')",
-      "whiteGreen": "url('../public/greenWhite.jpg')"
+      "whiteGreen": "url('../public/greenWhite.jpg')",
+      "whiteCell": "url('../public/whiteCell.jpeg')"
     },
   },
   plugins: [],
