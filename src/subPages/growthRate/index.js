@@ -34,7 +34,7 @@ const GrowthRate = () => {
                         </div>
                     </div>
                     <div
-                        className=' grid grid-cols-1 rounded-lg bg-slate-50 p-4 lg:m-4'
+                        className=' grid grid-cols-1 rounded-lg bg-slate-50 p-4 lg:m-4 border border-slate-500'
                     >
                         {growthRate ? growthRate.results.map((e, i) => <GrowthDropDown key={i} name={e.name} url={e.url} />) : <LoadingSpinner />}
                     </div>
