@@ -28,9 +28,12 @@ const NatureDetails = () => {
                     <table class="table border border-collapse w-full font-normal text-base border-slate-500">
                         <thead className=' bg-slate-300 capitalize'>
                             <tr className=' border-collapse border'>
-                                <th className=' border-collapse border border-slate-500'>high hp preference</th>
-                                <th className=' border-collapse border border-slate-500'>low hp preference</th>
-                                <th className=' border-collapse border border-slate-500'>move battle style</th>
+                                <th title='Chance of using the move, in percent, if HP is under one half.'
+                                    className=' hover:cursor-help border-collapse border border-slate-500'>high hp preference</th>
+                                <th title='Chance of using the move, in percent, if HP is over one half.'
+                                    className=' hover:cursor-help border-collapse border border-slate-500'>low hp preference</th>
+                                <th title='The move battle style.'
+                                    className='hover:cursor-help border-collapse border border-slate-500'>move battle style</th>
                             </tr>
                         </thead>
                         <tbody>
