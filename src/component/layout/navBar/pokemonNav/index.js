@@ -1,6 +1,7 @@
 import React from 'react';
 import { GrVulnerability } from 'react-icons/gr';
 import { CgPokemon } from 'react-icons/cg';
+import { SiVbulletin } from 'react-icons/si'
 import { GiCharacter, GiNestEggs, GiTreeGrowth } from 'react-icons/gi'
 import { BsGenderAmbiguous } from 'react-icons/bs'
 import { MdEmojiNature } from 'react-icons/md'
@@ -46,6 +47,11 @@ const PokemonNav = () => {
                 <Link to="/t-pokedex/nature/">
                     <div className=' hover:bg-slate-300 hover:rounded-lg hover:text-lg hover:font-semibold p-2 '>
                         <MdEmojiNature className=' inline' /> Nature
+                    </div>
+                </Link>
+                <Link to="/t-pokedex/pokeathlon-stat/">
+                    <div className=' hover:bg-slate-300 hover:rounded-lg hover:text-lg hover:font-semibold p-2 '>
+                        <SiVbulletin className=' inline' /> Pokeathlon Stat
                     </div>
                 </Link>
             </div>
