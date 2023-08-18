@@ -1,10 +1,11 @@
 import React from 'react';
 import { GrVulnerability } from 'react-icons/gr';
 import { CgPokemon } from 'react-icons/cg';
-import { SiVbulletin } from 'react-icons/si'
-import { GiCharacter, GiNestEggs, GiTreeGrowth } from 'react-icons/gi'
-import { BsGenderAmbiguous } from 'react-icons/bs'
-import { MdEmojiNature } from 'react-icons/md'
+import { SiVbulletin } from 'react-icons/si';
+import { GiCharacter, GiNestEggs, GiTreeGrowth } from 'react-icons/gi';
+import { BsGenderAmbiguous } from 'react-icons/bs';
+import { MdEmojiNature } from 'react-icons/md';
+import { AiOutlineBgColors } from 'react-icons/ai'
 import { Link } from 'react-router-dom';
 
 const PokemonNav = () => {
@@ -52,6 +53,11 @@ const PokemonNav = () => {
                 <Link to="/t-pokedex/pokeathlon-stat/">
                     <div className=' hover:bg-slate-300 hover:rounded-lg hover:text-lg hover:font-semibold p-2 '>
                         <SiVbulletin className=' inline' /> Pokeathlon Stat
+                    </div>
+                </Link>
+                <Link to="/t-pokedex/poke-color/">
+                    <div className=' hover:bg-slate-300 hover:rounded-lg hover:text-lg hover:font-semibold p-2 '>
+                        <AiOutlineBgColors className=' inline' /> Pokemon Color
                     </div>
                 </Link>
             </div>
