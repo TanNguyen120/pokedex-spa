@@ -41,7 +41,9 @@ module.exports = {
       "whiteOpera": "url('../public/whiteOpera.png')",
       "whiteHair": "url('../public/whiteHair.png')",
       "whiteGreen": "url('../public/greenWhite.jpg')",
-      "whiteCell": "url('../public/whiteCell.jpeg')"
+      "whiteCell": "url('../public/whiteCell.jpeg')",
+      "colorfulAbstract": "url('../public/coulorfulAbstract.jpg')",
+
     },
   },
   plugins: [],
