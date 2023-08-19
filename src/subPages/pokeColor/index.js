@@ -1,6 +1,27 @@
 import axios from 'axios';
-import React from 'react'
-import { useLoaderData } from 'react-router-dom';
+import React, { useEffect, useState } from 'react'
+import { Link, useLoaderData } from 'react-router-dom';
+import colorToBg from '../../tool/colorToBg';
+
+
+const ColorCard = ({ colorName }) => {
+    const [colorCss, setColorCss] = useState('');
+
+    useEffect(() => {
+        const css = colorToBg(colorName);
+        setColorCss(css);
+    }, [colorName])
+    return (
+        <Link
+            className={`text-xl px-3 py-10 ring ring-slate-500 capitalize font-semibold text-white hover:cursor-pointer rounded-lg  hover:scale-105 ${colorCss}`}
+            to={`/t-pokedex/poke-color/${colorName}`}>
+            {colorName}
+        </Link>
+    )
+}
+
+
+
 
 
 // loader function later will be call in the router 
@@ -37,8 +58,8 @@ const PokeColor = () => {
                     </div>
 
                 </div>
-                <div>
-                    {JSON.stringify(colorList)}
+                <div className=' grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 p-5 bg-slate-100 rounded-lg m-4 border border-slate-600 gap-16'>
+                    {colorList.map((e, i) => <ColorCard key={i} colorName={e.name} />)}
                 </div>
             </div>
         </div>
