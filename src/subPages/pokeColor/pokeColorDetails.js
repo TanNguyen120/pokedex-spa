@@ -1,7 +1,9 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import colorToBg from '../../tool/colorToBg';
+import { useDispatch } from 'react-redux';
+import { findPokeByName } from '../../reduxSlicer/findPokeInfoFlag';
 
 
 
@@ -15,6 +17,10 @@ const loader = async ({ params }) => {
 const PokeColorDetails = () => {
     const [cssColor, setCssColor] = useState('');
     const colorDetails = useLoaderData();
+    const dispatch = useDispatch();
+    const setPokeFlag = (pokeName) => {
+        dispatch(findPokeByName(pokeName));
+    }
     useEffect(() => {
         const css = colorToBg(colorDetails.name);
         setCssColor(css);
@@ -39,8 +45,10 @@ const PokeColorDetails = () => {
                                     {
                                         colorDetails.pokemon_species.map((e, i) =>
                                             <tr className=' border-collapse border p-4 border-slate-500 odd:bg-slate-200'
-                                                key={i} ><th
-                                                    className='border-collapse border border-slate-500 p-4 capitalize'>{e.name}
+                                                key={i} >
+                                                <th
+                                                    className='border-collapse border border-slate-500 p-4 capitalize'>
+                                                    <Link to={`/t-pokedex/pokemon/${e.name}`} onClick={e => setPokeFlag(e.name)}>{e.name}</Link>
                                                 </th>
                                                 <th
                                                     className='border-collapse border-slate-500 border p-4'>

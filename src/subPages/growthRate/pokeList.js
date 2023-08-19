@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React from 'react'
-import { useLoaderData } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { Link, useLoaderData } from 'react-router-dom';
+import { findPokeByName } from '../../reduxSlicer/findPokeInfoFlag';
 
 // in react router v6.4 we can define a loader function that can access to url param to call api 
 // loader function later will be call in the router 
@@ -13,6 +15,10 @@ const loader = async ({ params }) => {
 
 const GrowthRatePokeList = () => {
     const pokeList = useLoaderData();
+    const dispatch = useDispatch();
+    const setPokeFlag = (pokeName) => {
+        dispatch(findPokeByName(pokeName))
+    }
     return (
         <div className=' bg-whiteGreen min-h-screen bg-repeat font-serif'>
             <div className='lg:container lg:mx-auto md:mx-1'>
@@ -31,7 +37,8 @@ const GrowthRatePokeList = () => {
                                 pokeList.pokemon_species.map((e, i) =>
                                     <tr className=' border-collapse border p-4 border-slate-500 odd:bg-slate-200'
                                         key={i} ><th
-                                            className='border-collapse border border-slate-500 p-4 capitalize'>{e.name}
+                                            className='border-collapse border border-slate-500 p-4 capitalize'>
+                                            <Link to={`/t-pokedex/pokemon/${e.name}`} onClick={e => setPokeFlag(e.name)}>{e.name}</Link>
                                         </th>
                                         <th
                                             className='border-collapse border-slate-500 border p-4'>
