@@ -50,6 +50,7 @@ import NatureDetails, { loader as natureDetailsLoader } from "../subPages/nature
 import PokeathlonStat, { loader as pokeathlonLoader } from "../subPages/pokeathlonStat";
 import PokeColor, { loader as pokeColorLoader } from "../subPages/pokeColor";
 import PokeColorDetails, { loader as colorLoader } from "../subPages/pokeColor/pokeColorDetails";
+import PokemonHabitat, { loader as habitatLoader } from "../subPages/pokeHabitat";
 
 const router = createBrowserRouter([
     {
@@ -340,6 +341,12 @@ const router = createBrowserRouter([
                 path: "/t-pokedex/poke-color/:colorName",
                 element: <PokeColorDetails />,
                 loader: colorLoader,
+                errorElement: <ErrorPage />,
+            },
+            {
+                path: "/t-pokedex/poke-habitat/",
+                element: <PokemonHabitat />,
+                loader: habitatLoader,
                 errorElement: <ErrorPage />,
             }
         ]
