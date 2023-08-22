@@ -1,5 +1,6 @@
 import React from 'react'
 import { BiLandscape } from 'react-icons/bi'
+import { Link } from 'react-router-dom'
 
 const HabitatCanvas = ({ habitat }) => {
     return (
@@ -9,7 +10,7 @@ const HabitatCanvas = ({ habitat }) => {
             </h3>
             <div className='bg-white rounded-lg text-center text-black m-2 grid-cols-2 capitalize'>
                 {
-                    habitat ? habitat.name : "unknown"
+                    habitat ? <Link to={`/t-pokedex/poke-habitat/${habitat.name}`} className=' hover:text-blue-500 hover:underline'> {habitat.name} </Link> : "unknown"
                 }
             </div>
         </div>

@@ -51,6 +51,7 @@ import PokeathlonStat, { loader as pokeathlonLoader } from "../subPages/pokeathl
 import PokeColor, { loader as pokeColorLoader } from "../subPages/pokeColor";
 import PokeColorDetails, { loader as colorLoader } from "../subPages/pokeColor/pokeColorDetails";
 import PokemonHabitat, { loader as habitatLoader } from "../subPages/pokeHabitat";
+import HabitatPage, { loader as habitatPageLoader } from "../subPages/pokeHabitat/habitatPage";
 
 const router = createBrowserRouter([
     {
@@ -347,6 +348,12 @@ const router = createBrowserRouter([
                 path: "/t-pokedex/poke-habitat/",
                 element: <PokemonHabitat />,
                 loader: habitatLoader,
+                errorElement: <ErrorPage />,
+            },
+            {
+                path: "/t-pokedex/poke-habitat/:habitatName",
+                element: <HabitatPage />,
+                loader: habitatPageLoader,
                 errorElement: <ErrorPage />,
             }
         ]
