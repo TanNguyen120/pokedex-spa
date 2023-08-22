@@ -62,7 +62,7 @@ const RadomMonSection = () => {
             <div className='lg:col-start-2 md:col-start-1 md:col-span-3 
             bg-slate-300 font-mono text-sm md:text-xl 
             font-semibold lg:p-6 p-2 ring-offset-2 ring-2 
-            ring-red-300 rounded-full animate-bounce md:m-0 my-5'>
+            ring-red-300 rounded-full animate-bounce md:m-0 my-5 z-0'>
                 Pick One To See Detail <span>
                     <FaRegHandPointUp className='inline' />
                 </span>
