@@ -48,7 +48,7 @@ const PokeColorDetails = () => {
                                                 key={i} >
                                                 <th
                                                     className='border-collapse border border-slate-500 p-4 capitalize'>
-                                                    <Link to={`/t-pokedex/pokemon/${e.name}`} onClick={e => setPokeFlag(e.name)}>{e.name}</Link>
+                                                    <Link to={`/t-pokedex/pokemon/${e.name}`} onClick={event => setPokeFlag(e.name)}>{e.name}</Link>
                                                 </th>
                                                 <th
                                                     className='border-collapse border-slate-500 border p-4'>
