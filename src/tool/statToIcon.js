@@ -1,8 +1,9 @@
 import { GiTwoHandedSword, GiMagickTrick } from 'react-icons/gi';
 import { TbHeartPlus } from 'react-icons/tb';
+import { BiTargetLock } from 'react-icons/bi'
 import { FiShield } from 'react-icons/fi';
 import { RiShieldFlashFill } from 'react-icons/ri';
-import { MdSpeed } from 'react-icons/md'
+import { MdSpeed, MdOutlineCallMissedOutgoing } from 'react-icons/md'
 
 
 const statToIcon = (type) => {
@@ -19,6 +20,10 @@ const statToIcon = (type) => {
             return <RiShieldFlashFill className='inline' />
         case "speed":
             return <MdSpeed className='inline' />
+        case "accuracy":
+            return <BiTargetLock className='inline' />
+        case "evasion":
+            return <MdOutlineCallMissedOutgoing className='inline' />
         default:
             break;
     }

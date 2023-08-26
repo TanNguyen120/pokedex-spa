@@ -12,6 +12,10 @@ const statToColor = (type) => {
             return "bg-lime-400"
         case "speed":
             return "bg-pink-400"
+        case "accuracy":
+            return "bg-purple-400"
+        case "evasion":
+            return "bg-slate-400"
         default:
             break;
     }
