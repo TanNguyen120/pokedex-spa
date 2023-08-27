@@ -76,6 +76,11 @@ const PokemonNav = () => {
                         <GiStaticGuard className=' inline' /> Stats
                     </div>
                 </Link>
+                <Link to="/t-pokedex/type/">
+                    <div className=' hover:bg-slate-300 hover:rounded-lg hover:text-lg hover:font-semibold p-2 '>
+                        <GiStaticGuard className=' inline' /> Type
+                    </div>
+                </Link>
             </div>
         </div>
     )

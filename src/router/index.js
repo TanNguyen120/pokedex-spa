@@ -54,6 +54,7 @@ import PokemonHabitat, { loader as habitatLoader } from "../subPages/pokeHabitat
 import HabitatPage, { loader as habitatPageLoader } from "../subPages/pokeHabitat/habitatPage";
 import PokeShape, { loader as pokeShapeLoader } from "../subPages/pokeShape";
 import Stats, { loader as statLoader } from "../subPages/stats";
+import TypesList, { loader as typeLoader } from "../subPages/pokemonTypes";
 
 const router = createBrowserRouter([
     {
@@ -368,6 +369,12 @@ const router = createBrowserRouter([
                 path: "/t-pokedex/stats/",
                 element: <Stats />,
                 loader: statLoader,
+                errorElement: <ErrorPage />,
+            },
+            {
+                path: "/t-pokedex/type/",
+                element: <TypesList />,
+                loader: typeLoader,
                 errorElement: <ErrorPage />,
             }
         ]
