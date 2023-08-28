@@ -45,7 +45,7 @@ module.exports = {
       "colorfulAbstract": "url('../public/coulorfulAbstract.jpg')",
       "whiteVoid": "url('../public/voidSurge.png')",
       "whitePaint": "url('../public/whitePaint.jpeg')",
-
+      "whiteManmosa": "url('../public/whiteMimosa.jpg')"
     },
   },
   plugins: [],

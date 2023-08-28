@@ -4,7 +4,7 @@ import { CgPokemon } from 'react-icons/cg';
 import { SiVbulletin } from 'react-icons/si';
 import { GiCharacter, GiNestEggs, GiTreeGrowth, GiIsland, GiStaticGuard } from 'react-icons/gi';
 import { BsGenderAmbiguous } from 'react-icons/bs';
-import { MdEmojiNature } from 'react-icons/md';
+import { MdEmojiNature, MdOutlineMergeType } from 'react-icons/md';
 import { AiOutlineBgColors } from 'react-icons/ai';
 import { TbShape2 } from 'react-icons/tb'
 import { Link } from 'react-router-dom';
@@ -78,7 +78,7 @@ const PokemonNav = () => {
                 </Link>
                 <Link to="/t-pokedex/type/">
                     <div className=' hover:bg-slate-300 hover:rounded-lg hover:text-lg hover:font-semibold p-2 '>
-                        <GiStaticGuard className=' inline' /> Type
+                        <MdOutlineMergeType className=' inline' /> Type
                     </div>
                 </Link>
             </div>
