@@ -16,7 +16,7 @@ const TypeBtnSimp = ({ typeName }) => {
     }, [typeName]);
 
     return (
-        <Link to={`/t-pokedex/type/${typeName}`} className={`text-lg capitalize px-5 py-2 text-white w-min  ${css} rounded-lg`}>
+        <Link to={`/t-pokedex/type/${typeName}`} className={`text-lg capitalize px-5 py-2 text-white w-28  ${css} rounded-lg`}>
             {typeName}
         </Link>
     )
