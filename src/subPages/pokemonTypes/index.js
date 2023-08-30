@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useLoaderData } from 'react-router-dom';
 import typeToColor from '../../tool/typeColor';
+import TypeDetails from './typeDetails';
 
 const TypeBtn = ({ typeName, currentType, setCurrentType }) => {
     const [css, setCss] = useState('');
@@ -15,10 +16,10 @@ const TypeBtn = ({ typeName, currentType, setCurrentType }) => {
     }, [typeName]);
 
     useEffect(() => {
-        typeName === currentType ? setCurrentCss(' ring ring-slate-500 scale-110 ') : setCurrentCss('');
+        typeName === currentType ? setCurrentCss(' ring ring-slate-500 scale-110 ') : setCurrentCss('ring ring-white');
     }, [typeName, currentType])
     return (
-        <div className={`text-lg font-semibold px-5 py-2 text-white  ${css} rounded-lg ${currentCss}`} onClick={e => setCurrentType(typeName)}>
+        <div className={`text-lg capitalize px-5 py-2 text-white hover:cursor-pointer hover:scale-125  ${css} rounded-lg  ${currentCss}`} onClick={e => setCurrentType(typeName)}>
             {typeName}
         </div>
     )
@@ -67,12 +68,12 @@ const TypesList = () => {
                         </div>
                     </div>
                 </div>
-                <div className=' rounded-lg my-3 p-4 border border-slate-600 flex flex-row flex-wrap bg-slate-200 gap-7'>
+                <div className=' rounded-lg my-3 p-4 border border-slate-600 grid grid-cols-3 md:grid-cols-5 lg:grid-cols-8 bg-slate-200 gap-9'>
                     {
                         typeList.map((e, i) => <TypeBtn key={i} typeName={e.name} currentType={currentType} setCurrentType={setCurrentType} />)
                     }
                 </div>
-
+                <TypeDetails typeName={currentType} />
             </div>
         </div>
     )
