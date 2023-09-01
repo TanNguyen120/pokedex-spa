@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import LoadingSpinner from '../../component/loadingSpiner';
 import typeToColor from '../../tool/typeColor';
 import { Link } from 'react-router-dom';
+import PokemonTable from './pokemonTable';
 
 
 const TypeBtnSimp = ({ typeName }) => {
@@ -22,6 +23,7 @@ const TypeBtnSimp = ({ typeName }) => {
     )
 }
 
+//********************************************************************************************************************************************************************************************* */
 
 const TypeContent = ({ typeDetails }) => {
     return <div className=' grid grid-cols-1'>
@@ -116,6 +118,12 @@ const TypeContent = ({ typeDetails }) => {
             </div>
         </div>
         <div className=' grid grid-cols-1 bg-slate-200 rounded-lg p-2 my-2'>
+            <div className=' text-slate-400 text-2xl text-left ml-5'>{typeDetails.name} Type PokéMon: </div>
+            <div className=' grid grid-cols-1  p-8 rounded-lg bg-slate-100'>
+                <PokemonTable pokeList={typeDetails.pokemon} />
+            </div>
+        </div>
+        <div className=' grid grid-cols-1 bg-slate-200 rounded-lg p-2 my-2'>
             <div className=' text-slate-400 text-2xl text-left ml-5'>Move type</div>
             <div className=' grid grid-cols-1  p-8 rounded-lg bg-slate-100'>
                 <div className=' flex flex-row rounded-lg bg-slate-100  m-2 items-baseline'>
@@ -132,7 +140,7 @@ const TypeContent = ({ typeDetails }) => {
     </div>
 }
 
-
+//********************************************************************************************************************************************************************************************* */
 
 const TypeDetails = ({ typeName }) => {
     const [TypeDetails, setTypeDetails] = useState(null);
