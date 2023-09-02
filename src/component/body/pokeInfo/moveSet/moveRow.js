@@ -67,10 +67,11 @@ const MoveRow = ({ moveData, borderTailWind }) => {
             <td className={borderTailWind + ' p-3'}>
                 {
                     moveDetailData &&
-                    <div
-                        className={`${typeToColor(moveDetailData.type.name)} rounded-md text-white text-center text-sm font-semibold border border-indigo-600 m-1 px-3 `}>
+                    <Link
+                        to={`/t-pokedex/type/${moveDetailData.type.name}`}
+                        className={`${typeToColor(moveDetailData.type.name)} rounded-md text-white text-center text-sm font-semibold border border-indigo-600 m-1 px-3 w-16 `}>
                         {moveDetailData.type.name}
-                    </div>
+                    </Link>
                 }
             </td>
             <td className={borderTailWind + ' p-3'}>

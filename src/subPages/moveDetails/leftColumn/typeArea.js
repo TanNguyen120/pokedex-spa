@@ -1,5 +1,6 @@
 import React from 'react'
 import typeToColor from '../../../tool/typeColor'
+import { Link } from 'react-router-dom'
 
 const TypeArea = ({ typeName }) => {
     return (
@@ -8,9 +9,9 @@ const TypeArea = ({ typeName }) => {
                 Type:
             </div>
             <div className='  p-5 w-32'>
-                <div className={` rounded-lg px-3 py-2 ${typeToColor(typeName)} text-white font-semibold capitalize`}>
+                <Link to={`/t-pokedex/type/${typeName}`} className={` rounded-lg px-3 py-2 ${typeToColor(typeName)} text-white font-semibold capitalize`}>
                     {typeName}
-                </div>
+                </Link>
             </div>
         </div>
     )

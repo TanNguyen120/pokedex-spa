@@ -37,7 +37,7 @@ const TypeContent = () => {
     return (
         <div className=' bg-whiteManmosa  min-h-screen bg-repeat font-serif'>
             <div className='md:container md:mx-auto py-3'>
-                <div className=' grid grid-cols-1'>
+                <div className=' grid grid-cols-1 rounded-lg p-4 bg-slate-400'>
                     <div className=' text-3xl font-semibold text-slate-600 capitalize '>{typeDetails.name} Type</div>
                     <div className=' grid grid-cols-1 bg-slate-200 rounded-lg p-2'>
                         <div className=' text-slate-400 text-2xl text-left ml-5'>Damage Relations</div>

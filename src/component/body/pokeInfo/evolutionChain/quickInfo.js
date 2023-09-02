@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { findPokeByID } from '../../../../reduxSlicer/findPokeInfoFlag';
 import typeToColor from '../../../../tool/typeColor';
 import toTitleCase from '../../../../tool/upperCaseString';
+import { Link } from 'react-router-dom';
 
 const QuickInfo = ({ pokemon }) => {
     const dispatch = useDispatch();
@@ -14,9 +15,9 @@ const QuickInfo = ({ pokemon }) => {
             <div className='bg-slate-300 rounded-lg items-center m-1'>
                 <div className='bg-white rounded-lg justify-center flex flex-col lg:flex-row py-2 items-center'>
                     {pokemon.type.map((type, index) => (
-                        <div className={`${typeToColor(type.type.name)} lg:w-20 lg:h-6 rounded-md text-white text-center text-sm font-semibold border border-indigo-600 m-1 px-3 font-mono hover:cursor-pointer`} key={index}>
+                        <Link to={`/t-pokedex/type/${type.type.name}`} className={`${typeToColor(type.type.name)} lg:w-20 lg:h-6 rounded-md text-white text-center text-sm font-semibold border border-indigo-600 m-1 px-3 font-mono hover:cursor-pointer`} key={index}>
                             {type.type.name[0].toUpperCase() + type.type.name.slice(1)}
-                        </div>
+                        </Link>
                     ))}
                 </div>
 
