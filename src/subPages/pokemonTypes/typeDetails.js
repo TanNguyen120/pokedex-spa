@@ -110,7 +110,8 @@ const TypeContent = ({ typeDetails }) => {
                     <div className=' text-lg text-slate-500'>Appears in: </div>
                     <div className=' grid grid-cols-1 gap-3'>
                         {
-                            typeDetails.game_indices.map((e, i) => <Link className=' hover:bg-slate-300 ml-4 capitalize ' to={`/t-pokedex/generations/${e.generation.name}`}>{e.generation.name}</Link>)
+                            typeDetails.game_indices.length > 0 ? typeDetails.game_indices.map((e, i) => <Link className=' hover:bg-slate-300 ml-4 capitalize ' to={`/t-pokedex/generations/${e.generation.name}`}>{e.generation.name}</Link>)
+                                : 'No Data'
                         }
                     </div>
 
@@ -118,17 +119,17 @@ const TypeContent = ({ typeDetails }) => {
             </div>
         </div>
         <div className=' grid grid-cols-1 bg-slate-200 rounded-lg p-2 my-2'>
-            <div className=' text-slate-400 text-2xl text-left ml-5'>{typeDetails.name} Type PokéMon: </div>
+            <div className=' text-slate-400 text-2xl text-left ml-5 capitalize'>{typeDetails.name} Type PokéMon: </div>
             <div className=' grid grid-cols-1  p-8 rounded-lg bg-slate-100'>
-                <PokemonTable pokeList={typeDetails.pokemon} />
+                {typeDetails.pokemon.length > 0 ? <PokemonTable pokeList={typeDetails.pokemon} /> : 'No Data'}
             </div>
         </div>
         <div className=' grid grid-cols-1 bg-slate-200 rounded-lg p-2 my-2'>
-            <div className=' text-slate-400 text-2xl text-left ml-5'>Move type</div>
+            <div className=' text-slate-400 text-2xl text-left ml-5 capitalize'> {typeDetails.name} type Move:</div>
             <div className=' grid grid-cols-1  p-8 rounded-lg bg-slate-100'>
                 <div className=' flex flex-row rounded-lg bg-slate-100  m-2 items-baseline'>
                     <div className=' text-lg text-slate-500'>Damage Class: </div>
-                    <Link className=' ml-4 capitalize ' to={`/t-pokedex/move-damage-class/`}>{typeDetails.move_damage_class.name}</Link>
+                    <Link className=' ml-4 capitalize ' to={`/t-pokedex/move-damage-class/`}>{typeDetails.move_damage_class ? typeDetails.move_damage_class.name : ' None'}</Link>
                 </div>
                 <div className=' grid grid-cols-3 md:grid-cols-5 lg:grid-cols-8 gap-4'>
                     {
