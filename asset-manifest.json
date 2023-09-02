@@ -1,21 +1,29 @@
 {
   "files": {
-    "main.css": "/t-pokedex/static/css/main.b5efce04.css",
-    "main.js": "/t-pokedex/static/js/main.c20ae80e.js",
+    "main.css": "/t-pokedex/static/css/main.e772580b.css",
+    "main.js": "/t-pokedex/static/js/main.8824a093.js",
     "static/js/787.93efac9a.chunk.js": "/t-pokedex/static/js/787.93efac9a.chunk.js",
     "static/media/xWhite.jpg": "/t-pokedex/static/media/xWhite.7f69f439cacf1af9cb52.jpg",
+    "static/media/whiteMimosa.jpg": "/t-pokedex/static/media/whiteMimosa.b461b84eb7eb523af0a3.jpg",
     "static/media/whiteMoon.jpg": "/t-pokedex/static/media/whiteMoon.9a8736fa35bcec9a98d7.jpg",
+    "static/media/coulorfulAbstract.jpg": "/t-pokedex/static/media/coulorfulAbstract.739fe036b4135066afe9.jpg",
     "static/media/whitePaper.jpg": "/t-pokedex/static/media/whitePaper.a5def62104af3b1b888b.jpg",
     "static/media/whiteThings.jpg": "/t-pokedex/static/media/whiteThings.33cb4b7934ed97f4b284.jpg",
+    "static/media/whiteHair.png": "/t-pokedex/static/media/whiteHair.f6c73457d7943e0e1ea2.png",
+    "static/media/whitePaint.jpeg": "/t-pokedex/static/media/whitePaint.a2da233fc740a723aaed.jpeg",
+    "static/media/voidSurge.png": "/t-pokedex/static/media/voidSurge.9a435217c081981cede6.png",
     "static/media/whiteMarble.jpg": "/t-pokedex/static/media/whiteMarble.74b32650cc721869cc89.jpg",
     "static/media/whiteNature.jpg": "/t-pokedex/static/media/whiteNature.62081a4d23cbce74afc9.jpg",
     "static/media/whiteShineyWave.jpg": "/t-pokedex/static/media/whiteShineyWave.e4e8aef19c82dd8249e5.jpg",
     "static/media/whiteBubble.jpg": "/t-pokedex/static/media/whiteBubble.87184115db6417fb347f.jpg",
+    "static/media/whiteCell.jpeg": "/t-pokedex/static/media/whiteCell.ec37a5ef7caf20189a5b.jpeg",
     "static/media/whiteStripe.jpg": "/t-pokedex/static/media/whiteStripe.ddd1f27a83c621b12215.jpg",
     "static/media/whiteStripe2.jpg": "/t-pokedex/static/media/whiteStripe2.12a314cb85686a7a7783.jpg",
     "static/media/borderPoke.png": "/t-pokedex/static/media/borderPoke.f9fee76c6dc10617afab.png",
     "static/media/fabric.jpg": "/t-pokedex/static/media/fabric.58329998644eaf2bd4ca.jpg",
+    "static/media/greenWhite.jpg": "/t-pokedex/static/media/greenWhite.7d4a7fed6939d44c19a4.jpg",
     "static/media/whiteBrige.jpg": "/t-pokedex/static/media/whiteBrige.0f881d70d1d7a40f8ca0.jpg",
+    "static/media/whiteOpera.png": "/t-pokedex/static/media/whiteOpera.62d56b045764b3d78055.png",
     "static/media/whiteTriPat.jpg": "/t-pokedex/static/media/whiteTriPat.04e4d7fafa2706e84732.jpg",
     "static/media/abstractGrey.jpg": "/t-pokedex/static/media/abstractGrey.9cbde1c4cee4698f3128.jpg",
     "static/media/spaceBG.jpg": "/t-pokedex/static/media/spaceBG.28ff5d31c7105e4d46d2.jpg",
@@ -24,12 +32,12 @@
     "static/media/seaWhite.jpg": "/t-pokedex/static/media/seaWhite.1ff84317b67f2d8a8ddc.jpg",
     "static/media/regionBg.jpg": "/t-pokedex/static/media/regionBg.c140184394d4ec3b76bc.jpg",
     "index.html": "/t-pokedex/index.html",
-    "main.b5efce04.css.map": "/t-pokedex/static/css/main.b5efce04.css.map",
-    "main.c20ae80e.js.map": "/t-pokedex/static/js/main.c20ae80e.js.map",
+    "main.e772580b.css.map": "/t-pokedex/static/css/main.e772580b.css.map",
+    "main.8824a093.js.map": "/t-pokedex/static/js/main.8824a093.js.map",
     "787.93efac9a.chunk.js.map": "/t-pokedex/static/js/787.93efac9a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b5efce04.css",
-    "static/js/main.c20ae80e.js"
+    "static/css/main.e772580b.css",
+    "static/js/main.8824a093.js"
   ]
 }
