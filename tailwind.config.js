@@ -12,6 +12,7 @@ module.exports = {
       }
     },
     backgroundImage: {
+      'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       'red-space': "url('../public/spaceBG.jpg')",
       'magic-circle': "url('../public/borderPoke.png')",
       // 'magic-circle': "url('../public/newPokeBorder1.gif')",
@@ -45,7 +46,9 @@ module.exports = {
       "colorfulAbstract": "url('../public/coulorfulAbstract.jpg')",
       "whiteVoid": "url('../public/voidSurge.png')",
       "whitePaint": "url('../public/whitePaint.jpeg')",
-      "whiteManmosa": "url('../public/whiteMimosa.jpg')"
+      "whiteManmosa": "url('../public/whiteMimosa.jpg')",
+      "detectivePKC": "url('../public/detective-pikachu.jpg')",
+      "pokemonBattle": "url('../public/battleBg.png')"
     },
   },
   plugins: [],
