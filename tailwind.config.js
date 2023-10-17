@@ -48,7 +48,12 @@ module.exports = {
       "whitePaint": "url('../public/whitePaint.jpeg')",
       "whiteManmosa": "url('../public/whiteMimosa.jpg')",
       "detectivePKC": "url('../public/detective-pikachu.jpg')",
-      "pokemonBattle": "url('../public/battleBg.png')"
+      "pokemonBattle": "url('../public/battleBg.png')",
+      "genninja": "url('../public/changingBG/genNinja.jpg')",
+      "zapdos": "url('../public/changingBG/zapdos.jpg')",
+      "garvedoir": "url('../public/changingBG/garvedoir.png')",
+      "charizard": "url('../public/changingBG/charizard.jpg')",
+      "zigglypuff": "url('../public/changingBG/zigglypuff.jpg')",
     },
   },
   plugins: [],
