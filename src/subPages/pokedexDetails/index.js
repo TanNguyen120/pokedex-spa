@@ -8,6 +8,7 @@ import InfoSmallComponent from "../../component/body/pokeInfo/infoCanvas/inforSm
 import LoadingSpinner from "../../component/loadingSpiner";
 import PokemonBtn from "./pokemonBtn";
 import VersionGroupBtn from "./versionGroupBtn";
+import dynamicBG from "../../tool/bgChanger";
 
 // loader function later will be call in the router 
 const loader = async ({ params }) => {
@@ -19,6 +20,11 @@ const PokeDexDetails = () => {
     const pokeDexDetails = useLoaderData();
     const webLanguage = useSelector(state => state.webSettings.language);
     const [descriptionsLan, setDescription] = useState(null);
+    const [bg, setbg] = useState(null)
+
+    useEffect(() => {
+        setbg(dynamicBG())
+    }, [])
 
     useEffect(() => {
         const setDisplayData = async () => {
@@ -33,10 +39,10 @@ const PokeDexDetails = () => {
         setDisplayData();
     }, [pokeDexDetails, webLanguage])
     return (
-        <div className=' bg-smallGreyWhite bg-repeat min-h-screen font-serif'>
+        <div className={bg + ' bg-fixed bg-center min-h-screen font-serif'}>
             <div className='lg:container md:mx-auto'>
                 <div className='grid grid-cols-1'>
-                    <div className=' rounded-xl p-3 bg-slate-200 border border-indigo-800  m-10'>
+                    <div className=' rounded-xl p-3 bg-slate-600 bg-opacity-80 border border-indigo-800  m-10'>
                         <div className=" mx-8 my-3 text-lg font-semibold text-slate-500">
                             {descriptionsLan ? descriptionsLan.description : <LoadingSpinner />}
                         </div>

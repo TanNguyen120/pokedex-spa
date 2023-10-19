@@ -3,10 +3,12 @@ import React, { useEffect, useState } from 'react'
 import { useLoaderData } from 'react-router-dom';
 import typeToColor from '../../tool/typeColor';
 import TypeDetails from './typeDetails';
+import dynamicBG from '../../tool/bgChanger';
 
 const TypeBtn = ({ typeName, currentType, setCurrentType }) => {
     const [css, setCss] = useState('');
     const [currentCss, setCurrentCss] = useState('');
+
     useEffect(() => {
 
         const typeCss = typeToColor(typeName);
@@ -14,6 +16,7 @@ const TypeBtn = ({ typeName, currentType, setCurrentType }) => {
 
 
     }, [typeName]);
+
 
     useEffect(() => {
         typeName === currentType ? setCurrentCss(' ring ring-slate-500 scale-110 ') : setCurrentCss('ring ring-white');
@@ -37,10 +40,15 @@ const loader = async () => {
 const TypesList = () => {
     const typeList = useLoaderData();
     const [currentType, setCurrentType] = useState(typeList[0].name);
+    const [bg, setBg] = useState(null);
+    useEffect(() => {
+        setBg(dynamicBG());
+    }, [])
+
     return (
-        <div className=' bg-whiteManmosa  min-h-screen bg-repeat font-serif'>
+        <div className={bg + ' min-h-screen bg-fixed bg-center font-serif'}>
             <div className='md:container md:mx-auto py-3'>
-                <div className=' grid md:grid-cols-4 grid-cols-1 border-2 border-slate-600  bg-slate-100 rounded-lg  p-4'>
+                <div className=' grid md:grid-cols-4 grid-cols-1 border-2 border-slate-600  bg-slate-200 bg-opacity-90 rounded-lg  p-4'>
                     <div className=' lg:col-span-3 md:col-span-2 col-span-1 grid grid-cols-1 text-left first-letter:ml-16'>
                         <div className=' text-xl font-semibold text-left pl-10'>
                             PoKéMon Type
