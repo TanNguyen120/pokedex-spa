@@ -20,7 +20,7 @@ const PokemonTable = ({ pokeList }) => {
             <tbody>
                 {
                     pokeList.map((e, i) =>
-                        <tr className=' border-collapse border p-4 border-slate-500 odd:bg-slate-200'
+                        <tr className=' border-collapse border p-4 border-slate-500 odd:bg-white'
                             key={i} ><th
                                 className='border-collapse border border-slate-500 p-4 capitalize'>
                                 <Link to={`/t-pokedex/pokemon/${e.pokemon.name}`} onClick={event => { setPokeFlag(e.pokemon.name) }}>{e.pokemon.name}</Link>
