@@ -1,7 +1,8 @@
 import axios from 'axios'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useLoaderData } from 'react-router-dom'
 import AbilityPage from './abilityPage'
+import dynamicBG from '../../tool/bgChanger'
 
 //===============================================================================================================================================================================
 
@@ -18,11 +19,15 @@ const loader = async () => {
 
 const AbilityList = () => {
     const pageCount = useLoaderData();
+    const [bg, setBg] = useState('');
+    useEffect(() => {
+        setBg(dynamicBG());
+    }, [])
     return (
-        <div className=' bg-whiteShineyWave min-h-screen bg-repeat font-serif'>
+        <div className={` min-h-screen bg-repeat font-serif ${bg}`}>
             <div className='md:container md:mx-auto'>
                 <div className='grid grid-cols-1'>
-                    <div className=' grid grid-cols-4 border border-slate-600 bg-slat bg-slate-200 rounded-lg lg:m-4'>
+                    <div className=' grid grid-cols-4 border border-slate-600 bg-slat bg-slate-200 bg-opacity-80 rounded-lg lg:m-4'>
                         <div className=' col-span-3 text-left text-lg'>
                             <div className=' p-3 first-letter:ml-5'>
                                 An Ability (特性とくせい, Tokusei), called Special Ability in Pokémon the Series, is a game mechanic that was introduced in Generation III. They are various powers or characteristics that each Pokémon possesses and uses passively in a Pokémon battle.
@@ -38,7 +43,7 @@ const AbilityList = () => {
                             </div>
                         </div>
                     </div>
-                    <div className=' bg-slate-200 rounded-lg p-4'>
+                    <div className=' bg-slate-200 bg-opacity-80 rounded-lg p-4'>
                         <AbilityPage pageCount={pageCount} />
                     </div>
                 </div>

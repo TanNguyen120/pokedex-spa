@@ -8,11 +8,10 @@ const Body = () => {
     const [bgURL, setBgURL] = useState("bg-pokemonBattle");
     useEffect(() => {
         setBgURL(dynamicBG());
-        console.log(bgURL)
-    })
+    }, [])
     return (
         <div className={`${bgURL} bg-fixed bg-cover min-w-full min-h-screen bg-center`}>
-            <div className='lg:container md:mx-auto bg-slate-600 bg-opacity-90  grid grid-cols-1'>
+            <div className='lg:container md:mx-auto bg-slate-400 bg-opacity-70  grid grid-cols-1'>
                 {/* <MissingNoWarning /> */}
                 <RadomMonSection />
                 <SearchBar />

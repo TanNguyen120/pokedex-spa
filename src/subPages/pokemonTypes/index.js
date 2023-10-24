@@ -40,15 +40,15 @@ const loader = async () => {
 const TypesList = () => {
     const typeList = useLoaderData();
     const [currentType, setCurrentType] = useState(typeList[0].name);
-    const [bg, setBg] = useState(null);
+    const [bg, setBg] = useState('bg-slate-500');
     useEffect(() => {
         setBg(dynamicBG());
     }, [])
 
     return (
-        <div className={bg + ' min-h-screen bg-fixed bg-center font-serif'}>
-            <div className='md:container md:mx-auto py-3'>
-                <div className=' grid md:grid-cols-4 grid-cols-1 border-2 border-slate-600  bg-slate-200 bg-opacity-90 rounded-lg  p-4'>
+        <div className={` min-h-screen bg-fixed bg-center font-serif ${bg} `}>
+            <div className={`md:container md:mx-auto py-3 `}>
+                <div className=' grid md:grid-cols-4 grid-cols-1 border-2 border-slate-600  bg-slate-300 bg-opacity-80 rounded-lg  p-4'>
                     <div className=' lg:col-span-3 md:col-span-2 col-span-1 grid grid-cols-1 text-left first-letter:ml-16'>
                         <div className=' text-xl font-semibold text-left pl-10'>
                             PoKéMon Type
