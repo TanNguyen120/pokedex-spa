@@ -1,8 +1,10 @@
 import React from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { findPokeByName } from '../../reduxSlicer/findPokeInfoFlag';
 import { Link } from 'react-router-dom';
 
+
+//https://img.pokemondb.net/sprites/sword-shield/icon/venusaur.png
 const PokemonTable = ({ pokeList }) => {
     const dispatch = useDispatch();
     const setPokeFlag = (pokeName) => {
@@ -27,11 +29,13 @@ const PokemonTable = ({ pokeList }) => {
                             </th>
                             <th
                                 className='border-collapse border-slate-500 border p-4'>
-                                <img className=' w-16 h-16' src={`https://img.pokemondb.net/sprites/sword-shield/icon/${e.pokemon.name}.png`} alt='pokeSprite' />
+                                <img className=' w-16 h-16'
+                                    src={
+                                        `https://img.pokemondb.net/sprites/sword-shield/icon/${e.pokemon.name}.png`} alt='pokeSprite' />
                             </th>
                             <th
                                 className='border-collapse border-slate-500 border p-4'>
-                                <img src={`https://img.pokemondb.net/artwork/large/${e.pokemon.name}.jpg`} alt='pokeDraw' className=' h-16' />
+                                <img src={`https://img.pokemondb.net/artwork/large/${e.pokemon.name}.jpg`} alt='pokeArtWork' className=' h-16' />
                             </th>
                         </tr>)
                 }

@@ -33,7 +33,7 @@ const TypeContent = ({ typeDetails }) => {
             <div className=' grid grid-cols-1 md:grid-cols-2  p-8 rounded-lg bg-slate-100'>
                 <div className=' grid grid-cols-1 p-6'>
                     <div className=' text-red-700 text-lg font-medium'>Take Double Damage From: </div>
-                    <div className=' flex flex-col gap-4 text-center bg-slate-50 rounded-lg p-4'>
+                    <div className=' flex flex-col gap-4 text-center bg-slate-50 rounded-lg p-4 border border-slate-400'>
                         {
                             typeDetails.damage_relations.double_damage_from.length > 0 ?
                                 typeDetails.damage_relations.double_damage_from.map((e, i) => <TypeBtnSimp key={i} typeName={e.name} />)
@@ -44,7 +44,7 @@ const TypeContent = ({ typeDetails }) => {
                 </div>
                 <div className=' grid grid-cols-1 p-6'>
                     <div className=' text-green-700 text-lg font-medium'>Do Double Damage To: </div>
-                    <div className=' flex flex-col gap-4 text-center bg-slate-50 rounded-lg p-4'>
+                    <div className=' flex flex-col gap-4 text-center bg-slate-50 rounded-lg p-4 border border-slate-400' >
                         {
                             typeDetails.damage_relations.double_damage_to.length > 0 ?
                                 typeDetails.damage_relations.double_damage_to.map((e, i) => <TypeBtnSimp key={i} typeName={e.name} />)
@@ -55,7 +55,7 @@ const TypeContent = ({ typeDetails }) => {
                 </div>
                 <div className=' grid grid-cols-1 p-6'>
                     <div className=' text-green-700 text-lg font-medium'>Take Half Damage From: </div>
-                    <div className=' flex flex-col gap-4 text-center bg-slate-50 rounded-lg p-4'>
+                    <div className=' flex flex-col gap-4 text-center bg-slate-50 rounded-lg p-4 border border-slate-400'>
                         {
                             typeDetails.damage_relations.half_damage_from.length > 0 ?
                                 typeDetails.damage_relations.half_damage_from.map((e, i) => <TypeBtnSimp key={i} typeName={e.name} />)
@@ -66,7 +66,7 @@ const TypeContent = ({ typeDetails }) => {
                 </div>
                 <div className=' grid grid-cols-1 p-6'>
                     <div className=' text-red-700 text-lg font-medium'>Do Half Damage To: </div>
-                    <div className=' flex flex-col gap-4 text-center bg-slate-50 rounded-lg p-4'>
+                    <div className=' flex flex-col gap-4 text-center bg-slate-50 rounded-lg p-4 border border-slate-400'>
                         {
                             typeDetails.damage_relations.half_damage_to.length > 0 ?
                                 typeDetails.damage_relations.half_damage_to.map((e, i) => <TypeBtnSimp key={i} typeName={e.name} />)
@@ -77,7 +77,7 @@ const TypeContent = ({ typeDetails }) => {
                 </div>
                 <div className=' grid grid-cols-1 p-6'>
                     <div className=' text-green-700 text-lg font-medium'>Take No Damage From: </div>
-                    <div className=' flex flex-col gap-4 text-center bg-slate-50 rounded-lg p-4'>
+                    <div className=' flex flex-col gap-4 text-center bg-slate-50 rounded-lg p-4 border border-slate-400'>
                         {
                             typeDetails.damage_relations.no_damage_from.length > 0 ?
                                 typeDetails.damage_relations.no_damage_from.map((e, i) => <TypeBtnSimp key={i} typeName={e.name} />)
@@ -88,7 +88,7 @@ const TypeContent = ({ typeDetails }) => {
                 </div>
                 <div className=' grid grid-cols-1 p-6'>
                     <div className=' text-red-700 text-lg font-medium'>Do No Damage To: </div>
-                    <div className=' flex flex-col gap-4 text-center bg-slate-50 rounded-lg p-4'>
+                    <div className=' flex flex-col gap-4 text-center bg-slate-50 rounded-lg p-4 border border-slate-400' >
                         {
                             typeDetails.damage_relations.no_damage_to.length > 0 ?
                                 typeDetails.damage_relations.no_damage_to.map((e, i) => <TypeBtnSimp key={i} typeName={e.name} />)
