@@ -10,32 +10,32 @@ const GameItemsMenu = () => {
     return (
         <>
             <Link to="/t-pokedex/items-list">
-                <div className=' hover:bg-slate-300 hover:rounded-lg hover:text-lg hover:font-semibold p-2 '>
+                <div className=' hover:text-white hover:text-lg hover:font-semibold p-2 '>
                     <FaRegListAlt className=' inline' /> Items List
                 </div>
             </Link>
             <Link to="/t-pokedex/berries">
-                <div className=' hover:bg-slate-300 hover:rounded-lg hover:text-lg hover:font-semibold p-2 '>
+                <div className=' hover:text-white hover:text-lg hover:font-semibold p-2 '>
                     <FaRaspberryPi className='inline' /> Berries
                 </div>
             </Link>
             <Link to="/t-pokedex/item-category">
-                <div className=' hover:bg-slate-300 hover:rounded-lg hover:text-lg hover:font-semibold p-2 '>
+                <div className=' hover:text-white hover:text-lg hover:font-semibold p-2 '>
                     <MdCategory className=' inline' /> Items Category
                 </div>
             </Link>
             <Link to="/t-pokedex/item-attribute">
-                <div className=' hover:bg-slate-300 hover:rounded-lg hover:text-lg hover:font-semibold p-2 '>
+                <div className=' hover:text-white hover:text-lg hover:font-semibold p-2 '>
                     <CgAttribution className=' inline' /> Items Attribute
                 </div>
             </Link>
             <Link to="/t-pokedex/item-pocket">
-                <div className=' hover:bg-slate-300 hover:rounded-lg hover:text-lg hover:font-semibold p-2 '>
+                <div className=' hover:text-white hover:text-lg hover:font-semibold p-2 '>
                     <GiPocketWatch className=' inline' /> Items Pocket
                 </div>
             </Link>
             <Link to="/t-pokedex/machine">
-                <div className=' hover:bg-slate-300 hover:rounded-lg hover:text-lg hover:font-semibold p-2 '>
+                <div className=' hover:text-white hover:text-lg hover:font-semibold p-2 '>
                     <RiAlbumLine className=' inline' /> Machine
                 </div>
             </Link>

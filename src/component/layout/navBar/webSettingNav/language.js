@@ -23,11 +23,11 @@ const Language = () => {
     }, [languageWebSetting])
 
     return (
-        <div className=' flex flex-row p-2 rounded-md hover:bg-slate-200 hover:cursor-pointer'>
+        <div className=' flex flex-row p-2 rounded-md hover:cursor-pointer'>
             <div>
                 Language:
             </div>
-            <div className=' group rounded-lg ml-4 bg-slate-300 px-4'>
+            <div className=' group ml-4  px-4 hover:text-white underline text-slate-700'>
                 <div onClick={e => { toggleLanguageOption() }}> {languageWebSetting} </div>
                 {
                     languageListToggle && <div className=' rounded-lg grid-cols-1 text-left p-2 bg-slate-400 text-black w-56 absolute  mt-1'>

@@ -6,10 +6,10 @@ const PictureModeBtn = ({ modeName }) => {
     const pictureMode = useSelector((state) => state.webSettings.pictureMode);
     const dispatch = useDispatch();
     let bg = ""
-    modeName === pictureMode ? bg = "bg-slate-600" : bg = "bg-white"
+    modeName === pictureMode ? bg = "bg-slate-500 text-white border border-slate-100 border-2" : bg = " text-slate-300 hover:text-white"
     return (
         <div
-            className={`${bg} m-1 p-1 inline hover:cursor-pointer font-semibold rounded-lg`}
+            className={`${bg} m-1 py-1 px-2 inline hover:cursor-pointer font-semibold rounded-lg`}
             onClick={(e => {
                 dispatch(setPictureMode(modeName));
             })}

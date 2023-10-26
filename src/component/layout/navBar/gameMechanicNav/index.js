@@ -15,7 +15,7 @@ const GameMechanicNav = () => {
     return (
         <div className='group relative h-full '>
             <div className=' grid grid-cols-1 font-semibold text-lg font-mono rounded-t-lg transition-all ease-in-out duration-500 group-hover:cursor-pointer overflow-hidden'>
-                <span className="w-0 h-0 rounded bg-slate-500 absolute top-0 left-0 ease-out duration-500 transition-all group-hover:w-full group-hover:h-full -z-1"></span>
+                <span className="w-0 h-0 rounded bg-slate-400 absolute top-0 left-0 ease-out duration-500 transition-all group-hover:w-full group-hover:h-full -z-1"></span>
 
                 <span className=' text-lg text-center w-full transition-colors duration-300 ease-in-out group-hover:text-white z-10'>
                     <SiNintendo3Ds className='inline' /> Game Mechanic
@@ -27,27 +27,27 @@ const GameMechanicNav = () => {
                 <EncounterNav />
                 <FlingMoveNav />
                 <Link to='/t-pokedex/move/'>
-                    <div className=' hover:bg-slate-300 hover:rounded-lg hover:text-lg hover:font-semibold p-2 '>
+                    <div className=' hover:text-slate-50 text-slate-700 hover:text-lg hover:font-semibold p-2 '>
                         <TbHandMove className=' inline' /> Move
                     </div>
                 </Link>
                 <Link to='/t-pokedex/move-category/'>
-                    <div className=' hover:bg-slate-300 hover:rounded-lg hover:text-lg hover:font-semibold p-2 '>
+                    <div className=' hover:text-slate-50 text-slate-700 hover:text-lg hover:font-semibold p-2 '>
                         <MdCategory className=' inline' /> Move Category
                     </div>
                 </Link>
                 <Link to='/t-pokedex/move-damage-class/'>
-                    <div className=' hover:bg-slate-300 hover:rounded-lg hover:text-lg hover:font-semibold p-2 '>
+                    <div className=' hover:text-slate-50 text-slate-700 hover:text-lg hover:font-semibold p-2 '>
                         <FaHouseDamage className=' inline' /> Move Damage Class
                     </div>
                 </Link>
                 <Link to='/t-pokedex/move-learn-method/'>
-                    <div className=' hover:bg-slate-300 hover:rounded-lg hover:text-lg hover:font-semibold p-2 '>
+                    <div className=' hover:text-slate-50 text-slate-700 hover:text-lg hover:font-semibold p-2 '>
                         <RiInputMethodLine className=' inline' /> Move Learn Method
                     </div>
                 </Link>
                 <Link to='/t-pokedex/move-target/'>
-                    <div className=' hover:bg-slate-300 hover:rounded-lg hover:text-lg hover:font-semibold p-2 '>
+                    <div className=' hover:text-slate-50 text-slate-700 hover:text-lg hover:font-semibold p-2 '>
                         <RiInputMethodLine className=' inline' /> Move Target
                     </div>
                 </Link>
