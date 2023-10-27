@@ -13,7 +13,7 @@ const SingleLink = ({ name, url }) => {
 // quick link to pages
 const PagesLink = () => {
     return (
-        <div className=' grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 text-left'>
+        <div className=' grid md:grid-cols-2 lg:grid-cols-4 grid-cols-1 text-left mx-auto gap-9'>
             <div className='grid grid-cols-1'>
                 <SingleLink name='Berries' url={'/t-pokedex/berries'} />
                 <SingleLink name='Items' url={'/t-pokedex/item'} />
@@ -32,6 +32,13 @@ const PagesLink = () => {
                 <SingleLink name='Encounter' url={'/t-pokedex/encounter'} />
                 <SingleLink name='Move' url={'/t-pokedex/move'} />
                 <SingleLink name='Move Category' url={'/t-pokedex/move-category'} />
+            </div>
+            <div className='grid grid-cols-1'>
+                <SingleLink name='Pokémon Type' url={'/t-pokedex/type'} />
+                <SingleLink name='Pokémon Ability' url={'/t-pokedex/pokemon-ability'} />
+                <SingleLink name='Pokémon Nature' url={'/t-pokedex/nature'} />
+                <SingleLink name='Pokémon Color' url={'/t-pokedex/poke-color'} />
+                <SingleLink name='Pokémon Growth Rate' url={'/t-pokedex/growth-rate'} />
             </div>
         </div>
     )

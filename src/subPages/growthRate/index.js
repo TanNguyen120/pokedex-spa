@@ -1,8 +1,9 @@
 import axios from 'axios';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import GrowthDropDown from './growthDropDown';
 import LoadingSpinner from '../../component/loadingSpiner';
+import dynamicBG from '../../tool/bgChanger';
 // in react router v6.4 we can define a loader function that can access to url param to call api 
 // loader function later will be call in the router 
 const loader = async () => {
@@ -13,11 +14,18 @@ const loader = async () => {
 
 const GrowthRate = () => {
     const growthRate = useLoaderData();
+    const [bg, setBg] = useState('');
+    useEffect(() => {
+        setBg(dynamicBG());
+    }, [])
     return (
-        <div className=' bg-whiteGreen min-h-screen bg-repeat font-serif'>
+        <div className={' bg-fixed bg-center bg-cover min-h-screen font-serif ' + bg}>
             <div className='lg:container lg:mx-auto md:mx-1'>
                 <div className='grid grid-cols-1'>
-                    <div className=' grid lg:grid-cols-4 border border-slate-600 bg-slate-100 rounded-lg lg:m-4'>
+                    <div className=' grid lg:grid-cols-4 border border-slate-600 bg-slate-300 bg-opacity-80 rounded-lg lg:m-4'>
+                        <div className='lg:col-span-4 text-center text-slate-600 text-xl font-semibold'>
+                            Growth Rate
+                        </div>
                         <div className=' lg:col-span-3 text-left text-lg'>
                             <div className=' p-3 first-letter:ml-5'>
                                 If you've played any pokemon game, you'll know about Experience Points. Battle any pokemon and win, and you'll gain a set amount of experience for your pokemon. Get it to a certain point, and you level up. It's simple enough to understand for most people. The concept of battling many enemies to gain enough experience for your characters to level up is very commonly seen in RPG's. Of course, it's more complicated in Pokemon in a few not-so-obvious ways.                            </div>
@@ -34,7 +42,7 @@ const GrowthRate = () => {
                         </div>
                     </div>
                     <div
-                        className=' grid grid-cols-1 rounded-lg bg-slate-50 p-4 lg:m-4 border border-slate-500'
+                        className=' grid grid-cols-1 rounded-lg hover:bg-opacity-100 bg-opacity-80 bg-slate-100 p-4 lg:m-4 border border-slate-500'
                     >
                         {growthRate ? growthRate.results.map((e, i) => <GrowthDropDown key={i} name={e.name} url={e.url} />) : <LoadingSpinner />}
                     </div>

@@ -63,8 +63,8 @@ const MoveRow = ({ moveData, borderTailWind }) => {
 
     return (
         <tr className=' odd:bg-white even:bg-slate-50'>
-            <td className={borderTailWind + ' p-3 capitalize'}><Link to={`/t-pokedex/move/${moveData.move.name}`} className=' hover:cursor-pointer hover:text-blue-500 hover:underline'>{moveData.move.name} </Link></td>
-            <td className={borderTailWind + ' p-3'}>
+            <td className={borderTailWind + 'text-slate-600 p-3 capitalize'}><Link to={`/t-pokedex/move/${moveData.move.name}`} className=' hover:cursor-pointer hover:text-blue-500 hover:underline'>{moveData.move.name} </Link></td>
+            <td className={borderTailWind + 'text-slate-600 p-3'}>
                 {
                     moveDetailData &&
                     <Link
@@ -74,7 +74,7 @@ const MoveRow = ({ moveData, borderTailWind }) => {
                     </Link>
                 }
             </td>
-            <td className={borderTailWind + ' p-3'}>
+            <td className={borderTailWind + 'text-slate-600 p-3'}>
                 {
                     moveDetailData &&
                     <div>
@@ -82,7 +82,7 @@ const MoveRow = ({ moveData, borderTailWind }) => {
                     </div>
                 }
             </td>
-            <td className={borderTailWind + ' p-3'}>
+            <td className={borderTailWind + 'text-slate-600 p-3'}>
                 {
                     moveDetailData &&
                     <div>
@@ -90,7 +90,7 @@ const MoveRow = ({ moveData, borderTailWind }) => {
                     </div>
                 }
             </td>
-            <td className={borderTailWind + ' p-3'}>
+            <td className={borderTailWind + 'text-slate-600 p-3'}>
                 {
                     moveDetailData &&
                     <div>
@@ -98,7 +98,7 @@ const MoveRow = ({ moveData, borderTailWind }) => {
                     </div>
                 }
             </td>
-            <td className={borderTailWind + ' p-3'}>
+            <td className={borderTailWind + 'text-slate-600 p-3'}>
                 {
                     moveDetailData &&
                     <div>
@@ -106,8 +106,8 @@ const MoveRow = ({ moveData, borderTailWind }) => {
                     </div>
                 }
             </td>
-            <td className={borderTailWind + ' p-3'}>{moveData.version_group_details[0].move_learn_method.name}</td>
-            <td className={borderTailWind + ' p-3'}>{requireData}</td>
+            <td className={borderTailWind + 'text-slate-600 p-3'}>{moveData.version_group_details[0].move_learn_method.name}</td>
+            <td className={borderTailWind + 'text-slate-600 p-3'}>{requireData}</td>
         </tr>
     )
 }

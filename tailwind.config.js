@@ -54,7 +54,9 @@ module.exports = {
       "garvedoir": "url('../public/changingBG/garvedoir.png')",
       "charizard": "url('../public/changingBG/charizard.jpg')",
       "zigglypuff": "url('../public/changingBG/zigglypuff.jpg')",
-      "scarletXgold": "url('../public/changingBG/scarletxgold.jpg')"
+      "scarletXgold": "url('../public/changingBG/scarletxgold.jpg')",
+      "pokemonX": "url('../public/changingBG/pokemonX.jpg')",
+      "umbreon": "url('../public/changingBG/umbreon.jpg')"
     },
   },
   plugins: [],

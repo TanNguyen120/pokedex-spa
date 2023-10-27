@@ -4,7 +4,9 @@ const urlList = [
     "bg-garvedoir",
     "bg-charizard",
     "bg-jigglypuff",
-    "bg-scarletXGold"
+    "bg-scarletXGold",
+    "bg-pokemonX",
+    "bg-umbreon"
 ]
 
 // get a random link from the picture link liste

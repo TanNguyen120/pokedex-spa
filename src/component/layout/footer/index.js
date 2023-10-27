@@ -4,21 +4,12 @@ import OfficalAccount from './officalAccount'
 import PagesLink from './pagesLink'
 const Footer = () => {
     return (
-        <div className="grid grid-cols-3 md:grid-cols-6 bg-slate-100 p-2 md:p-5 divide-x-2">
+        <div className="grid grid-cols-3 md:grid-cols-6 bg-slate-100 p-2 md:p-5 divide-x-2 justify-center">
             <div div className='text-base ' >
                 <div className='text-center font-semibold'><img className="h-10 w-10 mx-6 py-1.5 object-cover inline" src={process.env.PUBLIC_URL + "/footerLogo.png"} alt="poke footer Logo" />Project T-Pokedex</div>
-
                 <div className="mt-5 md:mt-24 text-xs font-sans float-left">Copyright © 2022 Nguyen Viet Tan</div>
             </div >
-            <div className='flex items-center'>
-                <div
-                    className='text-md font-semibold animate-bounce ml-4 '>
-                    Visit me <a className='hover:cursor-pointer hover:text-red-400 hover:font-bold hover:text-xl ' href='https://tannguyen1220-pf.netlify.app/index.html'> Here! </a> <FaHandPointLeft className='inline' />
-                </div>
-                <div>
 
-                </div>
-            </div>
             <OfficalAccount />
             <div className='flex items-center flex-col'>
                 <span className="font-mono font-semibold"> Special Thank To </span>  <span> <img className='h-10 w-10 md:h-28 md:w-28' src={`${process.env.PUBLIC_URL}/pokeApi.png`} alt=' poke api' /></span>
@@ -27,9 +18,9 @@ const Footer = () => {
                         https://pokeapi.co/ </a>  for more info
                 </div>
             </div>
-            <div className=' md:col-span-2'>
+            <div className=' md:col-span-3 grid grid-cols-1'>
                 <div className="font-mono font-semibold"> Quick Link </div>
-                <div className=' m-5'>
+                <div className=' m-5 grid grid-cols-1'>
                     <PagesLink />
                 </div>
             </div>
